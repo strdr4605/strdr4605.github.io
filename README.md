@@ -38,10 +38,11 @@ Some of my highlights:
 
 ## Skills
 - Languages:
-  - Romanian - Native
-  - English - Good
-  - Russian - Good
-  - German - Beginner
+
+  |Romanian|English|Russian|German  |
+  |--------|-------|-------|--------|
+  |Native  |Good   |Good   |Beginner|
+  
 - Development:
   - HTML/CSS
   - JavaScript
