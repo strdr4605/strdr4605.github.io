@@ -30,7 +30,7 @@ Some of my highlights:
 - **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**  
   My team was aggregating a public gov API and my task was the website that displays *external debt of Moldova* in a friendly way. With the help of mentors, I created a small *VueJS* app with *flux architecture* that communicates with our backend. 
 - **StartUp Weekend 2016**  
-  My team created a web app that allows artists to generate PDF catalogs for their paintings. We used nodejs to create pdf from images that are upload on the site. Because I was more experienced than my teammates, I managed the deloping taught some JS basics and helped in resolving bugs.
+  My team created a web app that allows artists to generate PDF catalogs for their paintings. We used nodejs to create pdf from images that are upload on the site. Because I was more experienced than my teammates, I managed the development, taught some JS basics and helped in resolving bugs.
 - **[saci.md](http://saci.md)**  
   I had to create a simple landing page about bags. I decided to use as many CSS tricks as I can. Also, I created my own grid using *flexbox*. The site has some parallax effect and a lot of CSS animations.
 
