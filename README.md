@@ -7,13 +7,13 @@
 - [github.com/strdr4605](https://github.com/strdr4605)
 
 ## Personal Profile
-I study Computer Science in the last year of university. I am passionate about IT. I am a team player and always aim for teamwork, code review, documentation, discussion whether it is a complex project or a project just for fun. Also, I like any events related to IT where I can discover something new and exchange my experience with people. My hobby is Hackathons, where I learned and still learn new professional and personal skills.
+I study Computer Science and I'm expected to graduate in June 2019. I am passionate about IT. I am a team player and always aim for teamwork, code review, documentation, discussion whether it is a complex project or a project just for fun. Also, I like any events related to IT where I can discover something new and exchange my experience with people. My hobby is Hackathons, where I learned and still learn new professional and personal skills.
 
 ## Education
 - `01.10.2017–18.07.2018`  
-  **University of Siegen**, *Germany (Erasmus exchange)*  
+  **University of Siegen**, *Germany, Computer Science (Erasmus exchange)*  
 - `01.09.2015–PRESENT`  
-  **Technical University of Moldova**, *FCIM Software Engineering (FAF)*  
+  **Technical University of Moldova**, *Computer Science*  
 - `01.09.2012–16.06.2016`  
   Diploma of Professional Studies (Technician) **Financial Banking College**, *Chisinau (Moldova), Speciality Informatics*  
   
@@ -43,11 +43,13 @@ Some of my highlights:
 ## Skills
 - Languages:
   - Romanian - Native
-  - English - Good
-  - Russian - Good
+  - English - Fluent
+  - Russian - Fluent
   - German - Beginner
 - Development:
   - HTML/CSS
   - JavaScript
-  - Version control/GIT
   - Project Management
+  - Version control/GIT
+  - Python
+  - Java
