@@ -23,17 +23,17 @@ Some of my highlights:
 
 - **[rebble.io](http://rebble.io)**  
   I opened an issue with converting the *SVG static watch logo* into *real-time clock*. After approvement from admins, I edited some SVG paths of the logo and using JavaScript and CSS created an *Easter egg real-time watch*. The hardest part was understanding how SVG works.
-- **[FAF Hackathon 2017](https://github.com/strdr4605/faf-hack-bot/commits?author=strdr4605)**  
-  My team had to implement a bot that helps with managing your bank transactions. My task was to filter transactions by years/months and prepare data for *ChartJS* plotting. I wanted to learn functional programming in JS so I used *filters, maps and reduces* to write small, readable code.
+- **[saci.md](http://saci.md)**  
+  I had to create a simple landing page about bags. I decided to use as many CSS tricks as I can. Also, I created my own grid using *flexbox*. The site has some parallax effect and a lot of CSS animations.
 - **Techsylvania Hackathon 2017**  
   We created a *treasure hunting like game* on mobile using Bluetooth Low Energy for location detection. I was responsible for nodejs TCP server that allows users to share location and info. I used socket.io and created the protocol for communication.
+- **[FAF Hackathon 2017](https://github.com/strdr4605/faf-hack-bot/commits?author=strdr4605)**  
+  My team had to implement a bot that helps with managing your bank transactions. My task was to filter transactions by years/months and prepare data for *ChartJS* plotting. I wanted to learn functional programming in JS so I used *filters, maps and reduces* to write small, readable code.
 - **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**  
   My team was aggregating a public gov API and my task was the website that displays *external debt of Moldova* in a friendly way. With the help of mentors, I created a small *VueJS* app with *flux architecture* that communicates with our backend. 
 - **StartUp Weekend 2016**  
   My team created a web app that allows artists to generate PDF catalogs for their paintings. We used nodejs to create pdf from images that are upload on the site. Because I was more experienced than my teammates, I managed the development, taught some JS basics and helped in resolving bugs.
-- **[saci.md](http://saci.md)**  
-  I had to create a simple landing page about bags. I decided to use as many CSS tricks as I can. Also, I created my own grid using *flexbox*. The site has some parallax effect and a lot of CSS animations.
-
+  
 ### Other experience
 - `21.09.2018–PRESENT`  
   *Chief Legal Officer* at **FAF NGO**, Computer Science Students Organization.
