@@ -18,7 +18,7 @@ I study Computer Science and I'm expected to graduate in June 2019. I am passion
   Diploma of Professional Studies (Technician) **Financial Banking College**, *Chisinau (Moldova), Speciality Informatics*  
   
 ## Experience
-Mainly my professional experience comes from 23 Hackathons where I developed front-end/back-end/mobile apps. Beside developing I did design and project management. But also contributed to some open source projects.  
+Mainly my professional experience comes from 27 Hackathons where I developed front-end/back-end/mobile apps. Beside developing I did design and project management. But also contributed to some open source projects.  
 Some of my highlights:
 
 - **[rebble.io](http://rebble.io)**  
