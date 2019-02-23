@@ -21,6 +21,8 @@ I study Computer Science and I'm expected to graduate in June 2019. I am passion
 Mainly my professional experience comes from 27 Hackathons where I developed front-end/back-end/mobile apps. Beside developing I did design and project management. But also contributed to some open source projects.  
 Some of my highlights:
 
+- **[mockingcase](https://www.npmjs.com/package/mockingcase)**  
+  I created a *Node.js* package that converts a string to `mOcKiNgCaSe`. Working on this project a learned more about publication of a npm package, software versioning, unit testing, continuous integration, declaration files, documentation, and contribution on open source.
 - **[rebble.io](http://rebble.io)**  
   I opened an issue with converting the *SVG static watch logo* into *real-time clock*. After approvement from admins, I edited some SVG paths of the logo and using JavaScript and CSS created an *Easter egg real-time watch*. The hardest part was understanding how SVG works.
 - **[saci.md](http://saci.md)**  
@@ -33,8 +35,6 @@ Some of my highlights:
   At the internship I worked on some simple projects. First task was a custom responsive css style using *flexbox* for a simple site. Second task was to aggregate the forum of *Reddit API* using *NodeJS* and extract posts from some topics. Last task was to create a movie catalog site with *ReactJS/Redux* and content from a popular movie API.
 - **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**  
   My team was aggregating a public gov API and my task was the website that displays *external debt of Moldova* in a friendly way. With the help of mentors, I created a small *VueJS* app with *flux architecture* that communicates with our backend. 
-- **StartUp Weekend 2016**  
-  My team created a web app that allows artists to generate PDF catalogs for their paintings. We used nodejs to create pdf from images that are upload on the site. Because I was more experienced than my teammates, I managed the development, taught some JS basics and helped in resolving bugs.
   
 ### Other experience
 - `21.09.2018–PRESENT`  
