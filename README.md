@@ -21,7 +21,7 @@ I study Computer Science and I'm expected to graduate in June 2019. I am passion
 Mainly my professional experience comes from 28 Hackathons where I developed front-end/back-end/mobile apps. Beside developing I did design and project management. But also contributed to some open source projects.  
 Some of my highlights:
 
-- **[mockingcase](https://www.npmjs.com/package/mockingcase)**  
+- **[mockingcase](https://github.com/strdr4605/mockingcase)**  
   I created a *Node.js* package that converts a string to `mOcKiNgCaSe`. Working on this project a learned more about publication of a npm package, software versioning, unit testing, continuous integration, declaration files, documentation, and contribution on open source.
 - **[rebble.io](http://rebble.io)**  
   I opened an issue with converting the *SVG static watch logo* into *real-time clock*. After approvement from admins, I edited some SVG paths of the logo and using JavaScript and CSS created an *Easter egg real-time watch*. The hardest part was understanding how SVG works.
