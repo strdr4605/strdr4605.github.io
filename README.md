@@ -27,15 +27,14 @@ Some of my highlights:
   I opened an issue with converting the *SVG static watch logo* into *real-time clock*. After approvement from admins, I edited some SVG paths of the logo and using JavaScript and CSS created an *Easter egg real-time watch*. The hardest part was understanding how SVG works.
 - **[saci.md](http://saci.md)**  
   I had to create a simple landing page about bags. I decided to use as many CSS tricks as I can. Also, I created my own grid using *flexbox*. The site has some parallax effect and a lot of CSS animations.
-- **Techsylvania Hackathon 2017**  
-  We created a *treasure hunting like game* on mobile using Bluetooth Low Energy for location detection. I was responsible for nodejs TCP server that allows users to share location and info. I used socket.io and created the protocol for communication.
 - **[TV8 video player](http://tv8.md/live/)**  
   At one internship my task was a video player for a TV channel in Moldova. We used *VideoJS* framework as a player and I created a custom style using *css/flexbox* on main elements of the player according with clients design.
 - **Yopeso Front-end Internship 2016**  
   At the internship I worked on some simple projects. First task was a custom responsive css style using *flexbox* for a simple site. Second task was to aggregate the forum of *Reddit API* using *NodeJS* and extract posts from some topics. Last task was to create a movie catalog site with *ReactJS/Redux* and content from a popular movie API.
 - **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**  
   My team was aggregating a public gov API and my task was the website that displays *external debt of Moldova* in a friendly way. With the help of mentors, I created a small *VueJS* app with *flux architecture* that communicates with our backend. 
-  
+- `20.12.2018–PRESENT` **[GoParrot](https://www.goparrot.ai/)**  
+  Online Ordering Platform on *Microservices Architecture* build with *Nodejs/Reactjs/MongoDB*. I worked on a service that synchronize database with parteners *APIs* (transforming objects, comparing, merging). Now I work on *Reactjs* app for managing marketing strategy of the company. 
 ### Other experience
 - `21.09.2018–PRESENT`  
   *Chief Legal Officer* at **FAF NGO**, Computer Science Students Organization.
