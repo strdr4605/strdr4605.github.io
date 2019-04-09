@@ -18,7 +18,10 @@ I study Computer Science and I'm expected to graduate in June 2019. I am passion
   Diploma of Professional Studies (Technician) **Financial Banking College**, *Chisinau (Moldova), Speciality Informatics*  
   
 ## Experience
-Mainly my professional experience comes from 28 Hackathons where I developed front-end/back-end/mobile apps. Beside developing I did design and project management. But also contributed to some open source projects.  
+- `20.12.2018–PRESENT` **[GoParrot](https://www.goparrot.ai/)**  
+  Online Ordering Platform on *Microservices Architecture* build with *Nodejs/Reactjs/MongoDB*. I worked on a service that synchronize database with parteners *APIs* (transforming objects, comparing, merging). Now I work on *Reactjs* app for managing marketing strategy of the company. 
+
+A big part of my professional experience comes from 28 Hackathons where I developed front-end/back-end/mobile apps. Beside developing I did design and project management. But also contributed to some open source projects.  
 Some of my highlights:
 
 - **[mockingcase](https://github.com/strdr4605/mockingcase)**  
@@ -33,8 +36,6 @@ Some of my highlights:
   At the internship I worked on some simple projects. First task was a custom responsive css style using *flexbox* for a simple site. Second task was to aggregate the forum of *Reddit API* using *NodeJS* and extract posts from some topics. Last task was to create a movie catalog site with *ReactJS/Redux* and content from a popular movie API.
 - **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**  
   My team was aggregating a public gov API and my task was the website that displays *external debt of Moldova* in a friendly way. With the help of mentors, I created a small *VueJS* app with *flux architecture* that communicates with our backend. 
-- `20.12.2018–PRESENT` **[GoParrot](https://www.goparrot.ai/)**  
-  Online Ordering Platform on *Microservices Architecture* build with *Nodejs/Reactjs/MongoDB*. I worked on a service that synchronize database with parteners *APIs* (transforming objects, comparing, merging). Now I work on *Reactjs* app for managing marketing strategy of the company. 
 ### Other experience
 - `21.09.2018–PRESENT`  
   *Chief Legal Officer* at **FAF NGO**, Computer Science Students Organization.
