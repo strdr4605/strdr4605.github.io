@@ -32,8 +32,6 @@ Some of my highlights:
   I had to create a simple landing page about bags. I decided to use as many CSS tricks as I can. Also, I created my own grid using *flexbox*. The site has some parallax effect and a lot of CSS animations.
 - **[TV8 video player](http://tv8.md/live/)**  
   At one internship my task was a video player for a TV channel in Moldova. We used *VideoJS* framework as a player and I created a custom style using *css/flexbox* on main elements of the player according with clients design.
-- **Yopeso Front-end Internship 2016**  
-  At the internship I worked on some simple projects. First task was a custom responsive css style using *flexbox* for a simple site. Second task was to aggregate the forum of *Reddit API* using *NodeJS* and extract posts from some topics. Last task was to create a movie catalog site with *ReactJS/Redux* and content from a popular movie API.
 - **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**  
   My team was aggregating a public gov API and my task was the website that displays *external debt of Moldova* in a friendly way. With the help of mentors, I created a small *VueJS* app with *flux architecture* that communicates with our backend. 
 ### Other experience
