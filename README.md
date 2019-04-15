@@ -34,22 +34,6 @@ Some of my highlights:
   At one internship my task was a video player for a TV channel in Moldova. We used *VideoJS* framework as a player and I created a custom style using *css/flexbox* on main elements of the player according with clients design.
 - **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**  
   My team was aggregating a public gov API and my task was the website that displays *external debt of Moldova* in a friendly way. With the help of mentors, I created a small *VueJS* app with *flux architecture* that communicates with our backend. 
-### Other experience
-- `21.09.2018–PRESENT`  
-  *Chief Legal Officer* at **FAF NGO**, Computer Science Students Organization.
-- *Speaker* at **FAF Lectures** (technical presentations/workshops).
-
-
 ## Skills
-- Languages:
-  - Romanian - Native
-  - English - Fluent
-  - Russian - Fluent
-  - German - Beginner
-- Development:
-  - HTML/CSS
-  - JavaScript/TypeScript
-  - Project Management
-  - Version control/GIT
-  - Python
-  - Java
+- Languages: **Romanian**(*native*), **English**(*fluent*), **Russian**(*fluent*), **German**(*beginner*)
+- Development: **HTML/CSS**(*proficient*), **JavaScript/TypeScript**(*proficient*), **Project Management**(*working knowledge*), **Version control/GIT**(*proficient*), **Python**(*working knowledge*), **Java**(*working knowledge*)
