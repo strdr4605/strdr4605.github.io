@@ -24,16 +24,11 @@ I am passionate about IT. I am a team player and always aim for teamwork, code r
   Online Ordering Platform on _Microservices Architecture_. I worked on a service that synchronize database with parteners _APIs_ and reduced manual work from 1 week to 15 minutes. Now I work on new version of the Platform using _React-Native_/_ReactJS_ with 40%+ code shared between mobile and web.
 
 > A big part of my professional experience comes from 29 Hackathons where I developed front-end/back-end/mobile apps and games. Also, I contributed to some open source projects.  
-> Some of my highlights:
 
-- **[mockingcase](https://github.com/strdr4605/mockingcase)**  
-  I created a _Node.js_ package that converts a string to `mOcKiNgCaSe`. Working on this project a learned about software versioning, unit testing, documentation, and contribution on open source.
-- **[rebble.io](http://rebble.io)**  
-  I opened an issue on Github repo and using JavaScript and _CSS_, I converted _SVG static watch logo_ into _Easter egg real-time clock_. The hardest part was understanding how SVG works.
-- **[TV8 video player](http://tv8.md/live/)**  
-  At one internship my task was a video player for a TV channel in Moldova. We used _VideoJS_ framework and I created a custom styled player using _CSS/flexbox_ according with clients design.
-- **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**  
-  My team was aggregating a public gov API and my task was the website that displays _external debt of Moldova_ in a friendly way. I created a small _VueJS_ app with _FLUX Architecture_.
+- **[mockingcase](https://github.com/strdr4605/mockingcase)**: I created a _Node.js_ package that converts a string to `mOcKiNgCaSe`. Working on this project a learned about software versioning, unit testing, documentation, and contribution on open source.
+- **[rebble.io](http://rebble.io)**: I opened an issue on Github repo and using JavaScript and _CSS_, I converted _SVG static watch logo_ into _Easter egg real-time clock_. The hardest part was understanding how SVG works.
+- **[TV8 video player](http://tv8.md/live/)**: At one internship my task was a video player for a TV channel in Moldova. We used _VideoJS_ framework and I created a custom styled player using _CSS/flexbox_ according with clients design.
+- **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**: My team was aggregating a public gov API and my task was the website that displays _external debt of Moldova_ in a friendly way. I created a small _VueJS_ app with _FLUX Architecture_.
 
 ### Skills
 
