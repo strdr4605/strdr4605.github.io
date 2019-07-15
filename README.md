@@ -11,31 +11,31 @@ I am passionate about IT. I am a team player and always aim for teamwork, code r
 
 ### Education
 
-- `01.10.2017–18.07.2018`
+- `01.10.2017–18.07.2018`  
   **University of Siegen**, _Germany, Computer Science (Erasmus exchange)_
-- `01.09.2015–28.05.2019`
+- `01.09.2015–28.05.2019`  
   Bachelor's Diploma in _Computer Science_ (Licentiate Engineer), **Technical University of Moldova**
-- `01.09.2012–16.06.2016`
+- `01.09.2012–16.06.2016`  
   Diploma of Professional Studies (Technician), **Financial Banking College**, _Speciality Informatics_
 
 ### Experience
 
-- `20.12.2018–PRESENT` **[GoParrot](https://www.goparrot.ai/)**
-  Online Ordering Platform on _Microservices Architecture_ build with _Reactjs/Nodejs/MongoDB_. I worked on a service that synchronize database with parteners _APIs_ and reduced manual work from 1 week to 15 minutes. Now I work on new version of the Ordering Platform using _React-Native/Reactjs_ with 40%+ code shared between mobile and web apps.
+- `20.12.2018–PRESENT` **[GoParrot.ai](https://www.goparrot.ai/)**  
+  Online Ordering Platform on _Microservices Architecture_ built with _Reactjs/Nodejs/MongoDB_. I worked on a service that synchronize database with parteners _APIs_ and reduced manual work from 1 week to 15 minutes. Now I work on new version of the Platform using _React-Native_ and _Reactjs_ with 40%+ code shared between mobile and web.
 
-> A big part of my professional experience comes from 29 Hackathons where I developed front-end/back-end/mobile apps. Beside developing I did design and project management. But also contributed to some open source projects.
+> A big part of my professional experience comes from 29 Hackathons where I developed front-end/back-end/mobile apps and games. Beside developing I did project management. Also, I contributed to some open source projects.
 > Some of my highlights:
 
-- **[mockingcase](https://github.com/strdr4605/mockingcase)**
-  I created a _Node.js_ package that converts a string to `mOcKiNgCaSe`. Working on this project a learned more about publication of a npm package, software versioning, unit testing, continuous integration, declaration files, documentation, and contribution on open source.
-- **[rebble.io](http://rebble.io)**
-  Using JavaScript and CSS, I converted _SVG static watch logo_ into _Easter egg real-time clock_. The hardest part was understanding how SVG works.
-- **[TV8 video player](http://tv8.md/live/)**
-  At one internship my task was a video player for a TV channel in Moldova. We used _VideoJS_ framework and I created a custom style player using _css/flexbox_ according with clients design.
-- **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**
-  My team was aggregating a public gov API and my task was the website that displays _external debt of Moldova_ in a friendly way. With the help of mentors, I created a small _VueJS_ app with _flux architecture_ that communicates with our backend.
+- **[mockingcase](https://github.com/strdr4605/mockingcase)**  
+  I created a _Node.js_ package that converts a string to `mOcKiNgCaSe`. Working on this project a learned about publication of a npm package, software versioning, unit testing, documentation, and contribution on open source.
+- **[rebble.io](http://rebble.io)**  
+  I opened an issue on Github repo and using JavaScript and _CSS_, I converted _SVG static watch logo_ into _Easter egg real-time clock_. The hardest part was understanding how SVG works.
+- **[TV8 video player](http://tv8.md/live/)**  
+  At one internship my task was a video player for a TV channel in Moldova. We used _VideoJS_ framework and I created a custom styled player using _CSS/flexbox_ according with clients design.
+- **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**  
+  My team was aggregating a public gov API and my task was the website that displays _external debt of Moldova_ in a friendly way. I created a small _VueJS_ app with _flux architecture_ that communicates with our backend.
 
 ### Skills
 
-- Development: **JavaScript/TypeScript**(_proficient_), **Version control/GIT**(_proficient_), **HTML/CSS**(_working knowledge_), **Python**(_basic knowledge_), **ReasonML/Ocaml**(_basic knowledge_)
+- Development: **JavaScript/TypeScript**(_proficient_), **Version control/GIT**(_proficient_), **HTML/CSS**(_working knowledge_), **Project Management**(_working knowledge_), **Python**(_basic knowledge_), **ReasonML/Ocaml**(_basic knowledge_)
 - Languages: **Romanian**(_native_), **English**(_fluent_), **Russian**(_fluent_), **German**(_beginner_)
