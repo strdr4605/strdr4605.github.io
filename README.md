@@ -1,4 +1,4 @@
-# Dragoș Străinu
+## Dragoș Străinu
 
 - str.dr4605@gmail.com
 - +373 69 292120
