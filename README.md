@@ -15,6 +15,8 @@ I am passionate about IT. I am a team player and always aim for teamwork, code r
   **University of Siegen**, _Germany, Computer Science (Erasmus exchange)_
 - `01.09.2015–28.05.2019`  
   Bachelor's Diploma in _Computer Science_ (Licentiate Engineer), **Technical University of Moldova**
+- `01.09.2012–16.06.2016`  
+  Diploma of Professional Studies (Technician), **Financial Banking College**, _Speciality Informatics_
 
 #### Experience
 
