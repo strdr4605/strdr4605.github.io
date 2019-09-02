@@ -5,18 +5,16 @@
 - [linkedin.com/in/dragos-strainu](https://www.linkedin.com/in/dragos-strainu)
 - [github.com/strdr4605](https://github.com/strdr4605)
 
-#### Personal Profile
-
-I am passionate about IT. I am a team player and always aim for teamwork, code review, documentation, discussion whether it is a complex project or a project just for fun. My hobbies are Hackathons IT events, where I exchange my experience with people and learn new professional and personal skills.
+I am passionate about IT. I am a team player and always aim for teamwork, code review, documentation, discussion whether it is a complex project or a project just for fun. My hobbies are Hackathons and IT events, where I exchange my experience with people and learn new professional and personal skills.
 
 #### Education
 
+- `01.09.2019–PRESENT`  
+  Master's Degree in _Computer Science_, **Technical University of Moldova**
 - `01.10.2017–18.07.2018`  
   **University of Siegen**, _Germany, Computer Science (Erasmus exchange)_
 - `01.09.2015–28.05.2019`  
   Bachelor's Diploma in _Computer Science_ (Licentiate Engineer), **Technical University of Moldova**
-- `01.09.2012–16.06.2016`  
-  Diploma of Professional Studies (Technician), **Financial Banking College**, _Speciality Informatics_
 
 #### Experience
 
