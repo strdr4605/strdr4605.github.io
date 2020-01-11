@@ -25,10 +25,9 @@ I am passionate about IT. I am a team player and always aim for teamwork, code r
 
 > A big part of my professional experience comes from 33 Hackathons where I developed front-end/back-end/mobile apps and games. Also, I contributed to some open source projects.
 
-- **[mockingcase](https://github.com/strdr4605/mockingcase)**: I created a _Node.js_ package that converts a string to `mOcKiNgCaSe`. I learned about software versioning, unit testing, documentation, and contribution on open source.
+- **[mockingcase](https://github.com/strdr4605/mockingcase)**: I created and maintain a _Node.js_ package that converts a string to `mOcKiNgCaSe`. Friendly documentation, unit tests, jsdoc and types for _TypeScript_. I white feature requirements and documentation, review pull requests and and guide 15+ first-time contributors on open-source.
 - **[rebble.io](http://rebble.io)**: I opened an issue on Github repo and using JavaScript and _CSS_, I converted _SVG static watch logo_ into _Easter egg real-time clock_. The hardest part was understanding how SVG works.
-- **[TV8 video player](http://tv8.md/live/)**: My task was a video player for a TV channel in Moldova. We used _VideoJS_ framework and I created a custom styled player using _CSS/flexbox_ according with clients design.
-- **[JSHacks 2016](https://github.com/jshacks/challenge-debt-md/tree/master/debt-md-front-end)**: My team was aggregating a public gov API and my task was the website that displays _external debt of Moldova_ in a friendly way. I created a small _VueJS_ app with _FLUX Architecture_.
+- **[spacebook](https://tum-faf.github.io/spacebook/)**: At [NASA Hackathon 2019](https://2019.spaceappschallenge.org/challenges/invent-your-own-challenge/invent-your-own-challenge/teams/spacebook/project) I and my team created a _Progressive Web App_ which shows [Astronomy Picture of the Day](https://apod.nasa.gov/apod/astropix.html) in an infinite scroll feed. A (not perfect) app that works by these days.
 
 #### Skills
 
