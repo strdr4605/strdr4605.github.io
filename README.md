@@ -29,6 +29,8 @@ I am passionate about IT. I am a team player and always aim for teamwork, code r
 - **[rebble.io](http://rebble.io)**: I opened an issue on Github repo and using JavaScript and _CSS_, I converted _SVG static watch logo_ into _Easter egg real-time clock_. The hardest part was understanding how SVG works.
 - **[spacebook](https://tum-faf.github.io/spacebook/)**: At [NASA Hackathon 2019](https://2019.spaceappschallenge.org/challenges/invent-your-own-challenge/invent-your-own-challenge/teams/spacebook/project) I and my team created a _Progressive Web App_ which shows [Astronomy Picture of the Day](https://apod.nasa.gov/apod/astropix.html) in an infinite scroll feed. A (not perfect) app that works by these days.
 
+> Check many other (fun and interesting) projects on my Github profile.
+
 #### Skills
 
 - Development: **JavaScript/TypeScript**(_proficient_), **Version control/GIT**(_proficient_), **HTML/CSS**(_working knowledge_), **Python**(_basic knowledge_), **ReasonML/Ocaml**(_basic knowledge_)
