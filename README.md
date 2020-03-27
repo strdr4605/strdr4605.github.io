@@ -2,8 +2,9 @@
 
 - str.dr4605@gmail.com
 - +373 69 292120
-- [linkedin.com/in/dragos-strainu](https://www.linkedin.com/in/dragos-strainu)
 - [github.com/strdr4605](https://github.com/strdr4605)
+- [stackoverflow.com/users/5458200/](https://stackoverflow.com/users/5458200/)
+- [linkedin.com/in/dragos-strainu](https://www.linkedin.com/in/dragos-strainu)
 
 I am passionate about IT. I am a team player and always aim for teamwork, code review, documentation, discussion whether it is a complex project or a project just for fun. My hobbies are Hackathons and IT events, where I exchange my experience with people and learn new professional and personal skills.
 
