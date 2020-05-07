@@ -10,19 +10,14 @@ I am passionate about IT. I am a team player and always aim for teamwork, code r
 
 #### Education
 
-- `01.09.2019–PRESENT`  
-  Master's Degree in _Computer Science_, **Technical University of Moldova**
-- `01.10.2017–18.07.2018`  
-  **University of Siegen**, _Germany, Computer Science (Erasmus exchange)_
-- `01.09.2015–28.05.2019`  
-  Bachelor's Diploma in _Computer Science_ (Licentiate Engineer), **Technical University of Moldova**
-- `01.09.2012–16.06.2016`  
-  Diploma of Professional Studies (Technician), **Financial Banking College**, _Speciality Informatics_
+- Master's Degree in _Computer Science_, **Technical University of Moldova** `01.09.2019–PRESENT`
+- **University of Siegen**, _Germany, Computer Science (Erasmus exchange)_ `01.10.2017–18.07.2018`
+- Bachelor's Degree in _Computer Science_, **Technical University of Moldova** `01.09.2015–28.05.2019`
 
 #### Experience
 
-- `20.12.2018–PRESENT` **[GoParrot.ai](https://www.goparrot.ai/)**  
-  Online Ordering Platform on _Microservices Architecture_. I worked on a service that synchronize database with parteners _APIs_ and reduced manual work from 1 week to 15 minutes. Now I work on new version of the Platform using _React-Native_/_ReactJS_ with 40%+ code shared between mobile and web.
+- `20.12.2018–PRESENT` **[GoParrot.ai](https://www.goparrot.ai/)** | Online Ordering Platform on _Microservices Architecture_  
+I worked on a service that synchronize database with parteners _APIs_ and reduced manual work from 1 week to 15 minutes. Now I work on new version of the Platform using _React-Native_/_ReactJS_ with 40%+ code shared between mobile and web.
 
 > A big part of my professional experience comes from 35 Hackathons where I developed front-end/back-end/mobile apps and games. Also, I contributed to some open source projects.
 
