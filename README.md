@@ -8,11 +8,13 @@
 
 I am passionate about IT. I am a team player and always aim for teamwork, code review, documentation, discussion whether it is a complex project or a project just for fun. My hobbies are Hackathons and IT events, where I exchange my experience with people and learn new professional and personal skills.
 
-#### Education
+#### 
 
-- Master's Degree in _Computer Science_, **Technical University of Moldova** `01.09.2019–PRESENT`
-- **University of Siegen**, _Germany, Computer Science (Erasmus exchange)_ `01.10.2017–18.07.2018`
-- Bachelor's Degree in _Computer Science_, **Technical University of Moldova** `01.09.2015–28.05.2019`
+| Education | Period |
+|----| --- |
+| Master's Degree in _Computer Science_, **Technical University of Moldova** | `01.09.2019–PRESENT` |
+| **University of Siegen**, _Germany, Computer Science (Erasmus exchange)_ | `01.10.2017–18.07.2018` |
+| Bachelor's Degree in _Computer Science_, **Technical University of Moldova** | `01.09.2015–28.05.2019` |
 
 #### Experience
 
