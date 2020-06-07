@@ -38,4 +38,4 @@ I added the [promise driver](https://github.com/klis87/redux-requests/tree/maste
 ## Skills
 
 - Development: **JavaScript/TypeScript**(_proficient_), **Version control/GIT**(_proficient_), **HTML/CSS**(_working knowledge_), **Python**(_basic knowledge_), **ReasonML/Ocaml**(_basic knowledge_)
-- Languages: **Romanian**(_native_), **English**(_fluent_), **Russian**(_fluent_), **German**(_beginner_)
+- Spoken Languages: **Romanian**(_native_), **English**(_fluent_), **Russian**(_fluent_), **German**(_beginner_)
