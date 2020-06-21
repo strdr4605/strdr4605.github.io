@@ -23,7 +23,7 @@ I am passionate about IT. I am a team player and always aim for teamwork, code r
 
 - `20.12.2018–PRESENT` **[GoParrot.ai](https://www.goparrot.ai/)** | Online Ordering Platform on _Microservices Architecture_  
 I am responsible for a white-label mobile product with 7+ apps.  
-My team and I work on a new version of the Platform using _React-Native_/_ReactJS_ with 40%+ code shared between mobile and web.  
+My team and I work on a new version of the Platform using _React Native_/_ReactJS_ with 40%+ code shared between mobile and web.  
 I worked on a service that synchronize database with partners _APIs_ and reduced manual work from 1 week to 15 minutes.  
 
 > A big part of my professional experience comes from **35 Hackathons** where I developed front-end/back-end/mobile apps and games. Also, I contribute to some open-source projects.
@@ -37,5 +37,9 @@ I added the [promise driver](https://github.com/klis87/redux-requests/tree/maste
 
 ## Skills
 
-- Development: **JavaScript/TypeScript**(_proficient_), **Version control/GIT**(_proficient_), **HTML/CSS**(_working knowledge_), **Python**(_basic knowledge_), **ReasonML/Ocaml**(_basic knowledge_)
-- Spoken Languages: **Romanian**(_native_), **English**(_fluent_), **Russian**(_fluent_), **German**(_beginner_)
+| Spoken Languages      | Languages                               | Libraries/Platforms/Frameworks       |
+|:----------------------|:----------------------------------------|:-------------------------------------|
+| **Romanian** - Native | **JavaScript/TypeScript** - Proficient  | **ReactJS** - Proficient             |
+| **English** - Fluent  | **Version control/GIT** - Proficient    | **React Native** - Working knowledge |
+| **Russian** - Fluent  | **HTML/CSS** - Working knowledge        | **NodeJS** - Working knowledge       |
+| **German** - Beginner | **ReasonML/Ocaml** - Basic knowledge    | **VueJS** - Basic knowledge          |
