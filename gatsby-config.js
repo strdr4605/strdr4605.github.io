@@ -4,7 +4,10 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Minimal Blog - Gatsby Theme`,
+    siteTitle: `Dragoș Străinu`,
+    siteTitleAlt: `Dragoș Străinu blog`,
+    siteLanguage: `en`,
+    author: `@strdr4605`,
   },
   plugins: [
     {
@@ -17,18 +20,18 @@ module.exports = {
             slug: `/blog`,
           },
           {
-            title: `About`,
-            slug: `/about`,
+            title: `Resume`,
+            slug: `/resume`,
           },
         ],
         externalLinks: [
           {
-            name: `Twitter`,
-            url: `https://twitter.com/lekoarts_de`,
+            name: `Github`,
+            url: `https://github.com/strdr4605/`,
           },
           {
-            name: `Instagram`,
-            url: `https://www.instagram.com/lekoarts.de/`,
+            name: `Twitter`,
+            url: `https://twitter.com/strdr4605/`,
           },
         ],
       },
@@ -43,11 +46,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
-        short_name: `minimal-blog`,
-        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        name: `Dragoș Străinu blog`,
+        short_name: `strdr4605-blog`,
+        description: `Blog of a front-end software engineer`,
         start_url: `/`,
-        background_color: `#fff`,
+        background_color: `#FFFFF8`,
         theme_color: `#6B46C1`,
         display: `standalone`,
         icons: [
