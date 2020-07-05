@@ -6,7 +6,11 @@ module.exports = {
   siteMetadata: {
     siteTitle: `Dragoș Străinu`,
     siteTitleAlt: `Dragoș Străinu blog`,
+    siteHeadline: `Dragoș Străinu blog`,
+    siteUrl: `https://strdr4605.github.io`,
+    siteDescription: `I am Dragoș (Dragosh), a Front-end Software Engineer. I write about practical and philosophical parts of Software Engineering. Follow me on twitter [@strdr4605](https://twitter.com/strdr4605) to get updates about latest posts.`,
     siteLanguage: `en`,
+    siteImage: `/banner.jpg`,
     author: `@strdr4605`,
   },
   plugins: [
@@ -39,7 +43,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+        trackingId: `UA-171697116-1`,
       },
     },
     `gatsby-plugin-sitemap`,
