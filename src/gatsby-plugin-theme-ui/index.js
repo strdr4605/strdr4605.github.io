@@ -99,7 +99,7 @@ const theme = merge(tailwind, {
       borderLeftColor: `primary`,
       borderLeftStyle: `solid`,
       borderLeftWidth: `6px`,
-      backgroundColor: `#FF01`,
+      backgroundColor: `#FFFF0033`,
       mx: 0,
       pl: 4,
       p: {
