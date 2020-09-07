@@ -1,0 +1,17 @@
+.remark-autolink-headers {
+  float: left;
+  padding-right: 4px;
+  margin-left: -24px;
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  &:hover .remark-autolink-headers {
+    display: block;
+  }
+}
