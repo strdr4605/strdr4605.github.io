@@ -3,7 +3,7 @@ import React from "react";
 const UtterancesComments: React.FC = () => (
   <section
     ref={(elem) => {
-      if (!elem) {
+      if (!elem || window.UtterancesComments) {
         return;
       }
       const scriptElem = document.createElement("script");
@@ -14,6 +14,7 @@ const UtterancesComments: React.FC = () => (
       scriptElem.setAttribute("issue-term", "pathname");
       scriptElem.setAttribute("theme", "github-light");
       elem.appendChild(scriptElem);
+      window.UtterancesComments = true;
     }}
   />
 );
