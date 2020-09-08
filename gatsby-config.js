@@ -62,6 +62,7 @@ module.exports = {
               className: `remark-autolink-headers`,
             },
           },
+          { resolve: `gatsby-plugin-my-social-cards` },
         ],
         plugins: [
           {
