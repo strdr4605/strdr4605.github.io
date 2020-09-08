@@ -40,7 +40,7 @@ const Post = ({ data: { post } }: PostProps) => (
     <SEO
       title={post.title}
       description={post.description ? post.description : post.excerpt}
-      image={post.banner ? post.banner.childImageSharp.resize.src : undefined}
+      image={post.banner ? post.banner.childImageSharp.resize.src : `${post.slug}/post-banner.jpg`}
       pathname={post.slug}
     />
     <Heading variant="styles.h1">{post.title}</Heading>
