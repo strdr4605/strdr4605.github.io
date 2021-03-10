@@ -68,17 +68,17 @@ const theme = merge(tailwind, {
     },
     h1: {
       variant: `text.heading`,
-      fontSize: [4, 5, 6],
+      fontSize: [3, 4, 5],
       mt: 4,
     },
     h2: {
       variant: `text.heading`,
-      fontSize: [3, 4, 5],
+      fontSize: [2, 3, 4],
       mt: 4,
     },
     h3: {
       variant: `text.heading`,
-      fontSize: [2, 3, 4],
+      fontSize: [1, 2, 3],
       mt: 4,
     },
     h4: {
@@ -137,7 +137,7 @@ const theme = merge(tailwind, {
   layout: {
     container: {
       padding: [3, 4],
-      maxWidth: `1024px`,
+      maxWidth: `80ch`,
     },
   },
   text: {
