@@ -30,6 +30,9 @@ const theme = merge(tailwind, {
     body: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;`,
     heading: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;`,
   },
+  fontSizes: [
+    14, 16, 18, 24, 32, 32
+  ],
   styles: {
     root: {
       color: `text`,
@@ -137,7 +140,7 @@ const theme = merge(tailwind, {
   layout: {
     container: {
       padding: [3, 4],
-      maxWidth: `80ch`,
+      maxWidth: `65ch`,
     },
   },
   text: {
