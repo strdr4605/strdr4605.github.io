@@ -16,11 +16,14 @@ h6 {
   }
 }
 
-.gatsby-highlight {
-  min-width: 140%;
-  margin-left: -20% !important;
+@media only screen and (min-width: 900px) {
+  .gatsby-highlight {
+    min-width: 140%;
+    margin-left: -20% !important;
+    margin-right: auto !important;
+  }
 }
 
-.code--copy-button {
-  display: 'block'
+.code-copy-button {
+  display: none;
 }
