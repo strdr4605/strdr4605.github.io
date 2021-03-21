@@ -3,6 +3,7 @@
 <url> <loc>https://strdr4605.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://strdr4605.github.io/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://strdr4605.github.io/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://strdr4605.github.io/building-a-command-line-time-tracker</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://strdr4605.github.io/what-i-learned-from-35-hackathons</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://strdr4605.github.io/my-biggest-pull-request</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://strdr4605.github.io/project-over-money-team-over-project</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -13,4 +14,5 @@
 <url> <loc>https://strdr4605.github.io/tags/learning</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://strdr4605.github.io/tags/motivation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://strdr4605.github.io/tags/open-source</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://strdr4605.github.io/tags/tools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
