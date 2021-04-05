@@ -120,6 +120,31 @@ git commit --amend --no-edit --no-verify
 I add `--no-edit` if I want the message to stay the same and `--no-verify` if I am sure of the change and don't want to wait for a long **pre-commit** check to run.
 All this using **Ctrl + R** command to search for `ame` text (contains in `--amend`).
 
+## Stashing
+
+If I need to move between branches and have an unfinished work, I run:
+
+```bash
+git add -A
+git stash
+git checkout other-branch 
+# do some work on that branch
+git checkout wip-branch # come back
+git stash pop # applies and remove changes from stash stack
+```
+
+If I only need to apply the stash:
+
+```bash
+git stash apply
+```
+
+But once in a week or so, I clear my stash with:
+
+```bash
+git stash drop
+```
+
 ## Reseting
 
 When I have done some dummy changes and I want to flush every unneeded change I run:
