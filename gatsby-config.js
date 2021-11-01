@@ -29,6 +29,10 @@ module.exports = {
             title: `Resume`,
             slug: `/Dragos-Strainu-Resume.pdf`,
           },
+          {
+            title: `Projects`,
+            slug: `/projects`,
+          },
         ],
         externalLinks: [
           {
