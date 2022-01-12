@@ -22,7 +22,7 @@ Commitlint suggests [Conventional commits](https://www.conventionalcommits.org/e
 type(scope?): subject
 ```
 
-But what if I want to use a custom format specific for my team?! Let's say I want to use emoji as a type, an optional ticket and then the subject, like:
+But what if I want to use a custom format specific to my team?! Let's say I want to use emoji as a type, an optional ticket, and then the subject, like:
 
 ```
 type [ticket]? subject
@@ -67,7 +67,7 @@ Testing locally:
 > echo "Something else" | commitlint # should fail but still passes 🤔
 ```
 
-The problem is that there is no rule to make sure that header matched our RegExp. I can add 2 other rules from commitlint:
+The problem is that there is no rule to make sure that the header matched our RegExp. I can add 2 other rules from commitlint:
 
 ```js
 "type-empty": [2, "never"],
@@ -76,8 +76,8 @@ The problem is that there is no rule to make sure that header matched our RegExp
 
 but what if I have other variables names, `emoji` instead of `type`, `desc` instead of `subject`?
 
-I need to create custom rule using [Commitlint plugins](https://commitlint.js.org/#/reference-plugins). 
-Let's name the rule `header-match-team-pattern` and also use `emoji` instead of `type`. In the rule we check if all variables are `null` and return a message
+I need to create a custom rule using [Commitlint plugins](https://commitlint.js.org/#/reference-plugins). 
+Let's name the rule `header-match-team-pattern` and also use `emoji` instead of `type`. In the rule, we check if all variables are `null` and return a message
 
 ```js
 ...
@@ -135,7 +135,7 @@ ${Object.keys(emojisObject)
       "always",
       {
         "⭐️": "New feature",
-        "🐞": "Bug fix",
+        "🐞": "Bugfix",
         "✅": "Add, update tests",
         "🚧": "Work in progress",
         "♻️": "Refactor",
@@ -153,7 +153,7 @@ And when the engineer will set a wrong emoji it will have a error like:
 ⧗   input: 😂 Add tests
 ✖   emoji must be one of:
 ⭐️ - New feature
-🐞 - Bug fix
+🐞 - Bugfix
 ✅ - Add, update tests
 🚧 - Work in progress
 ♻️ - Refactor
@@ -236,4 +236,4 @@ ${Object.keys(emojisObject)
 
 I can add [some rules from Commitlint](https://commitlint.js.org/#/reference-rules) or create other custom ones.   
 Put the config in a [new package](https://commitlint.js.org/#/concepts-shareable-config).  
-Add `husky` and use it in every company repo on pre-commit hook.  
+Add `husky` and use it in every company repo on the pre-commit hook.  
