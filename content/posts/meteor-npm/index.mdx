@@ -24,6 +24,7 @@ Edit your shell config file with **vim**, **nano**, or **vscode**. Add this func
 
 ```bash
 # Add me to shell config file. ~/.zshrc or ~/.bashrc
+ORIGINAL_NPM=$(which npm)
 npm() {
   RED='\033[0;31m'
   GREEN='\033[0;92m'
@@ -33,12 +34,9 @@ npm() {
     echo "${RED}Meteor project${NC}\nRunning:\n\n\t${GREEN}meteor npm $@${NC}\n";
     meteor npm $@
   else
-    # Run 'which npm' to get your specific path
-    /usr/local/bin/npm $@
+    eval $ORIGINAL_NPM $@
   fi
 }
 ```
-
-If this function is not working outside meteor projects, you may have a different path to `npm` bin file. Replace `/usr/local/bin/npm` in the script.
 
 If needed we can also add another function for `meteor node`.
