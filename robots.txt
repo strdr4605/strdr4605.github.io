@@ -1,3 +1,9 @@
+# *
 User-agent: *
+Allow: /
 
-sitemap: https://strdr4605.github.io/sitemap.xml
+# Host
+Host: https://strdr4605.com
+
+# Sitemaps
+Sitemap: https://strdr4605.com/sitemap.xml

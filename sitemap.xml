@@ -1,31 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://strdr4605.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/blog</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/meteor-a-better-way-to-use-meteor-npm-command</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/commitlint-custom-commit-message-with-emojis</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/no-tits-in-git</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/how-to-win-a-hackathon</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/kanban-board-alternative</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/how-i-use-git</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/building-a-command-line-time-tracker</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/what-i-learned-from-35-hackathons</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/my-biggest-pull-request</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/project-over-money-team-over-project</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/my-first-open-source-project</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/th2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/projects</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/resume</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/career</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/development</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/git</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/hackathons</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/learning</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/management</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/motivation</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/node</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/npm</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/open-source</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://strdr4605.github.io/tags/tools</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url><loc>https://strdr4605.com</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/what-i-learned-from-35-hackathons</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/building-a-command-line-time-tracker</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/commitlint-custom-commit-message-with-emojis</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/how-i-use-git</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/how-to-win-a-hackathon</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/kanban-board-alternative</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/meteor-a-better-way-to-use-meteor-npm-command</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/my-biggest-pull-request</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/my-first-open-source-project</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/no-tits-in-git</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/project-over-money-team-over-project</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
+<url><loc>https://strdr4605.com/th2</loc><changefreq>daily</changefreq><priority>0.7</priority><lastmod>2022-01-23T19:27:42.917Z</lastmod></url>
 </urlset>
