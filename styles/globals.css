@@ -1,5 +1,6 @@
 :root {
   --link-color: #0366d6;
+  --second-color: #faf181;
 }
 
 html,
@@ -20,6 +21,12 @@ a {
 
 img {
   width: 100%;
+}
+
+blockquote {
+  border-left: 1px solid #999;
+  padding-left: 1rem;
+  font-style: italic;
 }
 
 @media only screen and (min-width: 900px) {
