@@ -7,6 +7,7 @@ import Head from "next/head";
 import CommonMeta from "../components/CommonMeta";
 import Date from "../components/Date";
 import Layout from "../components/Layout";
+import PostFooter from "../components/PostFooter";
 import {
   readSlugFolderNameCache,
   SlugFolderNameMap,
@@ -60,6 +61,7 @@ export default function Post({ postData }: Props) {
       <Date date={postData.date} />
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      <PostFooter />
     </Layout>
   );
 }
