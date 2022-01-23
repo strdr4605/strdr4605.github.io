@@ -4,9 +4,9 @@ import styles from "./RSSFeedIcon.module.css";
 export default function RSSFeedIcon() {
   return (
     <Link href="/feed/rss.xml">
-      <a className={styles.rssFeedIcon}>
+      <a className={styles.icon}>
         <svg
-          width="24"
+          width="1.5rem"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
