@@ -127,7 +127,7 @@ If I need to move between branches and have an unfinished work, I run:
 ```bash
 git add -A
 git stash
-git checkout other-branch 
+git checkout other-branch
 # do some work on that branch
 git checkout wip-branch # come back
 git stash pop # applies and remove changes from stash stack

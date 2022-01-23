@@ -5,6 +5,7 @@ import kebabCase from "lodash.kebabcase";
 import { remark } from "remark";
 import html from "remark-html";
 import prism from "remark-prism";
+import remarkGfm from "remark-gfm";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -98,6 +99,7 @@ export async function getPostData(folderName: string): Promise<PostData> {
       //   "treeview",
       // ],
     })
+    .use(remarkGfm)
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 
