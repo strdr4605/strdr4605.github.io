@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import kebabCase from "lodash.kebabcase";
 import { remark } from "remark";
 import html from "remark-html";
+import prism from "remark-prism";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -82,7 +83,21 @@ export async function getPostData(folderName: string): Promise<PostData> {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(html)
+    .use(html, { sanitize: false })
+    .use(prism as any, {
+      transformInlineCode: true,
+      // plugins: [
+      //   "autolinker",
+      //   "command-line",
+      //   "data-uri-highlight",
+      //   "diff-highlight",
+      //   "inline-color",
+      //   "keep-markup",
+      //   "line-numbers",
+      //   "show-invisibles",
+      //   "treeview",
+      // ],
+    })
     .process(matterResult.content);
   const contentHtml = processedContent.toString();
 

@@ -21,3 +21,10 @@ a {
 img {
   width: 100%;
 }
+
+@media only screen and (min-width: 900px) {
+  .remark-highlight {
+    width: 150%;
+    margin-left: -25%;
+  }
+}
