@@ -1,0 +1,17 @@
+.blogPosts {
+  list-style-type: none;
+  padding: unset;
+}
+
+.blogPosts li {
+  display: flex;
+}
+
+.blogPosts li span {
+  flex: 0 0 8rem;
+}
+
+.starred {
+  position: absolute;
+  margin-left: -1.5rem;
+}
