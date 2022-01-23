@@ -1,7 +1,6 @@
 import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import CommonMeta from "../components/CommonMeta";
 import Date from "../components/Date";
 import Layout from "../components/Layout";
 import { getSortedPostsData, PostData } from "../lib/posts";

@@ -4,10 +4,10 @@ import type {
   InferGetStaticPropsType,
 } from "next";
 import Head from "next/head";
-import CommonMeta from "../components/CommonMeta";
 import Date from "../components/Date";
 import Layout from "../components/Layout";
 import PostFooter from "../components/PostFooter";
+import UtterancesComments from "../components/UtterancesComments";
 import {
   readSlugFolderNameCache,
   SlugFolderNameMap,
@@ -71,6 +71,7 @@ export default function Post({ postData }: Props) {
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       <PostFooter />
+      <UtterancesComments />
     </Layout>
   );
 }
