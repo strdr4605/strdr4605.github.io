@@ -7,7 +7,7 @@ export default function Header() {
       <h3>
         <Link href="/">Dragoș Străinu&apos;s blog</Link>
       </h3>
-      <Link href="/api/feed/rss">
+      <Link href="/feed/rss.xml">
         <a>
           <RSSFeedIcon />
         </a>

@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next export",
+    "build": "next build && next export && npm run build-rss",
+    "build-rss": "node scripts/feed.js",
     "start": "next start",
     "lint": "next lint"
   },
