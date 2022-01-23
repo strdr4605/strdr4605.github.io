@@ -7,8 +7,9 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && npm run build-rss",
+    "build": "next build && next export && npm run build-rss && npm run build-og-images",
     "build-rss": "node scripts/feed.js",
+    "build-og-images": "node scripts/generateOGImages.js",
     "start": "next start",
     "lint": "next lint"
   },
