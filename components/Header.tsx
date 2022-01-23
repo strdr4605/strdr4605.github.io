@@ -13,6 +13,12 @@ export default function Header() {
       <GithubIcon />
       <TwitterIcon />
       <RSSFeedIcon />
+      <nav className={styles.nav}>
+        <p>
+          <Link href="/Dragos-Strainu-Resume.pdf">Resume</Link>
+          <Link href="/projects">Projects</Link>
+        </p>
+      </nav>
     </header>
   );
 }

@@ -1,3 +1,7 @@
 .header {
   position: relative;
 }
+
+.nav p a {
+  margin-right: 1rem;
+}
