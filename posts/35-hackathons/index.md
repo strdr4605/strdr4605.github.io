@@ -6,7 +6,7 @@ tags:
   - learning
   - career
   - hackathons
-banner: ./banner.jpg
+banner: 35-hackathons.jpg
 ---
 
 > Update: Now count is at 41 Hackathons
@@ -14,7 +14,6 @@ banner: ./banner.jpg
 ## What is a Hackathon
 
 > Hackathon - a usually competitive event in which people work in groups on software or hardware projects, with the goal of creating a functioning product by the end of the event.
-
 
 ## My story
 
@@ -63,6 +62,7 @@ Teams are brainstorming ideas that may have a potential success.
 The goal is to prepare and present a 5-minute pitch/presentation with a prototype or a [MVP](https://en.wikipedia.org/wiki/Minimum_viable_product).
 
 Main points:
+
 - The Problem _(some problem that you and preferably a lot of people faces)_
 - The Solution _(your innovative solution that will change people lives)_
 - Competitors

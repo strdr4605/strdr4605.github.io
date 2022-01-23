@@ -4,7 +4,6 @@ date: 2020-07-11
 description: What motivates me when I am looking for a new job in software engineering.
 tags:
  - motivation
-banner: ./banner.jpg
 ---
 
 Behind any work stands a motivation. Sometimes work is a pleasure, other times you do things that are unpleasant just because you have to.

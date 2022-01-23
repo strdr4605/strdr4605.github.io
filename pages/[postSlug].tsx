@@ -45,7 +45,9 @@ export default function Post({ postData }: Props) {
         <meta property="og:description" content={postData.description} />
         <meta
           property="og:image"
-          content={`${process.env.SITE_URL}/${postData.slug}.jpg`}
+          content={`${process.env.SITE_URL}/${
+            postData.banner || postData.slug + ".jpg"
+          }`}
         />
         <meta property="og:type" content="article" />
         <link

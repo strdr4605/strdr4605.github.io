@@ -4,7 +4,6 @@ date: 2020-07-25
 description: Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!
 tags:
   - development
-banner: ./banner.jpg
 ---
 
 ## The story

@@ -21,6 +21,7 @@ export type PostData = {
   description: string;
   draft?: boolean;
   starred?: boolean;
+  banner?: string;
   slug: string;
   tags: string[];
   contentHtml: string;
