@@ -34,12 +34,14 @@ function Home({ allPostsData }: Props) {
         <link rel="canonical" href={`${process.env.SITE_URL}`} />
       </Head>
       <h2>Salut</h2>
-      <p>I am Dragoș (Dragosh), a Frontend Software Engineer, Hackathoner, OSS enthusiast.</p>
+      <p>
+        I am Dragoș (Dragosh), a Frontend Software Engineer, Hackathoner, OSS
+        enthusiast.
+      </p>
       <section>
         <ul className={styles.blogPosts}>
           {allPostsData.map(({ slug, date, title, starred }: PostData) => (
-            <li key={slug}>
-              {starred && <span className={styles.starred}>★</span>}
+            <li key={slug} className={starred ? styles.starred : ""}>
               <span>
                 <Date date={date} />
               </span>
