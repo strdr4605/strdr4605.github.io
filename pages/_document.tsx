@@ -20,7 +20,7 @@ export default class CustomDocument extends Document<{
     const { isProduction } = this.props;
 
     return (
-      <HTML>
+      <HTML lang="en">
         <Head>
           <meta charSet="UTF-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
