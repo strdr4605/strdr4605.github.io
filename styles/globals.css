@@ -1,8 +1,10 @@
+/* @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css); */
+
 :root {
   --link-color: #0366d6;
   --second-color: #faf181;
   --prism-inline-code: #f5f2f0;
-  --code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --code-font: "Fira Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 }
 
 html,
@@ -46,4 +48,8 @@ blockquote {
   white-space: normal;
   background: var(--prism-inline-code);
   font-family: var(--code-font);
+}
+
+code {
+  font-family: var(--code-font) !important;
 }
