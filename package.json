@@ -6,12 +6,12 @@
   "author": "Dragoș Străinu <str.dr4605@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 4605",
     "build": "next build && next export",
     "postbuild": "next-sitemap && npm run build-rss && npm run build-og-images",
     "build-rss": "node scripts/feed.js",
     "build-og-images": "node scripts/generateOGImages.js",
-    "start": "next start",
+    "start": "next start -p 4605",
     "lint": "next lint"
   },
   "dependencies": {

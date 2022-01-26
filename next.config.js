@@ -5,7 +5,7 @@ module.exports = (phase, { defaultConfig }) => {
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
       env: {
-        SITE_URL: "http://localhost:3000",
+        SITE_URL: "http://localhost:4605",
         twitterCreator: "@strdr4605",
       },
       reactStrictMode: true,
