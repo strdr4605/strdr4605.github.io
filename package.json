@@ -8,9 +8,10 @@
   "scripts": {
     "dev": "next dev -p 4605",
     "build": "next build && next export",
-    "postbuild": "next-sitemap && npm run build-rss && npm run build-og-images",
+    "postbuild": "next-sitemap && npm run build-rss && npm run build-og-images && npm run redirects",
     "build-rss": "node scripts/feed.js",
     "build-og-images": "node scripts/generateOGImages.js",
+    "redirects": "html-redirections redirects.json out",
     "start": "next start -p 4605",
     "lint": "next lint"
   },
@@ -18,6 +19,7 @@
     "babel-plugin-superjson-next": "^0.4.2",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
+    "html-redirections": "^1.0.1",
     "jimp": "^0.16.1",
     "lodash.kebabcase": "^4.1.1",
     "next": "12.0.8",
