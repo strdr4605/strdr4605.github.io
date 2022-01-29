@@ -1,4 +1,5 @@
 import type { AppProps } from "next/app";
+import Head from "next/head";
 import Router from "next/router";
 import "prismjs/themes/prism.css";
 import * as gtag from "../lib/gtag";
@@ -8,10 +9,10 @@ const isProduction = process.env.NODE_ENV === "production";
 
 // Remove workers created by gatsby-plugin-offline
 // https://github.com/gatsbyjs/gatsby/issues/2880#issuecomment-349789919
-if (typeof window !== 'undefined' && 'serviceWorker' in navigator) {
-  window.navigator.serviceWorker.getRegistrations().then(registrations => {
-    registrations.forEach(r => r.unregister())
-  })
+if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+  window.navigator.serviceWorker.getRegistrations().then((registrations) => {
+    registrations.forEach((r) => r.unregister());
+  });
 }
 
 if (isProduction) {
@@ -20,7 +21,14 @@ if (isProduction) {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
