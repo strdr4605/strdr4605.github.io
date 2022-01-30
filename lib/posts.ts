@@ -58,6 +58,26 @@ export function getSortedPostsData(): PostData[] {
     });
 }
 
+export function getAllTags(): string[] {
+  // Get file names under /posts
+  const folderNames = fs.readdirSync(postsDirectory);
+  const allPostsData: PostData[] = folderNames.map((folderName) => {
+    const fileContents = getMDContent(folderName);
+
+    // Use gray-matter to parse the post metadata section
+    const matterResult = matter(fileContents);
+
+    // Combine the data with the id
+    return {
+      ...matterResult.data,
+      slug: matterResult.data.slug || kebabCase(matterResult.data.title),
+    } as PostData;
+  });
+  return Array.from(new Set(allPostsData.map((p) => p.tags).flat())).filter(
+    Boolean
+  );
+}
+
 export type PostFolderName = { folderName: string; postSlug: string };
 
 export function getAllPostFolderNames(): PostFolderName[] {
