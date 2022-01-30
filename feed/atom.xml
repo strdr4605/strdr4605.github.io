@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragos Strainu' blog</title>
-    <updated>2022-01-30T09:24:21.488Z</updated>
+    <updated>2022-01-30T11:46:50.744Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragos Strainu</name>
@@ -13,6 +13,24 @@
     <logo>undefined/banner.svg</logo>
     <icon>undefined/favicon.png</icon>
     <rights>All rights reserved 2022, Dragos Strainu</rights>
+    <entry>
+        <title type="html"><![CDATA[Git: temporary change commit author]]></title>
+        <id>undefined/git-temporary-change-commit-author</id>
+        <link href="undefined/git-temporary-change-commit-author"/>
+        <updated>2022-01-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author]]></summary>
+        <content type="html"><![CDATA[A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author]]></content>
+        <author>
+            <name>Dragos Strainu</name>
+            <email>str.dr460@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </author>
+        <contributor>
+            <name>Dragos Strainu</name>
+            <email>str.dr460@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Meteor: a better way to use meteor npm command]]></title>
         <id>undefined/meteor-a-better-way-to-use-meteor-npm-command</id>

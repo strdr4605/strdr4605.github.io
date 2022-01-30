@@ -4,7 +4,7 @@
         <title>Dragos Strainu' blog</title>
         <link>undefined</link>
         <description></description>
-        <lastBuildDate>Sun, 30 Jan 2022 09:24:21 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 30 Jan 2022 11:46:50 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>undefined</link>
         </image>
         <copyright>All rights reserved 2022, Dragos Strainu</copyright>
+        <item>
+            <title><![CDATA[Git: temporary change commit author]]></title>
+            <link>undefined/git-temporary-change-commit-author</link>
+            <guid>undefined/git-temporary-change-commit-author</guid>
+            <pubDate>Sun, 30 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author]]></description>
+            <content:encoded><![CDATA[A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author]]></content:encoded>
+            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+        </item>
         <item>
             <title><![CDATA[Meteor: a better way to use meteor npm command]]></title>
             <link>undefined/meteor-a-better-way-to-use-meteor-npm-command</link>

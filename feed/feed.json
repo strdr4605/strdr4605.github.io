@@ -9,6 +9,18 @@
     },
     "items": [
         {
+            "id": "undefined/git-temporary-change-commit-author",
+            "content_html": "A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author",
+            "url": "undefined/git-temporary-change-commit-author",
+            "title": "Git: temporary change commit author",
+            "summary": "A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author",
+            "date_modified": "2022-01-30T00:00:00.000Z",
+            "author": {
+                "name": "Dragos Strainu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "undefined/meteor-a-better-way-to-use-meteor-npm-command",
             "content_html": "Did you forget to add meteor command before npm? Try adding a bash script that will make sure you always run it correctly.",
             "url": "undefined/meteor-a-better-way-to-use-meteor-npm-command",
