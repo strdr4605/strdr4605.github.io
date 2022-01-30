@@ -16,6 +16,7 @@ import {
   writeSlugFolderNameCache,
 } from "../lib/post";
 import { getAllPostFolderNames, getPostData } from "../lib/posts";
+import styles from "./Post.module.css";
 
 export async function getStaticProps({
   params,
@@ -67,6 +68,16 @@ export default function Post({ postData }: Props) {
         </a>
       </Link>
       <br />
+      <ul className={styles.postTags}>
+        {postData.tags.map((tag) => {
+          const hashTag = `#${tag}`;
+          return (
+            <li key={tag}>
+              <Link href={`/tags/${tag}`}>{hashTag}</Link>
+            </li>
+          );
+        })}
+      </ul>
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       <PostFooter />
       <UtterancesComments />

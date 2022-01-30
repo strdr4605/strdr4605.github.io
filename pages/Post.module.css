@@ -1,0 +1,10 @@
+.postTags {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-flex;
+}
+
+.postTags li {
+  margin-right: 0.5rem;
+}
