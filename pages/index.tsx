@@ -35,7 +35,7 @@ function Home({ allPostsData }: Props) {
       </Head>
       <h2>Salut</h2>
       <p>
-        I am Dragoș (Dragosh), a Frontend Software Engineer, Hackathoner, OSS
+        I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS
         enthusiast.
       </p>
       <section>
