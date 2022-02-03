@@ -1,227 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
-    <title>Dragos Strainu' blog</title>
-    <updated>2022-01-30T11:46:50.744Z</updated>
+    <title>Dragoș Străinu's blog</title>
+    <updated>2022-02-03T17:20:02.551Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
-        <name>Dragos Strainu</name>
-        <email>str.dr460@gmail.com</email>
+        <name>Dragoș Străinu</name>
+        <email>str.dr4605@gmail.com</email>
         <uri>https://twitter.com/strdr4605</uri>
     </author>
-    <link rel="self" href="undefined/feed/atom.xml"/>
-    <logo>undefined/banner.svg</logo>
-    <icon>undefined/favicon.png</icon>
-    <rights>All rights reserved 2022, Dragos Strainu</rights>
+    <link rel="alternate" href="https://strdr4605.com"/>
+    <link rel="self" href="https://strdr4605.com/feed/atom.xml"/>
+    <subtitle>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</subtitle>
+    <logo>https://strdr4605.com/banner.jpg</logo>
+    <icon>https://strdr4605.com/favicon.ico</icon>
+    <rights>All rights reserved 2022, Dragoș Străinu</rights>
     <entry>
         <title type="html"><![CDATA[Git: temporary change commit author]]></title>
-        <id>undefined/git-temporary-change-commit-author</id>
-        <link href="undefined/git-temporary-change-commit-author"/>
+        <id>https://strdr4605.com/git-temporary-change-commit-author</id>
+        <link href="https://strdr4605.com/git-temporary-change-commit-author"/>
         <updated>2022-01-30T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author]]></summary>
         <content type="html"><![CDATA[A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author]]></content>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[Meteor: a better way to use meteor npm command]]></title>
-        <id>undefined/meteor-a-better-way-to-use-meteor-npm-command</id>
-        <link href="undefined/meteor-a-better-way-to-use-meteor-npm-command"/>
+        <id>https://strdr4605.com/meteor-a-better-way-to-use-meteor-npm-command</id>
+        <link href="https://strdr4605.com/meteor-a-better-way-to-use-meteor-npm-command"/>
         <updated>2022-01-13T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Did you forget to add meteor command before npm? Try adding a bash script that will make sure you always run it correctly.]]></summary>
         <content type="html"><![CDATA[Did you forget to add meteor command before npm? Try adding a bash script that will make sure you always run it correctly.]]></content>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[Commitlint: custom commit message with emojis]]></title>
-        <id>undefined/commitlint-custom-commit-message-with-emojis</id>
-        <link href="undefined/commitlint-custom-commit-message-with-emojis"/>
+        <id>https://strdr4605.com/commitlint-custom-commit-message-with-emojis</id>
+        <link href="https://strdr4605.com/commitlint-custom-commit-message-with-emojis"/>
         <updated>2022-01-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A guide to customize the commitlint to your need and use it as convention in your git repository. Customize commitlint header format to use emojis.]]></summary>
         <content type="html"><![CDATA[A guide to customize the commitlint to your need and use it as convention in your git repository. Customize commitlint header format to use emojis.]]></content>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[No tits in git]]></title>
-        <id>undefined/no-tits-in-git</id>
-        <link href="undefined/no-tits-in-git"/>
+        <id>https://strdr4605.com/no-tits-in-git</id>
+        <link href="https://strdr4605.com/no-tits-in-git"/>
         <updated>2021-11-09T00:00:00.000Z</updated>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[9 Ways to Win a Hackathon... Without Coming in First Place]]></title>
-        <id>undefined/how-to-win-a-hackathon</id>
-        <link href="undefined/how-to-win-a-hackathon"/>
+        <id>https://strdr4605.com/how-to-win-a-hackathon</id>
+        <link href="https://strdr4605.com/how-to-win-a-hackathon"/>
         <updated>2021-05-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[To win first place at a hackathon, you need to combine multiple components... and that's not always possible. Here's how to make the most of your next hackathon without coming in 'first place'.]]></summary>
         <content type="html"><![CDATA[To win first place at a hackathon, you need to combine multiple components... and that's not always possible. Here's how to make the most of your next hackathon without coming in 'first place'.]]></content>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[Kanban/Sprint board isn't working for you? Try this!]]></title>
-        <id>undefined/kanban-board-alternative</id>
-        <link href="undefined/kanban-board-alternative"/>
+        <id>https://strdr4605.com/kanban-board-alternative</id>
+        <link href="https://strdr4605.com/kanban-board-alternative"/>
         <updated>2021-04-24T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[An alternative to kanban board. Using Google Docs as a planning tool.]]></summary>
         <content type="html"><![CDATA[An alternative to kanban board. Using Google Docs as a planning tool.]]></content>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[How I use Git]]></title>
-        <id>undefined/how-i-use-git</id>
-        <link href="undefined/how-i-use-git"/>
+        <id>https://strdr4605.com/how-i-use-git</id>
+        <link href="https://strdr4605.com/how-i-use-git"/>
         <updated>2021-04-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day.]]></summary>
         <content type="html"><![CDATA[My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day.]]></content>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[Building a command-line time tracker]]></title>
-        <id>undefined/building-a-command-line-time-tracker</id>
-        <link href="undefined/building-a-command-line-time-tracker"/>
+        <id>https://strdr4605.com/building-a-command-line-time-tracker</id>
+        <link href="https://strdr4605.com/building-a-command-line-time-tracker"/>
         <updated>2021-03-21T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[This is my attempt to create a simple time tracker from the command line]]></summary>
         <content type="html"><![CDATA[This is my attempt to create a simple time tracker from the command line]]></content>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[What I learned from 35 Hackathons]]></title>
-        <id>undefined/what-i-learned-from-35-hackathons</id>
-        <link href="undefined/what-i-learned-from-35-hackathons"/>
+        <id>https://strdr4605.com/what-i-learned-from-35-hackathons</id>
+        <link href="https://strdr4605.com/what-i-learned-from-35-hackathons"/>
         <updated>2020-08-02T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[What I learned from 35 hackathons, why you should participate at hackathons, how to gain experience without a full-time job.]]></summary>
         <content type="html"><![CDATA[What I learned from 35 hackathons, why you should participate at hackathons, how to gain experience without a full-time job.]]></content>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[My biggest Pull Request]]></title>
-        <id>undefined/my-biggest-pull-request</id>
-        <link href="undefined/my-biggest-pull-request"/>
+        <id>https://strdr4605.com/my-biggest-pull-request</id>
+        <link href="https://strdr4605.com/my-biggest-pull-request"/>
         <updated>2020-07-25T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!]]></summary>
         <content type="html"><![CDATA[Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!]]></content>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[Project over money, team over project]]></title>
-        <id>undefined/project-over-money-team-over-project</id>
-        <link href="undefined/project-over-money-team-over-project"/>
+        <id>https://strdr4605.com/project-over-money-team-over-project</id>
+        <link href="https://strdr4605.com/project-over-money-team-over-project"/>
         <updated>2020-07-11T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[What motivates me when I am looking for a new job in software engineering.]]></summary>
         <content type="html"><![CDATA[What motivates me when I am looking for a new job in software engineering.]]></content>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
         <title type="html"><![CDATA[My first open-source project]]></title>
-        <id>undefined/my-first-open-source-project</id>
-        <link href="undefined/my-first-open-source-project"/>
+        <id>https://strdr4605.com/my-first-open-source-project</id>
+        <link href="https://strdr4605.com/my-first-open-source-project"/>
         <updated>2019-05-29T00:00:00.000Z</updated>
         <author>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </author>
         <contributor>
-            <name>Dragos Strainu</name>
-            <email>str.dr460@gmail.com</email>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
             <uri>https://twitter.com/strdr4605</uri>
         </contributor>
     </entry>

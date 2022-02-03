@@ -1,121 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>Dragos Strainu' blog</title>
-        <link>undefined</link>
-        <description></description>
-        <lastBuildDate>Sun, 30 Jan 2022 11:46:50 GMT</lastBuildDate>
+        <title>Dragoș Străinu's blog</title>
+        <link>https://strdr4605.com</link>
+        <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
+        <lastBuildDate>Thu, 03 Feb 2022 17:20:02 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
-            <title>Dragos Strainu' blog</title>
-            <url>undefined/banner.svg</url>
-            <link>undefined</link>
+            <title>Dragoș Străinu's blog</title>
+            <url>https://strdr4605.com/banner.jpg</url>
+            <link>https://strdr4605.com</link>
         </image>
-        <copyright>All rights reserved 2022, Dragos Strainu</copyright>
+        <copyright>All rights reserved 2022, Dragoș Străinu</copyright>
         <item>
             <title><![CDATA[Git: temporary change commit author]]></title>
-            <link>undefined/git-temporary-change-commit-author</link>
-            <guid>undefined/git-temporary-change-commit-author</guid>
+            <link>https://strdr4605.com/git-temporary-change-commit-author</link>
+            <guid>https://strdr4605.com/git-temporary-change-commit-author</guid>
             <pubDate>Sun, 30 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author]]></description>
             <content:encoded><![CDATA[A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author]]></content:encoded>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[Meteor: a better way to use meteor npm command]]></title>
-            <link>undefined/meteor-a-better-way-to-use-meteor-npm-command</link>
-            <guid>undefined/meteor-a-better-way-to-use-meteor-npm-command</guid>
+            <link>https://strdr4605.com/meteor-a-better-way-to-use-meteor-npm-command</link>
+            <guid>https://strdr4605.com/meteor-a-better-way-to-use-meteor-npm-command</guid>
             <pubDate>Thu, 13 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[Did you forget to add meteor command before npm? Try adding a bash script that will make sure you always run it correctly.]]></description>
             <content:encoded><![CDATA[Did you forget to add meteor command before npm? Try adding a bash script that will make sure you always run it correctly.]]></content:encoded>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[Commitlint: custom commit message with emojis]]></title>
-            <link>undefined/commitlint-custom-commit-message-with-emojis</link>
-            <guid>undefined/commitlint-custom-commit-message-with-emojis</guid>
+            <link>https://strdr4605.com/commitlint-custom-commit-message-with-emojis</link>
+            <guid>https://strdr4605.com/commitlint-custom-commit-message-with-emojis</guid>
             <pubDate>Tue, 11 Jan 2022 00:00:00 GMT</pubDate>
             <description><![CDATA[A guide to customize the commitlint to your need and use it as convention in your git repository. Customize commitlint header format to use emojis.]]></description>
             <content:encoded><![CDATA[A guide to customize the commitlint to your need and use it as convention in your git repository. Customize commitlint header format to use emojis.]]></content:encoded>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[No tits in git]]></title>
-            <link>undefined/no-tits-in-git</link>
-            <guid>undefined/no-tits-in-git</guid>
+            <link>https://strdr4605.com/no-tits-in-git</link>
+            <guid>https://strdr4605.com/no-tits-in-git</guid>
             <pubDate>Tue, 09 Nov 2021 00:00:00 GMT</pubDate>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[9 Ways to Win a Hackathon... Without Coming in First Place]]></title>
-            <link>undefined/how-to-win-a-hackathon</link>
-            <guid>undefined/how-to-win-a-hackathon</guid>
+            <link>https://strdr4605.com/how-to-win-a-hackathon</link>
+            <guid>https://strdr4605.com/how-to-win-a-hackathon</guid>
             <pubDate>Tue, 25 May 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[To win first place at a hackathon, you need to combine multiple components... and that's not always possible. Here's how to make the most of your next hackathon without coming in 'first place'.]]></description>
             <content:encoded><![CDATA[To win first place at a hackathon, you need to combine multiple components... and that's not always possible. Here's how to make the most of your next hackathon without coming in 'first place'.]]></content:encoded>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[Kanban/Sprint board isn't working for you? Try this!]]></title>
-            <link>undefined/kanban-board-alternative</link>
-            <guid>undefined/kanban-board-alternative</guid>
+            <link>https://strdr4605.com/kanban-board-alternative</link>
+            <guid>https://strdr4605.com/kanban-board-alternative</guid>
             <pubDate>Sat, 24 Apr 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[An alternative to kanban board. Using Google Docs as a planning tool.]]></description>
             <content:encoded><![CDATA[An alternative to kanban board. Using Google Docs as a planning tool.]]></content:encoded>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[How I use Git]]></title>
-            <link>undefined/how-i-use-git</link>
-            <guid>undefined/how-i-use-git</guid>
+            <link>https://strdr4605.com/how-i-use-git</link>
+            <guid>https://strdr4605.com/how-i-use-git</guid>
             <pubDate>Fri, 02 Apr 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day.]]></description>
             <content:encoded><![CDATA[My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day.]]></content:encoded>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[Building a command-line time tracker]]></title>
-            <link>undefined/building-a-command-line-time-tracker</link>
-            <guid>undefined/building-a-command-line-time-tracker</guid>
+            <link>https://strdr4605.com/building-a-command-line-time-tracker</link>
+            <guid>https://strdr4605.com/building-a-command-line-time-tracker</guid>
             <pubDate>Sun, 21 Mar 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[This is my attempt to create a simple time tracker from the command line]]></description>
             <content:encoded><![CDATA[This is my attempt to create a simple time tracker from the command line]]></content:encoded>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[What I learned from 35 Hackathons]]></title>
-            <link>undefined/what-i-learned-from-35-hackathons</link>
-            <guid>undefined/what-i-learned-from-35-hackathons</guid>
+            <link>https://strdr4605.com/what-i-learned-from-35-hackathons</link>
+            <guid>https://strdr4605.com/what-i-learned-from-35-hackathons</guid>
             <pubDate>Sun, 02 Aug 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[What I learned from 35 hackathons, why you should participate at hackathons, how to gain experience without a full-time job.]]></description>
             <content:encoded><![CDATA[What I learned from 35 hackathons, why you should participate at hackathons, how to gain experience without a full-time job.]]></content:encoded>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[My biggest Pull Request]]></title>
-            <link>undefined/my-biggest-pull-request</link>
-            <guid>undefined/my-biggest-pull-request</guid>
+            <link>https://strdr4605.com/my-biggest-pull-request</link>
+            <guid>https://strdr4605.com/my-biggest-pull-request</guid>
             <pubDate>Sat, 25 Jul 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!]]></description>
             <content:encoded><![CDATA[Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!]]></content:encoded>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[Project over money, team over project]]></title>
-            <link>undefined/project-over-money-team-over-project</link>
-            <guid>undefined/project-over-money-team-over-project</guid>
+            <link>https://strdr4605.com/project-over-money-team-over-project</link>
+            <guid>https://strdr4605.com/project-over-money-team-over-project</guid>
             <pubDate>Sat, 11 Jul 2020 00:00:00 GMT</pubDate>
             <description><![CDATA[What motivates me when I am looking for a new job in software engineering.]]></description>
             <content:encoded><![CDATA[What motivates me when I am looking for a new job in software engineering.]]></content:encoded>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>
             <title><![CDATA[My first open-source project]]></title>
-            <link>undefined/my-first-open-source-project</link>
-            <guid>undefined/my-first-open-source-project</guid>
+            <link>https://strdr4605.com/my-first-open-source-project</link>
+            <guid>https://strdr4605.com/my-first-open-source-project</guid>
             <pubDate>Wed, 29 May 2019 00:00:00 GMT</pubDate>
-            <author>str.dr460@gmail.com (Dragos Strainu)</author>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
     </channel>
 </rss>

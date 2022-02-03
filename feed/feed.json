@@ -1,151 +1,153 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Dragos Strainu' blog",
-    "feed_url": "undefined/feed/feed.json",
-    "icon": "undefined/banner.svg",
+    "title": "Dragoș Străinu's blog",
+    "home_page_url": "https://strdr4605.com",
+    "feed_url": "https://strdr4605.com/feed/feed.json",
+    "description": "I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.",
+    "icon": "https://strdr4605.com/banner.jpg",
     "author": {
-        "name": "Dragos Strainu",
+        "name": "Dragoș Străinu",
         "url": "https://twitter.com/strdr4605"
     },
     "items": [
         {
-            "id": "undefined/git-temporary-change-commit-author",
+            "id": "https://strdr4605.com/git-temporary-change-commit-author",
             "content_html": "A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author",
-            "url": "undefined/git-temporary-change-commit-author",
+            "url": "https://strdr4605.com/git-temporary-change-commit-author",
             "title": "Git: temporary change commit author",
             "summary": "A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author",
             "date_modified": "2022-01-30T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/meteor-a-better-way-to-use-meteor-npm-command",
+            "id": "https://strdr4605.com/meteor-a-better-way-to-use-meteor-npm-command",
             "content_html": "Did you forget to add meteor command before npm? Try adding a bash script that will make sure you always run it correctly.",
-            "url": "undefined/meteor-a-better-way-to-use-meteor-npm-command",
+            "url": "https://strdr4605.com/meteor-a-better-way-to-use-meteor-npm-command",
             "title": "Meteor: a better way to use meteor npm command",
             "summary": "Did you forget to add meteor command before npm? Try adding a bash script that will make sure you always run it correctly.",
             "date_modified": "2022-01-13T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/commitlint-custom-commit-message-with-emojis",
+            "id": "https://strdr4605.com/commitlint-custom-commit-message-with-emojis",
             "content_html": "A guide to customize the commitlint to your need and use it as convention in your git repository. Customize commitlint header format to use emojis.",
-            "url": "undefined/commitlint-custom-commit-message-with-emojis",
+            "url": "https://strdr4605.com/commitlint-custom-commit-message-with-emojis",
             "title": "Commitlint: custom commit message with emojis",
             "summary": "A guide to customize the commitlint to your need and use it as convention in your git repository. Customize commitlint header format to use emojis.",
             "date_modified": "2022-01-11T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/no-tits-in-git",
+            "id": "https://strdr4605.com/no-tits-in-git",
             "content_html": null,
-            "url": "undefined/no-tits-in-git",
+            "url": "https://strdr4605.com/no-tits-in-git",
             "title": "No tits in git",
             "date_modified": "2021-11-09T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/how-to-win-a-hackathon",
+            "id": "https://strdr4605.com/how-to-win-a-hackathon",
             "content_html": "To win first place at a hackathon, you need to combine multiple components... and that's not always possible. Here's how to make the most of your next hackathon without coming in 'first place'.",
-            "url": "undefined/how-to-win-a-hackathon",
+            "url": "https://strdr4605.com/how-to-win-a-hackathon",
             "title": "9 Ways to Win a Hackathon... Without Coming in First Place",
             "summary": "To win first place at a hackathon, you need to combine multiple components... and that's not always possible. Here's how to make the most of your next hackathon without coming in 'first place'.",
             "date_modified": "2021-05-25T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/kanban-board-alternative",
+            "id": "https://strdr4605.com/kanban-board-alternative",
             "content_html": "An alternative to kanban board. Using Google Docs as a planning tool.",
-            "url": "undefined/kanban-board-alternative",
+            "url": "https://strdr4605.com/kanban-board-alternative",
             "title": "Kanban/Sprint board isn't working for you? Try this!",
             "summary": "An alternative to kanban board. Using Google Docs as a planning tool.",
             "date_modified": "2021-04-24T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/how-i-use-git",
+            "id": "https://strdr4605.com/how-i-use-git",
             "content_html": "My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day.",
-            "url": "undefined/how-i-use-git",
+            "url": "https://strdr4605.com/how-i-use-git",
             "title": "How I use Git",
             "summary": "My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day.",
             "date_modified": "2021-04-02T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/building-a-command-line-time-tracker",
+            "id": "https://strdr4605.com/building-a-command-line-time-tracker",
             "content_html": "This is my attempt to create a simple time tracker from the command line",
-            "url": "undefined/building-a-command-line-time-tracker",
+            "url": "https://strdr4605.com/building-a-command-line-time-tracker",
             "title": "Building a command-line time tracker",
             "summary": "This is my attempt to create a simple time tracker from the command line",
             "date_modified": "2021-03-21T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/what-i-learned-from-35-hackathons",
+            "id": "https://strdr4605.com/what-i-learned-from-35-hackathons",
             "content_html": "What I learned from 35 hackathons, why you should participate at hackathons, how to gain experience without a full-time job.",
-            "url": "undefined/what-i-learned-from-35-hackathons",
+            "url": "https://strdr4605.com/what-i-learned-from-35-hackathons",
             "title": "What I learned from 35 Hackathons",
             "summary": "What I learned from 35 hackathons, why you should participate at hackathons, how to gain experience without a full-time job.",
             "date_modified": "2020-08-02T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/my-biggest-pull-request",
+            "id": "https://strdr4605.com/my-biggest-pull-request",
             "content_html": "Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!",
-            "url": "undefined/my-biggest-pull-request",
+            "url": "https://strdr4605.com/my-biggest-pull-request",
             "title": "My biggest Pull Request",
             "summary": "Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!",
             "date_modified": "2020-07-25T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/project-over-money-team-over-project",
+            "id": "https://strdr4605.com/project-over-money-team-over-project",
             "content_html": "What motivates me when I am looking for a new job in software engineering.",
-            "url": "undefined/project-over-money-team-over-project",
+            "url": "https://strdr4605.com/project-over-money-team-over-project",
             "title": "Project over money, team over project",
             "summary": "What motivates me when I am looking for a new job in software engineering.",
             "date_modified": "2020-07-11T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         },
         {
-            "id": "undefined/my-first-open-source-project",
-            "url": "undefined/my-first-open-source-project",
+            "id": "https://strdr4605.com/my-first-open-source-project",
+            "url": "https://strdr4605.com/my-first-open-source-project",
             "title": "My first open-source project",
             "date_modified": "2019-05-29T00:00:00.000Z",
             "author": {
-                "name": "Dragos Strainu",
+                "name": "Dragoș Străinu",
                 "url": "https://twitter.com/strdr4605"
             }
         }
