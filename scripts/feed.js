@@ -4,21 +4,21 @@ const getSortedPostsData = require("./utils").getSortedPostsData;
 
 const buildFeed = async () => {
   const posts = await getSortedPostsData();
-  const siteURL = process.env.SITE_URL;
+  const siteURL = process.env.SITE_URL || "https://strdr4605.com";
   const date = new Date();
   const author = {
-    name: "Dragos Strainu",
-    email: "str.dr460@gmail.com",
+    name: "Dragoș Străinu",
+    email: "str.dr4605@gmail.com",
     link: "https://twitter.com/strdr4605",
   };
   const feed = new Feed({
-    title: "Dragos Strainu' blog",
-    description: "",
-    id: siteURL || "https://strdr4605.com",
+    title: "Dragoș Străinu's blog",
+    description: "I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.",
+    id: siteURL,
     link: siteURL,
-    image: `${siteURL}/banner.svg`,
-    favicon: `${siteURL}/favicon.png`,
-    copyright: `All rights reserved ${date.getFullYear()}, Dragos Strainu`,
+    image: `${siteURL}/banner.jpg`,
+    favicon: `${siteURL}/favicon.ico`,
+    copyright: `All rights reserved ${date.getFullYear()}, Dragoș Străinu`,
     updated: date,
     generator: "Feed for Node.js",
     feedLinks: {
