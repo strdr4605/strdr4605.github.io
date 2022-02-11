@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/nudge-github-pr-reviewers-with-slack-api",
+            "content_html": "How to create a simple script that will nudge Github Pull Request reviewers on Slack using Slack API and userscripts.",
+            "url": "https://strdr4605.com/nudge-github-pr-reviewers-with-slack-api",
+            "title": "Nudge Github PR reviewers with Slack API",
+            "summary": "How to create a simple script that will nudge Github Pull Request reviewers on Slack using Slack API and userscripts.",
+            "date_modified": "2022-02-11T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/git-temporary-change-commit-author",
             "content_html": "A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author",
             "url": "https://strdr4605.com/git-temporary-change-commit-author",
