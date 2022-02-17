@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/git-hide-specific-branch-when-doing-git-log-all",
+            "content_html": "How to hide a specific branch when looking into git log history.",
+            "url": "https://strdr4605.com/git-hide-specific-branch-when-doing-git-log-all",
+            "title": "Git: hide specific branch when doing git log --all",
+            "summary": "How to hide a specific branch when looking into git log history.",
+            "date_modified": "2022-02-17T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/nudge-github-pr-reviewers-with-slack-api",
             "content_html": "How to create a simple script that will nudge Github Pull Request reviewers on Slack using Slack API and userscripts.",
             "url": "https://strdr4605.com/nudge-github-pr-reviewers-with-slack-api",
