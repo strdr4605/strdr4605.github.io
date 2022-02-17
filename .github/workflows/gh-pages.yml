@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - source # default branch
+      - master # default branch
 
 jobs:
   deploy:
@@ -32,5 +32,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          publish_branch: master
           commit_message: ${{ github.event.head_commit.message }}
