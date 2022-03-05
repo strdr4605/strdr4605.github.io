@@ -4,9 +4,11 @@ draft: true
 date: 2022-01-23
 ---
 
-Here is a list of projects (which are still alive) that I created or contributed to.
+Here is a list of projects that I created or contributed to.
 All of them are open-source, so you can also check how I write code 😅.
 Some of them need improvements, so if you are willing to contribute, contact me.
+
+## Still alive
 
 1. **[mockingcase](https://github.com/strdr4605/mockingcase)**: node package that converts a string to mOcKiNgCaSe
    It may be a not very useful package, but while working on it I learned a lot, and still consider it as amazing piece of software.
@@ -29,11 +31,6 @@ Some of them need improvements, so if you are willing to contribute, contact me.
 
 1. **[@strdr4605/eslint-plugin-react-props-destructuring](https://github.com/strdr4605/eslint-plugin-react-props-destructuring)**: A very opinionated rule for ReactJS props destructuring. See discussion [here](https://github.com/yannickcr/eslint-plugin-react/pull/3086).
 
-1. **[@goparrot/react-native-geometry-utils](https://github.com/goparrot/react-native-geometry-utils)**: Google maps geometry utils for react-native
-   I worked with React Native Modules and wrote some Kotlin and Swift. There are non-async replacements for this library, but it's still [used](https://www.npmjs.com/package/@goparrot/react-native-geometry-utils).
-
-1. **[@strdr4605/react-native-rename](https://github.com/strdr4605/react-native-rename)**: A fork of react-native-rename@2.4.1 with several improvements. Archived now.
-
 1. **[WHO AM I](https://strdr4605.github.io/whoami-ar)**: At BEST Hackathon 2021 my team and I created an _Augmented Reality_ game. Play it with your friends.
 
 1. **[Spacebook](https://tum-faf.github.io/spacebook)**: At [NASA Hackathon 2019](https://2019.spaceappschallenge.org/challenges/invent-your-own-challenge/invent-your-own-challenge/teams/spacebook/project) my team and I created a _Progressive Web App_ which shows [Astronomy Picture of the Day](https://apod.nasa.gov/apod/astropix.html) in an infinite scroll feed. A (not perfect) app that works by these days.
@@ -44,6 +41,20 @@ Some of them need improvements, so if you are willing to contribute, contact me.
 
 1. **[issue-branch-action](https://github.com/strdr4605/issue-branch-action)**: Github action that comment on an issue when a related branch is created.
 
-1. **[999 Plus](https://github.com/strdr4605/999-plus)**: Extension for sorting [999.md](https://999.md) items.
-
 1. **[Fracfik](https://strdr4605.github.io/fracfik/)**: At my first Hackathon we created a game that help kids to learn fraction operations.
+
+## Somehow dead
+
+1. **[@goparrot/react-native-geometry-utils](https://github.com/goparrot/react-native-geometry-utils)**: Google maps geometry utils for react-native
+   I worked with React Native Modules and wrote some Kotlin and Swift. There are non-async replacements for this library, but it's still [used](https://www.npmjs.com/package/@goparrot/react-native-geometry-utils).
+
+  > Archived because we found same functionality without native bridge.
+
+2. **[999 Plus](https://github.com/strdr4605/999-plus)**: Extension for sorting [999.md](https://999.md) items.
+
+  > Sorting was added to the site, but the extension is still useful to remove booster posts.
+
+3. **[@strdr4605/react-native-rename](https://github.com/strdr4605/react-native-rename)**: A fork of react-native-rename@2.4.1 with several improvements. Archived now.
+
+  > Archived because original library finally added the missing features.
+
