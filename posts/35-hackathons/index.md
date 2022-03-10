@@ -9,7 +9,7 @@ tags:
 banner: 35-hackathons.jpg
 ---
 
-> Update: Now count is at 41 Hackathons
+> Update: Now count is at 42 Hackathons
 
 ## What is a Hackathon
 
