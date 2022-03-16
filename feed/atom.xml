@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2022-03-10T09:48:55.537Z</updated>
+    <updated>2022-03-16T09:52:33.885Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
@@ -15,6 +15,24 @@
     <logo>https://strdr4605.com/banner.jpg</logo>
     <icon>https://strdr4605.com/favicon.ico</icon>
     <rights>All rights reserved 2022, Dragoș Străinu</rights>
+    <entry>
+        <title type="html"><![CDATA[You need to use Git worktree]]></title>
+        <id>https://strdr4605.com/you-need-to-use-git-worktree</id>
+        <link href="https://strdr4605.com/you-need-to-use-git-worktree"/>
+        <updated>2022-03-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A basic guide on why and how to use Git worktree feature.]]></summary>
+        <content type="html"><![CDATA[A basic guide on why and how to use Git worktree feature.]]></content>
+        <author>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </author>
+        <contributor>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Use Caps Lock to trigger iTerm2 terminal]]></title>
         <id>https://strdr4605.com/use-caps-lock-to-trigger-iterm2-terminal</id>

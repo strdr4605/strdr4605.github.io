@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/you-need-to-use-git-worktree",
+            "content_html": "A basic guide on why and how to use Git worktree feature.",
+            "url": "https://strdr4605.com/you-need-to-use-git-worktree",
+            "title": "You need to use Git worktree",
+            "summary": "A basic guide on why and how to use Git worktree feature.",
+            "date_modified": "2022-03-16T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/use-caps-lock-to-trigger-iterm2-terminal",
             "content_html": "A guide to remap Caps Lock to open the iTerm2 Mac terminal from anywhere in the system.",
             "url": "https://strdr4605.com/use-caps-lock-to-trigger-iterm2-terminal",
