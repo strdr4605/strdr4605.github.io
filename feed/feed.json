@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/npm-how-to-document-your-package-json-scripts",
+            "content_html": "Let's see different ways you can document your npm scripts using README, comments in package.json, or using npx why package.",
+            "url": "https://strdr4605.com/npm-how-to-document-your-package-json-scripts",
+            "title": "NPM: How to document your package.json scripts",
+            "summary": "Let's see different ways you can document your npm scripts using README, comments in package.json, or using npx why package.",
+            "date_modified": "2022-03-27T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/you-need-to-use-git-worktree",
             "content_html": "A basic guide on why and how to use Git worktree feature.",
             "url": "https://strdr4605.com/you-need-to-use-git-worktree",

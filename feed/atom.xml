@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2022-03-16T09:52:33.885Z</updated>
+    <updated>2022-03-27T14:35:37.750Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
@@ -15,6 +15,24 @@
     <logo>https://strdr4605.com/banner.jpg</logo>
     <icon>https://strdr4605.com/favicon.ico</icon>
     <rights>All rights reserved 2022, Dragoș Străinu</rights>
+    <entry>
+        <title type="html"><![CDATA[NPM: How to document your package.json scripts]]></title>
+        <id>https://strdr4605.com/npm-how-to-document-your-package-json-scripts</id>
+        <link href="https://strdr4605.com/npm-how-to-document-your-package-json-scripts"/>
+        <updated>2022-03-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Let's see different ways you can document your npm scripts using README, comments in package.json, or using npx why package.]]></summary>
+        <content type="html"><![CDATA[Let's see different ways you can document your npm scripts using README, comments in package.json, or using npx why package.]]></content>
+        <author>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </author>
+        <contributor>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[You need to use Git worktree]]></title>
         <id>https://strdr4605.com/you-need-to-use-git-worktree</id>
