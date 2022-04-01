@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2022-03-27T14:35:37.750Z</updated>
+    <updated>2022-04-01T09:41:17.666Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
@@ -15,6 +15,24 @@
     <logo>https://strdr4605.com/banner.jpg</logo>
     <icon>https://strdr4605.com/favicon.ico</icon>
     <rights>All rights reserved 2022, Dragoș Străinu</rights>
+    <entry>
+        <title type="html"><![CDATA[Optional pre-commit checks with husky]]></title>
+        <id>https://strdr4605.com/optional-pre-commit-checks-with-husky</id>
+        <link href="https://strdr4605.com/optional-pre-commit-checks-with-husky"/>
+        <updated>2022-03-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How to make your husky pre-commit optional for each check]]></summary>
+        <content type="html"><![CDATA[How to make your husky pre-commit optional for each check]]></content>
+        <author>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </author>
+        <contributor>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[NPM: How to document your package.json scripts]]></title>
         <id>https://strdr4605.com/npm-how-to-document-your-package-json-scripts</id>
