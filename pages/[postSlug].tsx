@@ -4,6 +4,7 @@ import type {
   InferGetStaticPropsType,
 } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import Date from "../components/Date";
 import Layout from "../components/Layout";
 import PostFooter from "../components/PostFooter";
@@ -37,7 +38,7 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 export default function Post({ postData }: Props) {
   return (
-    <Layout>
+    <Layout hideHeader>
       <Head>
         <title>{postData.title}</title>
         <meta name="description" content={postData.description} />
@@ -56,8 +57,9 @@ export default function Post({ postData }: Props) {
         />
       </Head>
       <h1>{postData.title}</h1>
-      <br />
       <Date date={postData.date} />
+      {" on "}
+      <Link href="/">Dragoș Străinu&apos;s blog</Link>
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       <PostFooter />
