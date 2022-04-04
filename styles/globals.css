@@ -7,10 +7,12 @@
 
 html,
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 * {
@@ -18,7 +20,7 @@ body {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 
 a {
