@@ -5,6 +5,7 @@ import type {
 } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import AnimatedName from "../components/AnimatedName";
 import Date from "../components/Date";
 import Layout from "../components/Layout";
 import PostFooter from "../components/PostFooter";
@@ -59,7 +60,12 @@ export default function Post({ postData }: Props) {
       <h1>{postData.title}</h1>
       <Date date={postData.date} />
       {" on "}
-      <Link href="/">Dragoș Străinu&apos;s blog</Link>
+      <Link href="/">
+        <a>
+          <AnimatedName />
+          &apos;s blog
+        </a>
+      </Link>
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       <PostFooter />

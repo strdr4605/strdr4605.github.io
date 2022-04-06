@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AnimatedName from "./AnimatedName";
 import GithubIcon from "./GithubIcon";
 import styles from "./Header.module.css";
 import RSSFeedIcon from "./RSSFeedIcon";
@@ -8,7 +9,12 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <h3>
-        <Link href="/">Dragoș Străinu&apos;s blog</Link>
+        <Link href="/">
+          <a>
+            <AnimatedName />
+            &apos;s blog
+          </a>
+        </Link>
       </h3>
       <GithubIcon />
       <TwitterIcon />
