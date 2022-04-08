@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/keep-your-java-script-repository-clean",
+            "content_html": "How we can clean up the repository root directory from config files like .eslintrc.js, tsconfig.json, jest.config.js and others.",
+            "url": "https://strdr4605.com/keep-your-java-script-repository-clean",
+            "title": "Keep your JavaScript repository clean",
+            "summary": "How we can clean up the repository root directory from config files like .eslintrc.js, tsconfig.json, jest.config.js and others.",
+            "date_modified": "2022-04-08T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/optional-pre-commit-checks-with-husky",
             "content_html": "How to make your husky pre-commit optional for each check",
             "url": "https://strdr4605.com/optional-pre-commit-checks-with-husky",

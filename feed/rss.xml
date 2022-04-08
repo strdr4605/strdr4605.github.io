@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Fri, 08 Apr 2022 09:56:51 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 08 Apr 2022 13:48:25 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>https://strdr4605.com</link>
         </image>
         <copyright>All rights reserved 2022, Dragoș Străinu</copyright>
+        <item>
+            <title><![CDATA[Keep your JavaScript repository clean]]></title>
+            <link>https://strdr4605.com/keep-your-java-script-repository-clean</link>
+            <guid>https://strdr4605.com/keep-your-java-script-repository-clean</guid>
+            <pubDate>Fri, 08 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[How we can clean up the repository root directory from config files like .eslintrc.js, tsconfig.json, jest.config.js and others.]]></description>
+            <content:encoded><![CDATA[How we can clean up the repository root directory from config files like .eslintrc.js, tsconfig.json, jest.config.js and others.]]></content:encoded>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
+        </item>
         <item>
             <title><![CDATA[Optional pre-commit checks with husky]]></title>
             <link>https://strdr4605.com/optional-pre-commit-checks-with-husky</link>
