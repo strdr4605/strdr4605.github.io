@@ -7,9 +7,9 @@ import Head from "next/head";
 import Link from "next/link";
 import AnimatedName from "../components/AnimatedName";
 import Date from "../components/Date";
+import GiscusComments from "../components/GiscusComments";
 import Layout from "../components/Layout";
 import PostFooter from "../components/PostFooter";
-import UtterancesComments from "../components/UtterancesComments";
 import {
   readSlugFolderNameCache,
   SlugFolderNameMap,
@@ -69,7 +69,7 @@ export default function Post({ postData }: Props) {
       <br />
       <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       <PostFooter />
-      <UtterancesComments />
+      <GiscusComments />
     </Layout>
   );
 }

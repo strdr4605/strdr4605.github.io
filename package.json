@@ -16,6 +16,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^2.0.1",
     "babel-plugin-superjson-next": "^0.4.2",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
