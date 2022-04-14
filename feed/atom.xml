@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2022-04-08T13:48:25.711Z</updated>
+    <updated>2022-04-14T21:34:04.362Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
@@ -15,6 +15,24 @@
     <logo>https://strdr4605.com/banner.jpg</logo>
     <icon>https://strdr4605.com/favicon.ico</icon>
     <rights>All rights reserved 2022, Dragoș Străinu</rights>
+    <entry>
+        <title type="html"><![CDATA[NodeJS: How to test the npm package before releasing]]></title>
+        <id>https://strdr4605.com/node-js-how-to-test-the-npm-package-before-releasing</id>
+        <link href="https://strdr4605.com/node-js-how-to-test-the-npm-package-before-releasing"/>
+        <updated>2022-04-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How to test and release an npm package when it is still a Work In Progress. How to create prereleases of a NodeJS package following semver.org convention.]]></summary>
+        <content type="html"><![CDATA[How to test and release an npm package when it is still a Work In Progress. How to create prereleases of a NodeJS package following semver.org convention.]]></content>
+        <author>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </author>
+        <contributor>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Keep your JavaScript repository clean]]></title>
         <id>https://strdr4605.com/keep-your-java-script-repository-clean</id>

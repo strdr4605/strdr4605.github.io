@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/node-js-how-to-test-the-npm-package-before-releasing",
+            "content_html": "How to test and release an npm package when it is still a Work In Progress. How to create prereleases of a NodeJS package following semver.org convention.",
+            "url": "https://strdr4605.com/node-js-how-to-test-the-npm-package-before-releasing",
+            "title": "NodeJS: How to test the npm package before releasing",
+            "summary": "How to test and release an npm package when it is still a Work In Progress. How to create prereleases of a NodeJS package following semver.org convention.",
+            "date_modified": "2022-04-15T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/keep-your-java-script-repository-clean",
             "content_html": "How we can clean up the repository root directory from config files like .eslintrc.js, tsconfig.json, jest.config.js and others.",
             "url": "https://strdr4605.com/keep-your-java-script-repository-clean",

@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Fri, 08 Apr 2022 13:48:25 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 14 Apr 2022 21:34:04 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>https://strdr4605.com</link>
         </image>
         <copyright>All rights reserved 2022, Dragoș Străinu</copyright>
+        <item>
+            <title><![CDATA[NodeJS: How to test the npm package before releasing]]></title>
+            <link>https://strdr4605.com/node-js-how-to-test-the-npm-package-before-releasing</link>
+            <guid>https://strdr4605.com/node-js-how-to-test-the-npm-package-before-releasing</guid>
+            <pubDate>Fri, 15 Apr 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[How to test and release an npm package when it is still a Work In Progress. How to create prereleases of a NodeJS package following semver.org convention.]]></description>
+            <content:encoded><![CDATA[How to test and release an npm package when it is still a Work In Progress. How to create prereleases of a NodeJS package following semver.org convention.]]></content:encoded>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
+        </item>
         <item>
             <title><![CDATA[Keep your JavaScript repository clean]]></title>
             <link>https://strdr4605.com/keep-your-java-script-repository-clean</link>
