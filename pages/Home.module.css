@@ -5,6 +5,7 @@
 
 .blogPosts li {
   display: flex;
+  margin: 1rem 0;
 }
 
 .blogPosts li span {
