@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Thu, 21 Apr 2022 08:08:08 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 13 May 2022 18:39:09 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>https://strdr4605.com</link>
         </image>
         <copyright>All rights reserved 2022, Dragoș Străinu</copyright>
+        <item>
+            <title><![CDATA[How I found a bug in 2000 files]]></title>
+            <link>https://strdr4605.com/how-i-found-a-bug-in-2000-files</link>
+            <guid>https://strdr4605.com/how-i-found-a-bug-in-2000-files</guid>
+            <pubDate>Fri, 13 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[A story how I found a bug in a change of 2000 files using bash, git commits and git bisect. Another title for this post cound be How to creat a commit per file that was changed.]]></description>
+            <content:encoded><![CDATA[A story how I found a bug in a change of 2000 files using bash, git commits and git bisect. Another title for this post cound be How to creat a commit per file that was changed.]]></content:encoded>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
+        </item>
         <item>
             <title><![CDATA[NodeJS: How to test the npm package before releasing]]></title>
             <link>https://strdr4605.com/node-js-how-to-test-the-npm-package-before-releasing</link>
