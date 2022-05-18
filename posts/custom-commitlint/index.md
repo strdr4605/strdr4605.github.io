@@ -1,6 +1,7 @@
 ---
 title: "Commitlint: custom commit message with emojis"
 date: 2022-01-11
+starred: true
 description: A guide to customize the commitlint to your need and use it as convention in your git repository. Customize commitlint header format to use emojis.
 tags:
   - tools
