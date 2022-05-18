@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2022-05-13T18:39:09.986Z</updated>
+    <updated>2022-05-18T09:46:34.233Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
@@ -15,6 +15,24 @@
     <logo>https://strdr4605.com/banner.jpg</logo>
     <icon>https://strdr4605.com/favicon.ico</icon>
     <rights>All rights reserved 2022, Dragoș Străinu</rights>
+    <entry>
+        <title type="html"><![CDATA[How to gradually add an eslint rule]]></title>
+        <id>https://strdr4605.com/how-to-gradually-add-an-eslint-rule</id>
+        <link href="https://strdr4605.com/how-to-gradually-add-an-eslint-rule"/>
+        <updated>2022-05-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Sometimes you decide to add a new eslint plugin or rule to your javascript project. To not do 2000+ files change you may try to gradually change files with lint-staged.]]></summary>
+        <content type="html"><![CDATA[Sometimes you decide to add a new eslint plugin or rule to your javascript project. To not do 2000+ files change you may try to gradually change files with lint-staged.]]></content>
+        <author>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </author>
+        <contributor>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How I found a bug in 2000 files]]></title>
         <id>https://strdr4605.com/how-i-found-a-bug-in-2000-files</id>

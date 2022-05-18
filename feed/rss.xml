@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Fri, 13 May 2022 18:39:09 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 18 May 2022 09:46:34 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>https://strdr4605.com</link>
         </image>
         <copyright>All rights reserved 2022, Dragoș Străinu</copyright>
+        <item>
+            <title><![CDATA[How to gradually add an eslint rule]]></title>
+            <link>https://strdr4605.com/how-to-gradually-add-an-eslint-rule</link>
+            <guid>https://strdr4605.com/how-to-gradually-add-an-eslint-rule</guid>
+            <pubDate>Tue, 17 May 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Sometimes you decide to add a new eslint plugin or rule to your javascript project. To not do 2000+ files change you may try to gradually change files with lint-staged.]]></description>
+            <content:encoded><![CDATA[Sometimes you decide to add a new eslint plugin or rule to your javascript project. To not do 2000+ files change you may try to gradually change files with lint-staged.]]></content:encoded>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
+        </item>
         <item>
             <title><![CDATA[How I found a bug in 2000 files]]></title>
             <link>https://strdr4605.com/how-i-found-a-bug-in-2000-files</link>

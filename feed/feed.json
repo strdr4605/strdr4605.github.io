@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/how-to-gradually-add-an-eslint-rule",
+            "content_html": "Sometimes you decide to add a new eslint plugin or rule to your javascript project. To not do 2000+ files change you may try to gradually change files with lint-staged.",
+            "url": "https://strdr4605.com/how-to-gradually-add-an-eslint-rule",
+            "title": "How to gradually add an eslint rule",
+            "summary": "Sometimes you decide to add a new eslint plugin or rule to your javascript project. To not do 2000+ files change you may try to gradually change files with lint-staged.",
+            "date_modified": "2022-05-17T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/how-i-found-a-bug-in-2000-files",
             "content_html": "A story how I found a bug in a change of 2000 files using bash, git commits and git bisect. Another title for this post cound be How to creat a commit per file that was changed.",
             "url": "https://strdr4605.com/how-i-found-a-bug-in-2000-files",
