@@ -48,6 +48,8 @@ For this, you might use the `dev` tag.
   - Change the version of **core**: `1.0.1-4605.0`
   - Publish the WIP version: `npm publish --tag dev`
   - Update the **app** with WIP version of **core**
+    - `npm install core@dev`
+    - or manually set **core** version in **app** `package.json` and do `npm install`
   - Do move WIP prereleases if needed: `1.0.1-4605.1`
 4. Create PRs for both projects
 5. When **core** PR is approved
