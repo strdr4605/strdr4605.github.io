@@ -15,6 +15,8 @@ Some of them need improvements, so if you are willing to contribute, contact me.
 
 1. **[why](https://github.com/strdr4605/why)**: A tool to document your package.json scripts.
 
+1. **[symlink-config](https://github.com/strdr4605/symlink-config)**: A tool to make your JavaScript repos cleaner by symlinking your project config files to root.
+
 1. **[mockingcase](https://github.com/strdr4605/mockingcase)**: node package that converts a string to mOcKiNgCaSe
    It may be a not very useful package, but while working on it I learned a lot, and still consider it as an amazing piece of software.
    More about it [here](https://strdr4605.github.io/my-first-open-source-project).
