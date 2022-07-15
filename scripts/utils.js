@@ -5,8 +5,7 @@ const kebabCase = require("lodash.kebabcase");
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-function getMDContent(folderName) {
-  const markdownFile = folderName + "/index.md";
+function getMDContent(markdownFile) {
   // Read markdown file as string
   const fullPath = path.join(postsDirectory, markdownFile);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -15,8 +14,8 @@ function getMDContent(folderName) {
 
 function getSortedPostsData() {
   // Get file names under /posts
-  const folderNames = fs.readdirSync(postsDirectory);
-  const allPostsData = folderNames.map((folderName) => {
+  const fileNames = fs.readdirSync(postsDirectory);
+  const allPostsData = fileNames.map((folderName) => {
     const fileContents = getMDContent(folderName);
 
     // Use gray-matter to parse the post metadata section
