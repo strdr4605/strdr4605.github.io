@@ -9,8 +9,7 @@ import remarkGfm from "remark-gfm";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-function getMDContent(folderName: string): string {
-  const markdownFile = folderName + "/index.md";
+function getMDContent(markdownFile: string): string {
   // Read markdown file as string
   const fullPath = path.join(postsDirectory, markdownFile);
   const fileContents = fs.readFileSync(fullPath, "utf8");
@@ -31,8 +30,8 @@ export type PostData = {
 
 export function getSortedPostsData(): PostData[] {
   // Get file names under /posts
-  const folderNames = fs.readdirSync(postsDirectory);
-  const allPostsData: PostData[] = folderNames.map((folderName) => {
+  const fileNames = fs.readdirSync(postsDirectory);
+  const allPostsData: PostData[] = fileNames.map((folderName) => {
     const fileContents = getMDContent(folderName);
 
     // Use gray-matter to parse the post metadata section
