@@ -32,7 +32,7 @@ async function writePostOGImage(postTitle, postSlug) {
 }
 
 async function generatePostsOGImages() {
-  const postsData = await getSortedPostsData();
+  const postsData = getSortedPostsData(true);
   postsData.forEach((postData) =>
     writePostOGImage(postData.title, postData.slug)
   );
