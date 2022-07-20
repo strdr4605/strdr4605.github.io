@@ -3,7 +3,7 @@ const Feed = require("feed").Feed;
 const getSortedPostsData = require("./utils").getSortedPostsData;
 
 const buildFeed = async () => {
-  const posts = await getSortedPostsData();
+  const posts = getSortedPostsData();
   const siteURL = process.env.SITE_URL || "https://strdr4605.com";
   const date = new Date();
   const author = {

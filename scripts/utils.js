@@ -12,7 +12,7 @@ function getMDContent(markdownFile) {
   return fileContents;
 }
 
-function getSortedPostsData() {
+function getSortedPostsData(includeDraft = false) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((folderName) => {
@@ -29,7 +29,7 @@ function getSortedPostsData() {
   });
   // Sort posts by date
   return allPostsData
-    .filter((p) => !p.draft)
+    .filter((p) => includeDraft || !p.draft)
     .sort(({ date: a }, { date: b }) => {
       if (a < b) {
         return 1;
