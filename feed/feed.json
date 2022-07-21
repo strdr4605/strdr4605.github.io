@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/how-i-keep-my-i-phone-battery-at-optimal-level",
+            "content_html": "How I maintain the iPhone battery between 35% and 70% using iPhone shortcuts",
+            "url": "https://strdr4605.com/how-i-keep-my-i-phone-battery-at-optimal-level",
+            "title": "How I keep my iPhone battery at optimal level",
+            "summary": "How I maintain the iPhone battery between 35% and 70% using iPhone shortcuts",
+            "date_modified": "2022-07-17T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/how-to-gradually-add-an-eslint-rule",
             "content_html": "Sometimes you decide to add a new eslint plugin or rule to your javascript project. To not do 2000+ files change you may try to gradually change files with lint-staged.",
             "url": "https://strdr4605.com/how-to-gradually-add-an-eslint-rule",
