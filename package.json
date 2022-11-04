@@ -1,5 +1,9 @@
 {
   "private": true,
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.22.17"
+  },
   "name": "strdr4605",
   "description": "My blog",
   "version": "1.0.0",
