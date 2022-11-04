@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/typescript-errors-into-vim-quickfix",
+            "content_html": "How to populate errors from running tsc in vim/neovim quickfix. Get typescript compiler errors inside vim.",
+            "url": "https://strdr4605.com/typescript-errors-into-vim-quickfix",
+            "title": "Typescript errors into vim quickfix",
+            "summary": "How to populate errors from running tsc in vim/neovim quickfix. Get typescript compiler errors inside vim.",
+            "date_modified": "2022-11-04T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/how-i-keep-my-i-phone-battery-at-optimal-level",
             "content_html": "How I maintain the iPhone battery between 35% and 70% using iPhone shortcuts",
             "url": "https://strdr4605.com/how-i-keep-my-i-phone-battery-at-optimal-level",
