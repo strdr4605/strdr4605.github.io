@@ -12,6 +12,23 @@ You can run `tsc` in the terminal and manually search for files with errors. But
 Vim has the `:make` command which executes the program that is set into `makeprg`. By default, it's `make` but we can change it to any terminal program/command.
 The output of `makeprg` is then populated into quickfix.
 
+
+## Update 🖊️
+
+After discussion on reddit someone suggested a better approach.
+The error is already parced in [`compiler tsc`](https://github.com/neovim/neovim/blob/master/runtime/compiler/tsc.vim).
+I just change `makeprg=npx\ tsc` instead of `makeprg=tsc`.
+
+```vim
+vim.cmd [[
+  augroup strdr4605
+    autocmd FileType typescript,typescriptreact compiler tsc | setlocal makeprg=npx\ tsc
+  augroup END
+]]
+```
+
+## Initial post
+
 Let's create an auto command that will set makeprg to `tsc` if we are in a typescript project:
 
 ```vim
