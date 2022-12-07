@@ -50,7 +50,7 @@ For this, you might use the `dev` tag.
   - Update the **app** with WIP version of **core**
     - `npm install core@dev`
     - or manually set **core** version in **app** `package.json` and do `npm install`
-  - Do move WIP prereleases if needed: `1.0.1-4605.1`
+  - Do more WIP prereleases if needed: `1.0.1-4605.1`
 4. Create PRs for both projects
 5. When **core** PR is approved
   - Merge **core**
