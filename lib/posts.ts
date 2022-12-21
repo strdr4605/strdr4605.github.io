@@ -17,7 +17,7 @@ function getMDContent(markdownFile: string): string {
 }
 
 export type PostData = {
-  date: Date;
+  date: Date | string;
   title: string;
   description: string;
   draft?: boolean;
