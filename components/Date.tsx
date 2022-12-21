@@ -1,10 +1,10 @@
 import { formatDate } from "../lib/utils";
 
-export default function Date({ date }: { date: Date }) {
+export default function DateComponent({ date }: { date: Date | string }) {
   return (
     <i>
-      <time dateTime={date.toISOString().split("T")[0]}>
-        {formatDate(date)}
+      <time dateTime={new Date(date).toISOString().split("T")[0]}>
+        {formatDate(new Date(date))}
       </time>
     </i>
   );
