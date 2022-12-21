@@ -33,9 +33,9 @@ async function writePostOGImage(postTitle, postSlug) {
 
 async function generatePostsOGImages() {
   const postsData = getSortedPostsData(true);
-  postsData.forEach((postData) =>
-    writePostOGImage(postData.title, postData.slug)
-  );
+  postsData
+    .filter((p) => p.slug)
+    .forEach((postData) => writePostOGImage(postData.title, postData.slug));
 }
 
 generatePostsOGImages();
