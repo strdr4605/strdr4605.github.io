@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
 const kebabCase = require("lodash.kebabcase");
+const externalPosts = require("../external-posts.json");
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -12,6 +13,13 @@ function getMDContent(markdownFile) {
   return fileContents;
 }
 
+/**
+ * @typedef {import("../lib/types").PostData} PostData
+ */
+
+/**
+ * @returns {PostData[]}
+ */
 function getSortedPostsData(includeDraft = false) {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory);
@@ -27,13 +35,17 @@ function getSortedPostsData(includeDraft = false) {
       slug: matterResult.data.slug || kebabCase(matterResult.data.title),
     };
   });
+
   // Sort posts by date
   return allPostsData
+    .concat(externalPosts)
     .filter((p) => includeDraft || !p.draft)
     .sort(({ date: a }, { date: b }) => {
-      if (a < b) {
+      const aDate = new Date(a);
+      const bDate = new Date(b);
+      if (aDate < bDate) {
         return 1;
-      } else if (a > b) {
+      } else if (aDate > bDate) {
         return -1;
       } else {
         return 0;
@@ -41,4 +53,4 @@ function getSortedPostsData(includeDraft = false) {
     });
 }
 
-module.exports = { getSortedPostsData };
+module.exports = { getSortedPostsData, postsDirectory, getMDContent };

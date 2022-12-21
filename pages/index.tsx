@@ -3,7 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 import Date from "../components/Date";
 import Layout from "../components/Layout";
-import { getSortedPostsData, PostData } from "../lib/posts";
+import { getSortedPostsData } from "../lib/posts";
+import { PostData } from "../lib/types";
 import styles from "./Home.module.css";
 
 export async function getStaticProps() {
@@ -40,16 +41,21 @@ function Home({ allPostsData }: Props) {
       </p>
       <section>
         <ul className={styles.blogPosts}>
-          {allPostsData.map(({ slug, date, title, starred }: PostData) => (
-            <li key={slug} className={starred ? styles.starred : ""}>
-              <span>
-                <Date date={date} />
-              </span>
-              <Link href={slug}>
-                <a>{title}</a>
-              </Link>
-            </li>
-          ))}
+          {allPostsData.map(
+            ({ slug, date, title, starred, externalLink }: PostData) => (
+              <li
+                key={externalLink || slug}
+                className={starred ? styles.starred : ""}
+              >
+                <span>
+                  <Date date={date} />
+                </span>
+                <Link href={externalLink || slug}>
+                  <a>{title}</a>
+                </Link>
+              </li>
+            )
+          )}
         </ul>
       </section>
     </Layout>

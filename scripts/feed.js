@@ -4,6 +4,7 @@ const getSortedPostsData = require("./utils").getSortedPostsData;
 
 const buildFeed = async () => {
   const posts = getSortedPostsData();
+  console.log({ posts });
   const siteURL = process.env.SITE_URL || "https://strdr4605.com";
   const date = new Date();
   const author = {
@@ -13,7 +14,8 @@ const buildFeed = async () => {
   };
   const feed = new Feed({
     title: "Dragoș Străinu's blog",
-    description: "I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.",
+    description:
+      "I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.",
     id: siteURL,
     link: siteURL,
     image: `${siteURL}/banner.jpg`,
@@ -29,7 +31,7 @@ const buildFeed = async () => {
     author,
   });
   posts.forEach((post) => {
-    const url = `${siteURL}/${post.slug}`;
+    const url = post.externalLink || `${siteURL}/${post.slug}`;
     feed.addItem({
       title: post.title,
       id: url,
