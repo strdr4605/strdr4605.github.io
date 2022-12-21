@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Wed, 07 Dec 2022 15:06:01 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 21 Dec 2022 15:04:48 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -153,6 +153,13 @@
             <link>https://strdr4605.com/no-tits-in-git</link>
             <guid>https://strdr4605.com/no-tits-in-git</guid>
             <pubDate>Tue, 09 Nov 2021 00:00:00 GMT</pubDate>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
+        </item>
+        <item>
+            <title><![CDATA[JSMD Meetup #12: Dragoș Străinu / You Don't Know *.user.js]]></title>
+            <link>https://youtu.be/9yFi3-cfprQ</link>
+            <guid>https://youtu.be/9yFi3-cfprQ</guid>
+            <pubDate>Sun, 10 Oct 2021 00:00:00 GMT</pubDate>
             <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>

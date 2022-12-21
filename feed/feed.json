@@ -202,6 +202,16 @@
             }
         },
         {
+            "id": "https://youtu.be/9yFi3-cfprQ",
+            "url": "https://youtu.be/9yFi3-cfprQ",
+            "title": "JSMD Meetup #12: Dragoș Străinu / You Don't Know *.user.js",
+            "date_modified": "2021-10-10T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/how-to-win-a-hackathon",
             "content_html": "To win first place at a hackathon, you need to combine multiple components... and that's not always possible. Here's how to make the most of your next hackathon without coming in 'first place'.",
             "url": "https://strdr4605.com/how-to-win-a-hackathon",

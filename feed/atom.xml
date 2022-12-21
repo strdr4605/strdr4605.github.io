@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2022-12-07T15:06:01.888Z</updated>
+    <updated>2022-12-21T15:04:48.385Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
@@ -290,6 +290,22 @@
         <id>https://strdr4605.com/no-tits-in-git</id>
         <link href="https://strdr4605.com/no-tits-in-git"/>
         <updated>2021-11-09T00:00:00.000Z</updated>
+        <author>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </author>
+        <contributor>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </contributor>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[JSMD Meetup #12: Dragoș Străinu / You Don't Know *.user.js]]></title>
+        <id>https://youtu.be/9yFi3-cfprQ</id>
+        <link href="https://youtu.be/9yFi3-cfprQ"/>
+        <updated>2021-10-10T00:00:00.000Z</updated>
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
