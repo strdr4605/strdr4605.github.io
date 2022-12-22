@@ -57,18 +57,20 @@ export default function Post({ postData }: Props) {
           href={`${process.env.SITE_URL}/${postData.slug}`}
         />
       </Head>
-      <h1>{postData.title}</h1>
-      <Date date={postData.date} />
-      {" on "}
-      <Link href="/">
-        <a>
-          <AnimatedName />
-          &apos;s blog
-        </a>
-      </Link>
-      <br />
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      <PostFooter />
+      <article>
+        <h1>{postData.title}</h1>
+        <Date date={postData.date} />
+        {" on "}
+        <Link href="/">
+          <a>
+            <AnimatedName />
+            &apos;s blog
+          </a>
+        </Link>
+        <br />
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        <PostFooter />
+      </article>
       <GiscusComments />
     </Layout>
   );
