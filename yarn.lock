@@ -611,6 +611,11 @@
     "@typescript-eslint/types" "5.42.0"
     eslint-visitor-keys "^3.3.0"
 
+"@vanillaes/csv@^3.0.1":
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/@vanillaes/csv/-/csv-3.0.1.tgz#3815a44363d563ca8165c067f06867809dad9b35"
+  integrity sha512-mNKB75OwOUQl90lXxDcgOzN8vb5fsGEa4TNF4rbP0e/MiXzJzEzMc369wOT9jyXidJlbZTHzP6H839d3i7Zdag==
+
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.6.tgz#41b80f2c871d19686216b82309231cfd3cb3d291"
