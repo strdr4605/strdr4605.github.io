@@ -23,6 +23,7 @@ export default function Header() {
         <p>
           <Link href="/Dragos-Strainu-Resume.pdf">Resume</Link>
           <Link href="/projects">Projects</Link>
+          <Link href="/tir">Today I read</Link>
         </p>
       </nav>
     </header>
