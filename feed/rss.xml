@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Mon, 13 Mar 2023 12:04:32 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 13 Mar 2023 12:19:03 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -14,9 +14,9 @@
         </image>
         <copyright>All rights reserved 2023, Dragoș Străinu</copyright>
         <item>
-            <title><![CDATA[How I start working on a new task with Git]]></title>
-            <link>https://strdr4605.com/how-i-start-working-on-a-new-task-with-git</link>
-            <guid>https://strdr4605.com/how-i-start-working-on-a-new-task-with-git</guid>
+            <title><![CDATA[Stop doing git checkout master branch]]></title>
+            <link>https://strdr4605.com/stop-doing-git-checkout-master-branch</link>
+            <guid>https://strdr4605.com/stop-doing-git-checkout-master-branch</guid>
             <pubDate>Mon, 13 Mar 2023 00:00:00 GMT</pubDate>
             <description><![CDATA[My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.]]></description>
             <content:encoded><![CDATA[My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.]]></content:encoded>

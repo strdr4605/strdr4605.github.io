@@ -11,10 +11,10 @@
     },
     "items": [
         {
-            "id": "https://strdr4605.com/how-i-start-working-on-a-new-task-with-git",
+            "id": "https://strdr4605.com/stop-doing-git-checkout-master-branch",
             "content_html": "My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.",
-            "url": "https://strdr4605.com/how-i-start-working-on-a-new-task-with-git",
-            "title": "How I start working on a new task with Git",
+            "url": "https://strdr4605.com/stop-doing-git-checkout-master-branch",
+            "title": "Stop doing git checkout master branch",
             "summary": "My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.",
             "date_modified": "2023-03-13T00:00:00.000Z",
             "author": {

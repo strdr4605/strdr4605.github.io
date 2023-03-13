@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2023-03-13T12:04:32.337Z</updated>
+    <updated>2023-03-13T12:19:03.757Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
@@ -16,9 +16,9 @@
     <icon>https://strdr4605.com/favicon.ico</icon>
     <rights>All rights reserved 2023, Dragoș Străinu</rights>
     <entry>
-        <title type="html"><![CDATA[How I start working on a new task with Git]]></title>
-        <id>https://strdr4605.com/how-i-start-working-on-a-new-task-with-git</id>
-        <link href="https://strdr4605.com/how-i-start-working-on-a-new-task-with-git"/>
+        <title type="html"><![CDATA[Stop doing git checkout master branch]]></title>
+        <id>https://strdr4605.com/stop-doing-git-checkout-master-branch</id>
+        <link href="https://strdr4605.com/stop-doing-git-checkout-master-branch"/>
         <updated>2023-03-13T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.]]></summary>
         <content type="html"><![CDATA[My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.]]></content>
