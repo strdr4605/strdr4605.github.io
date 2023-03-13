@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Thu, 09 Mar 2023 10:17:44 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 13 Mar 2023 12:04:32 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>https://strdr4605.com</link>
         </image>
         <copyright>All rights reserved 2023, Dragoș Străinu</copyright>
+        <item>
+            <title><![CDATA[How I start working on a new task with Git]]></title>
+            <link>https://strdr4605.com/how-i-start-working-on-a-new-task-with-git</link>
+            <guid>https://strdr4605.com/how-i-start-working-on-a-new-task-with-git</guid>
+            <pubDate>Mon, 13 Mar 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.]]></description>
+            <content:encoded><![CDATA[My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.]]></content:encoded>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
+        </item>
         <item>
             <title><![CDATA[Typescript errors into vim quickfix]]></title>
             <link>https://strdr4605.com/typescript-errors-into-vim-quickfix</link>

@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/how-i-start-working-on-a-new-task-with-git",
+            "content_html": "My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.",
+            "url": "https://strdr4605.com/how-i-start-working-on-a-new-task-with-git",
+            "title": "How I start working on a new task with Git",
+            "summary": "My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.",
+            "date_modified": "2023-03-13T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/typescript-errors-into-vim-quickfix",
             "content_html": "How to populate errors from running tsc in vim/neovim quickfix. Get typescript compiler errors inside vim.",
             "url": "https://strdr4605.com/typescript-errors-into-vim-quickfix",
