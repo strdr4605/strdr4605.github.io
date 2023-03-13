@@ -1,5 +1,5 @@
 ---
-title: "How I start working on a new task with Git"
+title: "Stop doing git checkout master branch"
 date: 2023-03-13
 description: My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.
 tags:
