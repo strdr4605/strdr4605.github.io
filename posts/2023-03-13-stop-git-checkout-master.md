@@ -17,6 +17,15 @@ git checkout -b feat/4605-new-task
 But I do things a bit differently. The main difference is that I don't care about the local `master` branch because the source of truth is always remote `origin/master`. 
 I don't do commits on `master` branch, because all changes to the project are done through Pull Requests. So why should I keep the local `master` in sync with `origin/master`?
 
+You can do:
+
+```bash
+git fetch # get latest updates from origin/master
+git checkout -b feat/4605-new-task origin/master # --no-track
+```
+
+And here is my workflow:
+
 The first thing I do is fetch the remote master branch to get the latest commits.
 
 I have an alias in my `.gitconfig` file:
