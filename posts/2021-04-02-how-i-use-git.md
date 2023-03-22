@@ -50,6 +50,8 @@ I also use **Ctrl + R** for any other long command that I need again, so you may
 
 ## Synchronizing with remote
 
+> Note: I [don't do git checkout master anymore](https://strdr4605.com/stop-doing-git-checkout-master-branch)
+
 When I start a new task and need to get the latest changes from `master` I do:
 
 ```bash
