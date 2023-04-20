@@ -32,4 +32,13 @@ For our use case we use `HashtagPlugin` and  `AutoLinkPlugin` from Lexical, and 
 After the feature parity and user experience were acceptable. 
 We decided first to migrate comments as they were fewer and not the critical feature for the platform.
 
+## Conversion
 
+As stated in [#1641 (comment)](https://github.com/facebook/lexical/issues/1641#issuecomment-1100062066), DraftJS and Lexical are not compatible, so we need to write our custom functions for converting. 
+Depending on plugins used and entities it may be challenging, but using [Node Transforms](https://lexical.dev/docs/concepts/transforms) it's possible delegate some conversion steps to Lexical.
+
+Our plan was the following:
+
+1. Create `draftToLexical` and `lexicalToDraft` conversion functions
+2. When user using DraftJS editor, on server side also create Lexical `SerializedEditorState`
+3. When user using Lexical editor (under feature flag), also create `RawDraftContentState` on the server side
