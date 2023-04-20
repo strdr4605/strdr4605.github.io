@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Thu, 23 Mar 2023 08:05:30 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 20 Apr 2023 20:21:25 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,15 @@
             <link>https://strdr4605.com</link>
         </image>
         <copyright>All rights reserved 2023, Dragoș Străinu</copyright>
+        <item>
+            <title><![CDATA[MacOS: notify when the terminal command is finished]]></title>
+            <link>https://strdr4605.com/mac-os-notify-when-the-terminal-command-is-finished</link>
+            <guid>https://strdr4605.com/mac-os-notify-when-the-terminal-command-is-finished</guid>
+            <pubDate>Thu, 20 Apr 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[I created a small bash function to notify me when a long-running terminal command finishes]]></description>
+            <content:encoded><![CDATA[I created a small bash function to notify me when a long-running terminal command finishes]]></content:encoded>
+            <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
+        </item>
         <item>
             <title><![CDATA[Stop doing git checkout master branch]]></title>
             <link>https://strdr4605.com/stop-doing-git-checkout-master-branch</link>

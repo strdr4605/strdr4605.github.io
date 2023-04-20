@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/mac-os-notify-when-the-terminal-command-is-finished",
+            "content_html": "I created a small bash function to notify me when a long-running terminal command finishes",
+            "url": "https://strdr4605.com/mac-os-notify-when-the-terminal-command-is-finished",
+            "title": "MacOS: notify when the terminal command is finished",
+            "summary": "I created a small bash function to notify me when a long-running terminal command finishes",
+            "date_modified": "2023-04-20T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/stop-doing-git-checkout-master-branch",
             "content_html": "My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.",
             "url": "https://strdr4605.com/stop-doing-git-checkout-master-branch",
