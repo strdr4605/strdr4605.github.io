@@ -100,7 +100,7 @@ Easier to get some changes from other branches, or to find a bug that from past 
 You may think, [rebasing is lying about the project history](https://news.ycombinator.com/item?id=26582912) and it's true.
 When rebasing you reapply the commits and now they have different hashes and committing dates/authors.
 You will lose info about the branch name that was merged, or when these changes were initially committed.
-If this is more important for you then yeah git **gits** is the way to go.
+If this is more important for you then yeah git **tits** is the way to go.
 But I think about git history, not like some timeline of the project development where changes happened and I need all details,
 but more like a version history of the project where every commit is a new version.
 Then I don't care about dates, hashes, authors. I only know that this version of the project (commit 2) comes after another version (commit 1).
