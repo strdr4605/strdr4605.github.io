@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Sat, 23 Dec 2023 09:33:05 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 06 Feb 2024 15:36:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,7 +12,7 @@
             <url>https://strdr4605.com/banner.jpg</url>
             <link>https://strdr4605.com</link>
         </image>
-        <copyright>All rights reserved 2023, Dragoș Străinu</copyright>
+        <copyright>All rights reserved 2024, Dragoș Străinu</copyright>
         <item>
             <title><![CDATA[MacOS: notify when the terminal command is finished]]></title>
             <link>https://strdr4605.com/mac-os-notify-when-the-terminal-command-is-finished</link>
