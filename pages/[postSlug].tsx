@@ -56,6 +56,10 @@ export default function Post({ postData }: Props) {
           rel="canonical"
           href={`${process.env.SITE_URL}/${postData.slug}`}
         />
+        <link
+          rel="stylesheet"
+          href="https://unpkg.com/prismjs@1.28.0/plugins/diff-highlight/prism-diff-highlight.min.css"
+        />
       </Head>
       <article>
         <h1>{postData.title}</h1>
@@ -84,7 +88,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
       acc[postSlug] = folderName;
       return acc;
     },
-    {}
+    {},
   );
   writeSlugFolderNameCache(slugFolderNameMap);
 

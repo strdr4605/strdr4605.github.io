@@ -6,12 +6,8 @@ import { remark } from "remark";
 import html from "remark-html";
 import prism from "remark-prism";
 import remarkGfm from "remark-gfm";
-import {
-  getMDContent,
-  postsDirectory,
-} from "../scripts/utils";
+import { getMDContent, postsDirectory } from "../scripts/utils";
 import { PostData, PostFolderName } from "./types";
-
 
 export function getAllPostFolderNames(): PostFolderName[] {
   // Get file names under /posts
@@ -39,18 +35,8 @@ export async function getPostData(folderName: string): Promise<PostData> {
   const processedContent = await remark()
     .use(html, { sanitize: false })
     .use(prism as any, {
-      // transformInlineCode: true,
-      // plugins: [
-      //   "autolinker",
-      //   "command-line",
-      //   "data-uri-highlight",
-      //   "diff-highlight",
-      //   "inline-color",
-      //   "keep-markup",
-      //   "line-numbers",
-      //   "show-invisibles",
-      //   "treeview",
-      // ],
+      transformInlineCode: true,
+      plugins: ["diff-highlight"],
     })
     .use(remarkGfm)
     .process(matterResult.content);
