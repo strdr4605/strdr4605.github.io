@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/how-to-set-up-lexical-editor-in-react-native",
+            "content_html": "We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview.",
+            "url": "https://strdr4605.com/how-to-set-up-lexical-editor-in-react-native",
+            "title": "How to set up Lexical editor in React Native",
+            "summary": "We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview.",
+            "date_modified": "2024-02-21T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/mac-os-notify-when-the-terminal-command-is-finished",
             "content_html": "I created a small bash function to notify me when a long-running terminal command finishes",
             "url": "https://strdr4605.com/mac-os-notify-when-the-terminal-command-is-finished",
