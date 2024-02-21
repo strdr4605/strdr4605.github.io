@@ -1,10 +1,9 @@
 ---
-title: "How to setup Lexical editor in React Native"
-date: 2024-02-06
+title: "How to set up Lexical editor in React Native"
+date: 2024-02-21
 description: We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview.
 tags:
   - react-native
-draft: true
 ---
 
 So you have a web app that uses Lexical editor and now you want to build the same editor on React Native, or maybe you just want to build a rich text editor in React Native using Lexical.
@@ -534,6 +533,12 @@ And use it in our `Editor.tsx`:
      </LexicalComposer>
 ```
 
-Now let's see it in action:
+Let's see it in action:
 
 ![lexical-initial-state](lexical-initial-state.gif#small)
+
+## What's next?
+
+Now you can add the desired nodes and plugins into editor. Also, add new messages and commands for communication between React Native and Lexical editor in WebView.
+
+For the full code example, you can check the playground project on GitHub, [react-native-lexical](https://github.com/Planable/react-native-lexical).
