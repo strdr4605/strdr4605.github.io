@@ -1,23 +1,23 @@
 ---
-title: "How to implement a lexical editor in React Native"
+title: "How to setup Lexical editor in React Native"
 date: 2024-02-06
-description: We will look on how to build a rich text editor in React Native using lexical editor, with a help of react-native-webview.
+description: We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview.
 tags:
   - react-native
 draft: true
 ---
 
-So you have a web app that uses lexical editor and now you want to build the same editor on React Native, or maybe you just want to build a rich text editor in React Native using lexical.
+So you have a web app that uses Lexical editor and now you want to build the same editor on React Native, or maybe you just want to build a rich text editor in React Native using Lexical.
 But unfortunately lexical does not [support React Native](https://github.com/facebook/lexical/discussions/2410) at the moment.
 
-So the idea that comes to mind is to try lexical editor in a react-native-webview. There are similar solutions like [react-native-cn-quill](https://github.com/imnapo/react-native-cn-quill) and [react-native-rich-editor](https://github.com/wxik/react-native-rich-editor).
+So the idea that comes to mind is to try Lexical editor in a react-native-webview. There are similar solutions like [react-native-cn-quill](https://github.com/imnapo/react-native-cn-quill) and [react-native-rich-editor](https://github.com/wxik/react-native-rich-editor).
 
 But as [expo docs](https://docs.expo.dev/guides/editing-richtext/#custom-webview-based-editor) say:
 
 > If you need more configurability, you can build a similar library with an existing web-only editor.
 
-So let's implement a lexical editor in a Expo app.  
-(This is a demo project but you can follow the steps to add the editor into an existing React Native app)
+So let's implement a lexical editor in an Expo app.  
+(This is a demo project but you can follow the steps to add the editor to an existing React Native app)
 
 ## Create the expo app
 
@@ -31,7 +31,7 @@ Now let's install `react-native-webview`.
 npm i react-native-webview
 ```
 
-And make some changes in `App.tsx`, to display the webview with https://playground.lexical.dev/ (for now).
+And make some changes in `App.tsx`, to display the WebView with https://playground.lexical.dev/ (for now).
 
 ```tsx
 // ./App.tsx
@@ -68,7 +68,7 @@ We should have this result:
 
 ## Add lexical editor
 
-Other implementations for rich text editor in react-native give us a predefined editor. But we want to create our custom lexical editor with custom nodes and logic. So the only option is to create the editor from scratch.  
+Other implementations for a rich text editor in react-native give us a predefined editor. However, we want to create our custom lexical editor with custom nodes and logic. So the only option is to create the editor from scratch.  
 How? By creating a new app inside the project using [npm workspaces](https://docs.npmjs.com/cli/v7/using-npm/workspaces).
 
 We add a workspace to `package.json`:
@@ -89,13 +89,13 @@ We add a workspace to `package.json`:
 
 ### Create web app as npm workspace
 
-For this we will use [vite](https://vitejs.dev/).
+For this, we will use [vite](https://vitejs.dev/).
 
 ```bash
 npm create vite@latest lexical-editor -- --template react-ts
 ```
 
-Let's do a clean up and some changes in lexical-editor app.
+Let's do a cleanup and some changes in lexical-editor app.
 
 ```bash
 lexical-editor
@@ -112,7 +112,7 @@ lexical-editor
 └── vite.config.ts
 ```
 
-Important to not enable zoom in the webview, add this to `index.html`:
+Important to not enable zoom in the WebView, add this to `index.html`:
 
 ```html
 <meta
@@ -134,9 +134,9 @@ And we can see this in the browser:
 
 Cool, now how can we put this into `react-native-webview`?!
 
-### Build web app for react-native-webview
+### Build a web app for react-native-webview
 
-For this we need some vite plugins that will build the app into a single file that we will import into react-native-webview.
+For this, we need some vite plugins that will build the app into a single file that we will import into react-native-webview.
 
 ```bash
 npm -w=lexical-editor i -D vite-plugin-singlefile
@@ -177,15 +177,10 @@ export default defineConfig({
 });
 ```
 
-This config watches for changes and builds the app into a single `index.html` file that we next write into a `htmlString.ts` file so we can import it into react-native.
+This config watches for changes and builds the app into a single `index.html` file that we next write into a file named `htmlString.ts` so we can import it into react-native.
 
 Now we can run:
-
-```bash
-npm -w=lexical-editor run build
-```
-
-Also we need to build the app on install:
+Also, we need to build the app on install:
 
 ```diff-json[class="diff-highlight"]
    "scripts": {
@@ -194,7 +189,7 @@ Also we need to build the app on install:
 +    "prepare": "npm run build -- --no-watch",
 ```
 
-Only now we can import the output of web app into react-native-webview:
+Only now we can import the output of the web app into react-native-webview:
 
 ```diff-tsx[class="diff-highlight"]
  import { StyleSheet, Text, View } from "react-native";
@@ -215,7 +210,7 @@ Only now we can import the output of web app into react-native-webview:
 
 ![lexical-vite-webview](lexical-vite-webview.png#small)
 
-## Create basic lexical editor
+## Create a basic lexical editor
 
 Following https://lexical.dev/docs/getting-started/react
 
@@ -310,7 +305,7 @@ Let's add the `OnChangePlugin` and post a message to react-native:
    );
 ```
 
-Ok, now we can receive this message on react-native side:
+Ok, now we can receive this message on the react-native side:
 
 ```diff-tsx[class="diff-highlight"]
  import { StyleSheet, Text, View } from "react-native";
@@ -336,7 +331,7 @@ Ok, now we can receive this message on react-native side:
          />
 ```
 
-And when we type something in WebView editor we receive:
+When we type something in the WebView editor we receive:
 
 ```json
 {
@@ -462,7 +457,7 @@ We listen for `LEXICAL_EDITOR_READY` message and post a message to webview using
            source={{ html: htmlString }}
 ```
 
-Now we need to handle this in lexical editor. We can create a custom plugin.
+Now we need to handle this in Lexical editor. We can create a custom plugin.
 
 ```tsx
 import { useEffect } from "react";
