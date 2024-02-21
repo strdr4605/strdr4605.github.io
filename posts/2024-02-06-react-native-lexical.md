@@ -509,10 +509,7 @@ And use it in our `Editor.tsx`:
 +import { EditorStateInitPlugin } from "./plugins/EditorStateInitPlugin";
  import "./Editor.css";
 
- function onError(error: unknown) {
-@@ -17,7 +18,14 @@ export function Editor() {
-     onError,
-   };
+...
 
 -  function onChange(editorState: EditorState) {
 +  function onChange(
@@ -526,7 +523,8 @@ And use it in our `Editor.tsx`:
      editorState.read(() => {
        const plainText = $getRoot().getTextContent();
 
-@@ -44,6 +52,7 @@ export function Editor() {
+...
+
            ErrorBoundary={LexicalErrorBoundary}
          />
          <HistoryPlugin />
