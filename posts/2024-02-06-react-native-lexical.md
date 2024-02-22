@@ -179,6 +179,13 @@ export default defineConfig({
 This config watches for changes and builds the app into a single `index.html` file that we next write into a file named `htmlString.ts` so we can import it into react-native.
 
 Now we can run:
+
+```bash
+npm -w=lexical-editor run build
+```
+
+And vite will build the web editor on every change.
+
 Also, we need to build the app on install:
 
 ```diff-json[class="diff-highlight"]
