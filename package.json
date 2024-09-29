@@ -20,12 +20,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@allindevelopers/html-redirections": "^1.1.1",
     "@giscus/react": "^2.0.1",
     "@vanillaes/csv": "^3.0.1",
     "babel-plugin-superjson-next": "^0.4.2",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
-    "html-redirections": "^1.0.1",
     "jimp": "^0.16.1",
     "lodash.kebabcase": "^4.1.1",
     "next": "12.1.0",

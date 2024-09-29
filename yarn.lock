@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@allindevelopers/html-redirections@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@allindevelopers/html-redirections/-/html-redirections-1.1.1.tgz#7f6f48803cccad08a039080de61c85c583b80c22"
+  integrity sha512-xRdcHePl3xCAqp3FNhn08bAxXfftnApceUJ6+9X1B4CRqPkdcwgPnMfkE1kHYy6EaaDqxvGk7cv5eYnEr1yczA==
+
 "@babel/helper-module-imports@^7.13.12":
   version "7.18.6"
   resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.18.6.tgz#1e3ebdbbd08aad1437b428c50204db13c5a3ca6e"
@@ -1698,11 +1703,6 @@ html-encoding-sniffer@^2.0.1:
   integrity sha512-D5JbOMBIR/TVZkubHT+OyT2705QvogUW4IBn6nHd756OwieSF9aDYFj4dv6HHEVGYbHaLETa3WggZYWWMyy3ZQ==
   dependencies:
     whatwg-encoding "^1.0.5"
-
-html-redirections@^1.0.1:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/html-redirections/-/html-redirections-1.1.0.tgz#c36f7c94fbb64cb6e05becab6066a8d0d3a67911"
-  integrity sha512-X4hrcIbnXLwxDw3qQmxe6ReXLzTjNiXWCN5NQ7AvokC1wQKDokbyVx5UUHN2bBGS/SYhQN9xVLS2hnkXrVTYtQ==
 
 html-void-elements@^2.0.0:
   version "2.0.1"
