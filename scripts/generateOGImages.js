@@ -26,7 +26,7 @@ async function writePostOGImage(postTitle, postSlug) {
         alignmentY: jimp.VERTICAL_ALIGN_MIDDLE,
       },
       1000,
-      179
+      179,
     )
     .write(output);
 }

@@ -4,7 +4,7 @@ import styles from "./Layout.module.css";
 
 export default function Layout({
   children,
-  hideHeader
+  hideHeader,
 }: React.PropsWithChildren<{ hideHeader?: boolean }>) {
   return (
     <div className={styles.container}>

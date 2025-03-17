@@ -9,7 +9,7 @@ export function writeSlugFolderNameCache(slugFolderNameMap: SlugFolderNameMap) {
   fs.writeFileSync(
     ".slugFolderNameCache",
     JSON.stringify(slugFolderNameMap),
-    "utf8"
+    "utf8",
   );
 }
 

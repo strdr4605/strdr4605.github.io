@@ -54,7 +54,7 @@ function Home({ allPostsData }: Props) {
                   <a>{title}</a>
                 </Link>
               </li>
-            )
+            ),
           )}
         </ul>
       </section>
