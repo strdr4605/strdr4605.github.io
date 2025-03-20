@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2025-03-17T21:51:33.142Z</updated>
+    <updated>2025-03-20T21:12:36.409Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
@@ -15,6 +15,24 @@
     <logo>https://strdr4605.com/banner.jpg</logo>
     <icon>https://strdr4605.com/favicon.ico</icon>
     <rights>All rights reserved 2025, Dragoș Străinu</rights>
+    <entry>
+        <title type="html"><![CDATA[Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace]]></title>
+        <id>https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace</id>
+        <link href="https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace"/>
+        <updated>2025-03-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How to paste code in Neovim without unwanted newlines and leading whitespace.]]></summary>
+        <content type="html"><![CDATA[How to paste code in Neovim without unwanted newlines and leading whitespace.]]></content>
+        <author>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </author>
+        <contributor>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://twitter.com/strdr4605</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[How to set up Lexical editor in React Native]]></title>
         <id>https://strdr4605.com/how-to-set-up-lexical-editor-in-react-native</id>

@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace",
+            "content_html": "How to paste code in Neovim without unwanted newlines and leading whitespace.",
+            "url": "https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace",
+            "title": "Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace",
+            "summary": "How to paste code in Neovim without unwanted newlines and leading whitespace.",
+            "date_modified": "2025-03-20T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://twitter.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/how-to-set-up-lexical-editor-in-react-native",
             "content_html": "We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview.",
             "url": "https://strdr4605.com/how-to-set-up-lexical-editor-in-react-native",
