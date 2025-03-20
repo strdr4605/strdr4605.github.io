@@ -1,12 +1,12 @@
 ---
 title: "Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace"
 date: 2025-03-20
-description: We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview.
+description: How to paste code in Neovim without unwanted newlines and leading whitespace.
 tags:
   - vim
 ---
 
-When I work on a web project I find myself copy pasting html tags or Components from one place to another.
+When I work on a web project, I find myself copy-pasting HTML tags or Components from one place to another.
 
 Here are some use cases:
 
@@ -56,12 +56,15 @@ Here are some use cases:
 return ();
 ```
 
-For first use case I can put the cursor inside `<div class="copy-paste">` and do `yat` or `vaty` (yank around tag) to copy the html tag, then move inside `<div id="2"></div>` and paste.
-But for the other use cases this does not work because `<Component />` is self closing and Neovim can’t select with `t` (tag).
+For the first use case, I can put the cursor inside  
+`<div class="copy-paste">` and do `yat` or `vaty` (yank around tag) to copy the HTML tag, then move inside `<div id="2"></div>` and paste.
 
-So most often I just use `SHIFT+V` to enter in visual mode on the whole line, move N lines below, select the html tag or Component, then use `y` to copy the selection.
+But for the other use cases, this does not work because  
+`<Component />` is self-closing and Neovim can't select with `t` (tag).
 
-Now because of `SHIFT+V` the yanked text includes newlines and leading whitespace and when I paste I get this results:
+So most often I just use `SHIFT+V` to enter in visual mode on the whole line, move N lines below, select the HTML tag or Component, then use `y` to copy the selection.
+
+Now because of `SHIFT+V`, the yanked text includes newlines and leading whitespace, and when I paste I get this result:
 
 ```html
 <!-- 1: Copy html tag to another parent  -->
@@ -99,9 +102,9 @@ vim.keymap.set("n", "yp", function()
 end, { expr = true })
 ```
 
-You can change the keymap to `cp` or `<leader>p`.
+You can change the keymap to `cp` (clean paste) or `<leader>p`.
 
-The result is:
+The result when using this keymap is:
 
 ```html
 <!-- 1: Copy html tag to another parent  -->
@@ -120,7 +123,7 @@ The result is:
   </div></div>
 ```
 
-And next, I just let my formatter do the job to:
+And next, I just let my formatter do the job:
 
 ```html
 <!-- 1: Copy html tag to another parent  -->
@@ -141,7 +144,7 @@ And next, I just let my formatter do the job to:
 </div>
 ```
 
-This also work for other use cases:
+This also works for other use cases:
 
 ```html
 <!-- 4: Return component -->
@@ -160,3 +163,5 @@ return (<Component
   />);
 
 ```
+
+![neovim-clean-paste](neovim-clean-paste.gif#small)
