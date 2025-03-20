@@ -35,7 +35,6 @@ export async function getPostData(folderName: string): Promise<PostData> {
   const processedContent = await remark()
     .use(html, { sanitize: false })
     .use(prism as any, {
-      transformInlineCode: true,
       plugins: ["diff-highlight"],
     })
     .use(remarkGfm)
