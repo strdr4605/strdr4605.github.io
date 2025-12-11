@@ -2,6 +2,15 @@ const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
 
 /** @type {import('next').NextConfig} */
 module.exports = (phase, { defaultConfig }) => {
+  const rewrites = async () => {
+    return [
+      {
+        source: "/planable-wrapped",
+        destination: "/planable-wrapped/index.html",
+      },
+    ];
+  };
+
   if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
       env: {
@@ -9,6 +18,7 @@ module.exports = (phase, { defaultConfig }) => {
         twitterCreator: "@strdr4605",
       },
       reactStrictMode: true,
+      rewrites,
     };
   }
 
@@ -18,5 +28,6 @@ module.exports = (phase, { defaultConfig }) => {
       twitterCreator: "@strdr4605",
     },
     reactStrictMode: true,
+    rewrites,
   };
 };
