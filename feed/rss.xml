@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Sat, 20 Dec 2025 17:13:19 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 30 Jan 2026 12:43:59 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -12,7 +12,7 @@
             <url>https://strdr4605.com/banner.jpg</url>
             <link>https://strdr4605.com</link>
         </image>
-        <copyright>All rights reserved 2025, Dragoș Străinu</copyright>
+        <copyright>All rights reserved 2026, Dragoș Străinu</copyright>
         <item>
             <title><![CDATA[Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace]]></title>
             <link>https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace</link>
