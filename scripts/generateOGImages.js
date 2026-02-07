@@ -32,7 +32,16 @@ function getSortedPostsData(includeDraft = false) {
     });
 }
 
-function wrapText(text, maxCharsPerLine = 35) {
+function escapeXml(str) {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function wrapText(text, maxCharsPerLine = 29) {
   const words = text.split(" ");
   const lines = [];
   let current = "";
@@ -53,14 +62,19 @@ async function writePostOGImage(postTitle, postSlug) {
   const baseImg = "./public/post-banner-template.jpg";
 
   const lines = wrapText(postTitle);
-  const lineHeight = 52;
-  const startY = 240 - (lines.length * lineHeight) / 2;
+  const fontSize = lines.length > 3 ? 56 : 72;
+  const lineHeight = Math.round(fontSize * 1.2);
+  const textBlockHeight = lines.length * lineHeight;
+  const textAreaTop = 80;
+  const textAreaBottom = 390;
+  const textAreaCenter = (textAreaTop + textAreaBottom) / 2;
+  const startY = textAreaCenter - textBlockHeight / 2 + fontSize;
 
   const textSvg = `<svg width="1200" height="630">
     <style>
-      text { font-family: sans-serif; font-size: 40px; font-weight: bold; fill: #333; }
+      text { font-family: 'Montserrat', 'Arial Black', sans-serif; font-size: ${fontSize}px; font-weight: 900; fill: #1a1a1a; }
     </style>
-    ${lines.map((line, i) => `<text x="600" y="${startY + i * lineHeight}" text-anchor="middle">${line.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;")}</text>`).join("\n    ")}
+    ${lines.map((line, i) => `<text x="600" y="${startY + i * lineHeight}" text-anchor="middle">${escapeXml(line)}</text>`).join("\n    ")}
   </svg>`;
 
   await sharp(baseImg)
