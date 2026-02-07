@@ -1,4 +1,4 @@
-import { Jimp, loadFont, HorizontalAlign, VerticalAlign } from "jimp";
+import sharp from "sharp";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -32,34 +32,42 @@ function getSortedPostsData(includeDraft = false) {
     });
 }
 
+function wrapText(text, maxCharsPerLine = 35) {
+  const words = text.split(" ");
+  const lines = [];
+  let current = "";
+  for (const word of words) {
+    if (current && (current + " " + word).length > maxCharsPerLine) {
+      lines.push(current);
+      current = word;
+    } else {
+      current = current ? current + " " + word : word;
+    }
+  }
+  if (current) lines.push(current);
+  return lines;
+}
+
 async function writePostOGImage(postTitle, postSlug) {
   const output = "./out/" + postSlug + ".jpg";
   const baseImg = "./public/post-banner-template.jpg";
-  const imgWidth = 1200;
-  const imgHeight = 630;
-  const x = 100;
-  const y = 150;
 
-  const [image, montserrat] = await Promise.all([
-    Jimp.read(baseImg),
-    loadFont("./public/fonts/montserrat.fnt"),
-  ]);
+  const lines = wrapText(postTitle);
+  const lineHeight = 52;
+  const startY = 240 - (lines.length * lineHeight) / 2;
 
-  image
-    .resize({ w: imgWidth, h: imgHeight })
-    .print({
-      font: montserrat,
-      x,
-      y,
-      text: {
-        text: postTitle,
-        alignmentX: HorizontalAlign.CENTER,
-        alignmentY: VerticalAlign.MIDDLE,
-      },
-      maxWidth: 1000,
-      maxHeight: 179,
-    })
-    .write(output);
+  const textSvg = `<svg width="1200" height="630">
+    <style>
+      text { font-family: sans-serif; font-size: 40px; font-weight: bold; fill: #333; }
+    </style>
+    ${lines.map((line, i) => `<text x="600" y="${startY + i * lineHeight}" text-anchor="middle">${line.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;")}</text>`).join("\n    ")}
+  </svg>`;
+
+  await sharp(baseImg)
+    .resize(1200, 630)
+    .composite([{ input: Buffer.from(textSvg), top: 0, left: 0 }])
+    .jpeg({ quality: 80 })
+    .toFile(output);
 }
 
 async function generatePostsOGImages() {
