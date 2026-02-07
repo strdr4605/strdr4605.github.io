@@ -7,6 +7,9 @@ export default defineConfig({
   site: 'https://strdr4605.com',
   outDir: './out',
   trailingSlash: 'never',
+  redirects: {
+    '/planable-wrapped': '/planable-wrapped/index.html',
+  },
   integrations: [
     react(),
     sitemap(),
