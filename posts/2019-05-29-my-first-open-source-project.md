@@ -1,6 +1,7 @@
 ---
 title: "My first open-source project"
 date: 2019-05-29
+description: "How I created mockingcase, a beginner-friendly npm package that converts strings to mOcKiNgCaSe, and what I learned about open-source contribution."
 tags:
   - open-source
 ---

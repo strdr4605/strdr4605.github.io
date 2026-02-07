@@ -1,7 +1,7 @@
 ---
 title: No tits in git
 date: 2021-11-09
-description:
+description: "Why merge commits make git history unreadable and how git rebase keeps it clean."
 tags:
   - git
 ---
