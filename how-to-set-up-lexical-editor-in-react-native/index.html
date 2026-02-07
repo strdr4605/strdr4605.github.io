@@ -1,0 +1,433 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><title>How to set up Lexical editor in React Native</title><meta name="description" content="We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview."><meta property="og:locale" content="en_GB"><meta property="og:title" content="How to set up Lexical editor in React Native"><meta property="og:description" content="We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview."><meta property="og:image" content="https://strdr4605.com/how-to-set-up-lexical-editor-in-react-native.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@strdr4605"><meta name="theme-color" content="#FAF181"><meta property="og:url" content="https://strdr4605.com/how-to-set-up-lexical-editor-in-react-native"><link rel="canonical" href="https://strdr4605.com/how-to-set-up-lexical-editor-in-react-native"><style>:root{--link-color: #0366d6;--second-color: #faf181;--prism-inline-code: #f5f2f0;--code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace}html,body{padding:0;margin:0;font-family:Verdana,Geneva,Tahoma,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}h1{font-size:1.6em}a{color:var(--link-color)}img{width:100%}blockquote{border-left:1px solid #999;padding-left:1rem;font-style:italic}@media only screen and (min-width:900px){.astro-code{width:150%;margin-left:-25%}}img[src*="#small"]{max-height:500px;object-fit:contain}.astro-code .diff.add{background-color:#acf2bd4d}.astro-code .diff.remove{background-color:#fdb8c04d}.astro-code .diff.add:before{content:"+";color:#22863a;position:absolute;left:.5rem}.astro-code .diff.remove:before{content:"-";color:#cb2431;position:absolute;left:.5rem}:not(pre)>code{padding:.1em;border-radius:.3em;white-space:normal;background:var(--prism-inline-code);font-family:var(--code-font)}.container{max-width:60ch;padding:0 1rem;margin:1rem auto}.header{position:relative}.header nav p a{margin-right:1rem}.github-icon{position:absolute;top:0;right:2.5rem}.rss-icon{position:absolute;top:0;right:0}.blog-posts{list-style-type:none;padding:unset}.blog-posts li{display:flex;margin:1rem 0}.blog-posts li span{flex:0 0 8rem}li.starred:before{content:"★";margin-left:-1.5rem;position:absolute}@media only screen and (max-width:666px){.blog-posts{list-style-type:disc;padding-left:1rem}.blog-posts li{display:list-item}.blog-posts li span{display:none}.starred{list-style-type:"★ "}li.starred:before{content:unset}}.post-footer{border-top:1px solid #999;text-align:center;padding:1rem}
+</style></head> <body> <div class="container">  <article> <h1>How to set up Lexical editor in React Native</h1> <i> <time datetime="2024-02-21">21 Feb 2024</time> </i>  on  <a href="/"> <span id="animated-name">Dragoș Străinu</span><script type="module">const e=document.getElementById("animated-name");if(e){const n=(t=250)=>new Promise(o=>setTimeout(o,t));(async()=>{await n(1500);const t="Dragoș Străinu".split("");t.splice(6,1),e.textContent=t.join("");let o=5;for(;o>=0;){let[i]=t.splice(o,1);t.splice(t.length-5+o,0,i),await n(),e.textContent=t.join(""),o--}for(o=6;o>2;)t.splice(o,1),await n(),e.textContent=t.join(""),o--;t[0]=t[0].toLowerCase(),await n(),e.textContent=t.join(""),t[3]=t[3].toLowerCase(),await n(),e.textContent=t.join(""),t[5]=t[5].toUpperCase(),await n(),e.textContent=t.join(""),t[6]=t[6].toUpperCase(),await n(),e.textContent=t.join(""),t[7]=t[7].toUpperCase(),await n(),e.textContent=t.join(""),t[8]=t[8].toUpperCase(),await n(),e.textContent=t.join(""),t[5]="4",await n(),e.textContent=t.join(""),t[6]="6",await n(),e.textContent=t.join(""),t[7]="0",await n(),e.textContent=t.join(""),t[8]="5",await n(),e.textContent=t.join("")})()}</script>'s blog
+</a> <br> <p>So you have a web app that uses Lexical editor and now you want to build the same editor on React Native, or maybe you just want to build a rich text editor in React Native using Lexical.
+But unfortunately lexical does not <a href="https://github.com/facebook/lexical/discussions/2410">support React Native</a> at the moment.</p>
+<p>So the idea that comes to mind is to try Lexical editor in a react-native-webview. There are similar solutions like <a href="https://github.com/imnapo/react-native-cn-quill">react-native-cn-quill</a> and <a href="https://github.com/wxik/react-native-rich-editor">react-native-rich-editor</a>.</p>
+<p>But as <a href="https://docs.expo.dev/guides/editing-richtext/#custom-webview-based-editor">expo docs</a> say:</p>
+<blockquote>
+<p>If you need more configurability, you can build a similar library with an existing web-only editor.</p>
+</blockquote>
+<p>So let’s implement a lexical editor in an Expo app.<br>
+(This is a demo project but you can follow the steps to add the editor to an existing React Native app)</p>
+<h2 id="create-the-expo-app">Create the expo app</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">npx</span><span style="color:#032F62"> create-expo-app</span><span style="color:#005CC5"> -t</span><span style="color:#032F62"> expo-template-blank-typescript</span></span></code></pre>
+<p>Now let’s install <code>react-native-webview</code>.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">npm</span><span style="color:#032F62"> i</span><span style="color:#032F62"> react-native-webview</span></span></code></pre>
+<p>And make some changes in <code>App.tsx</code>, to display the WebView with <a href="https://playground.lexical.dev/">https://playground.lexical.dev/</a> (for now).</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#6A737D">// ./App.tsx</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { StyleSheet, Text, View } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "react-native"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> WebView </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "react-native-webview"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> default</span><span style="color:#D73A49"> function</span><span style="color:#6F42C1"> App</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#24292E"> (</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#005CC5">View</span><span style="color:#6F42C1"> style</span><span style="color:#D73A49">=</span><span style="color:#24292E">{styles.container}></span></span>
+<span class="line"><span style="color:#24292E">      &#x3C;</span><span style="color:#005CC5">View</span><span style="color:#6F42C1"> style</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ width: </span><span style="color:#032F62">"100%"</span><span style="color:#24292E">, height: </span><span style="color:#032F62">"80%"</span><span style="color:#24292E"> }}></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">Text</span><span style="color:#24292E">>Lexical Webview&#x3C;/</span><span style="color:#005CC5">Text</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">WebView</span></span>
+<span class="line"><span style="color:#6F42C1">          source</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ uri: </span><span style="color:#032F62">"https://playground.lexical.dev"</span><span style="color:#24292E"> }}</span></span>
+<span class="line"><span style="color:#6F42C1">          style</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ marginTop: </span><span style="color:#005CC5">20</span><span style="color:#24292E"> }}</span></span>
+<span class="line"><span style="color:#24292E">        /></span></span>
+<span class="line"><span style="color:#24292E">      &#x3C;/</span><span style="color:#005CC5">View</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#005CC5">View</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  );</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">const</span><span style="color:#005CC5"> styles</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> StyleSheet.</span><span style="color:#6F42C1">create</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">  container: {</span></span>
+<span class="line"><span style="color:#24292E">    flex: </span><span style="color:#005CC5">1</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    backgroundColor: </span><span style="color:#032F62">"#e0e0e0"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    alignItems: </span><span style="color:#032F62">"center"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    justifyContent: </span><span style="color:#032F62">"center"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  },</span></span>
+<span class="line"><span style="color:#24292E">});</span></span></code></pre>
+<p>We should have this result:</p>
+<p><img src="/expo-webview-init.png#small" alt="expo-webview-init"></p>
+<h2 id="add-lexical-editor">Add lexical editor</h2>
+<p>Other implementations for a rich text editor in react-native give us a predefined editor. However, we want to create our custom lexical editor with custom nodes and logic. So the only option is to create the editor from scratch.<br>
+How? By creating a new app inside the project using <a href="https://docs.npmjs.com/cli/v7/using-npm/workspaces">npm workspaces</a>.</p>
+<p>We add a workspace to <code>package.json</code>:</p>
+<pre class="astro-code github-light has-diff" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#032F62">  "name"</span><span style="color:#24292E">: </span><span style="color:#032F62">"react-native-lexical"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">  "version"</span><span style="color:#24292E">: </span><span style="color:#032F62">"1.0.0"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">  "main"</span><span style="color:#24292E">: </span><span style="color:#032F62">"node_modules/expo/AppEntry.js"</span><span style="color:#24292E">,</span></span>
+<span class="line diff add"><span style="color:#032F62">  "workspaces"</span><span style="color:#24292E">: [ </span></span>
+<span class="line diff add"><span style="color:#032F62">    "lexical-editor"</span></span>
+<span class="line diff add"><span style="color:#24292E">  ], </span></span>
+<span class="line"><span style="color:#032F62">  "scripts"</span><span style="color:#24292E">: {</span></span>
+<span class="line"><span style="color:#005CC5">    "start"</span><span style="color:#24292E">: </span><span style="color:#032F62">"expo start"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "android"</span><span style="color:#24292E">: </span><span style="color:#032F62">"expo start --android"</span><span style="color:#24292E">,</span></span></code></pre>
+<blockquote>
+<p>We can name it how we want <code>post-editor</code>, <code>page-editor</code>. Also we can have multiple editors if needed.</p>
+</blockquote>
+<h3 id="create-web-app-as-npm-workspace">Create web app as npm workspace</h3>
+<p>For this, we will use <a href="https://vitejs.dev/">vite</a>.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">npm</span><span style="color:#032F62"> create</span><span style="color:#032F62"> vite@latest</span><span style="color:#032F62"> lexical-editor</span><span style="color:#005CC5"> --</span><span style="color:#005CC5"> --template</span><span style="color:#032F62"> react-ts</span></span></code></pre>
+<p>Let’s do a cleanup and some changes in lexical-editor app.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">lexical-editor</span></span>
+<span class="line"><span style="color:#6F42C1">├──</span><span style="color:#032F62"> README.md</span></span>
+<span class="line"><span style="color:#6F42C1">├──</span><span style="color:#032F62"> index.html</span></span>
+<span class="line"><span style="color:#6F42C1">├──</span><span style="color:#032F62"> package.json</span></span>
+<span class="line"><span style="color:#6F42C1">├──</span><span style="color:#032F62"> src</span></span>
+<span class="line"><span style="color:#6F42C1">│  </span><span style="color:#032F62"> ├──</span><span style="color:#032F62"> App.tsx</span></span>
+<span class="line"><span style="color:#6F42C1">│  </span><span style="color:#032F62"> ├──</span><span style="color:#032F62"> index.css</span></span>
+<span class="line"><span style="color:#6F42C1">│  </span><span style="color:#032F62"> ├──</span><span style="color:#032F62"> main.tsx</span></span>
+<span class="line"><span style="color:#6F42C1">│  </span><span style="color:#032F62"> └──</span><span style="color:#032F62"> vite-env.d.ts</span></span>
+<span class="line"><span style="color:#6F42C1">├──</span><span style="color:#032F62"> tsconfig.json</span></span>
+<span class="line"><span style="color:#6F42C1">├──</span><span style="color:#032F62"> tsconfig.node.json</span></span>
+<span class="line"><span style="color:#6F42C1">└──</span><span style="color:#032F62"> vite.config.ts</span></span></code></pre>
+<p>Important to not enable zoom in the WebView, add this to <code>index.html</code>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">meta</span></span>
+<span class="line"><span style="color:#6F42C1">  name</span><span style="color:#24292E">=</span><span style="color:#032F62">"viewport"</span></span>
+<span class="line"><span style="color:#6F42C1">  content</span><span style="color:#24292E">=</span><span style="color:#032F62">"width=device-width, initial-scale=1, maximum-scale=0.99, user-scalable=0"</span></span>
+<span class="line"><span style="color:#24292E">/></span></span></code></pre>
+<p>Now we can run the web app:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># in the root of expo app, we run script from lexical-editor workspace</span></span>
+<span class="line"><span style="color:#6F42C1">npm</span><span style="color:#005CC5"> --workspace=lexical-editor</span><span style="color:#032F62"> run</span><span style="color:#032F62"> dev</span></span></code></pre>
+<p>And we can see this in the browser:</p>
+<p><img src="/lexical-vite-init.png" alt="lexical-vite-init"></p>
+<p>Cool, now how can we put this into <code>react-native-webview</code>?!</p>
+<h3 id="build-a-web-app-for-react-native-webview">Build a web app for react-native-webview</h3>
+<p>For this, we need some vite plugins that will build the app into a single file that we will import into react-native-webview.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">npm</span><span style="color:#005CC5"> -w=lexical-editor</span><span style="color:#032F62"> i</span><span style="color:#005CC5"> -D</span><span style="color:#032F62"> vite-plugin-singlefile</span></span></code></pre>
+<p>and let’s change the <code>vite.config.ts</code>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#6A737D">// .lexical-editor/vite.config.ts</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> fs </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "fs"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { defineConfig } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "vite"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { viteSingleFile } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "vite-plugin-singlefile"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> react </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@vitejs/plugin-react"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// https://vitejs.dev/config/</span></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> default</span><span style="color:#6F42C1"> defineConfig</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">  build: {</span></span>
+<span class="line"><span style="color:#24292E">    watch: {</span></span>
+<span class="line"><span style="color:#24292E">      include: [</span><span style="color:#032F62">"src/**"</span><span style="color:#24292E">],</span></span>
+<span class="line"><span style="color:#24292E">      buildDelay: </span><span style="color:#005CC5">500</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    },</span></span>
+<span class="line"><span style="color:#24292E">  },</span></span>
+<span class="line"><span style="color:#24292E">  plugins: [</span></span>
+<span class="line"><span style="color:#6F42C1">    react</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#6F42C1">    viteSingleFile</span><span style="color:#24292E">(),</span></span>
+<span class="line"><span style="color:#24292E">    {</span></span>
+<span class="line"><span style="color:#24292E">      name: </span><span style="color:#032F62">"vite-plugin-html-string"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#6F42C1">      closeBundle</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">        const</span><span style="color:#005CC5"> bundle</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> fs.</span><span style="color:#6F42C1">readFileSync</span><span style="color:#24292E">(</span><span style="color:#032F62">"dist/index.html"</span><span style="color:#24292E">, </span><span style="color:#032F62">"utf8"</span><span style="color:#24292E">);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">        const</span><span style="color:#005CC5"> escaped</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">(bundle);</span></span>
+<span class="line"><span style="color:#D73A49">        const</span><span style="color:#005CC5"> js</span><span style="color:#D73A49"> =</span><span style="color:#032F62"> `export default ${</span><span style="color:#24292E">escaped</span><span style="color:#032F62">}`</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">        fs.</span><span style="color:#6F42C1">writeFileSync</span><span style="color:#24292E">(</span><span style="color:#032F62">"dist/htmlString.ts"</span><span style="color:#24292E">, js);</span></span>
+<span class="line"><span style="color:#24292E">      },</span></span>
+<span class="line"><span style="color:#24292E">    },</span></span>
+<span class="line"><span style="color:#24292E">  ],</span></span>
+<span class="line"><span style="color:#24292E">});</span></span></code></pre>
+<p>This config watches for changes and builds the app into a single <code>index.html</code> file that we next write into a file named <code>htmlString.ts</code> so we can import it into react-native.</p>
+<p>Now we can run:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">npm</span><span style="color:#005CC5"> -w=lexical-editor</span><span style="color:#032F62"> run</span><span style="color:#032F62"> build</span></span></code></pre>
+<p>And vite will build the web editor on every change.</p>
+<p>Also, we need to build the app on install:</p>
+<pre class="astro-code github-light has-diff" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#032F62">  "scripts"</span><span style="color:#24292E">: {</span></span>
+<span class="line"><span style="color:#005CC5">    "dev"</span><span style="color:#24292E">: </span><span style="color:#032F62">"vite"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "build"</span><span style="color:#24292E">: </span><span style="color:#032F62">"tsc &#x26;&#x26; vite build"</span><span style="color:#24292E">,</span></span>
+<span class="line diff add"><span style="color:#005CC5">    "prepare"</span><span style="color:#24292E">: </span><span style="color:#032F62">"npm run build -- --no-watch"</span><span style="color:#24292E">, </span></span></code></pre>
+<p>Only now we can import the output of the web app into react-native-webview:</p>
+<pre class="astro-code github-light has-diff" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { StyleSheet, Text, View } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "react-native"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> WebView </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "react-native-webview"</span><span style="color:#24292E">;</span></span>
+<span class="line diff add"><span style="color:#D73A49">import</span><span style="color:#24292E"> htmlString </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "./lexical-editor/dist/htmlString"</span><span style="color:#24292E">; </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> default</span><span style="color:#D73A49"> function</span><span style="color:#6F42C1"> App</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#24292E"> (</span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">Text</span><span style="color:#24292E">>Lexical Webview&#x3C;/</span><span style="color:#005CC5">Text</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">WebView</span></span>
+<span class="line"><span style="color:#6F42C1">          originWhitelist</span><span style="color:#D73A49">=</span><span style="color:#24292E">{[</span><span style="color:#032F62">"*"</span><span style="color:#24292E">]}</span></span>
+<span class="line diff remove"><span style="color:#6F42C1">          source</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ uri: </span><span style="color:#032F62">"https://playground.lexical.dev"</span><span style="color:#24292E"> }} </span></span>
+<span class="line diff add"><span style="color:#6F42C1">          source</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ html: htmlString }} </span></span>
+<span class="line"><span style="color:#6F42C1">          style</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ marginTop: </span><span style="color:#005CC5">20</span><span style="color:#24292E"> }}</span></span>
+<span class="line"><span style="color:#24292E">        /></span></span>
+<span class="line"><span style="color:#D73A49">      &#x3C;/</span><span style="color:#24292E">View</span><span style="color:#D73A49">></span></span></code></pre>
+<p><img src="/lexical-vite-webview.png#small" alt="lexical-vite-webview"></p>
+<h2 id="create-a-basic-lexical-editor">Create a basic lexical editor</h2>
+<p>Following <a href="https://lexical.dev/docs/getting-started/react">https://lexical.dev/docs/getting-started/react</a></p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">npm</span><span style="color:#005CC5"> -w=lexical-editor</span><span style="color:#032F62"> install</span><span style="color:#005CC5"> --save</span><span style="color:#032F62"> lexical</span><span style="color:#032F62"> @lexical/react</span></span></code></pre>
+<p>We can create a basic lexical editor:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#6A737D">// lexical-editor/src/Editor.tsx</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { LexicalComposer } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalComposer"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { PlainTextPlugin } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalPlainTextPlugin"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { ContentEditable } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalContentEditable"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { HistoryPlugin } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalHistoryPlugin"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> LexicalErrorBoundary </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalErrorBoundary"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#032F62"> "./Editor.css"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> onError</span><span style="color:#24292E">(</span><span style="color:#E36209">error</span><span style="color:#D73A49">:</span><span style="color:#005CC5"> unknown</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">  console.</span><span style="color:#6F42C1">error</span><span style="color:#24292E">(error);</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> function</span><span style="color:#6F42C1"> Editor</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> initialConfig</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    namespace: </span><span style="color:#032F62">"MyEditor"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    onError,</span></span>
+<span class="line"><span style="color:#24292E">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#24292E"> (</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#005CC5">LexicalComposer</span><span style="color:#6F42C1"> initialConfig</span><span style="color:#D73A49">=</span><span style="color:#24292E">{initialConfig}></span></span>
+<span class="line"><span style="color:#24292E">      &#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> className</span><span style="color:#D73A49">=</span><span style="color:#032F62">"editor-container"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">PlainTextPlugin</span></span>
+<span class="line"><span style="color:#6F42C1">          contentEditable</span><span style="color:#D73A49">=</span><span style="color:#24292E">{&#x3C;</span><span style="color:#005CC5">ContentEditable</span><span style="color:#6F42C1"> className</span><span style="color:#D73A49">=</span><span style="color:#032F62">"editor-input"</span><span style="color:#24292E"> />}</span></span>
+<span class="line"><span style="color:#6F42C1">          placeholder</span><span style="color:#D73A49">=</span><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#24292E">            &#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> className</span><span style="color:#D73A49">=</span><span style="color:#032F62">"editor-placeholder"</span><span style="color:#24292E">>Enter some text...&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">          }</span></span>
+<span class="line"><span style="color:#6F42C1">          ErrorBoundary</span><span style="color:#D73A49">=</span><span style="color:#24292E">{LexicalErrorBoundary}</span></span>
+<span class="line"><span style="color:#24292E">        /></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">HistoryPlugin</span><span style="color:#24292E"> /></span></span>
+<span class="line"><span style="color:#24292E">      &#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#005CC5">LexicalComposer</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  );</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<p><img __ASTRO_IMAGE_="{&#x22;src&#x22;:&#x22;basic-lexical-editor.gif#small&#x22;,&#x22;alt&#x22;:&#x22;basic-lexical-editor&#x22;,&#x22;index&#x22;:0}"></p>
+<h2 id="message-from-webview-to-react-native">Message from WebView to React Native</h2>
+<p>Let’s add the <code>OnChangePlugin</code> and post a message to react-native:</p>
+<pre class="astro-code github-light has-diff" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="tsx"><code><span class="line diff add"><span style="color:#D73A49">import</span><span style="color:#24292E"> { $getRoot, EditorState } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "lexical"</span><span style="color:#24292E">; </span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { LexicalComposer } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalComposer"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { PlainTextPlugin } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalPlainTextPlugin"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { ContentEditable } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalContentEditable"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { HistoryPlugin } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalHistoryPlugin"</span><span style="color:#24292E">;</span></span>
+<span class="line diff add"><span style="color:#D73A49">import</span><span style="color:#24292E"> { OnChangePlugin } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalOnChangePlugin"</span><span style="color:#24292E">; </span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> LexicalErrorBoundary </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalErrorBoundary"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#032F62"> "./Editor.css"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">// ...</span></span>
+<span class="line"><span style="color:#24292E">    onError,</span></span>
+<span class="line"><span style="color:#24292E">  };</span></span>
+<span class="line"></span>
+<span class="line diff add"><span style="color:#D73A49">  function</span><span style="color:#6F42C1"> onChange</span><span style="color:#24292E">(</span><span style="color:#E36209">editorState</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> EditorState</span><span style="color:#24292E">) { </span></span>
+<span class="line diff add"><span style="color:#24292E">    editorState.</span><span style="color:#6F42C1">read</span><span style="color:#24292E">(() </span><span style="color:#D73A49">=></span><span style="color:#24292E"> { </span></span>
+<span class="line diff add"><span style="color:#D73A49">      const</span><span style="color:#005CC5"> plainText</span><span style="color:#D73A49"> =</span><span style="color:#6F42C1"> $getRoot</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getTextContent</span><span style="color:#24292E">(); </span></span>
+<span class="line diff add"><span style="color:#D73A49">      const</span><span style="color:#005CC5"> message</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> { </span></span>
+<span class="line diff add"><span style="color:#24292E">        type: </span><span style="color:#032F62">"LEXICAL_EDITOR_STATE_CHANGE"</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">        payload: { </span></span>
+<span class="line diff add"><span style="color:#24292E">          plainText, </span></span>
+<span class="line diff add"><span style="color:#24292E">          serializedEditorState: editorState.</span><span style="color:#6F42C1">toJSON</span><span style="color:#24292E">(), </span></span>
+<span class="line diff add"><span style="color:#24292E">        }, </span></span>
+<span class="line diff add"><span style="color:#24292E">      }; </span></span>
+<span class="line diff add"><span style="color:#24292E">      window.ReactNativeWebView?.</span><span style="color:#6F42C1">postMessage</span><span style="color:#24292E">(</span><span style="color:#005CC5">JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">(message)); </span></span>
+<span class="line diff add"><span style="color:#24292E">    }); </span></span>
+<span class="line diff add"><span style="color:#24292E">  } </span></span>
+<span class="line diff add"><span style="color:#D73A49">  return</span><span style="color:#24292E"> (</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#005CC5">LexicalComposer</span><span style="color:#6F42C1"> initialConfig</span><span style="color:#D73A49">=</span><span style="color:#24292E">{initialConfig}></span></span>
+<span class="line"><span style="color:#24292E">      &#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> className</span><span style="color:#D73A49">=</span><span style="color:#032F62">"editor-container"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">// ...</span></span>
+<span class="line"><span style="color:#24292E">          ErrorBoundary={LexicalErrorBoundary}</span></span>
+<span class="line"><span style="color:#24292E">        /></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">HistoryPlugin</span><span style="color:#24292E"> /></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">OnChangePlugin</span><span style="color:#6F42C1"> onChange</span><span style="color:#D73A49">=</span><span style="color:#24292E">{onChange} /> // [!code ++]</span></span>
+<span class="line"><span style="color:#24292E">      &#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;/</span><span style="color:#005CC5">LexicalComposer</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  );</span></span></code></pre>
+<p>Ok, now we can receive this message on the react-native side:</p>
+<pre class="astro-code github-light has-diff" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { StyleSheet, Text, View } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "react-native"</span><span style="color:#24292E">;</span></span>
+<span class="line diff remove"><span style="color:#D73A49">import</span><span style="color:#24292E"> WebView </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "react-native-webview"</span><span style="color:#24292E">; </span></span>
+<span class="line diff add"><span style="color:#D73A49">import</span><span style="color:#24292E"> WebView, { WebViewMessageEvent } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "react-native-webview"</span><span style="color:#24292E">; </span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> htmlString </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "./lexical-editor/dist/htmlString"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> default</span><span style="color:#D73A49"> function</span><span style="color:#6F42C1"> App</span><span style="color:#24292E">() {</span></span>
+<span class="line diff add"><span style="color:#D73A49">  function</span><span style="color:#6F42C1"> onMessage</span><span style="color:#24292E">(</span><span style="color:#E36209">event</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> WebViewMessageEvent</span><span style="color:#24292E">) { </span></span>
+<span class="line diff add"><span style="color:#D73A49">    const</span><span style="color:#005CC5"> message</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">parse</span><span style="color:#24292E">(event.nativeEvent.data); </span></span>
+<span class="line diff add"><span style="color:#24292E">    console.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(</span><span style="color:#005CC5">JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">(message, </span><span style="color:#005CC5">null</span><span style="color:#24292E">, </span><span style="color:#005CC5">2</span><span style="color:#24292E">)); </span></span>
+<span class="line diff add"><span style="color:#24292E">  } </span></span>
+<span class="line diff add"><span style="color:#D73A49">  return</span><span style="color:#24292E"> (</span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#005CC5">View</span><span style="color:#6F42C1"> style</span><span style="color:#D73A49">=</span><span style="color:#24292E">{styles.container}></span></span>
+<span class="line"><span style="color:#24292E">      &#x3C;</span><span style="color:#005CC5">View</span><span style="color:#6F42C1"> style</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ width: </span><span style="color:#032F62">"100%"</span><span style="color:#24292E">, height: </span><span style="color:#032F62">"80%"</span><span style="color:#24292E"> }}></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">Text</span><span style="color:#24292E">>Lexical Webview&#x3C;/</span><span style="color:#005CC5">Text</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">WebView</span></span>
+<span class="line"><span style="color:#6F42C1">          originWhitelist</span><span style="color:#D73A49">=</span><span style="color:#24292E">{[</span><span style="color:#032F62">"*"</span><span style="color:#24292E">]}</span></span>
+<span class="line diff add"><span style="color:#6F42C1">          onMessage</span><span style="color:#D73A49">=</span><span style="color:#24292E">{onMessage} </span></span>
+<span class="line"><span style="color:#6F42C1">          source</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ html: htmlString }}</span></span>
+<span class="line"><span style="color:#6F42C1">          style</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ marginTop: </span><span style="color:#005CC5">20</span><span style="color:#24292E"> }}</span></span>
+<span class="line"><span style="color:#24292E">        /></span></span></code></pre>
+<p>When we type something in the WebView editor we receive:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#005CC5">  "type"</span><span style="color:#24292E">: </span><span style="color:#032F62">"LEXICAL_EDITOR_STATE_CHANGE"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "payload"</span><span style="color:#24292E">: {</span></span>
+<span class="line"><span style="color:#005CC5">    "plainText"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Hi"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">    "serializedEditorState"</span><span style="color:#24292E">: {</span></span>
+<span class="line"><span style="color:#005CC5">      "root"</span><span style="color:#24292E">: {</span></span>
+<span class="line"><span style="color:#005CC5">        "children"</span><span style="color:#24292E">: [</span></span>
+<span class="line"><span style="color:#24292E">          {</span></span>
+<span class="line"><span style="color:#005CC5">            "children"</span><span style="color:#24292E">: [</span></span>
+<span class="line"><span style="color:#24292E">              {</span></span>
+<span class="line"><span style="color:#005CC5">                "detail"</span><span style="color:#24292E">: </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                "format"</span><span style="color:#24292E">: </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                "mode"</span><span style="color:#24292E">: </span><span style="color:#032F62">"normal"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                "style"</span><span style="color:#24292E">: </span><span style="color:#032F62">""</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                "text"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Hi"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                "type"</span><span style="color:#24292E">: </span><span style="color:#032F62">"text"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">                "version"</span><span style="color:#24292E">: </span><span style="color:#005CC5">1</span></span>
+<span class="line"><span style="color:#24292E">              }</span></span>
+<span class="line"><span style="color:#24292E">            ],</span></span>
+<span class="line"><span style="color:#005CC5">            "direction"</span><span style="color:#24292E">: </span><span style="color:#032F62">"ltr"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">            "format"</span><span style="color:#24292E">: </span><span style="color:#032F62">""</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">            "indent"</span><span style="color:#24292E">: </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">            "type"</span><span style="color:#24292E">: </span><span style="color:#032F62">"paragraph"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">            "version"</span><span style="color:#24292E">: </span><span style="color:#005CC5">1</span></span>
+<span class="line"><span style="color:#24292E">          }</span></span>
+<span class="line"><span style="color:#24292E">        ],</span></span>
+<span class="line"><span style="color:#005CC5">        "direction"</span><span style="color:#24292E">: </span><span style="color:#032F62">"ltr"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">        "format"</span><span style="color:#24292E">: </span><span style="color:#032F62">""</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">        "indent"</span><span style="color:#24292E">: </span><span style="color:#005CC5">0</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">        "type"</span><span style="color:#24292E">: </span><span style="color:#032F62">"root"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">        "version"</span><span style="color:#24292E">: </span><span style="color:#005CC5">1</span></span>
+<span class="line"><span style="color:#24292E">      }</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<p>We can do a switch on <code>message.type</code> and handle any messages:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="ts"><code><span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> onMessage</span><span style="color:#24292E">(</span><span style="color:#E36209">event</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> WebViewMessageEvent</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> message</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">parse</span><span style="color:#24292E">(event.nativeEvent.data);</span></span>
+<span class="line"><span style="color:#24292E">  console.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(</span><span style="color:#005CC5">JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">(message, </span><span style="color:#005CC5">null</span><span style="color:#24292E">, </span><span style="color:#005CC5">2</span><span style="color:#24292E">));</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  switch</span><span style="color:#24292E"> (message.type) {</span></span>
+<span class="line"><span style="color:#D73A49">    case</span><span style="color:#032F62"> "LEXICAL_EDITOR_STATE_CHANGE"</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#6A737D">      // Do something with the editor state</span></span>
+<span class="line"><span style="color:#6A737D">      // like saving it to a database</span></span>
+<span class="line"><span style="color:#D73A49">      break</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">    default</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">      console.</span><span style="color:#6F42C1">error</span><span style="color:#24292E">(</span><span style="color:#032F62">"Unknown message type"</span><span style="color:#24292E">, message);</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h2 id="command-from-react-native-to-webview">Command from React Native to Webview</h2>
+<p>Let’s say, we want to initialize the editor state when it is mounted.</p>
+<p>We listen for <code>LEXICAL_EDITOR_READY</code> message and post a message to webview using WebView ref.</p>
+<pre class="astro-code github-light has-diff" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#D73A49">...</span></span>
+<span class="line diff add"><span style="color:#D73A49">import</span><span style="color:#24292E"> { useRef } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "react"</span><span style="color:#24292E">; </span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> default</span><span style="color:#D73A49"> function</span><span style="color:#6F42C1"> App</span><span style="color:#24292E">() {</span></span>
+<span class="line diff add"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> webviewRef</span><span style="color:#D73A49"> =</span><span style="color:#6F42C1"> useRef</span><span style="color:#24292E">&#x3C;</span><span style="color:#6F42C1">WebView</span><span style="color:#24292E">>(</span><span style="color:#005CC5">null</span><span style="color:#24292E">); </span></span>
+<span class="line diff add"><span style="color:#D73A49">  function</span><span style="color:#6F42C1"> onMessage</span><span style="color:#24292E">(</span><span style="color:#E36209">event</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> WebViewMessageEvent</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">    const</span><span style="color:#005CC5"> message</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">parse</span><span style="color:#24292E">(event.nativeEvent.data);</span></span>
+<span class="line"><span style="color:#24292E">    console.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">(</span><span style="color:#005CC5">JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">(message, </span><span style="color:#005CC5">null</span><span style="color:#24292E">, </span><span style="color:#005CC5">2</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#D73A49">    ...</span></span>
+<span class="line"><span style="color:#6A737D">        // Do something with the editor state</span></span>
+<span class="line"><span style="color:#6A737D">        // like saving it to a database</span></span>
+<span class="line"><span style="color:#D73A49">        break</span><span style="color:#24292E">;</span></span>
+<span class="line diff add"><span style="color:#D73A49">      case</span><span style="color:#032F62"> "LEXICAL_EDITOR_READY"</span><span style="color:#24292E">: </span></span>
+<span class="line diff add"><span style="color:#D73A49">        const</span><span style="color:#005CC5"> commandMessage</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> { </span></span>
+<span class="line diff add"><span style="color:#24292E">          command: </span><span style="color:#032F62">"INIT_SERIALIZED_EDITOR_STATE"</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">          payload: { </span></span>
+<span class="line diff add"><span style="color:#24292E">            root: { </span></span>
+<span class="line diff add"><span style="color:#24292E">              children: [ </span></span>
+<span class="line diff add"><span style="color:#24292E">                { </span></span>
+<span class="line diff add"><span style="color:#24292E">                  children: [ </span></span>
+<span class="line diff add"><span style="color:#24292E">                    { </span></span>
+<span class="line diff add"><span style="color:#24292E">                      detail: </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                      format: </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                      mode: </span><span style="color:#032F62">"normal"</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                      style: </span><span style="color:#032F62">""</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                      text: </span><span style="color:#032F62">"Initial text"</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                      type: </span><span style="color:#032F62">"text"</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                      version: </span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                    }, </span></span>
+<span class="line diff add"><span style="color:#24292E">                  ], </span></span>
+<span class="line diff add"><span style="color:#24292E">                  direction: </span><span style="color:#032F62">"ltr"</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                  format: </span><span style="color:#032F62">""</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                  indent: </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                  type: </span><span style="color:#032F62">"paragraph"</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                  version: </span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">                }, </span></span>
+<span class="line diff add"><span style="color:#24292E">              ], </span></span>
+<span class="line diff add"><span style="color:#24292E">              direction: </span><span style="color:#032F62">"ltr"</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">              format: </span><span style="color:#032F62">""</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">              indent: </span><span style="color:#005CC5">0</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">              type: </span><span style="color:#032F62">"root"</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">              version: </span><span style="color:#005CC5">1</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#24292E">            }, </span></span>
+<span class="line diff add"><span style="color:#24292E">          }, </span></span>
+<span class="line diff add"><span style="color:#24292E">        }; </span></span>
+<span class="line diff add"><span style="color:#24292E">        webviewRef.current?.</span><span style="color:#6F42C1">postMessage</span><span style="color:#24292E">(</span><span style="color:#005CC5">JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">(commandMessage)); </span></span>
+<span class="line diff add"><span style="color:#D73A49">        break</span><span style="color:#24292E">; </span></span>
+<span class="line"><span style="color:#D73A49">      default</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">        console.</span><span style="color:#6F42C1">error</span><span style="color:#24292E">(</span><span style="color:#032F62">"Unknown message type"</span><span style="color:#24292E">, message);</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"><span style="color:#24292E">      &#x3C;</span><span style="color:#005CC5">View</span><span style="color:#6F42C1"> style</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ width: </span><span style="color:#032F62">"100%"</span><span style="color:#24292E">, height: </span><span style="color:#032F62">"80%"</span><span style="color:#24292E"> }}></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">Text</span><span style="color:#24292E">>Lexical Webview&#x3C;/</span><span style="color:#005CC5">Text</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">WebView</span></span>
+<span class="line diff add"><span style="color:#6F42C1">          ref</span><span style="color:#D73A49">=</span><span style="color:#24292E">{webviewRef} </span></span>
+<span class="line"><span style="color:#6F42C1">          originWhitelist</span><span style="color:#D73A49">=</span><span style="color:#24292E">{[</span><span style="color:#032F62">"*"</span><span style="color:#24292E">]}</span></span>
+<span class="line"><span style="color:#6F42C1">          onMessage</span><span style="color:#D73A49">=</span><span style="color:#24292E">{onMessage}</span></span>
+<span class="line"><span style="color:#6F42C1">          source</span><span style="color:#D73A49">=</span><span style="color:#24292E">{{ html: htmlString }}</span></span></code></pre>
+<p>Now we need to handle this in Lexical editor. We can create a custom plugin.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="tsx"><code><span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { useEffect } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "react"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { useLexicalComposerContext } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalComposerContext"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">export</span><span style="color:#D73A49"> const</span><span style="color:#6F42C1"> EditorStateInitPlugin</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> () </span><span style="color:#D73A49">=></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#24292E"> [</span><span style="color:#005CC5">editor</span><span style="color:#24292E">] </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> useLexicalComposerContext</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">  useEffect</span><span style="color:#24292E">(() </span><span style="color:#D73A49">=></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    const</span><span style="color:#005CC5"> message</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">      type: </span><span style="color:#032F62">"LEXICAL_EDITOR_READY"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    window.ReactNativeWebView?.</span><span style="color:#6F42C1">postMessage</span><span style="color:#24292E">(</span><span style="color:#005CC5">JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">(message));</span></span>
+<span class="line"><span style="color:#24292E">  }, []);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">  useEffect</span><span style="color:#24292E">(() </span><span style="color:#D73A49">=></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">    const</span><span style="color:#6F42C1"> listener</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> (</span><span style="color:#E36209">e</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> MessageEvent</span><span style="color:#24292E">&#x3C;</span><span style="color:#005CC5">string</span><span style="color:#24292E">>) </span><span style="color:#D73A49">=></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">      const</span><span style="color:#005CC5"> message</span><span style="color:#D73A49"> =</span><span style="color:#005CC5"> JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">parse</span><span style="color:#24292E">(e.data);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">      if</span><span style="color:#24292E"> (message.command </span><span style="color:#D73A49">===</span><span style="color:#032F62"> "INIT_SERIALIZED_EDITOR_STATE"</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">        editor.</span><span style="color:#6F42C1">setEditorState</span><span style="color:#24292E">(editor.</span><span style="color:#6F42C1">parseEditorState</span><span style="color:#24292E">(message.payload), {</span></span>
+<span class="line"><span style="color:#24292E">          tag: </span><span style="color:#032F62">"FromReactNativeToLexical"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">        });</span></span>
+<span class="line"><span style="color:#24292E">      }</span></span>
+<span class="line"><span style="color:#24292E">    };</span></span>
+<span class="line"><span style="color:#24292E">    window.</span><span style="color:#6F42C1">addEventListener</span><span style="color:#24292E">(</span><span style="color:#032F62">"message"</span><span style="color:#24292E">, listener);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> () </span><span style="color:#D73A49">=></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">      window.</span><span style="color:#6F42C1">removeEventListener</span><span style="color:#24292E">(</span><span style="color:#032F62">"message"</span><span style="color:#24292E">, listener);</span></span>
+<span class="line"><span style="color:#24292E">    };</span></span>
+<span class="line"><span style="color:#24292E">  }, [editor]);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#005CC5"> null</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">};</span></span></code></pre>
+<p>And use it in our <code>Editor.tsx</code>:</p>
+<pre class="astro-code github-light has-diff" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="tsx"><code><span class="line diff remove"><span style="color:#D73A49">import</span><span style="color:#24292E"> { $getRoot, EditorState } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "lexical"</span><span style="color:#24292E">; </span></span>
+<span class="line diff add"><span style="color:#D73A49">import</span><span style="color:#24292E"> { $getRoot, EditorState, LexicalEditor } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "lexical"</span><span style="color:#24292E">; </span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { LexicalComposer } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalComposer"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { PlainTextPlugin } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalPlainTextPlugin"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { ContentEditable } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalContentEditable"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { HistoryPlugin } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalHistoryPlugin"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> { OnChangePlugin } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalOnChangePlugin"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> LexicalErrorBoundary </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "@lexical/react/LexicalErrorBoundary"</span><span style="color:#24292E">;</span></span>
+<span class="line diff add"><span style="color:#D73A49">import</span><span style="color:#24292E"> { EditorStateInitPlugin } </span><span style="color:#D73A49">from</span><span style="color:#032F62"> "./plugins/EditorStateInitPlugin"</span><span style="color:#24292E">; </span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#032F62"> "./Editor.css"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">...</span></span>
+<span class="line"></span>
+<span class="line diff remove"><span style="color:#D73A49">  function</span><span style="color:#6F42C1"> onChange</span><span style="color:#24292E">(</span><span style="color:#E36209">editorState</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> EditorState</span><span style="color:#24292E">) { </span></span>
+<span class="line diff add"><span style="color:#D73A49">  function</span><span style="color:#6F42C1"> onChange</span><span style="color:#24292E">( </span></span>
+<span class="line diff add"><span style="color:#E36209">    editorState</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> EditorState</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#E36209">    _latestEditor</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> LexicalEditor</span><span style="color:#24292E">, </span></span>
+<span class="line diff add"><span style="color:#E36209">    tags</span><span style="color:#D73A49">:</span><span style="color:#6F42C1"> Set</span><span style="color:#24292E">&#x3C;</span><span style="color:#005CC5">string</span><span style="color:#24292E">>, </span></span>
+<span class="line diff add"><span style="color:#24292E">  ) { </span></span>
+<span class="line diff add"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (tags.</span><span style="color:#6F42C1">has</span><span style="color:#24292E">(</span><span style="color:#032F62">"FromReactNativeToLexical"</span><span style="color:#24292E">)) { </span></span>
+<span class="line diff add"><span style="color:#D73A49">      return</span><span style="color:#24292E">; </span></span>
+<span class="line diff add"><span style="color:#24292E">    } </span></span>
+<span class="line"><span style="color:#24292E">    editorState.</span><span style="color:#6F42C1">read</span><span style="color:#24292E">(() </span><span style="color:#D73A49">=></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#D73A49">      const</span><span style="color:#005CC5"> plainText</span><span style="color:#D73A49"> =</span><span style="color:#6F42C1"> $getRoot</span><span style="color:#24292E">().</span><span style="color:#6F42C1">getTextContent</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">...</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">          ErrorBoundary</span><span style="color:#D73A49">=</span><span style="color:#24292E">{LexicalErrorBoundary}</span></span>
+<span class="line"><span style="color:#D73A49">        /></span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">HistoryPlugin</span><span style="color:#24292E"> /></span></span>
+<span class="line diff add"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">EditorStateInitPlugin</span><span style="color:#24292E"> /> </span></span>
+<span class="line"><span style="color:#24292E">        &#x3C;</span><span style="color:#005CC5">OnChangePlugin</span><span style="color:#6F42C1"> onChange</span><span style="color:#D73A49">=</span><span style="color:#24292E">{onChange} /></span></span>
+<span class="line"><span style="color:#D73A49">      &#x3C;/</span><span style="color:#24292E">div</span><span style="color:#D73A49">></span></span>
+<span class="line"><span style="color:#D73A49">    &#x3C;/</span><span style="color:#24292E">LexicalComposer</span><span style="color:#D73A49">></span></span></code></pre>
+<p>Let’s see it in action:</p>
+<p><img __ASTRO_IMAGE_="{&#x22;src&#x22;:&#x22;lexical-initial-state.gif#small&#x22;,&#x22;alt&#x22;:&#x22;lexical-initial-state&#x22;,&#x22;index&#x22;:0}"></p>
+<h2 id="whats-next">What’s next?</h2>
+<p>Now you can add the desired nodes and plugins into editor. Also, add new messages and commands for communication between React Native and Lexical editor in WebView.</p>
+<p>For the full code example, you can check the playground project on GitHub, <a href="https://github.com/Planable/react-native-lexical">react-native-lexical</a>.</p> <footer class="post-footer">
+Liked this post? Follow me  <a target="_blank" href="https://x.com/strdr4605" rel="noreferrer">
+@strdr4605
+</a> 
+to get more updates.
+</footer> </article> <section id="giscus-container"></section> <script type="module">const e=document.getElementById("giscus-container");if(e){const a=new IntersectionObserver(i=>{if(i[0].isIntersecting){a.disconnect();const t=document.createElement("script");t.src="https://giscus.app/client.js",t.setAttribute("data-repo","strdr4605/strdr4605.github.io"),t.setAttribute("data-repo-id","MDEwOlJlcG9zaXRvcnkxNDk5ODc2NDA="),t.setAttribute("data-category","General"),t.setAttribute("data-category-id","DIC_kwDOCPChOM4COePA"),t.setAttribute("data-mapping","pathname"),t.setAttribute("data-reactions-enabled","1"),t.setAttribute("data-emit-metadata","0"),t.setAttribute("data-input-position","bottom"),t.setAttribute("data-theme","light"),t.setAttribute("data-lang","en"),t.setAttribute("data-loading","lazy"),t.crossOrigin="anonymous",t.async=!0,e.appendChild(t)}},{rootMargin:"200px"});a.observe(e)}</script>  </div> <script defer src="https://analytics.umami.is/script.js" data-website-id="ffd94eb4-d3a5-4505-bcd4-35c97edc57c8"></script> </body> </html> 

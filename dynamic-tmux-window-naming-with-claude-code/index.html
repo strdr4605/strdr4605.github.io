@@ -1,0 +1,112 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><title>Dynamic Tmux Window Naming with Claude Code</title><meta name="description" content="How to automatically rename tmux windows based on your current task when working with Claude Code."><meta property="og:locale" content="en_GB"><meta property="og:title" content="Dynamic Tmux Window Naming with Claude Code"><meta property="og:description" content="How to automatically rename tmux windows based on your current task when working with Claude Code."><meta property="og:image" content="https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@strdr4605"><meta name="theme-color" content="#FAF181"><meta property="og:url" content="https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code"><link rel="canonical" href="https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code"><style>:root{--link-color: #0366d6;--second-color: #faf181;--prism-inline-code: #f5f2f0;--code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace}html,body{padding:0;margin:0;font-family:Verdana,Geneva,Tahoma,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}h1{font-size:1.6em}a{color:var(--link-color)}img{width:100%}blockquote{border-left:1px solid #999;padding-left:1rem;font-style:italic}@media only screen and (min-width:900px){.astro-code{width:150%;margin-left:-25%}}img[src*="#small"]{max-height:500px;object-fit:contain}.astro-code .diff.add{background-color:#acf2bd4d}.astro-code .diff.remove{background-color:#fdb8c04d}.astro-code .diff.add:before{content:"+";color:#22863a;position:absolute;left:.5rem}.astro-code .diff.remove:before{content:"-";color:#cb2431;position:absolute;left:.5rem}:not(pre)>code{padding:.1em;border-radius:.3em;white-space:normal;background:var(--prism-inline-code);font-family:var(--code-font)}.container{max-width:60ch;padding:0 1rem;margin:1rem auto}.header{position:relative}.header nav p a{margin-right:1rem}.github-icon{position:absolute;top:0;right:2.5rem}.rss-icon{position:absolute;top:0;right:0}.blog-posts{list-style-type:none;padding:unset}.blog-posts li{display:flex;margin:1rem 0}.blog-posts li span{flex:0 0 8rem}li.starred:before{content:"★";margin-left:-1.5rem;position:absolute}@media only screen and (max-width:666px){.blog-posts{list-style-type:disc;padding-left:1rem}.blog-posts li{display:list-item}.blog-posts li span{display:none}.starred{list-style-type:"★ "}li.starred:before{content:unset}}.post-footer{border-top:1px solid #999;text-align:center;padding:1rem}
+</style></head> <body> <div class="container">  <article> <h1>Dynamic Tmux Window Naming with Claude Code</h1> <i> <time datetime="2025-10-27">27 Oct 2025</time> </i>  on  <a href="/"> <span id="animated-name">Dragoș Străinu</span><script type="module">const e=document.getElementById("animated-name");if(e){const n=(t=250)=>new Promise(o=>setTimeout(o,t));(async()=>{await n(1500);const t="Dragoș Străinu".split("");t.splice(6,1),e.textContent=t.join("");let o=5;for(;o>=0;){let[i]=t.splice(o,1);t.splice(t.length-5+o,0,i),await n(),e.textContent=t.join(""),o--}for(o=6;o>2;)t.splice(o,1),await n(),e.textContent=t.join(""),o--;t[0]=t[0].toLowerCase(),await n(),e.textContent=t.join(""),t[3]=t[3].toLowerCase(),await n(),e.textContent=t.join(""),t[5]=t[5].toUpperCase(),await n(),e.textContent=t.join(""),t[6]=t[6].toUpperCase(),await n(),e.textContent=t.join(""),t[7]=t[7].toUpperCase(),await n(),e.textContent=t.join(""),t[8]=t[8].toUpperCase(),await n(),e.textContent=t.join(""),t[5]="4",await n(),e.textContent=t.join(""),t[6]="6",await n(),e.textContent=t.join(""),t[7]="0",await n(),e.textContent=t.join(""),t[8]="5",await n(),e.textContent=t.join("")})()}</script>'s blog
+</a> <br> <p>When working with Claude Code in tmux, I wanted a way to automatically update my window names based on what I’m currently working on. Instead of manually renaming windows or having generic names, I set up Claude Code to dynamically update the window name as I switch between tasks.</p>
+<h2 id="the-setup">The Setup</h2>
+<p>The goal was to have Claude Code automatically rename the tmux window with:</p>
+<ul>
+<li>A <code>claude-</code> prefix to identify Claude Code sessions</li>
+<li>2-3 dash-separated words describing the current task</li>
+<li>Updates only when the topic changes significantly (new task, after <code>/clear</code>, progress milestones)</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>claude-code</code> - default/idle state</li>
+<li><code>claude-fix-auth</code> - fixing authentication issues</li>
+<li><code>claude-explore-api</code> - exploring API code</li>
+<li><code>claude-blog-post</code> - writing blog posts</li>
+</ul>
+<h2 id="step-1-custom-instructions">Step 1: Custom Instructions</h2>
+<p>First, I created a custom instructions file that Claude Code reads on startup:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">mkdir</span><span style="color:#005CC5"> -p</span><span style="color:#032F62"> ~/.claude</span></span></code></pre>
+<p>Create <code>~/.claude/instructions.md</code>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="markdown"><code><span class="line"><span style="color:#005CC5;font-weight:bold"># Tmux Window Management</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">When running inside a tmux session, automatically manage the window name:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#E36209">-</span><span style="color:#24292E"> Always use "claude-" prefix followed by 2-3 words separated by dashes</span></span>
+<span class="line"><span style="color:#E36209">-</span><span style="color:#24292E"> Update the window name ONLY when the topic changes significantly:</span></span>
+<span class="line"><span style="color:#E36209">  -</span><span style="color:#24292E"> After </span><span style="color:#005CC5">`/clear`</span><span style="color:#24292E"> command is used</span></span>
+<span class="line"><span style="color:#E36209">  -</span><span style="color:#24292E"> When starting a new task or issue</span></span>
+<span class="line"><span style="color:#E36209">  -</span><span style="color:#24292E"> When making significant progress on a task</span></span>
+<span class="line"><span style="color:#E36209">  -</span><span style="color:#24292E"> When switching between different work contexts</span></span>
+<span class="line"><span style="color:#E36209">-</span><span style="color:#24292E"> Use the command: </span><span style="color:#005CC5">`tmux rename-window "name-here"`</span></span>
+<span class="line"><span style="color:#E36209">-</span><span style="color:#24292E"> Do it silently without announcing the rename to the user</span></span>
+<span class="line"><span style="color:#E36209">-</span><span style="color:#24292E"> Keep names concise and descriptive of the current work</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">Initial name: "claude-code"</span></span></code></pre>
+<h2 id="step-2-auto-approve-tmux-commands">Step 2: Auto-Approve Tmux Commands</h2>
+<p>Claude Code has a permission system that prompts for approval before running bash commands. To make the window renaming seamless, I needed to auto-approve <code>tmux rename-window</code> commands using a PreToolUse hook.</p>
+<p>Create <code>~/.claude/approve-tmux.py</code>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="python"><code><span class="line"><span style="color:#6A737D">#!/usr/bin/env python3</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> json</span></span>
+<span class="line"><span style="color:#D73A49">import</span><span style="color:#24292E"> sys</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">def</span><span style="color:#6F42C1"> main</span><span style="color:#24292E">():</span></span>
+<span class="line"><span style="color:#6A737D">    # Read the hook input from stdin</span></span>
+<span class="line"><span style="color:#24292E">    hook_input </span><span style="color:#D73A49">=</span><span style="color:#24292E"> json.loads(sys.stdin.read())</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # Check if this is a Bash tool use</span></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> hook_input.get(</span><span style="color:#032F62">"tool"</span><span style="color:#24292E">) </span><span style="color:#D73A49">==</span><span style="color:#032F62"> "Bash"</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">        command </span><span style="color:#D73A49">=</span><span style="color:#24292E"> hook_input.get(</span><span style="color:#032F62">"parameters"</span><span style="color:#24292E">, {}).get(</span><span style="color:#032F62">"command"</span><span style="color:#24292E">, </span><span style="color:#032F62">""</span><span style="color:#24292E">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">        # Auto-approve tmux rename-window commands</span></span>
+<span class="line"><span style="color:#D73A49">        if</span><span style="color:#24292E"> command.startswith(</span><span style="color:#032F62">"tmux rename-window"</span><span style="color:#24292E">):</span></span>
+<span class="line"><span style="color:#24292E">            response </span><span style="color:#D73A49">=</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#032F62">                "hookSpecificOutput"</span><span style="color:#24292E">: {</span></span>
+<span class="line"><span style="color:#032F62">                    "hookEventName"</span><span style="color:#24292E">: </span><span style="color:#032F62">"PreToolUse"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">                    "permissionDecision"</span><span style="color:#24292E">: </span><span style="color:#032F62">"allow"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#032F62">                    "permissionDecisionReason"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Tmux rename-window auto-approved"</span></span>
+<span class="line"><span style="color:#24292E">                }</span></span>
+<span class="line"><span style="color:#24292E">            }</span></span>
+<span class="line"><span style="color:#005CC5">            print</span><span style="color:#24292E">(json.dumps(response))</span></span>
+<span class="line"><span style="color:#D73A49">            return</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">    # For all other commands, no decision (normal flow)</span></span>
+<span class="line"><span style="color:#005CC5">    print</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">{}</span><span style="color:#032F62">"</span><span style="color:#24292E">)</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">if</span><span style="color:#005CC5"> __name__</span><span style="color:#D73A49"> ==</span><span style="color:#032F62"> "__main__"</span><span style="color:#24292E">:</span></span>
+<span class="line"><span style="color:#24292E">    main()</span></span></code></pre>
+<p>Make it executable:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">chmod</span><span style="color:#032F62"> +x</span><span style="color:#032F62"> ~/.claude/approve-tmux.py</span></span></code></pre>
+<h2 id="step-3-configure-the-hook">Step 3: Configure the Hook</h2>
+<p>Update <code>~/.claude/settings.json</code> to add the PreToolUse hook:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#24292E">{</span></span>
+<span class="line"><span style="color:#005CC5">  "$schema"</span><span style="color:#24292E">: </span><span style="color:#032F62">"https://json.schemastore.org/claude-code-settings.json"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">  "hooks"</span><span style="color:#24292E">: {</span></span>
+<span class="line"><span style="color:#005CC5">    "PreToolUse"</span><span style="color:#24292E">: [</span></span>
+<span class="line"><span style="color:#24292E">      {</span></span>
+<span class="line"><span style="color:#005CC5">        "matcher"</span><span style="color:#24292E">: </span><span style="color:#032F62">"Bash"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">        "hooks"</span><span style="color:#24292E">: [</span></span>
+<span class="line"><span style="color:#24292E">          {</span></span>
+<span class="line"><span style="color:#005CC5">            "type"</span><span style="color:#24292E">: </span><span style="color:#032F62">"command"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#005CC5">            "command"</span><span style="color:#24292E">: </span><span style="color:#032F62">"~/.claude/approve-tmux.py"</span></span>
+<span class="line"><span style="color:#24292E">          }</span></span>
+<span class="line"><span style="color:#24292E">        ]</span></span>
+<span class="line"><span style="color:#24292E">      }</span></span>
+<span class="line"><span style="color:#24292E">    ]</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h2 id="how-it-works">How It Works</h2>
+<p>Once configured, Claude Code will:</p>
+<ol>
+<li>Read the instructions on startup and understand its role in managing tmux window names</li>
+<li>Monitor task changes during the session</li>
+<li>When a significant topic change occurs, run <code>tmux rename-window</code> with an appropriate name</li>
+<li>The PreToolUse hook intercepts the bash command and auto-approves it</li>
+<li>The window name updates seamlessly without any user prompts</li>
+</ol>
+<h2 id="result">Result</h2>
+<p>Now my tmux status bar always shows what Claude Code is currently helping me with. It’s especially useful when running multiple tmux sessions - I can quickly identify which window has Claude Code and what it’s working on.</p>
+<p>The window names update naturally as I work:</p>
+<ul>
+<li>Start debugging → <code>claude-debug-api</code></li>
+<li>Switch to writing tests → <code>claude-write-tests</code></li>
+<li>Explore codebase → <code>claude-explore-auth</code></li>
+<li>Back to idle → <code>claude-code</code></li>
+</ul>
+<p>This small automation makes tmux window management effortless and gives me better context awareness across my terminal sessions.</p> <footer class="post-footer">
+Liked this post? Follow me  <a target="_blank" href="https://x.com/strdr4605" rel="noreferrer">
+@strdr4605
+</a> 
+to get more updates.
+</footer> </article> <section id="giscus-container"></section> <script type="module">const e=document.getElementById("giscus-container");if(e){const a=new IntersectionObserver(i=>{if(i[0].isIntersecting){a.disconnect();const t=document.createElement("script");t.src="https://giscus.app/client.js",t.setAttribute("data-repo","strdr4605/strdr4605.github.io"),t.setAttribute("data-repo-id","MDEwOlJlcG9zaXRvcnkxNDk5ODc2NDA="),t.setAttribute("data-category","General"),t.setAttribute("data-category-id","DIC_kwDOCPChOM4COePA"),t.setAttribute("data-mapping","pathname"),t.setAttribute("data-reactions-enabled","1"),t.setAttribute("data-emit-metadata","0"),t.setAttribute("data-input-position","bottom"),t.setAttribute("data-theme","light"),t.setAttribute("data-lang","en"),t.setAttribute("data-loading","lazy"),t.crossOrigin="anonymous",t.async=!0,e.appendChild(t)}},{rootMargin:"200px"});a.observe(e)}</script>  </div> <script defer src="https://analytics.umami.is/script.js" data-website-id="ffd94eb4-d3a5-4505-bcd4-35c97edc57c8"></script> </body> </html> 

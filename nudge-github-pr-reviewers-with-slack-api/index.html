@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><title>Nudge Github PR reviewers with Slack API</title><meta name="description" content="How to create a simple script that will nudge Github Pull Request reviewers on Slack using Slack API and userscripts."><meta property="og:locale" content="en_GB"><meta property="og:title" content="Nudge Github PR reviewers with Slack API"><meta property="og:description" content="How to create a simple script that will nudge Github Pull Request reviewers on Slack using Slack API and userscripts."><meta property="og:image" content="https://strdr4605.com/nudge-github-pr-reviewers-with-slack-api.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@strdr4605"><meta name="theme-color" content="#FAF181"><meta property="og:url" content="https://strdr4605.com/nudge-github-pr-reviewers-with-slack-api"><link rel="canonical" href="https://strdr4605.com/nudge-github-pr-reviewers-with-slack-api"><style>:root{--link-color: #0366d6;--second-color: #faf181;--prism-inline-code: #f5f2f0;--code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace}html,body{padding:0;margin:0;font-family:Verdana,Geneva,Tahoma,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}h1{font-size:1.6em}a{color:var(--link-color)}img{width:100%}blockquote{border-left:1px solid #999;padding-left:1rem;font-style:italic}@media only screen and (min-width:900px){.astro-code{width:150%;margin-left:-25%}}img[src*="#small"]{max-height:500px;object-fit:contain}.astro-code .diff.add{background-color:#acf2bd4d}.astro-code .diff.remove{background-color:#fdb8c04d}.astro-code .diff.add:before{content:"+";color:#22863a;position:absolute;left:.5rem}.astro-code .diff.remove:before{content:"-";color:#cb2431;position:absolute;left:.5rem}:not(pre)>code{padding:.1em;border-radius:.3em;white-space:normal;background:var(--prism-inline-code);font-family:var(--code-font)}.container{max-width:60ch;padding:0 1rem;margin:1rem auto}.header{position:relative}.header nav p a{margin-right:1rem}.github-icon{position:absolute;top:0;right:2.5rem}.rss-icon{position:absolute;top:0;right:0}.blog-posts{list-style-type:none;padding:unset}.blog-posts li{display:flex;margin:1rem 0}.blog-posts li span{flex:0 0 8rem}li.starred:before{content:"★";margin-left:-1.5rem;position:absolute}@media only screen and (max-width:666px){.blog-posts{list-style-type:disc;padding-left:1rem}.blog-posts li{display:list-item}.blog-posts li span{display:none}.starred{list-style-type:"★ "}li.starred:before{content:unset}}.post-footer{border-top:1px solid #999;text-align:center;padding:1rem}
+</style></head> <body> <div class="container">  <article> <h1>Nudge Github PR reviewers with Slack API</h1> <i> <time datetime="2022-02-11">11 Feb 2022</time> </i>  on  <a href="/"> <span id="animated-name">Dragoș Străinu</span><script type="module">const e=document.getElementById("animated-name");if(e){const n=(t=250)=>new Promise(o=>setTimeout(o,t));(async()=>{await n(1500);const t="Dragoș Străinu".split("");t.splice(6,1),e.textContent=t.join("");let o=5;for(;o>=0;){let[i]=t.splice(o,1);t.splice(t.length-5+o,0,i),await n(),e.textContent=t.join(""),o--}for(o=6;o>2;)t.splice(o,1),await n(),e.textContent=t.join(""),o--;t[0]=t[0].toLowerCase(),await n(),e.textContent=t.join(""),t[3]=t[3].toLowerCase(),await n(),e.textContent=t.join(""),t[5]=t[5].toUpperCase(),await n(),e.textContent=t.join(""),t[6]=t[6].toUpperCase(),await n(),e.textContent=t.join(""),t[7]=t[7].toUpperCase(),await n(),e.textContent=t.join(""),t[8]=t[8].toUpperCase(),await n(),e.textContent=t.join(""),t[5]="4",await n(),e.textContent=t.join(""),t[6]="6",await n(),e.textContent=t.join(""),t[7]="0",await n(),e.textContent=t.join(""),t[8]="5",await n(),e.textContent=t.join("")})()}</script>'s blog
+</a> <br> <p>You know that moment when you have a Pull Request waiting for someone to review but days pass and no one is looking at it, so you have to manually ask reviewers in a public channel or privately. How we can automate this?</p>
+<p>Previously I was using Bitbucket and <a href="https://slack.com/apps/A8W8QLZD1-bitbucket-cloud?tab=more_info">Bitbucket Cloud</a> have a cool feature to nudge reviewers from Slack and it will send a private message notifying reviewers to take a look at the Pull Request.</p>
+<p>Now I am using Github with <a href="https://slack.com/apps/A01BP7R4KNY-github?tab=more_info">Github for Slack</a> and it has a feature to remind reviewers at a specific time of the day about PRs. But I could not find a nudge reviewer feature. I searched on the Slack app store but still had no success.</p>
+<p>I decided to do an MVP for my project and team, not publicly available, but you can create the same feature for your project/team/company.</p>
+<h2 id="slack-app">Slack App</h2>
+<p>To publish messages to Slack workspace you need to create a <a href="https://api.slack.com/apps">Slack App</a>.</p>
+<ol>
+<li>Click <strong>Create New App</strong> button</li>
+<li>Pick <strong>From scratch</strong></li>
+<li>Set <strong>App Name</strong> to <code>&#x3C;Company name> PR nudge</code> (or any other suitable name)</li>
+<li>Pick your company workspace</li>
+<li>Press <strong>Create App</strong></li>
+</ol>
+<p>Next, we need to create a webhook for a Slack channel.</p>
+<ol>
+<li>In <strong>Add features and functionality</strong> section select <strong>Incoming Webhooks</strong></li>
+<li>Click <strong>Add New Webhook to Workspace</strong> and select a channel where all messages from <a href="https://slack.com/apps/A01BP7R4KNY-github?tab=more_info">Github for Slack</a> goes (Usually this channel is named <code>#dev</code>)</li>
+</ol>
+<p>Now we have a webhook that will post messages to our channel, next we need to call this webhook from somewhere.</p>
+<h2 id="userscript">Userscript</h2>
+<p>Let’s build a userscript that will add a <strong>Nudge reviewers</strong> button into Github PR page, that when clicked will nudge in Slack, reviewers that are awaited for review.</p>
+<p>If you don’t know about userscripts you can check my explanation video: <a href="https://youtu.be/9yFi3-cfprQ">You Don’t Know *.user.js</a>.</p>
+<p><a href="https://youtu.be/9yFi3-cfprQ" title="You Don&#x27;t Know *.user.js"><img src="http://img.youtube.com/vi/9yFi3-cfprQ/0.jpg" alt="You Don&#x27;t Know *.user.js"></a></p>
+<p>First, your need a Userscript manager extension, let’s install <a href="https://www.tampermonkey.net/">Tampermonkey</a>.
+After installation open Tampermonkey and create a new script.</p>
+<h3 id="userscript-header">Userscript Header</h3>
+<p>We start with:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// ==UserScript==</span></span>
+<span class="line"><span style="color:#6A737D">// @name         &#x3C;Your Company> PR nudge</span></span>
+<span class="line"><span style="color:#6A737D">// @namespace    https://github.com/&#x3C;Your Company></span></span>
+<span class="line"><span style="color:#6A737D">// @version      1.0.0</span></span>
+<span class="line"><span style="color:#6A737D">// @description  Nudge PR reviewers</span></span>
+<span class="line"><span style="color:#6A737D">// @author       You</span></span>
+<span class="line"><span style="color:#6A737D">// @match        https://github.com/&#x3C;Your Company>/*/pull/*</span></span>
+<span class="line"><span style="color:#6A737D">// @icon         https://www.google.com/s2/favicons?sz=64&#x26;domain=github.com</span></span>
+<span class="line"><span style="color:#6A737D">// @grant        GM_xmlhttpRequest</span></span>
+<span class="line"><span style="color:#6A737D">// @connect      slack.com</span></span>
+<span class="line"><span style="color:#6A737D">// ==/UserScript==</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">(</span><span style="color:#D73A49">function</span><span style="color:#24292E"> () {</span></span>
+<span class="line"><span style="color:#032F62">  "use strict"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">  // Your code here...</span></span>
+<span class="line"><span style="color:#24292E">})();</span></span></code></pre>
+<p>We need:</p>
+<ul>
+<li><code>@match https://github.com/&#x3C;Your Company>/*/pull/*</code> to run the script only when navigating to a PR page, such as
+<code>https://github.com/Org/Repo/pull/4605</code></li>
+<li><code>@grant GM_xmlhttpRequest</code> to do requests to Slack webhook</li>
+<li><code>@connect slack.com</code> to allow requests to Slack</li>
+</ul>
+<h3 id="nudge-reviewers-button">Nudge reviewers button</h3>
+<p>Now let’s create a <strong>Nudge reviewers</strong> button and add it to the Reviewers section:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#24292E">(</span><span style="color:#D73A49">function</span><span style="color:#24292E"> () {</span></span>
+<span class="line"><span style="color:#032F62">  "use strict"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> PR_NUDGE_WEBHOOK</span><span style="color:#D73A49"> =</span></span>
+<span class="line"><span style="color:#032F62">    "https://hooks.slack.com/services/********/***********/************************"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> nudgeButton</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> document.</span><span style="color:#6F42C1">createElement</span><span style="color:#24292E">(</span><span style="color:#032F62">"button"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">  nudgeButton.innerText </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "Nudge reviewers"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">  nudgeButton.className </span><span style="color:#D73A49">=</span></span>
+<span class="line"><span style="color:#032F62">    "btn btn-sm js-details-target d-inline-block float-left float-none m-0 mr-md-0 js-title-edit-button"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> reviewersFormElement</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> document.</span><span style="color:#6F42C1">getElementById</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#032F62">    "reviewers-select-menu"</span></span>
+<span class="line"><span style="color:#24292E">  ).parentElement;</span></span>
+<span class="line"><span style="color:#24292E">})();</span></span></code></pre>
+<p><img src="/nudge_reviewers_button.png" alt="nudge_reviewers_button"></p>
+<h3 id="who-needs-to-review">Who needs to review</h3>
+<p>This function will return a list with Github nicknames that should review this PR.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> getAllAwaiting</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> allReviewers</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> Array.</span><span style="color:#6F42C1">from</span><span style="color:#24292E">(reviewersFormElement.</span><span style="color:#6F42C1">querySelectorAll</span><span style="color:#24292E">(</span><span style="color:#032F62">"p"</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> awaiting</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> allReviewers.</span><span style="color:#6F42C1">filter</span><span style="color:#24292E">((</span><span style="color:#E36209">reviewerEl</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span></span>
+<span class="line"><span style="color:#24292E">    reviewerEl</span></span>
+<span class="line"><span style="color:#24292E">      .</span><span style="color:#6F42C1">querySelector</span><span style="color:#24292E">(</span><span style="color:#032F62">"span[aria-label]"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">      .</span><span style="color:#6F42C1">getAttribute</span><span style="color:#24292E">(</span><span style="color:#032F62">"aria-label"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">      .</span><span style="color:#6F42C1">startsWith</span><span style="color:#24292E">(</span><span style="color:#032F62">"Awaiting"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">  );</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> awaitingNicknames</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> awaiting.</span><span style="color:#6F42C1">map</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#24292E">    (</span><span style="color:#E36209">reviewerEl</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span><span style="color:#24292E"> reviewerEl.</span><span style="color:#6F42C1">querySelectorAll</span><span style="color:#24292E">(</span><span style="color:#032F62">"a"</span><span style="color:#24292E">)[</span><span style="color:#005CC5">1</span><span style="color:#24292E">].innerText</span></span>
+<span class="line"><span style="color:#24292E">  );</span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#24292E"> awaitingNicknames;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h3 id="mapping-github-user-with-slack-user">Mapping Github user with Slack user</h3>
+<p>Here is a sad part of this script, because we need to map Github with Slack, to know whom to nudge on Slack.
+At this point, this is a manual process and this is the only downside of this solution.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#24292E">(</span><span style="color:#D73A49">function</span><span style="color:#24292E"> () {</span></span>
+<span class="line"><span style="color:#032F62">  "use strict"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> GithubSlackMap</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    strdr4605: </span><span style="color:#032F62">"U**********"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#D73A49">    ...</span></span>
+<span class="line"><span style="color:#24292E">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> PR_NUDGE_WEBHOOK</span><span style="color:#D73A49"> =</span></span>
+<span class="line"><span style="color:#D73A49">  ...</span></span></code></pre>
+<p>To find the member ID from Slack, go to a Slack user profile, click <strong>More</strong>, and click <strong>Copy member ID</strong>.
+If you have 30+ engineers in your team it may take a while. For me, it was 11 engineers.</p>
+<blockquote>
+<p>If you have an idea how to automate this, let me know.</p>
+</blockquote>
+<h3 id="onnudgebtnclick">onNudgeBtnClick</h3>
+<p>Now let’s gather all the data and sent a request to Slack webhook.
+Slack has a specific format style for messages, so to tag people we need <code>slackMention</code> function.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> slackMention</span><span style="color:#24292E">(</span><span style="color:#E36209">githugNickname</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#24292E"> GithubSlackMap[githugNickname]</span></span>
+<span class="line"><span style="color:#D73A49">    ?</span><span style="color:#032F62"> `&#x3C;@${</span><span style="color:#24292E">GithubSlackMap</span><span style="color:#032F62">[</span><span style="color:#24292E">githugNickname</span><span style="color:#032F62">]</span><span style="color:#032F62">}>`</span></span>
+<span class="line"><span style="color:#D73A49">    :</span><span style="color:#24292E"> githugNickname;</span></span>
+<span class="line"><span style="color:#24292E">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">function</span><span style="color:#6F42C1"> onNudgeBtnClick</span><span style="color:#24292E">(</span><span style="color:#E36209">e</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">  e.</span><span style="color:#6F42C1">preventDefault</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> prLink</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> window.location.href;</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> prTitle</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> document.title.</span><span style="color:#6F42C1">split</span><span style="color:#24292E">(</span><span style="color:#032F62">" by "</span><span style="color:#24292E">)[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] </span><span style="color:#D73A49">||</span><span style="color:#24292E"> prLink;</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> awaitingReviewers</span><span style="color:#D73A49"> =</span><span style="color:#6F42C1"> getAllAwaiting</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  if</span><span style="color:#24292E"> (</span><span style="color:#D73A49">!</span><span style="color:#24292E">awaitingReviewers.</span><span style="color:#005CC5">length</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> dataObj</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    text: </span><span style="color:#032F62">`Hey ${</span><span style="color:#24292E">awaitingReviewers</span><span style="color:#032F62">.</span><span style="color:#6F42C1">map</span><span style="color:#032F62">(</span></span>
+<span class="line"><span style="color:#24292E">      slackMention</span></span>
+<span class="line"><span style="color:#032F62">    )</span><span style="color:#032F62">},</span><span style="color:#005CC5">\n</span><span style="color:#032F62">I really need your review on &#x3C;${</span><span style="color:#24292E">prLink</span><span style="color:#032F62">}|${</span><span style="color:#24292E">prTitle</span><span style="color:#032F62">}>. 🥺😇🙏😊`</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">  GM_xmlhttpRequest</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">    fetch: </span><span style="color:#005CC5">true</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    method: </span><span style="color:#032F62">"POST"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    url: </span><span style="color:#005CC5">PR_NUDGE_WEBHOOK</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    data: </span><span style="color:#005CC5">JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">(dataObj),</span></span>
+<span class="line"><span style="color:#24292E">    responseType: </span><span style="color:#032F62">"json"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    nocache: </span><span style="color:#005CC5">true</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#6F42C1">    onload</span><span style="color:#24292E">: (</span><span style="color:#E36209">response</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span><span style="color:#24292E"> console.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">({ response }),</span></span>
+<span class="line"><span style="color:#6F42C1">    onerror</span><span style="color:#24292E">: (</span><span style="color:#E36209">err</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span><span style="color:#24292E"> console.</span><span style="color:#6F42C1">error</span><span style="color:#24292E">({ err }),</span></span>
+<span class="line"><span style="color:#24292E">  });</span></span>
+<span class="line"><span style="color:#24292E">}</span></span></code></pre>
+<h3 id="add-button-to-the-page">Add button to the page</h3>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#24292E">nudgeButton.</span><span style="color:#6F42C1">addEventListener</span><span style="color:#24292E">(</span><span style="color:#032F62">"click"</span><span style="color:#24292E">, onNudgeBtnClick);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">setTimeout</span><span style="color:#24292E">(() </span><span style="color:#D73A49">=></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">  reviewersFormElement.</span><span style="color:#6F42C1">appendChild</span><span style="color:#24292E">(nudgeButton);</span></span>
+<span class="line"><span style="color:#24292E">}, </span><span style="color:#005CC5">1000</span><span style="color:#24292E">);</span></span></code></pre>
+<h2 id="final-result">Final result</h2>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="js"><code><span class="line"><span style="color:#6A737D">// ==UserScript==</span></span>
+<span class="line"><span style="color:#6A737D">// @name         &#x3C;Your Company> PR nudge</span></span>
+<span class="line"><span style="color:#6A737D">// @namespace    https://github.com/&#x3C;Your Company></span></span>
+<span class="line"><span style="color:#6A737D">// @version      1.0.0</span></span>
+<span class="line"><span style="color:#6A737D">// @description  Nudge PR reviewers</span></span>
+<span class="line"><span style="color:#6A737D">// @author       You</span></span>
+<span class="line"><span style="color:#6A737D">// @match        https://github.com/&#x3C;Your Company>/*/pull/*</span></span>
+<span class="line"><span style="color:#6A737D">// @icon         https://www.google.com/s2/favicons?sz=64&#x26;domain=github.com</span></span>
+<span class="line"><span style="color:#6A737D">// @grant        GM_xmlhttpRequest</span></span>
+<span class="line"><span style="color:#6A737D">// @connect      slack.com</span></span>
+<span class="line"><span style="color:#6A737D">// ==/UserScript==</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">(</span><span style="color:#D73A49">function</span><span style="color:#24292E"> () {</span></span>
+<span class="line"><span style="color:#032F62">  "use strict"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> GithubSlackMap</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    strdr4605: </span><span style="color:#032F62">"U**********"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#D73A49">    ...</span></span>
+<span class="line"><span style="color:#24292E">  };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> PR_NUDGE_WEBHOOK</span><span style="color:#D73A49"> =</span></span>
+<span class="line"><span style="color:#032F62">    "https://hooks.slack.com/services/********/***********/************************"</span><span style="color:#24292E">;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> nudgeButton</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> document.</span><span style="color:#6F42C1">createElement</span><span style="color:#24292E">(</span><span style="color:#032F62">"button"</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">  nudgeButton.innerText </span><span style="color:#D73A49">=</span><span style="color:#032F62"> "Nudge reviewers"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">  nudgeButton.className </span><span style="color:#D73A49">=</span></span>
+<span class="line"><span style="color:#032F62">    "btn btn-sm js-details-target d-inline-block float-left float-none m-0 mr-md-0 js-title-edit-button"</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#D73A49">  const</span><span style="color:#005CC5"> reviewersFormElement</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> document.</span><span style="color:#6F42C1">getElementById</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#032F62">    "reviewers-select-menu"</span></span>
+<span class="line"><span style="color:#24292E">  ).parentElement;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  function</span><span style="color:#6F42C1"> getAllAwaiting</span><span style="color:#24292E">() {</span></span>
+<span class="line"><span style="color:#D73A49">    const</span><span style="color:#005CC5"> allReviewers</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> Array.</span><span style="color:#6F42C1">from</span><span style="color:#24292E">(reviewersFormElement.</span><span style="color:#6F42C1">querySelectorAll</span><span style="color:#24292E">(</span><span style="color:#032F62">"p"</span><span style="color:#24292E">));</span></span>
+<span class="line"><span style="color:#D73A49">    const</span><span style="color:#005CC5"> awaiting</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> allReviewers.</span><span style="color:#6F42C1">filter</span><span style="color:#24292E">((</span><span style="color:#E36209">reviewerEl</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span></span>
+<span class="line"><span style="color:#24292E">      reviewerEl</span></span>
+<span class="line"><span style="color:#24292E">        .</span><span style="color:#6F42C1">querySelector</span><span style="color:#24292E">(</span><span style="color:#032F62">"span[aria-label]"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">        .</span><span style="color:#6F42C1">getAttribute</span><span style="color:#24292E">(</span><span style="color:#032F62">"aria-label"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">        .</span><span style="color:#6F42C1">startsWith</span><span style="color:#24292E">(</span><span style="color:#032F62">"Awaiting"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#24292E">    );</span></span>
+<span class="line"><span style="color:#D73A49">    const</span><span style="color:#005CC5"> awaitingNicknames</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> awaiting.</span><span style="color:#6F42C1">map</span><span style="color:#24292E">(</span></span>
+<span class="line"><span style="color:#24292E">      (</span><span style="color:#E36209">reviewerEl</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span><span style="color:#24292E"> reviewerEl.</span><span style="color:#6F42C1">querySelectorAll</span><span style="color:#24292E">(</span><span style="color:#032F62">"a"</span><span style="color:#24292E">)[</span><span style="color:#005CC5">1</span><span style="color:#24292E">].innerText</span></span>
+<span class="line"><span style="color:#24292E">    );</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> awaitingNicknames;</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  function</span><span style="color:#6F42C1"> slackMention</span><span style="color:#24292E">(</span><span style="color:#E36209">githugNickname</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">    return</span><span style="color:#24292E"> GithubSlackMap[githugNickname]</span></span>
+<span class="line"><span style="color:#D73A49">      ?</span><span style="color:#032F62"> `&#x3C;@${</span><span style="color:#24292E">GithubSlackMap</span><span style="color:#032F62">[</span><span style="color:#24292E">githugNickname</span><span style="color:#032F62">]</span><span style="color:#032F62">}>`</span></span>
+<span class="line"><span style="color:#D73A49">      :</span><span style="color:#24292E"> githugNickname;</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">  function</span><span style="color:#6F42C1"> onNudgeBtnClick</span><span style="color:#24292E">(</span><span style="color:#E36209">e</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#24292E">    e.</span><span style="color:#6F42C1">preventDefault</span><span style="color:#24292E">();</span></span>
+<span class="line"><span style="color:#D73A49">    const</span><span style="color:#005CC5"> prLink</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> window.location.href;</span></span>
+<span class="line"><span style="color:#D73A49">    const</span><span style="color:#005CC5"> prTitle</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> document.title.</span><span style="color:#6F42C1">split</span><span style="color:#24292E">(</span><span style="color:#032F62">" by "</span><span style="color:#24292E">)[</span><span style="color:#005CC5">0</span><span style="color:#24292E">] </span><span style="color:#D73A49">||</span><span style="color:#24292E"> prLink;</span></span>
+<span class="line"><span style="color:#D73A49">    const</span><span style="color:#005CC5"> awaitingReviewers</span><span style="color:#D73A49"> =</span><span style="color:#6F42C1"> getAllAwaiting</span><span style="color:#24292E">();</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    if</span><span style="color:#24292E"> (</span><span style="color:#D73A49">!</span><span style="color:#24292E">awaitingReviewers.</span><span style="color:#005CC5">length</span><span style="color:#24292E">) {</span></span>
+<span class="line"><span style="color:#D73A49">      return</span><span style="color:#24292E">;</span></span>
+<span class="line"><span style="color:#24292E">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#D73A49">    const</span><span style="color:#005CC5"> dataObj</span><span style="color:#D73A49"> =</span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">      text: </span><span style="color:#032F62">`Hey ${</span><span style="color:#24292E">awaitingReviewers</span><span style="color:#032F62">.</span><span style="color:#6F42C1">map</span><span style="color:#032F62">(</span></span>
+<span class="line"><span style="color:#24292E">        slackMention</span></span>
+<span class="line"><span style="color:#032F62">      )</span><span style="color:#032F62">},</span><span style="color:#005CC5">\n</span><span style="color:#032F62">I really need your review on &#x3C;${</span><span style="color:#24292E">prLink</span><span style="color:#032F62">}|${</span><span style="color:#24292E">prTitle</span><span style="color:#032F62">}>. 🥺😇🙏😊`</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">    };</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">    GM_xmlhttpRequest</span><span style="color:#24292E">({</span></span>
+<span class="line"><span style="color:#24292E">      fetch: </span><span style="color:#005CC5">true</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">      method: </span><span style="color:#032F62">"POST"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">      url: </span><span style="color:#005CC5">PR_NUDGE_WEBHOOK</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">      data: </span><span style="color:#005CC5">JSON</span><span style="color:#24292E">.</span><span style="color:#6F42C1">stringify</span><span style="color:#24292E">(dataObj),</span></span>
+<span class="line"><span style="color:#24292E">      responseType: </span><span style="color:#032F62">"json"</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#24292E">      nocache: </span><span style="color:#005CC5">true</span><span style="color:#24292E">,</span></span>
+<span class="line"><span style="color:#6F42C1">      onload</span><span style="color:#24292E">: (</span><span style="color:#E36209">response</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span><span style="color:#24292E"> console.</span><span style="color:#6F42C1">log</span><span style="color:#24292E">({ response }),</span></span>
+<span class="line"><span style="color:#6F42C1">      onerror</span><span style="color:#24292E">: (</span><span style="color:#E36209">err</span><span style="color:#24292E">) </span><span style="color:#D73A49">=></span><span style="color:#24292E"> console.</span><span style="color:#6F42C1">error</span><span style="color:#24292E">({ err }),</span></span>
+<span class="line"><span style="color:#24292E">    });</span></span>
+<span class="line"><span style="color:#24292E">  }</span></span>
+<span class="line"><span style="color:#24292E">  nudgeButton.</span><span style="color:#6F42C1">addEventListener</span><span style="color:#24292E">(</span><span style="color:#032F62">"click"</span><span style="color:#24292E">, onNudgeBtnClick);</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">  setTimeout</span><span style="color:#24292E">(() </span><span style="color:#D73A49">=></span><span style="color:#24292E"> {</span></span>
+<span class="line"><span style="color:#24292E">    reviewersFormElement.</span><span style="color:#6F42C1">appendChild</span><span style="color:#24292E">(nudgeButton);</span></span>
+<span class="line"><span style="color:#24292E">  }, </span><span style="color:#005CC5">1000</span><span style="color:#24292E">);</span></span>
+<span class="line"><span style="color:#24292E">})();</span></span></code></pre>
+<p>Now when clicking <strong>Nudge reviewers</strong> your teammates will be notified and will review your changes faster.</p>
+<h2 id="final-step">Final step</h2>
+<blockquote>
+<p>Don’t expose webhook URL to the public!</p>
+</blockquote>
+<p>Add the script to a private repo(<code>company-userscripts</code>) in your Github org.
+Name it <code>PR-nudge.user.js</code>.<br>
+Tell teammates to install Tampermonkey and send them:<br>
+<a href="https://github.com/Org/org-userscripts/blob/master/PR-nudge.user.js?raw=1">https://github.com/Org/org-userscripts/blob/master/PR-nudge.user.js?raw=1</a><br>
+to add the script on their machine.</p> <footer class="post-footer">
+Liked this post? Follow me  <a target="_blank" href="https://x.com/strdr4605" rel="noreferrer">
+@strdr4605
+</a> 
+to get more updates.
+</footer> </article> <section id="giscus-container"></section> <script type="module">const e=document.getElementById("giscus-container");if(e){const a=new IntersectionObserver(i=>{if(i[0].isIntersecting){a.disconnect();const t=document.createElement("script");t.src="https://giscus.app/client.js",t.setAttribute("data-repo","strdr4605/strdr4605.github.io"),t.setAttribute("data-repo-id","MDEwOlJlcG9zaXRvcnkxNDk5ODc2NDA="),t.setAttribute("data-category","General"),t.setAttribute("data-category-id","DIC_kwDOCPChOM4COePA"),t.setAttribute("data-mapping","pathname"),t.setAttribute("data-reactions-enabled","1"),t.setAttribute("data-emit-metadata","0"),t.setAttribute("data-input-position","bottom"),t.setAttribute("data-theme","light"),t.setAttribute("data-lang","en"),t.setAttribute("data-loading","lazy"),t.crossOrigin="anonymous",t.async=!0,e.appendChild(t)}},{rootMargin:"200px"});a.observe(e)}</script>  </div> <script defer src="https://analytics.umami.is/script.js" data-website-id="ffd94eb4-d3a5-4505-bcd4-35c97edc57c8"></script> </body> </html> 

@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><title>No tits in git</title><meta name="description" content="Why merge commits make git history unreadable and how git rebase keeps it clean."><meta property="og:locale" content="en_GB"><meta property="og:title" content="No tits in git"><meta property="og:description" content="Why merge commits make git history unreadable and how git rebase keeps it clean."><meta property="og:image" content="https://strdr4605.com/no-tits-in-git.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@strdr4605"><meta name="theme-color" content="#FAF181"><meta property="og:url" content="https://strdr4605.com/no-tits-in-git"><link rel="canonical" href="https://strdr4605.com/no-tits-in-git"><style>:root{--link-color: #0366d6;--second-color: #faf181;--prism-inline-code: #f5f2f0;--code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace}html,body{padding:0;margin:0;font-family:Verdana,Geneva,Tahoma,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}h1{font-size:1.6em}a{color:var(--link-color)}img{width:100%}blockquote{border-left:1px solid #999;padding-left:1rem;font-style:italic}@media only screen and (min-width:900px){.astro-code{width:150%;margin-left:-25%}}img[src*="#small"]{max-height:500px;object-fit:contain}.astro-code .diff.add{background-color:#acf2bd4d}.astro-code .diff.remove{background-color:#fdb8c04d}.astro-code .diff.add:before{content:"+";color:#22863a;position:absolute;left:.5rem}.astro-code .diff.remove:before{content:"-";color:#cb2431;position:absolute;left:.5rem}:not(pre)>code{padding:.1em;border-radius:.3em;white-space:normal;background:var(--prism-inline-code);font-family:var(--code-font)}.container{max-width:60ch;padding:0 1rem;margin:1rem auto}.header{position:relative}.header nav p a{margin-right:1rem}.github-icon{position:absolute;top:0;right:2.5rem}.rss-icon{position:absolute;top:0;right:0}.blog-posts{list-style-type:none;padding:unset}.blog-posts li{display:flex;margin:1rem 0}.blog-posts li span{flex:0 0 8rem}li.starred:before{content:"★";margin-left:-1.5rem;position:absolute}@media only screen and (max-width:666px){.blog-posts{list-style-type:disc;padding-left:1rem}.blog-posts li{display:list-item}.blog-posts li span{display:none}.starred{list-style-type:"★ "}li.starred:before{content:unset}}.post-footer{border-top:1px solid #999;text-align:center;padding:1rem}
+</style></head> <body> <div class="container">  <article> <h1>No tits in git</h1> <i> <time datetime="2021-11-09">09 Nov 2021</time> </i>  on  <a href="/"> <span id="animated-name">Dragoș Străinu</span><script type="module">const e=document.getElementById("animated-name");if(e){const n=(t=250)=>new Promise(o=>setTimeout(o,t));(async()=>{await n(1500);const t="Dragoș Străinu".split("");t.splice(6,1),e.textContent=t.join("");let o=5;for(;o>=0;){let[i]=t.splice(o,1);t.splice(t.length-5+o,0,i),await n(),e.textContent=t.join(""),o--}for(o=6;o>2;)t.splice(o,1),await n(),e.textContent=t.join(""),o--;t[0]=t[0].toLowerCase(),await n(),e.textContent=t.join(""),t[3]=t[3].toLowerCase(),await n(),e.textContent=t.join(""),t[5]=t[5].toUpperCase(),await n(),e.textContent=t.join(""),t[6]=t[6].toUpperCase(),await n(),e.textContent=t.join(""),t[7]=t[7].toUpperCase(),await n(),e.textContent=t.join(""),t[8]=t[8].toUpperCase(),await n(),e.textContent=t.join(""),t[5]="4",await n(),e.textContent=t.join(""),t[6]="6",await n(),e.textContent=t.join(""),t[7]="0",await n(),e.textContent=t.join(""),t[8]="5",await n(),e.textContent=t.join("")})()}</script>'s blog
+</a> <br> <p>I don’t know about you but my first git experience was with Github.
+The power of git is allowing development as a team, where every team member can make a branch and then create a Pull Request.
+My <a href="https://firstpr.me/#strdr4605">first PR</a> was an experience.
+After submitting it, my teammate merged it and the git history looked like this:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E">   8d662a2 Merge pull request </span><span style="color:#6A737D">#1 from strdr4605/new-colors</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#005CC5">\</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#6F42C1"> *</span><span style="color:#032F62"> cbf20e1</span><span style="color:#032F62"> Setting</span><span style="color:#032F62"> better</span><span style="color:#032F62"> colors</span><span style="color:#032F62"> for</span><span style="color:#032F62"> rectangles</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#6F42C1">/</span></span>
+<span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> 40446a6 fixed readme typo</span></span>
+<span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> b894618 add readme to lab2, modified cases methods in bussiness logic</span></span></code></pre>
+<p>When doing a default merge, git will create a merge commit with info about the branch that was merged history will show the path to commits.
+I call it a <strong>“tit”</strong> and I now will explain why you should not have <strong>tits</strong> in git!</p>
+<p>Let’s say my teammate was doing something on local master, his master branch was at <code>40446a6</code> then he committed some changes.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> 5963243 (</span><span style="color:#6F42C1">HEAD</span><span style="color:#24292E"> -</span><span style="color:#D73A49">></span><span style="color:#032F62"> master</span><span style="color:#24292E">) add circles</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#6F42C1"> *</span><span style="color:#032F62">   8d662a2</span><span style="color:#24292E"> (origin/master, </span><span style="color:#032F62">origin/HEAD</span><span style="color:#24292E">) Merge pull request </span><span style="color:#6A737D">#1 from strdr4605/new-colors</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#D73A49"> |</span><span style="color:#005CC5">\</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#6F42C1">/</span><span style="color:#032F62"> /</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#6F42C1"> *</span><span style="color:#032F62"> cbf20e1</span><span style="color:#032F62"> Setting</span><span style="color:#032F62"> better</span><span style="color:#032F62"> colors</span><span style="color:#032F62"> for</span><span style="color:#032F62"> rectangles</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#6F42C1">/</span></span>
+<span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> 40446a6 fixed readme typo</span></span>
+<span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> b894618 add readme to lab2, modified cases methods in bussiness logic</span></span></code></pre>
+<p>Now when he tries to push to remote git will alert that he should first do a <code>git pull</code>.
+<code>git pull</code> internally is doing 2 things, <code>git fetch</code> to get updates from <strong>origin/master</strong> and <code>git merge</code>.
+And the git history looks like this:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E">   c3633b4 (</span><span style="color:#6F42C1">HEAD</span><span style="color:#24292E"> -</span><span style="color:#D73A49">></span><span style="color:#032F62"> master</span><span style="color:#24292E">) Merge branch </span><span style="color:#032F62">'master'</span><span style="color:#24292E"> of https://github.com/sspatari/OR_Labs</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#005CC5">\</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#6F42C1"> *</span><span style="color:#032F62">   8d662a2</span><span style="color:#24292E"> (origin/master, </span><span style="color:#032F62">origin/HEAD</span><span style="color:#24292E">) Merge pull request </span><span style="color:#6A737D">#1 from strdr4605/new-colors</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#D73A49"> |</span><span style="color:#005CC5">\</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> *</span><span style="color:#032F62"> cbf20e1</span><span style="color:#032F62"> Setting</span><span style="color:#032F62"> better</span><span style="color:#032F62"> colors</span><span style="color:#032F62"> for</span><span style="color:#032F62"> rectangles</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1">/</span></span>
+<span class="line"><span style="color:#D73A49">*</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> c27aac2</span><span style="color:#032F62"> add</span><span style="color:#032F62"> circles</span></span>
+<span class="line"><span style="color:#D73A49">|</span><span style="color:#6F42C1">/</span></span>
+<span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> 40446a6 fixed readme typo</span></span>
+<span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> b894618 add readme to lab2, modified cases methods in bussiness logic</span></span></code></pre>
+<p>You see! A new indentation and a bigger <strong>tit</strong>. Now it’s harder to understand the git history.
+And it can get worse, and in one moment when you need to debug something and use git history, you see over 9000 tits, small, big, enormous, gigantic.</p>
+<p>I asked a friend of mine whats this:</p>
+<p><img src="/git-carpet.png" alt="Git carpet"></p>
+<p>And he told me that it’s a photo of my grandma’s carpet 😂.</p>
+<p>But actually, it’s a git history from a development team of my friend. Here is a zoom out:</p>
+<p><img src="/gigantic-git-tits.jpg" alt="Gigantic git tits"></p>
+<p>You may say <em>“I don’t look at git history, I don’t even use the command line, I only click the magic button on my IDE when I want to push my changes and everything is ok”</em>.
+Sure, it’s ok until the moment when things become complicated.
+Maybe you need to get some changes from another branch, or maybe you need only one commit from your teammate’s branch.
+You may have some conflicts when merging/rebasing a wrong branch using your magic IDE.
+Maybe you need to find a bug that was introduced some time ago and the only way to understand where approximately it was is by looking at git history.
+You may spend hours, days trying to navigate in a dimension full of <strong>tits</strong>.</p>
+<p>The main causes of git <strong>tits</strong> are:</p>
+<ol>
+<li>No desire to learn git a bit</li>
+<li>Using magic IDE buttons</li>
+<li>Using <strong>“Merge pull request”</strong> option button in Github PRs</li>
+</ol>
+<h2 id="the-solution">The solution</h2>
+<p>Use <code>git rebase</code> always!</p>
+<p>Here is a version of the git history above if it was done using <code>git rebase</code>:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> 461db4e add circles</span></span>
+<span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> ad0041c Setting better colors </span><span style="color:#D73A49">for</span><span style="color:#24292E"> rectangles</span></span>
+<span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> 40446a6 fixed readme typo</span></span>
+<span class="line"><span style="color:#D73A49">*</span><span style="color:#24292E"> b894618 add readme to lab2, modified cases methods in bussiness logic</span></span></code></pre>
+<p>🎉 Now it’s cleaner what is happening in the project.
+If rebasing on every feature or bug fix, the git history will look like a straight line with some branches on top.
+It will be easier to understand the status of the project and what git operations should be done.
+Easier to get some changes from other branches, or to find a bug that from past commits.</p>
+<p>You may think, <a href="https://news.ycombinator.com/item?id=26582912">rebasing is lying about the project history</a> and it’s true.
+When rebasing you reapply the commits and now they have different hashes and committing dates/authors.
+You will lose info about the branch name that was merged, or when these changes were initially committed.
+If this is more important for you then yeah git <strong>tits</strong> is the way to go.
+But I think about git history, not like some timeline of the project development where changes happened and I need all details,
+but more like a version history of the project where every commit is a new version.
+Then I don’t care about dates, hashes, authors. I only know that this version of the project (commit 2) comes after another version (commit 1).</p>
+<p>So, how to eliminate git <strong>tits</strong>:</p>
+<ol>
+<li>Use <code>git rebase</code> instead of <code>git merge</code> (or use <code>git merge --ff-only</code>)</li>
+<li>Use <code>git pull -r</code> (will do <code>git fetch</code> and <code>git rebase</code>) when getting updates from remote</li>
+<li>Use <strong>Rebase and merge</strong> option button in Github when merging PRs</li>
+</ol>
+<p>The only case where we can not escape from git <strong>tit</strong> is doing a rebase with a lot of commits (20+) and you have to resolve conflicts at every other commit.
+This can be a pain, especially when in the process of rebasing you did a mistake and the only way to revert it is to rebase again.
+In this case <code>git merge</code> will let you solve all the conflicts in one take.</p>
+<p>I hope you understood my idea and from now on instead of confusing git <strong>tits</strong> and spaghetti, your project git history will look more like a beautiful palm tree.</p>
+<blockquote>
+<p>Let me know if there are other use cases when git <strong>tits</strong> are inevitable</p>
+<blockquote>
+<p>You may also check <a href="/how-i-use-git">how I use git</a></p>
+</blockquote>
+</blockquote> <footer class="post-footer">
+Liked this post? Follow me  <a target="_blank" href="https://x.com/strdr4605" rel="noreferrer">
+@strdr4605
+</a> 
+to get more updates.
+</footer> </article> <section id="giscus-container"></section> <script type="module">const e=document.getElementById("giscus-container");if(e){const a=new IntersectionObserver(i=>{if(i[0].isIntersecting){a.disconnect();const t=document.createElement("script");t.src="https://giscus.app/client.js",t.setAttribute("data-repo","strdr4605/strdr4605.github.io"),t.setAttribute("data-repo-id","MDEwOlJlcG9zaXRvcnkxNDk5ODc2NDA="),t.setAttribute("data-category","General"),t.setAttribute("data-category-id","DIC_kwDOCPChOM4COePA"),t.setAttribute("data-mapping","pathname"),t.setAttribute("data-reactions-enabled","1"),t.setAttribute("data-emit-metadata","0"),t.setAttribute("data-input-position","bottom"),t.setAttribute("data-theme","light"),t.setAttribute("data-lang","en"),t.setAttribute("data-loading","lazy"),t.crossOrigin="anonymous",t.async=!0,e.appendChild(t)}},{rootMargin:"200px"});a.observe(e)}</script>  </div> <script defer src="https://analytics.umami.is/script.js" data-website-id="ffd94eb4-d3a5-4505-bcd4-35c97edc57c8"></script> </body> </html> 

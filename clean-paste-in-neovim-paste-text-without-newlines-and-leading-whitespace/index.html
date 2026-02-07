@@ -1,0 +1,137 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><title>Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace</title><meta name="description" content="How to paste code in Neovim without unwanted newlines and leading whitespace."><meta property="og:locale" content="en_GB"><meta property="og:title" content="Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace"><meta property="og:description" content="How to paste code in Neovim without unwanted newlines and leading whitespace."><meta property="og:image" content="https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@strdr4605"><meta name="theme-color" content="#FAF181"><meta property="og:url" content="https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace"><link rel="canonical" href="https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace"><style>:root{--link-color: #0366d6;--second-color: #faf181;--prism-inline-code: #f5f2f0;--code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace}html,body{padding:0;margin:0;font-family:Verdana,Geneva,Tahoma,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}h1{font-size:1.6em}a{color:var(--link-color)}img{width:100%}blockquote{border-left:1px solid #999;padding-left:1rem;font-style:italic}@media only screen and (min-width:900px){.astro-code{width:150%;margin-left:-25%}}img[src*="#small"]{max-height:500px;object-fit:contain}.astro-code .diff.add{background-color:#acf2bd4d}.astro-code .diff.remove{background-color:#fdb8c04d}.astro-code .diff.add:before{content:"+";color:#22863a;position:absolute;left:.5rem}.astro-code .diff.remove:before{content:"-";color:#cb2431;position:absolute;left:.5rem}:not(pre)>code{padding:.1em;border-radius:.3em;white-space:normal;background:var(--prism-inline-code);font-family:var(--code-font)}.container{max-width:60ch;padding:0 1rem;margin:1rem auto}.header{position:relative}.header nav p a{margin-right:1rem}.github-icon{position:absolute;top:0;right:2.5rem}.rss-icon{position:absolute;top:0;right:0}.blog-posts{list-style-type:none;padding:unset}.blog-posts li{display:flex;margin:1rem 0}.blog-posts li span{flex:0 0 8rem}li.starred:before{content:"★";margin-left:-1.5rem;position:absolute}@media only screen and (max-width:666px){.blog-posts{list-style-type:disc;padding-left:1rem}.blog-posts li{display:list-item}.blog-posts li span{display:none}.starred{list-style-type:"★ "}li.starred:before{content:unset}}.post-footer{border-top:1px solid #999;text-align:center;padding:1rem}
+</style></head> <body> <div class="container">  <article> <h1>Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace</h1> <i> <time datetime="2025-03-20">20 Mar 2025</time> </i>  on  <a href="/"> <span id="animated-name">Dragoș Străinu</span><script type="module">const e=document.getElementById("animated-name");if(e){const n=(t=250)=>new Promise(o=>setTimeout(o,t));(async()=>{await n(1500);const t="Dragoș Străinu".split("");t.splice(6,1),e.textContent=t.join("");let o=5;for(;o>=0;){let[i]=t.splice(o,1);t.splice(t.length-5+o,0,i),await n(),e.textContent=t.join(""),o--}for(o=6;o>2;)t.splice(o,1),await n(),e.textContent=t.join(""),o--;t[0]=t[0].toLowerCase(),await n(),e.textContent=t.join(""),t[3]=t[3].toLowerCase(),await n(),e.textContent=t.join(""),t[5]=t[5].toUpperCase(),await n(),e.textContent=t.join(""),t[6]=t[6].toUpperCase(),await n(),e.textContent=t.join(""),t[7]=t[7].toUpperCase(),await n(),e.textContent=t.join(""),t[8]=t[8].toUpperCase(),await n(),e.textContent=t.join(""),t[5]="4",await n(),e.textContent=t.join(""),t[6]="6",await n(),e.textContent=t.join(""),t[7]="0",await n(),e.textContent=t.join(""),t[8]="5",await n(),e.textContent=t.join("")})()}</script>'s blog
+</a> <br> <p>When I work on a web project, I find myself copy-pasting HTML tags or Components from one place to another.</p>
+<p>Here are some use cases:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- 1: Copy html tag to another parent  --></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"1"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">h2</span><span style="color:#24292E">>Copy me to div#2&#x3C;/</span><span style="color:#22863A">h2</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">div</span><span style="color:#24292E">>Here is another child element&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"2"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- 2: Copy component to another parent --></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"1"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#B31D28;font-style:italic">Component</span></span>
+<span class="line"><span style="color:#6F42C1">    className</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span></span>
+<span class="line"><span style="color:#6F42C1">    title</span><span style="color:#24292E">=</span><span style="color:#032F62">"Copy me to div#2"</span></span>
+<span class="line"><span style="color:#6F42C1">    description</span><span style="color:#24292E">=</span><span style="color:#032F62">"Here is the description"</span></span>
+<span class="line"><span style="color:#24292E">  /></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"2"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- 3: component as prop --></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"1"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#B31D28;font-style:italic">Component</span></span>
+<span class="line"><span style="color:#6F42C1">    className</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span></span>
+<span class="line"><span style="color:#6F42C1">    title</span><span style="color:#24292E">=</span><span style="color:#032F62">"Move me to Container header"</span></span>
+<span class="line"><span style="color:#6F42C1">    description</span><span style="color:#24292E">=</span><span style="color:#032F62">"Here is the description"</span></span>
+<span class="line"><span style="color:#24292E">  /></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#B31D28;font-style:italic">Container</span><span style="color:#6F42C1"> header</span><span style="color:#24292E">=</span><span style="color:#032F62">{}</span><span style="color:#24292E"> /></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D">&#x3C;!-- 4: Return component --></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"1"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#B31D28;font-style:italic">Component</span></span>
+<span class="line"><span style="color:#6F42C1">    className</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span></span>
+<span class="line"><span style="color:#6F42C1">    title</span><span style="color:#24292E">=</span><span style="color:#032F62">"Move me to Container header"</span></span>
+<span class="line"><span style="color:#6F42C1">    description</span><span style="color:#24292E">=</span><span style="color:#032F62">"Here is the description"</span></span>
+<span class="line"><span style="color:#24292E">  /></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">return ();</span></span></code></pre>
+<p>For the first use case, I can put the cursor inside<br>
+<code>&#x3C;div class="copy-paste"></code> and do <code>yat</code> or <code>vaty</code> (yank around tag) to copy the HTML tag, then move inside <code>&#x3C;div id="2">&#x3C;/div></code> and paste.</p>
+<p>But for the other use cases, this does not work because<br>
+<code>&#x3C;Component /></code> is self-closing and Neovim can’t select with <code>t</code> (tag).</p>
+<p>So most often I just use <code>SHIFT+V</code> to enter in visual mode on the whole line, move N lines below, select the HTML tag or Component, then use <code>y</code> to copy the selection.</p>
+<p>Now because of <code>SHIFT+V</code>, the yanked text includes newlines and leading whitespace, and when I paste I get this result:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- 1: Copy html tag to another parent  --></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"1"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">h2</span><span style="color:#24292E">>Copy me to div#2&#x3C;/</span><span style="color:#22863A">h2</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">div</span><span style="color:#24292E">>Here is another child element&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"2"</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">h2</span><span style="color:#24292E">>Copy me to div#2&#x3C;/</span><span style="color:#22863A">h2</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">div</span><span style="color:#24292E">>Here is another child element&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span></code></pre>
+<p>So I created a keymap to paste the text without newlines and leading whitespace:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="lua"><code><span class="line"><span style="color:#6A737D">-- Map yp to paste yanked line without newlines and without leading whitespace</span></span>
+<span class="line"><span style="color:#24292E">vim.</span><span style="color:#6F42C1">keymap</span><span style="color:#24292E">.</span><span style="color:#005CC5">set</span><span style="color:#24292E">(</span><span style="color:#032F62">"n"</span><span style="color:#24292E">, </span><span style="color:#032F62">"yp"</span><span style="color:#24292E">, </span><span style="color:#D73A49">function</span><span style="color:#24292E">()</span></span>
+<span class="line"><span style="color:#6A737D">  -- Get content from register 0 (most recent yank)</span></span>
+<span class="line"><span style="color:#D73A49">  local</span><span style="color:#24292E"> yanked_text </span><span style="color:#D73A49">=</span><span style="color:#24292E"> vim.</span><span style="color:#6F42C1">fn</span><span style="color:#24292E">.</span><span style="color:#005CC5">getreg</span><span style="color:#24292E">(</span><span style="color:#032F62">"0"</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#6A737D">  -- Remove trailing newline if present</span></span>
+<span class="line"><span style="color:#24292E">  yanked_text </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> yanked_text</span><span style="color:#24292E">:</span><span style="color:#005CC5">gsub</span><span style="color:#24292E">(</span><span style="color:#032F62">"</span><span style="color:#005CC5">\n</span><span style="color:#032F62">$"</span><span style="color:#24292E">, </span><span style="color:#032F62">""</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#6A737D">  -- Remove leading whitespace</span></span>
+<span class="line"><span style="color:#24292E">  yanked_text </span><span style="color:#D73A49">=</span><span style="color:#6F42C1"> yanked_text</span><span style="color:#24292E">:</span><span style="color:#005CC5">gsub</span><span style="color:#24292E">(</span><span style="color:#032F62">"^%s+"</span><span style="color:#24292E">, </span><span style="color:#032F62">""</span><span style="color:#24292E">)</span></span>
+<span class="line"><span style="color:#6A737D">  -- Store in register p</span></span>
+<span class="line"><span style="color:#24292E">  vim.</span><span style="color:#6F42C1">fn</span><span style="color:#24292E">.</span><span style="color:#005CC5">setreg</span><span style="color:#24292E">(</span><span style="color:#032F62">"p"</span><span style="color:#24292E">, yanked_text)</span></span>
+<span class="line"><span style="color:#6A737D">  -- Paste from register p</span></span>
+<span class="line"><span style="color:#D73A49">  return</span><span style="color:#032F62"> '"pp'</span></span>
+<span class="line"><span style="color:#D73A49">end</span><span style="color:#24292E">, { expr </span><span style="color:#D73A49">=</span><span style="color:#005CC5"> true</span><span style="color:#24292E"> })</span></span></code></pre>
+<p>You can change the keymap to <code>cp</code> (clean paste) or <code>&#x3C;leader>p</code>.</p>
+<p>The result when using this keymap is:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- 1: Copy html tag to another parent  --></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"1"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">h2</span><span style="color:#24292E">>Copy me to div#2&#x3C;/</span><span style="color:#22863A">h2</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">div</span><span style="color:#24292E">>Here is another child element&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"2"</span><span style="color:#24292E">>&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">h2</span><span style="color:#24292E">>Copy me to div#2&#x3C;/</span><span style="color:#22863A">h2</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">div</span><span style="color:#24292E">>Here is another child element&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">>&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span></code></pre>
+<p>And next, I just let my formatter do the job:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- 1: Copy html tag to another parent  --></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"1"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">h2</span><span style="color:#24292E">>Copy me to div#2&#x3C;/</span><span style="color:#22863A">h2</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">div</span><span style="color:#24292E">>Here is another child element&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"2"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> class</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">h2</span><span style="color:#24292E">>Copy me to div#2&#x3C;/</span><span style="color:#22863A">h2</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">    &#x3C;</span><span style="color:#22863A">div</span><span style="color:#24292E">>Here is another child element&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span></code></pre>
+<p>This also works for other use cases:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#6A737D">&#x3C;!-- 4: Return component --></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;</span><span style="color:#22863A">div</span><span style="color:#6F42C1"> id</span><span style="color:#24292E">=</span><span style="color:#032F62">"1"</span><span style="color:#24292E">></span></span>
+<span class="line"><span style="color:#24292E">  &#x3C;</span><span style="color:#B31D28;font-style:italic">Component</span></span>
+<span class="line"><span style="color:#6F42C1">    className</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span></span>
+<span class="line"><span style="color:#6F42C1">    title</span><span style="color:#24292E">=</span><span style="color:#032F62">"Move me to Container header"</span></span>
+<span class="line"><span style="color:#6F42C1">    description</span><span style="color:#24292E">=</span><span style="color:#032F62">"Here is the description"</span></span>
+<span class="line"><span style="color:#24292E">  /></span></span>
+<span class="line"><span style="color:#24292E">&#x3C;/</span><span style="color:#22863A">div</span><span style="color:#24292E">></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#24292E">return (&#x3C;</span><span style="color:#B31D28;font-style:italic">Component</span></span>
+<span class="line"><span style="color:#6F42C1">    className</span><span style="color:#24292E">=</span><span style="color:#032F62">"copy-paste"</span></span>
+<span class="line"><span style="color:#6F42C1">    title</span><span style="color:#24292E">=</span><span style="color:#032F62">"Move me to Container header"</span></span>
+<span class="line"><span style="color:#6F42C1">    description</span><span style="color:#24292E">=</span><span style="color:#032F62">"Here is the description"</span></span>
+<span class="line"><span style="color:#24292E">  />);</span></span>
+<span class="line"></span></code></pre>
+<p><img __ASTRO_IMAGE_="{&#x22;src&#x22;:&#x22;neovim-clean-paste.gif#small&#x22;,&#x22;alt&#x22;:&#x22;neovim-clean-paste&#x22;,&#x22;index&#x22;:0}"></p> <footer class="post-footer">
+Liked this post? Follow me  <a target="_blank" href="https://x.com/strdr4605" rel="noreferrer">
+@strdr4605
+</a> 
+to get more updates.
+</footer> </article> <section id="giscus-container"></section> <script type="module">const e=document.getElementById("giscus-container");if(e){const a=new IntersectionObserver(i=>{if(i[0].isIntersecting){a.disconnect();const t=document.createElement("script");t.src="https://giscus.app/client.js",t.setAttribute("data-repo","strdr4605/strdr4605.github.io"),t.setAttribute("data-repo-id","MDEwOlJlcG9zaXRvcnkxNDk5ODc2NDA="),t.setAttribute("data-category","General"),t.setAttribute("data-category-id","DIC_kwDOCPChOM4COePA"),t.setAttribute("data-mapping","pathname"),t.setAttribute("data-reactions-enabled","1"),t.setAttribute("data-emit-metadata","0"),t.setAttribute("data-input-position","bottom"),t.setAttribute("data-theme","light"),t.setAttribute("data-lang","en"),t.setAttribute("data-loading","lazy"),t.crossOrigin="anonymous",t.async=!0,e.appendChild(t)}},{rootMargin:"200px"});a.observe(e)}</script>  </div> <script defer src="https://analytics.umami.is/script.js" data-website-id="ffd94eb4-d3a5-4505-bcd4-35c97edc57c8"></script> </body> </html> 

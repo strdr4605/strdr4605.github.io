@@ -1,0 +1,66 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><title>My biggest Pull Request</title><meta name="description" content="Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!"><meta property="og:locale" content="en_GB"><meta property="og:title" content="My biggest Pull Request"><meta property="og:description" content="Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!"><meta property="og:image" content="https://strdr4605.com/my-biggest-pull-request.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@strdr4605"><meta name="theme-color" content="#FAF181"><meta property="og:url" content="https://strdr4605.com/my-biggest-pull-request"><link rel="canonical" href="https://strdr4605.com/my-biggest-pull-request"><style>:root{--link-color: #0366d6;--second-color: #faf181;--prism-inline-code: #f5f2f0;--code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace}html,body{padding:0;margin:0;font-family:Verdana,Geneva,Tahoma,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}h1{font-size:1.6em}a{color:var(--link-color)}img{width:100%}blockquote{border-left:1px solid #999;padding-left:1rem;font-style:italic}@media only screen and (min-width:900px){.astro-code{width:150%;margin-left:-25%}}img[src*="#small"]{max-height:500px;object-fit:contain}.astro-code .diff.add{background-color:#acf2bd4d}.astro-code .diff.remove{background-color:#fdb8c04d}.astro-code .diff.add:before{content:"+";color:#22863a;position:absolute;left:.5rem}.astro-code .diff.remove:before{content:"-";color:#cb2431;position:absolute;left:.5rem}:not(pre)>code{padding:.1em;border-radius:.3em;white-space:normal;background:var(--prism-inline-code);font-family:var(--code-font)}.container{max-width:60ch;padding:0 1rem;margin:1rem auto}.header{position:relative}.header nav p a{margin-right:1rem}.github-icon{position:absolute;top:0;right:2.5rem}.rss-icon{position:absolute;top:0;right:0}.blog-posts{list-style-type:none;padding:unset}.blog-posts li{display:flex;margin:1rem 0}.blog-posts li span{flex:0 0 8rem}li.starred:before{content:"★";margin-left:-1.5rem;position:absolute}@media only screen and (max-width:666px){.blog-posts{list-style-type:disc;padding-left:1rem}.blog-posts li{display:list-item}.blog-posts li span{display:none}.starred{list-style-type:"★ "}li.starred:before{content:unset}}.post-footer{border-top:1px solid #999;text-align:center;padding:1rem}
+</style></head> <body> <div class="container">  <article> <h1>My biggest Pull Request</h1> <i> <time datetime="2020-07-25">25 Jul 2020</time> </i>  on  <a href="/"> <span id="animated-name">Dragoș Străinu</span><script type="module">const e=document.getElementById("animated-name");if(e){const n=(t=250)=>new Promise(o=>setTimeout(o,t));(async()=>{await n(1500);const t="Dragoș Străinu".split("");t.splice(6,1),e.textContent=t.join("");let o=5;for(;o>=0;){let[i]=t.splice(o,1);t.splice(t.length-5+o,0,i),await n(),e.textContent=t.join(""),o--}for(o=6;o>2;)t.splice(o,1),await n(),e.textContent=t.join(""),o--;t[0]=t[0].toLowerCase(),await n(),e.textContent=t.join(""),t[3]=t[3].toLowerCase(),await n(),e.textContent=t.join(""),t[5]=t[5].toUpperCase(),await n(),e.textContent=t.join(""),t[6]=t[6].toUpperCase(),await n(),e.textContent=t.join(""),t[7]=t[7].toUpperCase(),await n(),e.textContent=t.join(""),t[8]=t[8].toUpperCase(),await n(),e.textContent=t.join(""),t[5]="4",await n(),e.textContent=t.join(""),t[6]="6",await n(),e.textContent=t.join(""),t[7]="0",await n(),e.textContent=t.join(""),t[8]="5",await n(),e.textContent=t.join("")})()}</script>'s blog
+</a> <br> <h2 id="the-story">The story</h2>
+<p>I was working on a white-label mobile application in active development.
+<em>(If you plan to develop a white-label mobile app, JUST DON’T!!!</em> 😅 <em>But this is a story for another post.)</em>
+I implemented a <strong>BIG FEATURE</strong> that was very tightly coupled with back-end implementation.</p>
+<p>The PRs were created, reviewed, and approved by front-end and back-end teams.
+Everything was tested, some small bugs were found, I fixed them and was ready for merging to <code>master</code> branch.
+But some severe bugs and priority features had to be done,
+so the back-end developer had to switch working on them and the back-end implementation was not shipped in production.</p>
+<p>I didn’t want to merge my commits in <code>master</code> branch,
+as the implementation in back-end may be changed after addition of other requirements
+and decided to wait until the back-end developer will be free and ready to merge his implementations.</p>
+<p>I thought that the feature will be shipped the week after.</p>
+<p>Meanwhile, I started working on the next feature that was based on the <strong>BIG FEATURE</strong>.
+When I finished I didn’t create a new PR in <code>master</code> branch as the <code>feature2</code> branch included changes from <code>feature1</code>.
+After a week I asked the back-end developer about the status with <strong>BIG FEATURE</strong> shipment to production,
+but he was busy with other tasks and as the app was in active development I continued developing on top of <strong><code>big-feature</code></strong> branch.</p>
+<p>I was working alone in that repo and the front-end devs were helping me only with pair programming or opinions on feature implementations.
+No one needed my changes and I took the easy path of just working on features/bugs and creating builds directly for testers and onboarding clients.</p>
+<p>Time has passed, the back-end developer forgot about the <strong>BIG FEATURE</strong>.
+I was working on features and bug fixes.
+<code>feature5</code>, <code>feature10</code>, <code>feature13</code>, <code>bugfix12</code>, <code>refactor2</code> branches were all created on top of <strong><code>big-feature</code></strong> branch.</p>
+<p>One day I understood that the PR in <code>master</code> branch will be an <strong>ENORMOUS</strong> lesson for me and the team.
+Another developer joined the project so I created a new <code>dev</code> branch from <code>feature16</code> and for the last 2 weeks, we created and reviewed PRs in <code>dev</code> branch.</p>
+<p>Finally after <strong>140 days</strong> from the beginning of <strong>BIG FEATURE</strong> the back-end implementation was merged and shipped to prod.</p>
+<p>And I was ready for <strong>my biggest Pull Request</strong> <em>(so far)</em>.</p>
+<h2 id="the-pull-request">The Pull Request</h2>
+<p><img src="/bitbucket-warn.png" alt="bitbucket-warn"></p>
+<p>It was so big that BitBucket couldn’t display it. The only way to review it was by checking each commit separately or maybe using a desktop git client.
+Additional complexity added mobile-specific files that were generated by XCode and Android Studio.</p>
+<h3 id="stats">Stats:</h3>
+<ul>
+<li><strong><code>420 files changed, 25739 insertions(+), 19429 deletions(-)</code></strong> <br>
+Beside 420 files maybe 20-40 files were added and removed in between. <br></li>
+<li>Changes from <strong>140 days</strong> <br></li>
+<li><strong>163 commits</strong> <br></li>
+<li><strong>36 intermediary branches</strong></li>
+</ul>
+<p>In the end, I received 3 approves and only <strong>one comment</strong>.</p>
+<blockquote>
+<p>“Omg” - Tech Lead (implemented the back-end for <strong>BIG FEATURE</strong>)</p>
+</blockquote>
+<h2 id="lessons-learned">Lessons learned</h2>
+<ul>
+<li>Make small PRs.</li>
+<li>One feature | bug-fix | refactor per PR.</li>
+<li>If the PRs includes several features squash commits to have one commit per feature <br>
+and let the team review each commit separately.</li>
+<li>Don’t squash everything. <br>
+Let styling/formatting commits be separate from implementation commits.</li>
+<li>Create <code>temporary-master</code> branches <br>
+If features relay on other features that are not in <code>master</code>.
+Or you are working on a <strong>BIG FEATURE</strong>, divide <strong>BIG FEATURE</strong> in <em>big-feature-phase-1</em>, <em>big-feature-phase-2</em>.
+Create temporary branches like <code>dev</code> and make PRs in <code>dev</code>.</li>
+<li>Create <code>"Fix PR comments"</code> commits and then squash them. <br>
+If PR is big and you have several comments, fix them in a separate commit and let reviewers check only it.
+After approval squash <code>"Fix PR comments"</code> commit in previous feature commit.</li>
+<li>Be kind to your reviewers.</li>
+<li>Make small PRs.</li>
+</ul> <footer class="post-footer">
+Liked this post? Follow me  <a target="_blank" href="https://x.com/strdr4605" rel="noreferrer">
+@strdr4605
+</a> 
+to get more updates.
+</footer> </article> <section id="giscus-container"></section> <script type="module">const e=document.getElementById("giscus-container");if(e){const a=new IntersectionObserver(i=>{if(i[0].isIntersecting){a.disconnect();const t=document.createElement("script");t.src="https://giscus.app/client.js",t.setAttribute("data-repo","strdr4605/strdr4605.github.io"),t.setAttribute("data-repo-id","MDEwOlJlcG9zaXRvcnkxNDk5ODc2NDA="),t.setAttribute("data-category","General"),t.setAttribute("data-category-id","DIC_kwDOCPChOM4COePA"),t.setAttribute("data-mapping","pathname"),t.setAttribute("data-reactions-enabled","1"),t.setAttribute("data-emit-metadata","0"),t.setAttribute("data-input-position","bottom"),t.setAttribute("data-theme","light"),t.setAttribute("data-lang","en"),t.setAttribute("data-loading","lazy"),t.crossOrigin="anonymous",t.async=!0,e.appendChild(t)}},{rootMargin:"200px"});a.observe(e)}</script>  </div> <script defer src="https://analytics.umami.is/script.js" data-website-id="ffd94eb4-d3a5-4505-bcd4-35c97edc57c8"></script> </body> </html> 

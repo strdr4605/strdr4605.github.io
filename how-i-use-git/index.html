@@ -1,0 +1,156 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><title>How I use Git</title><meta name="description" content="My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day."><meta property="og:locale" content="en_GB"><meta property="og:title" content="How I use Git"><meta property="og:description" content="My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day."><meta property="og:image" content="https://strdr4605.com/how-i-use-git.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@strdr4605"><meta name="theme-color" content="#FAF181"><meta property="og:url" content="https://strdr4605.com/how-i-use-git"><link rel="canonical" href="https://strdr4605.com/how-i-use-git"><style>:root{--link-color: #0366d6;--second-color: #faf181;--prism-inline-code: #f5f2f0;--code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace}html,body{padding:0;margin:0;font-family:Verdana,Geneva,Tahoma,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}h1{font-size:1.6em}a{color:var(--link-color)}img{width:100%}blockquote{border-left:1px solid #999;padding-left:1rem;font-style:italic}@media only screen and (min-width:900px){.astro-code{width:150%;margin-left:-25%}}img[src*="#small"]{max-height:500px;object-fit:contain}.astro-code .diff.add{background-color:#acf2bd4d}.astro-code .diff.remove{background-color:#fdb8c04d}.astro-code .diff.add:before{content:"+";color:#22863a;position:absolute;left:.5rem}.astro-code .diff.remove:before{content:"-";color:#cb2431;position:absolute;left:.5rem}:not(pre)>code{padding:.1em;border-radius:.3em;white-space:normal;background:var(--prism-inline-code);font-family:var(--code-font)}.container{max-width:60ch;padding:0 1rem;margin:1rem auto}.header{position:relative}.header nav p a{margin-right:1rem}.github-icon{position:absolute;top:0;right:2.5rem}.rss-icon{position:absolute;top:0;right:0}.blog-posts{list-style-type:none;padding:unset}.blog-posts li{display:flex;margin:1rem 0}.blog-posts li span{flex:0 0 8rem}li.starred:before{content:"★";margin-left:-1.5rem;position:absolute}@media only screen and (max-width:666px){.blog-posts{list-style-type:disc;padding-left:1rem}.blog-posts li{display:list-item}.blog-posts li span{display:none}.starred{list-style-type:"★ "}li.starred:before{content:unset}}.post-footer{border-top:1px solid #999;text-align:center;padding:1rem}
+</style></head> <body> <div class="container">  <article> <h1>How I use Git</h1> <i> <time datetime="2021-04-02">02 Apr 2021</time> </i>  on  <a href="/"> <span id="animated-name">Dragoș Străinu</span><script type="module">const e=document.getElementById("animated-name");if(e){const n=(t=250)=>new Promise(o=>setTimeout(o,t));(async()=>{await n(1500);const t="Dragoș Străinu".split("");t.splice(6,1),e.textContent=t.join("");let o=5;for(;o>=0;){let[i]=t.splice(o,1);t.splice(t.length-5+o,0,i),await n(),e.textContent=t.join(""),o--}for(o=6;o>2;)t.splice(o,1),await n(),e.textContent=t.join(""),o--;t[0]=t[0].toLowerCase(),await n(),e.textContent=t.join(""),t[3]=t[3].toLowerCase(),await n(),e.textContent=t.join(""),t[5]=t[5].toUpperCase(),await n(),e.textContent=t.join(""),t[6]=t[6].toUpperCase(),await n(),e.textContent=t.join(""),t[7]=t[7].toUpperCase(),await n(),e.textContent=t.join(""),t[8]=t[8].toUpperCase(),await n(),e.textContent=t.join(""),t[5]="4",await n(),e.textContent=t.join(""),t[6]="6",await n(),e.textContent=t.join(""),t[7]="0",await n(),e.textContent=t.join(""),t[8]="5",await n(),e.textContent=t.join("")})()}</script>'s blog
+</a> <br> <p>Nowadays almost every software engineer is using Git as a version control system for their projects.
+There are a lot of GUI apps for working with Git, also integrations with IDEs and text editors.
+I know engineers that are using Git only from their IDE. But no matter what, one day you have to use Git from the command line.</p>
+<p>When I started using Git the first time I used it from the command line and at the beginning, I felt like a cool engineer working with the terminal.
+So I decided to stick with this approach as usually from IDE it’s not possible to do everything that Git is capable of.
+Maybe a more realistic reason is that I never worked with rich IDEs with support for Git.
+Although nowadays I use VSCode and sometimes I reach its integration with Git.</p>
+<p>This is not a beginner guide on how to use Git, it’s just my daily use of it.
+If you are using Git from the command line or trying to switch from GUI to the command line some of these tips may be helpful for you.</p>
+<h2 id="git-history">Git history</h2>
+<p>Usually when I open a project first thing that I do is looking into Git history to see what was done and where I am in the commits history.
+Git doesn’t have a beautiful way to show the history and many engineers that I know are using GUI to see a clear picture of the history.
+But if you don’t use Merge commits even a simple <code>git log</code> is clear to understand.</p>
+<p>My command for showing Git history is:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> log</span><span style="color:#005CC5"> --oneline</span><span style="color:#005CC5"> --all</span><span style="color:#005CC5"> --graph</span></span></code></pre>
+<p>You can look at what all these arguments do at <a href="https://www.git-scm.com/docs/git-log">git-log docs</a>.
+Basically, it prints the history in this format:</p>
+<p><img src="/git-log.png" alt="git-log"></p>
+<p>I can see my current location <strong><code>HEAD</code></strong>, also local and remote branches. <br>
+I run <code>git log --oneline --all --graph</code> almost every time with other commands that I use.</p>
+<h2 id="git-aliases-vs-ctrl--r">Git Aliases vs Ctrl + R</h2>
+<p>Of course, typing <code>git log --oneline --all --graph</code> every time takes a lot of time.
+For these cases, people usually set <a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">Git Aliases</a>.
+But this means that you need to configure aliases on every new machine that you work on. You may use <a href="https://dotfiles.github.io">dotfiles</a>.</p>
+<p>I got used to doing a search using <strong>Ctrl + R</strong> where I type <code>gra</code> and <code>git log --oneline --all --graph</code> appears as a last used command.
+I also use <strong>Ctrl + R</strong> for any other long command that I need again, so you may consider <strong>Ctrl + R</strong> over Git Aliases.</p>
+<h2 id="synchronizing-with-remote">Synchronizing with remote</h2>
+<blockquote>
+<p>Note: I <a href="https://strdr4605.com/stop-doing-git-checkout-master-branch">don’t do git checkout master anymore</a></p>
+</blockquote>
+<p>When I start a new task and need to get the latest changes from <code>master</code> I do:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> checkout</span><span style="color:#032F62"> master</span><span style="color:#6A737D"> # switch to master branch</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> fetch</span><span style="color:#032F62"> origin</span><span style="color:#032F62"> master</span><span style="color:#6A737D"> # updating origin/master branch</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> reset</span><span style="color:#005CC5"> --hard</span><span style="color:#032F62"> origin/master</span><span style="color:#6A737D"> # reset local (master) branch to much origin/master</span></span></code></pre>
+<p>I know people that do:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> checkout</span><span style="color:#032F62"> master</span><span style="color:#6A737D"> # switch to master branch</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> pull</span><span style="color:#032F62"> origin</span><span style="color:#032F62"> master</span><span style="color:#6A737D"> # does git fetch + git merge</span></span></code></pre>
+<p>But I almost never run this command because I don’t want to resolve any conflicts while merging and I don’t care about changes in local <code>master</code>.
+Sometimes I may run <code>git pull -r origin master</code> which does <code>git rebase</code> instead of <code>git merge</code> because I don’t like Merge commits.</p>
+<h2 id="creating-a-new-branch">Creating a new branch</h2>
+<p>When working on a new task I create a new branch with:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> checkout</span><span style="color:#005CC5"> -b</span><span style="color:#032F62"> feat/4605-new-function</span></span></code></pre>
+<p>In the name of the branch I follow this format <br>
+<code>&#x3C;type of task>/&#x3C;number of ticket>-&#x3C;short description></code>.</p>
+<h2 id="committing-changes">Committing changes</h2>
+<p>When I am ready to commit a change in the repo, I add my changes to stage phase using:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> add</span><span style="color:#005CC5"> -A</span></span></code></pre>
+<p>I know that some people are using <code>git add .</code> but this command stages only the file from the current folder,
+so with you run this command in a child folder changes from the parent folder will be not staged for commit.</p>
+<h3 id="git-version-2x">Git Version 2.x</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Command</th><th>New Files</th><th>Modified Files</th><th>Deleted Files</th><th>Description</th></tr></thead><tbody><tr><td><code>git add -A</code></td><td>✔️</td><td>✔️</td><td>✔️</td><td>Stage all (new, modified, deleted) files</td></tr><tr><td><code>git add .</code></td><td>✔️</td><td>✔️</td><td>✔️</td><td>Stage all (new, modified, deleted) files in current folder</td></tr></tbody></table>
+<p>More info <a href="https://stackoverflow.com/questions/572549/difference-between-git-add-a-and-git-add">here</a>.</p>
+<p>When committing I use:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> commit</span><span style="color:#005CC5"> -m</span><span style="color:#032F62"> "feat: add new function"</span></span></code></pre>
+<p>To write the commit message nowadays I use <a href="https://www.conventionalcommits.org/en/v1.0.0-beta.2/">Conventional Commits</a> standard.
+But to write a good description I try to stick to this approach; <a href="https://chris.beams.io/posts/git-commit/">How to Write a Git Commit Message</a>.</p>
+<h2 id="amending">Amending</h2>
+<p>If I need to make a change to the previous commit I change the files and run:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> add</span><span style="color:#005CC5"> -A</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> commit</span><span style="color:#005CC5"> --amend</span><span style="color:#005CC5"> --no-edit</span><span style="color:#005CC5"> --no-verify</span></span></code></pre>
+<p>I add <code>--no-edit</code> if I want the message to stay the same and <code>--no-verify</code> if I am sure of the change and don’t want to wait for a long <strong>pre-commit</strong> check to run.
+All this using <strong>Ctrl + R</strong> command to search for <code>ame</code> text (contains in <code>--amend</code>).</p>
+<h2 id="stashing">Stashing</h2>
+<p>If I need to move between branches and have an unfinished work, I run:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> add</span><span style="color:#005CC5"> -A</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> stash</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> checkout</span><span style="color:#032F62"> other-branch</span></span>
+<span class="line"><span style="color:#6A737D"># do some work on that branch</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> checkout</span><span style="color:#032F62"> wip-branch</span><span style="color:#6A737D"> # come back</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> stash</span><span style="color:#032F62"> pop</span><span style="color:#6A737D"> # applies and remove changes from stash stack</span></span></code></pre>
+<p>If I only need to apply the stash:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> stash</span><span style="color:#032F62"> apply</span></span></code></pre>
+<p>But once in a week or so, I clear my stash with:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> stash</span><span style="color:#032F62"> drop</span></span></code></pre>
+<h2 id="reseting">Reseting</h2>
+<p>When I have done some dummy changes and I want to flush every unneeded change I run:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> reset</span><span style="color:#005CC5"> --hard</span><span style="color:#032F62"> HEAD</span></span></code></pre>
+<h2 id="before-pull-request">Before Pull Request</h2>
+<p>Before pushing, I check if there are no changes on the remote <code>master</code>. If the <code>origin/master</code> branch was updated I need to rebase on the new changes.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> fetch</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> log</span><span style="color:#005CC5"> --oneline</span><span style="color:#005CC5"> --all</span><span style="color:#005CC5"> --graph</span><span style="color:#6A737D"> # inspect any changes, mental preparation for any rebase conflicts</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> rebase</span><span style="color:#032F62"> origin</span><span style="color:#032F62"> master</span></span>
+<span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> push</span><span style="color:#005CC5"> -u</span><span style="color:#032F62"> origin</span><span style="color:#032F62"> feat/4605-new-function</span></span></code></pre>
+<p>Also, I may change the history of the current branch using:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> rebase</span><span style="color:#005CC5"> -i</span><span style="color:#6A737D"> # Let you edit the history (changing messaging, squashing, ...)</span></span></code></pre>
+<h2 id="another-useful-rebase-command">Another useful rebase command</h2>
+<p>Sometimes I have rebase use cases where I need to use a powerful option of rebase command.
+Let’s say that I finished a task on branch <code>topicA</code> and created a new branch with commits for <code>topicB</code>.</p>
+<p>Like so:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>.</span></span>
+<span class="line"><span>                            H---I---J topicB</span></span>
+<span class="line"><span>                           /</span></span>
+<span class="line"><span>                  E---F---G  topicA</span></span>
+<span class="line"><span>                 /</span></span>
+<span class="line"><span>    A---B---C---D  master</span></span></code></pre>
+<p>Then I realize that <code>topicB</code> doesn’t rely on changes from <code>topicA</code> and I should have started it from <code>master</code> branch.</p>
+<p>Running <code>git rebase master</code> will not change anything because <code>topicB</code> is based on <code>topicA</code> which itself is based on <code>master</code>.
+Moving <code>topicB</code> to start from <code>master</code> I run:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> rebase</span><span style="color:#005CC5"> --onto</span><span style="color:#032F62"> master</span><span style="color:#032F62"> topicA</span><span style="color:#032F62"> topicB</span></span></code></pre>
+<p>Adding <code>topicB</code> is optional if I am already being on <code>topicB</code> branch</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span> .</span></span>
+<span class="line"><span>                 H'--I'--J'  topicB</span></span>
+<span class="line"><span>                /</span></span>
+<span class="line"><span>                | E---F---G  topicA</span></span>
+<span class="line"><span>                |/</span></span>
+<span class="line"><span>    A---B---C---D  master</span></span></code></pre>
+<p>I remember corect command order by <br>
+<code>git rebase --onto &#x3C;new base> &#x3C;old base></code></p>
+<p>More about <a href="https://git-scm.com/docs/git-rebase">Git rebase</a>.</p>
+<h2 id="clean-up-remote-branches">Clean up remote branches</h2>
+<p>To remove old “red” branches.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">git</span><span style="color:#032F62"> remote</span><span style="color:#032F62"> prune</span><span style="color:#032F62"> origin</span><span style="color:#6A737D"> # add -n for dry run</span></span></code></pre>
+<p>More options <a href="https://www.git-tower.com/learn/git/faq/cleanup-remote-branches-with-git-prune/">here</a>.</p>
+<h2 id="commands-that-i-use-rarely">Commands that I use rarely</h2>
+<p>I don’t use <code>git merge</code> that often because I am more used to <code>git rebase</code>, but then I need I always use <code>git merge --ff-only</code> to not create a Merge commit. <br>
+I used several times <code>git bisect</code> to find bugs in a 40 commits range history. <br>
+Also <code>git reflog</code> to recover some changes from wrong hard resets or rebases. <br></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>I am not that good at Git as I wish I was but I know enough to resolve almost any git related problems.
+I have friends that use Git in IDE and sometimes they ask me to help to solve a Git use case.
+Also I now enough to search and understand any solution for a new Git use case that I encounter.</p>
+<p>I will update this post with new changes to my Git usage.
+Let me know what other commands do you use often!</p> <footer class="post-footer">
+Liked this post? Follow me  <a target="_blank" href="https://x.com/strdr4605" rel="noreferrer">
+@strdr4605
+</a> 
+to get more updates.
+</footer> </article> <section id="giscus-container"></section> <script type="module">const e=document.getElementById("giscus-container");if(e){const a=new IntersectionObserver(i=>{if(i[0].isIntersecting){a.disconnect();const t=document.createElement("script");t.src="https://giscus.app/client.js",t.setAttribute("data-repo","strdr4605/strdr4605.github.io"),t.setAttribute("data-repo-id","MDEwOlJlcG9zaXRvcnkxNDk5ODc2NDA="),t.setAttribute("data-category","General"),t.setAttribute("data-category-id","DIC_kwDOCPChOM4COePA"),t.setAttribute("data-mapping","pathname"),t.setAttribute("data-reactions-enabled","1"),t.setAttribute("data-emit-metadata","0"),t.setAttribute("data-input-position","bottom"),t.setAttribute("data-theme","light"),t.setAttribute("data-lang","en"),t.setAttribute("data-loading","lazy"),t.crossOrigin="anonymous",t.async=!0,e.appendChild(t)}},{rootMargin:"200px"});a.observe(e)}</script>  </div> <script defer src="https://analytics.umami.is/script.js" data-website-id="ffd94eb4-d3a5-4505-bcd4-35c97edc57c8"></script> </body> </html> 

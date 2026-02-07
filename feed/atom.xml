@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2026-01-30T12:43:59.628Z</updated>
+    <updated>2026-02-07T17:40:53.002Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
         <email>str.dr4605@gmail.com</email>
-        <uri>https://twitter.com/strdr4605</uri>
+        <uri>https://x.com/strdr4605</uri>
     </author>
     <link rel="alternate" href="https://strdr4605.com"/>
     <link rel="self" href="https://strdr4605.com/feed/atom.xml"/>
@@ -15,6 +15,24 @@
     <logo>https://strdr4605.com/banner.jpg</logo>
     <icon>https://strdr4605.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Dragoș Străinu</rights>
+    <entry>
+        <title type="html"><![CDATA[Dynamic Tmux Window Naming with Claude Code]]></title>
+        <id>https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code</id>
+        <link href="https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code"/>
+        <updated>2025-10-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How to automatically rename tmux windows based on your current task when working with Claude Code.]]></summary>
+        <content type="html"><![CDATA[How to automatically rename tmux windows based on your current task when working with Claude Code.]]></content>
+        <author>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://x.com/strdr4605</uri>
+        </author>
+        <contributor>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://x.com/strdr4605</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace]]></title>
         <id>https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace</id>
@@ -25,12 +43,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -43,12 +61,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -61,12 +79,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -79,12 +97,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -97,12 +115,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -115,12 +133,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -133,12 +151,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -151,12 +169,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -169,12 +187,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -187,12 +205,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -205,12 +223,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -223,12 +241,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -241,12 +259,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -259,12 +277,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -277,12 +295,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -295,12 +313,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -313,12 +331,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -331,12 +349,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -349,12 +367,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -362,15 +380,17 @@
         <id>https://strdr4605.com/no-tits-in-git</id>
         <link href="https://strdr4605.com/no-tits-in-git"/>
         <updated>2021-11-09T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Why merge commits make git history unreadable and how git rebase keeps it clean.]]></summary>
+        <content type="html"><![CDATA[Why merge commits make git history unreadable and how git rebase keeps it clean.]]></content>
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -381,12 +401,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -399,12 +419,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -417,12 +437,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -435,12 +455,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -453,12 +473,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -471,12 +491,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -489,12 +509,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -507,12 +527,12 @@
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
     <entry>
@@ -520,15 +540,17 @@
         <id>https://strdr4605.com/my-first-open-source-project</id>
         <link href="https://strdr4605.com/my-first-open-source-project"/>
         <updated>2019-05-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How I created mockingcase, a beginner-friendly npm package that converts strings to mOcKiNgCaSe, and what I learned about open-source contribution.]]></summary>
+        <content type="html"><![CDATA[How I created mockingcase, a beginner-friendly npm package that converts strings to mOcKiNgCaSe, and what I learned about open-source contribution.]]></content>
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </author>
         <contributor>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>
-            <uri>https://twitter.com/strdr4605</uri>
+            <uri>https://x.com/strdr4605</uri>
         </contributor>
     </entry>
 </feed>

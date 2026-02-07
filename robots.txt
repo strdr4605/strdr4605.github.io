@@ -6,4 +6,4 @@ Allow: /
 Host: https://strdr4605.com
 
 # Sitemaps
-Sitemap: https://strdr4605.com/sitemap.xml
+Sitemap: https://strdr4605.com/sitemap-index.xml

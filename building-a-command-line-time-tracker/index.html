@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><title>Building a command-line time tracker</title><meta name="description" content="This is my attempt to create a simple time tracker from the command line"><meta property="og:locale" content="en_GB"><meta property="og:title" content="Building a command-line time tracker"><meta property="og:description" content="This is my attempt to create a simple time tracker from the command line"><meta property="og:image" content="https://strdr4605.com/building-a-command-line-time-tracker.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@strdr4605"><meta name="theme-color" content="#FAF181"><meta property="og:url" content="https://strdr4605.com/building-a-command-line-time-tracker"><link rel="canonical" href="https://strdr4605.com/building-a-command-line-time-tracker"><style>:root{--link-color: #0366d6;--second-color: #faf181;--prism-inline-code: #f5f2f0;--code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace}html,body{padding:0;margin:0;font-family:Verdana,Geneva,Tahoma,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}h1{font-size:1.6em}a{color:var(--link-color)}img{width:100%}blockquote{border-left:1px solid #999;padding-left:1rem;font-style:italic}@media only screen and (min-width:900px){.astro-code{width:150%;margin-left:-25%}}img[src*="#small"]{max-height:500px;object-fit:contain}.astro-code .diff.add{background-color:#acf2bd4d}.astro-code .diff.remove{background-color:#fdb8c04d}.astro-code .diff.add:before{content:"+";color:#22863a;position:absolute;left:.5rem}.astro-code .diff.remove:before{content:"-";color:#cb2431;position:absolute;left:.5rem}:not(pre)>code{padding:.1em;border-radius:.3em;white-space:normal;background:var(--prism-inline-code);font-family:var(--code-font)}.container{max-width:60ch;padding:0 1rem;margin:1rem auto}.header{position:relative}.header nav p a{margin-right:1rem}.github-icon{position:absolute;top:0;right:2.5rem}.rss-icon{position:absolute;top:0;right:0}.blog-posts{list-style-type:none;padding:unset}.blog-posts li{display:flex;margin:1rem 0}.blog-posts li span{flex:0 0 8rem}li.starred:before{content:"★";margin-left:-1.5rem;position:absolute}@media only screen and (max-width:666px){.blog-posts{list-style-type:disc;padding-left:1rem}.blog-posts li{display:list-item}.blog-posts li span{display:none}.starred{list-style-type:"★ "}li.starred:before{content:unset}}.post-footer{border-top:1px solid #999;text-align:center;padding:1rem}
+</style></head> <body> <div class="container">  <article> <h1>Building a command-line time tracker</h1> <i> <time datetime="2021-03-21">21 Mar 2021</time> </i>  on  <a href="/"> <span id="animated-name">Dragoș Străinu</span><script type="module">const e=document.getElementById("animated-name");if(e){const n=(t=250)=>new Promise(o=>setTimeout(o,t));(async()=>{await n(1500);const t="Dragoș Străinu".split("");t.splice(6,1),e.textContent=t.join("");let o=5;for(;o>=0;){let[i]=t.splice(o,1);t.splice(t.length-5+o,0,i),await n(),e.textContent=t.join(""),o--}for(o=6;o>2;)t.splice(o,1),await n(),e.textContent=t.join(""),o--;t[0]=t[0].toLowerCase(),await n(),e.textContent=t.join(""),t[3]=t[3].toLowerCase(),await n(),e.textContent=t.join(""),t[5]=t[5].toUpperCase(),await n(),e.textContent=t.join(""),t[6]=t[6].toUpperCase(),await n(),e.textContent=t.join(""),t[7]=t[7].toUpperCase(),await n(),e.textContent=t.join(""),t[8]=t[8].toUpperCase(),await n(),e.textContent=t.join(""),t[5]="4",await n(),e.textContent=t.join(""),t[6]="6",await n(),e.textContent=t.join(""),t[7]="0",await n(),e.textContent=t.join(""),t[8]="5",await n(),e.textContent=t.join("")})()}</script>'s blog
+</a> <br> <p>I started working on a project and I wanted to track the time that I spend.
+I searched and found desktop apps, websites, browser extensions, for time tracking.
+But some of them were part of a big product with dashboards.
+I even downloaded and tested tracking extensions for VSCode but some of them also required accounts on some platform for reporting.</p>
+<p>I wanted something simple, start a task, stop a task, display the time.
+Something that I can use for any project, task, activity, personal or work.
+Knowing that most of the time I have my terminal open, I thought that it’s the best place for me to use a tracker.
+For example, before creating a new branch for the task,
+I could start the timer, and when I need a pause, stop it.
+All this in one terminal tab.</p>
+<p>I started looking for command-line time tracker solutions.
+I didn’t find a lot. Most of them were written in Python, but for me, the features were too much.
+I also found NodeJS packages, and one written in C that was way too simple as I need time in hours and minutes (not only seconds).</p>
+<p>Don’t know why but my initial thought was that a command-line time tracker should be implemented in shell script.
+I found <a href="https://labs.tomasino.org/time-tracker-in-bash/">Time tracker in Bash</a> and I liked the features but there was no instruction on how to install,
+and while trying the script was throwing some error (maybe was not compatible with macOS).</p>
+<p>I decided to write one myself in shell script, as an idea that it can be used on any unix system, without the need to have Python, C or NodeJS installed.
+I thought that it may take 4-5 hours to finish the first version.
+I decided to call the command <code>tt</code> (from time tracker), as it’s short to type and start working.</p>
+<h2 id="implementation">Implementation</h2>
+<p>First I started with a hello world script, and then I noticed something I use but I am not 100% sure why.
+I am talking about the first line of most command-line scripts <code>#!/usr/bin/env bash</code>. Why it’s needed?
+After a search, I found that it’s called <a href="https://en.wikipedia.org/wiki/Shebang_%28Unix%29">Shebang</a>.
+I decided that I will put the link and explanation at the beginning of the file,
+so people who may want to contribute or just see the implementation, will also know why this line is really needed.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D">#!/usr/bin/env sh</span></span>
+<span class="line"><span style="color:#6A737D"># First 2 chars in the file are called Shebang https://en.wikipedia.org/wiki/Shebang_%28Unix%29</span></span>
+<span class="line"><span style="color:#6A737D"># In this case:</span></span>
+<span class="line"><span style="color:#6A737D">#   Execute this file with a "sh" interpreter, using the "env" program search path to find it.</span></span>
+<span class="line"><span style="color:#6A737D"># Now you know!</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">tt</span><span style="color:#24292E">() {</span></span></code></pre>
+<p>Requirements are simple:</p>
+<ol>
+<li>Start an activity</li>
+<li>Stop an activity</li>
+<li>Log an activity and time spent (in hours and minutes)</li>
+<li>Clean history</li>
+</ol>
+<p>As a first idea, we need two files:</p>
+<ol>
+<li><code>~/.tt_logs</code> - will store all the logs.</li>
+<li><code>~/.tt_session</code> - will instore info about current activity started time.</li>
+</ol>
+<p>The session file will have <code>start_time</code> and <code>activity_name</code>. <br>
+Time will be stored in sec using <code>date +%s</code> which will return <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a>.</p>
+<p>Basic writing to a file with shell script is simple.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> "start_time="</span><span style="color:#D73A49"> ></span><span style="color:#032F62"> ~/.tt_session</span></span>
+<span class="line"><span style="color:#005CC5">echo</span><span style="color:#032F62"> "activity_name="</span><span style="color:#D73A49"> >></span><span style="color:#032F62"> ~/.tt_session</span></span></code></pre>
+<ul>
+<li>The <code>></code> redirection operator writes <code>"start_time="</code> to a given file. If the file exists, it is truncated to zero length. Otherwise, the file is created. Be extra careful when using this operator as you may overwrite an important file.</li>
+<li>The <code>>></code> redirection operator appends the output to a given file. The file is created if it does not exist.</li>
+</ul>
+<p>When finishing an activity the script should read the data from the session file and write it into the logs file.
+There are multiple options to read from a file. After a lot of testing, I found a way that works for my case.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#24292E">start_time</span><span style="color:#D73A49">=</span><span style="color:#24292E">$(</span><span style="color:#6F42C1">grep</span><span style="color:#032F62"> 'start_time='</span><span style="color:#032F62"> "</span><span style="color:#24292E">$TT_SESSION</span><span style="color:#032F62">"</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> sed</span><span style="color:#005CC5"> -E</span><span style="color:#032F62"> "s/.*start_time=([0-9]+).*/</span><span style="color:#005CC5">\\</span><span style="color:#032F62">1/"</span><span style="color:#24292E">)</span></span></code></pre>
+<p>To be honest, I don’t like the solution, and I am sure you too, but I didn’t want to spend more time on this.
+You are welcome to contribute with a better one.</p>
+<p>After 3 or 4 hours I understood that it will take more time to create this script as new use cases appeared.
+What if I want to pause the activity, or maybe abort without logs?</p>
+<p>While thinking about how to solve new use cases I also asked myself: Isn’t it too much time spent on this script?
+Why just don’t use Python solutions with richer features (like starting an activity in past).
+But I decided to push it to the end as while spending time on this I learned something new, and also if I will need more features I will just add them later.</p>
+<p>Current functionality</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="text"><code><span class="line"><span>tt - time tracker</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Tracks activity time with a simple start/stop syntax. Logs to CSV.</span></span>
+<span class="line"><span>Allows one activity active at a time, per session.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>usage: tt                                       # show this help</span></span>
+<span class="line"><span>usage: tt (--help or -h)                        # show this help</span></span>
+<span class="line"><span>usage: tt (--start or -s) [activity name]       # start a new activity</span></span>
+<span class="line"><span>usage: tt (--pause or -p)                       # pauses current activity</span></span>
+<span class="line"><span>usage: tt (--done or -d or --finish or -f)      # stop and log activity</span></span>
+<span class="line"><span>usage: tt (--abort or -a)                       # stop activity, no log</span></span>
+<span class="line"><span>usage: tt --clear-logs                          # delete log of previous activities</span></span>
+<span class="line"><span>usage: tt --activity-name                       # show activity for current session</span></span>
+<span class="line"><span>usage: tt (--logs or -l)                        # show logs of previous activities</span></span></code></pre>
+<h2 id="installation">Installation</h2>
+<p>When searching on how to make my script function <code>tt</code> available globally on the system I hadn’t found a 100% right solution, so I decided to go with <code>source</code>.</p>
+<blockquote>
+<p>The <code>source</code> command reads and executes commands from the file specified as its argument in the current shell environment. It is useful to load functions, variables, and configuration files into shell scripts.</p>
+<blockquote>
+<p><a href="https://linuxize.com/post/bash-source-command/">https://linuxize.com/post/bash-source-command/</a></p>
+</blockquote>
+</blockquote>
+<p>This means that to use this time tracker you need to download the source and put it wherever you want.</p>
+<p>For example, using <code>curl</code> to download and write in the file located in the home directory:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">curl</span><span style="color:#032F62"> https://raw.githubusercontent.com/strdr4605/tt/master/tt.sh</span><span style="color:#D73A49"> ></span><span style="color:#24292E"> $HOME</span><span style="color:#032F62">/tt.sh</span></span></code></pre>
+<p>Now you just need to add <code>source $HOME/tt.sh</code> into your shell config file.</p>
+<p>Besides that, as a person that cares about code quality
+I made sure to have a good code structure with separate functions for each use case and not a big <code>if else switch case</code> as some other shell scripts are.</p>
+<p>In the end, I spent a day working on it (with some breaks and other tasks).
+I would say it took 10-12 hours (with README, formating, and linting).
+I don’t know the exact time as I I haven’t used a time tracker for this project 😅.</p>
+<p>If want to contribute or just see the implementation, the project is on <a href="https://github.com/strdr4605/tt">https://github.com/strdr4605/tt</a>.</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6F42C1">tt</span><span style="color:#005CC5"> -f</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6F42C1">Sun</span><span style="color:#032F62"> Mar</span><span style="color:#005CC5"> 21</span><span style="color:#032F62"> 20:39:04</span><span style="color:#032F62"> UTC</span><span style="color:#005CC5"> 2021</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> Writing</span><span style="color:#032F62"> this</span><span style="color:#032F62"> post</span><span style="color:#D73A49"> |</span><span style="color:#6F42C1"> 1h</span><span style="color:#032F62"> 43m</span></span></code></pre> <footer class="post-footer">
+Liked this post? Follow me  <a target="_blank" href="https://x.com/strdr4605" rel="noreferrer">
+@strdr4605
+</a> 
+to get more updates.
+</footer> </article> <section id="giscus-container"></section> <script type="module">const e=document.getElementById("giscus-container");if(e){const a=new IntersectionObserver(i=>{if(i[0].isIntersecting){a.disconnect();const t=document.createElement("script");t.src="https://giscus.app/client.js",t.setAttribute("data-repo","strdr4605/strdr4605.github.io"),t.setAttribute("data-repo-id","MDEwOlJlcG9zaXRvcnkxNDk5ODc2NDA="),t.setAttribute("data-category","General"),t.setAttribute("data-category-id","DIC_kwDOCPChOM4COePA"),t.setAttribute("data-mapping","pathname"),t.setAttribute("data-reactions-enabled","1"),t.setAttribute("data-emit-metadata","0"),t.setAttribute("data-input-position","bottom"),t.setAttribute("data-theme","light"),t.setAttribute("data-lang","en"),t.setAttribute("data-loading","lazy"),t.crossOrigin="anonymous",t.async=!0,e.appendChild(t)}},{rootMargin:"200px"});a.observe(e)}</script>  </div> <script defer src="https://analytics.umami.is/script.js" data-website-id="ffd94eb4-d3a5-4505-bcd4-35c97edc57c8"></script> </body> </html> 

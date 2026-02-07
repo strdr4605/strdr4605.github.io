@@ -7,9 +7,21 @@
     "icon": "https://strdr4605.com/banner.jpg",
     "author": {
         "name": "Dragoș Străinu",
-        "url": "https://twitter.com/strdr4605"
+        "url": "https://x.com/strdr4605"
     },
     "items": [
+        {
+            "id": "https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code",
+            "content_html": "How to automatically rename tmux windows based on your current task when working with Claude Code.",
+            "url": "https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code",
+            "title": "Dynamic Tmux Window Naming with Claude Code",
+            "summary": "How to automatically rename tmux windows based on your current task when working with Claude Code.",
+            "date_modified": "2025-10-27T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://x.com/strdr4605"
+            }
+        },
         {
             "id": "https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace",
             "content_html": "How to paste code in Neovim without unwanted newlines and leading whitespace.",
@@ -19,7 +31,7 @@
             "date_modified": "2025-03-20T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -31,7 +43,7 @@
             "date_modified": "2024-02-21T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -43,7 +55,7 @@
             "date_modified": "2023-04-20T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -55,7 +67,7 @@
             "date_modified": "2023-03-13T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -67,7 +79,7 @@
             "date_modified": "2022-11-04T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -79,7 +91,7 @@
             "date_modified": "2022-07-17T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -91,7 +103,7 @@
             "date_modified": "2022-05-17T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -103,7 +115,7 @@
             "date_modified": "2022-05-13T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -115,7 +127,7 @@
             "date_modified": "2022-04-15T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -127,7 +139,7 @@
             "date_modified": "2022-04-08T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -139,7 +151,7 @@
             "date_modified": "2022-03-31T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -151,7 +163,7 @@
             "date_modified": "2022-03-27T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -163,7 +175,7 @@
             "date_modified": "2022-03-16T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -175,7 +187,7 @@
             "date_modified": "2022-02-22T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -187,7 +199,7 @@
             "date_modified": "2022-02-17T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -199,7 +211,7 @@
             "date_modified": "2022-02-11T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -211,7 +223,7 @@
             "date_modified": "2022-01-30T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -223,7 +235,7 @@
             "date_modified": "2022-01-13T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -235,18 +247,19 @@
             "date_modified": "2022-01-11T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
             "id": "https://strdr4605.com/no-tits-in-git",
-            "content_html": null,
+            "content_html": "Why merge commits make git history unreadable and how git rebase keeps it clean.",
             "url": "https://strdr4605.com/no-tits-in-git",
             "title": "No tits in git",
+            "summary": "Why merge commits make git history unreadable and how git rebase keeps it clean.",
             "date_modified": "2021-11-09T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -256,7 +269,7 @@
             "date_modified": "2021-10-10T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -268,7 +281,7 @@
             "date_modified": "2021-05-25T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -280,7 +293,7 @@
             "date_modified": "2021-04-24T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -292,7 +305,7 @@
             "date_modified": "2021-04-02T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -304,7 +317,7 @@
             "date_modified": "2021-03-21T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -316,7 +329,7 @@
             "date_modified": "2020-08-02T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -328,7 +341,7 @@
             "date_modified": "2020-07-25T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
@@ -340,17 +353,19 @@
             "date_modified": "2020-07-11T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         },
         {
             "id": "https://strdr4605.com/my-first-open-source-project",
+            "content_html": "How I created mockingcase, a beginner-friendly npm package that converts strings to mOcKiNgCaSe, and what I learned about open-source contribution.",
             "url": "https://strdr4605.com/my-first-open-source-project",
             "title": "My first open-source project",
+            "summary": "How I created mockingcase, a beginner-friendly npm package that converts strings to mOcKiNgCaSe, and what I learned about open-source contribution.",
             "date_modified": "2019-05-29T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",
-                "url": "https://twitter.com/strdr4605"
+                "url": "https://x.com/strdr4605"
             }
         }
     ]
