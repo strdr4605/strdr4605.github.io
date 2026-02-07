@@ -35,7 +35,7 @@ export async function generateFeed() {
   const author = {
     name: 'Dragoș Străinu',
     email: 'str.dr4605@gmail.com',
-    link: 'https://twitter.com/strdr4605',
+    link: 'https://x.com/strdr4605',
   };
 
   const feed = new Feed({
