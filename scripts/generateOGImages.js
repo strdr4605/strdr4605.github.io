@@ -62,7 +62,10 @@ async function writePostOGImage(postTitle, postSlug) {
   const baseImg = "./public/post-banner-template.jpg";
 
   const lines = wrapText(postTitle);
-  const fontSize = lines.length > 3 ? 56 : 72;
+  const maxLineLen = Math.max(...lines.map((l) => l.length));
+  // ~0.65em per char at 900 weight, 1100px usable width
+  const maxFontForWidth = Math.floor(1100 / (maxLineLen * 0.65));
+  const fontSize = Math.min(lines.length > 3 ? 56 : 72, maxFontForWidth);
   const lineHeight = Math.round(fontSize * 1.2);
   const textBlockHeight = lines.length * lineHeight;
   const textAreaTop = 80;
