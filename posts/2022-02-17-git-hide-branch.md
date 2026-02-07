@@ -1,6 +1,7 @@
 ---
 title: "Git: hide specific branch when doing git log --all"
 date: 2022-02-17
+slug: git-hide-specific-branch-when-doing-git-log-all
 description: How to hide a specific branch when looking into git log history.
 tags:
   - git

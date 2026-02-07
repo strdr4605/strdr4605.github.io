@@ -1,6 +1,7 @@
 ---
 title: "Typescript errors into vim quickfix"
 date: 2022-11-04
+slug: typescript-errors-into-vim-quickfix
 description: How to populate errors from running tsc in vim/neovim quickfix. Get typescript compiler errors inside vim.
 tags:
   - vim

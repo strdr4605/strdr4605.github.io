@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://strdr4605.com
+
+# Sitemaps
+Sitemap: https://strdr4605.com/sitemap-index.xml

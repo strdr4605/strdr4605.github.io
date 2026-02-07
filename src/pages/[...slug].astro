@@ -1,0 +1,48 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AnimatedName from '../components/AnimatedName.astro';
+import DateComponent from '../components/Date.astro';
+import PostFooter from '../components/PostFooter.astro';
+import GiscusComments from '../components/GiscusComments.astro';
+
+const siteUrl = 'https://strdr4605.com';
+
+export async function getStaticPaths() {
+  // Include all posts (including drafts) - drafts are just hidden from home page
+  const posts = await getCollection('posts');
+  return posts.map((post) => {
+    const slug = post.data.slug;
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const slug = post.data.slug;
+const ogImage = `${siteUrl}/${post.data.banner || slug + '.jpg'}`;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  ogImage={ogImage}
+  ogType="article"
+  canonicalUrl={`${siteUrl}/${slug}`}
+>
+  <article>
+    <h1>{post.data.title}</h1>
+    <DateComponent date={post.data.date} />
+    {' on '}
+    <a href="/">
+      <AnimatedName />'s blog
+    </a>
+    <br />
+    <Content />
+    <PostFooter />
+  </article>
+  <GiscusComments />
+</BaseLayout>

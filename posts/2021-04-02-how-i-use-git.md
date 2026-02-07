@@ -1,6 +1,7 @@
 ---
 title: How I use Git
 date: 2021-04-02
+slug: how-i-use-git
 description: My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day.
 tags:
   - development
@@ -34,7 +35,7 @@ git log --oneline --all --graph
 You can look at what all these arguments do at [git-log docs](https://www.git-scm.com/docs/git-log).
 Basically, it prints the history in this format:
 
-![git-log](git-log.png)
+![git-log](/git-log.png)
 
 I can see my current location **`HEAD`**, also local and remote branches. <br/>
 I run `git log --oneline --all --graph` almost every time with other commands that I use.

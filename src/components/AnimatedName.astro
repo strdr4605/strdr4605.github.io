@@ -1,0 +1,57 @@
+<span id="animated-name">Dragoș Străinu</span><script>
+  const el = document.getElementById("animated-name");
+  if (el) {
+    const sleep = (ms = 250) => new Promise((res) => setTimeout(res, ms));
+    (async () => {
+      await sleep(1500);
+      const c = "Dragoș Străinu".split("");
+      c.splice(6, 1);
+      el.textContent = c.join("");
+      let i = 5;
+      while (i >= 0) {
+        let [ch] = c.splice(i, 1);
+        c.splice(c.length - 5 + i, 0, ch);
+        await sleep();
+        el.textContent = c.join("");
+        i--;
+      }
+      i = 6;
+      while (i > 2) {
+        c.splice(i, 1);
+        await sleep();
+        el.textContent = c.join("");
+        i--;
+      }
+      c[0] = c[0].toLowerCase();
+      await sleep();
+      el.textContent = c.join("");
+      c[3] = c[3].toLowerCase();
+      await sleep();
+      el.textContent = c.join("");
+      c[5] = c[5].toUpperCase();
+      await sleep();
+      el.textContent = c.join("");
+      c[6] = c[6].toUpperCase();
+      await sleep();
+      el.textContent = c.join("");
+      c[7] = c[7].toUpperCase();
+      await sleep();
+      el.textContent = c.join("");
+      c[8] = c[8].toUpperCase();
+      await sleep();
+      el.textContent = c.join("");
+      c[5] = "4";
+      await sleep();
+      el.textContent = c.join("");
+      c[6] = "6";
+      await sleep();
+      el.textContent = c.join("");
+      c[7] = "0";
+      await sleep();
+      el.textContent = c.join("");
+      c[8] = "5";
+      await sleep();
+      el.textContent = c.join("");
+    })();
+  }
+</script>

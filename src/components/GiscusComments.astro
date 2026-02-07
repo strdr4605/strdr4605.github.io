@@ -1,0 +1,35 @@
+<section id="giscus-container"></section>
+
+<script>
+  const container = document.getElementById("giscus-container");
+  if (container) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          observer.disconnect();
+          const script = document.createElement("script");
+          script.src = "https://giscus.app/client.js";
+          script.setAttribute("data-repo", "strdr4605/strdr4605.github.io");
+          script.setAttribute(
+            "data-repo-id",
+            "MDEwOlJlcG9zaXRvcnkxNDk5ODc2NDA=",
+          );
+          script.setAttribute("data-category", "General");
+          script.setAttribute("data-category-id", "DIC_kwDOCPChOM4COePA");
+          script.setAttribute("data-mapping", "pathname");
+          script.setAttribute("data-reactions-enabled", "1");
+          script.setAttribute("data-emit-metadata", "0");
+          script.setAttribute("data-input-position", "bottom");
+          script.setAttribute("data-theme", "light");
+          script.setAttribute("data-lang", "en");
+          script.setAttribute("data-loading", "lazy");
+          script.crossOrigin = "anonymous";
+          script.async = true;
+          container.appendChild(script);
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(container);
+  }
+</script>

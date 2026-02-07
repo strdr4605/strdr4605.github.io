@@ -1,7 +1,8 @@
 ---
 title: No tits in git
 date: 2021-11-09
-description:
+slug: no-tits-in-git
+description: "Why merge commits make git history unreadable and how git rebase keeps it clean."
 tags:
   - git
 ---
@@ -58,13 +59,13 @@ And it can get worse, and in one moment when you need to debug something and use
 
 I asked a friend of mine whats this:
 
-![Git carpet](git-carpet.png)
+![Git carpet](/git-carpet.png)
 
 And he told me that it's a photo of my grandma's carpet 😂.
 
 But actually, it's a git history from a development team of my friend. Here is a zoom out:
 
-![Gigantic git tits](gigantic-git-tits.jpg)
+![Gigantic git tits](/gigantic-git-tits.jpg)
 
 You may say _"I don't look at git history, I don't even use the command line, I only click the magic button on my IDE when I want to push my changes and everything is ok"_.
 Sure, it's ok until the moment when things become complicated.

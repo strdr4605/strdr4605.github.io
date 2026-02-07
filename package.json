@@ -9,45 +9,28 @@
   "version": "1.0.0",
   "author": "Dragoș Străinu <str.dr4605@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "dev": "next dev -p 4605",
+    "dev": "astro dev --port 4605",
     "format": "prettier . --write",
-    "build": "next build && next export",
-    "postbuild": "next-sitemap && npm run build-rss && npm run build-og-images && npm run redirects",
-    "build-rss": "node scripts/feed.js",
+    "build": "astro build && npm run build-og-images && npm run redirects",
     "build-og-images": "node scripts/generateOGImages.js",
     "redirects": "html-redirections redirects.json out",
-    "start": "next start -p 4605",
-    "lint": "next lint"
+    "preview": "astro preview --port 4605",
+    "lint": "astro check"
   },
   "dependencies": {
     "@allindevelopers/html-redirections": "^1.1.1",
-    "@giscus/react": "^2.0.1",
-    "@vanillaes/csv": "^3.0.1",
-    "babel-plugin-superjson-next": "^0.4.2",
+    "@astrojs/sitemap": "^3.2.1",
+    "@shikijs/transformers": "^3.22.0",
+    "@vanillaes/csv": "^3.0.4",
+    "astro": "^5.2.5",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
-    "jimp": "^0.16.1",
-    "lodash.kebabcase": "^4.1.1",
-    "next": "12.1.0",
-    "next-sitemap": "^1.9.12",
-    "prismjs": "^1.27.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "remark": "^14.0.2",
-    "remark-gfm": "^3.0.1",
-    "remark-html": "^15.0.1",
-    "remark-prism": "^1.3.6",
-    "superjson": "^1.8.1"
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "@types/lodash.kebabcase": "^4.1.6",
-    "@types/node": "17.0.10",
-    "@types/react": "17.0.38",
-    "@types/remark-prism": "^1.3.0",
-    "eslint": "8.7.0",
-    "eslint-config-next": "12.0.8",
-    "prettier": "3.5.3",
-    "typescript": "4.5.4"
+    "prettier": "3.8.1",
+    "typescript": "^5.7.3"
   }
 }

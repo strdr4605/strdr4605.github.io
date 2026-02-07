@@ -1,6 +1,7 @@
 ---
 title: "How I keep my iPhone battery at optimal level"
 date: 2022-07-17
+slug: how-i-keep-my-i-phone-battery-at-optimal-level
 description: How I maintain the iPhone battery between 35% and 70% using iPhone shortcuts
 tags:
   - hacks
@@ -25,11 +26,11 @@ But for this specific use case, I use shortcuts automation.
 
 I can add automation when the battery reaches a specific level, like below 35% or above 70%.
 
-![iphone-battery-shortcut1](iphone-battery-shortcut1.jpeg)
+![iphone-battery-shortcut1](/iphone-battery-shortcut1.jpeg)
 
 I decided to show a notification and disabled "Ask before Running".
 
-![iphone-battery-shortcut2](iphone-battery-shortcut2.jpeg)
+![iphone-battery-shortcut2](/iphone-battery-shortcut2.jpeg)
 
 Now each time the phone battery drops under 35% I get a notification on my smartwatch and plug the phone to change.
 And then the phone was changed to 70% I get another notification and remove the phone from changing.

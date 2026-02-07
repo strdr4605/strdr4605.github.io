@@ -1,6 +1,7 @@
 ---
 title: "Meteor: a better way to use meteor npm command"
 date: 2022-01-13
+slug: meteor-a-better-way-to-use-meteor-npm-command
 description: Did you forget to add meteor command before npm? Try adding a bash script that will make sure you always run it correctly.
 tags:
   - tools

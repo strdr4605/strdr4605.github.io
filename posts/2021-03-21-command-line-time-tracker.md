@@ -1,6 +1,7 @@
 ---
 title: Building a command-line time tracker
 date: 2021-03-21
+slug: building-a-command-line-time-tracker
 description: This is my attempt to create a simple time tracker from the command line
 tags:
   - tools

@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import DateComponent from '../components/Date.astro';
+import externalPosts from '../../external-posts.json';
+
+const siteUrl = 'https://strdr4605.com';
+
+const posts = await getCollection('posts', ({ data }) => !data.draft);
+
+type PostItem = {
+  slug: string;
+  date: Date | string;
+  title: string;
+  starred?: boolean;
+  externalLink?: string;
+};
+
+const allPosts: PostItem[] = [
+  ...posts.map((post) => ({
+    slug: post.data.slug,
+    date: post.data.date,
+    title: post.data.title,
+    starred: post.data.starred,
+  })),
+  ...externalPosts.map((post) => ({
+    slug: '',
+    date: post.date,
+    title: post.title,
+    externalLink: post.externalLink,
+  })),
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+---
+
+<BaseLayout
+  title="Dragoș Străinu's blog"
+  ogImage={`${siteUrl}/banner.jpg`}
+  canonicalUrl={siteUrl}
+>
+  <Header />
+  <h2>Salut</h2>
+  <p>
+    I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS
+    enthusiast.
+  </p>
+  <section>
+    <ul class="blog-posts">
+      {
+        allPosts.map(({ slug, date, title, starred, externalLink }) => (
+          <li class={starred ? 'starred' : ''}>
+            <span>
+              <DateComponent date={date} />
+            </span>
+            <a href={externalLink || `/${slug}`}>{title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>

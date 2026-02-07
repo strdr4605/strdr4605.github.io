@@ -1,6 +1,7 @@
 ---
 title: "NPM: How to document your package.json scripts"
 date: 2022-03-27
+slug: npm-how-to-document-your-package-json-scripts
 description: Let's see different ways you can document your npm scripts using README, comments in package.json, or using npx why package.
 tags:
   - npm

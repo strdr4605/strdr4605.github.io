@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+const siteUrl = 'https://strdr4605.com';
+---
+
+<BaseLayout
+  title="Dragoș Străinu's blog"
+  ogImage={`${siteUrl}/banner.jpg`}
+  canonicalUrl={siteUrl}
+>
+  <Header />
+  <h1>Page Not Found</h1>
+  <p>
+    Probably you mistyped or the page was removed.{' '}
+    <a
+      target="_blank"
+      href="mailto:str.dr4605@gmail.com?subject=Page not found&body=Hey Dragoș, I think [please insert url here] should exist."
+      rel="noreferrer"
+    >
+      Let me know
+    </a>{' '}
+    if you think that this page should exist.
+  </p>
+  <p>
+    Meanwhile you can check the <a href="/">main page</a>. Or follow me{' '}
+    <a target="_blank" href="https://x.com/strdr4605" rel="noreferrer">
+      @strdr4605
+    </a>.
+  </p>
+</BaseLayout>
