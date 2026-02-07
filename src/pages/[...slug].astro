@@ -1,6 +1,5 @@
 ---
 import { getCollection, render } from 'astro:content';
-import kebabCase from 'lodash.kebabcase';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import AnimatedName from '../components/AnimatedName.astro';
 import DateComponent from '../components/Date.astro';
@@ -13,7 +12,7 @@ export async function getStaticPaths() {
   // Include all posts (including drafts) - drafts are just hidden from home page
   const posts = await getCollection('posts');
   return posts.map((post) => {
-    const slug = post.data.slug || kebabCase(post.data.title);
+    const slug = post.data.slug;
     return {
       params: { slug },
       props: { post },
@@ -22,7 +21,7 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
-const slug = post.data.slug || kebabCase(post.data.title);
+const slug = post.data.slug;
 const ogImage = `${siteUrl}/${post.data.banner || slug + '.jpg'}`;
 const { Content } = await render(post);
 ---

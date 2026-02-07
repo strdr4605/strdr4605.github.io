@@ -1,6 +1,7 @@
 ---
 title: "How I keep my iPhone battery at optimal level"
 date: 2022-07-17
+slug: how-i-keep-my-i-phone-battery-at-optimal-level
 description: How I maintain the iPhone battery between 35% and 70% using iPhone shortcuts
 tags:
   - hacks

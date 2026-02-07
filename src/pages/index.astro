@@ -1,6 +1,5 @@
 ---
 import { getCollection } from 'astro:content';
-import kebabCase from 'lodash.kebabcase';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import DateComponent from '../components/Date.astro';
@@ -20,7 +19,7 @@ type PostItem = {
 
 const allPosts: PostItem[] = [
   ...posts.map((post) => ({
-    slug: post.data.slug || kebabCase(post.data.title),
+    slug: post.data.slug,
     date: post.data.date,
     title: post.data.title,
     starred: post.data.starred,

@@ -1,6 +1,7 @@
 ---
 title: "You need to use Git worktree"
 date: 2022-03-16
+slug: you-need-to-use-git-worktree
 description: A basic guide on why and how to use Git worktree feature.
 tags:
   - git

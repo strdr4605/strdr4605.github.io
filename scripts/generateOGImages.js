@@ -2,7 +2,6 @@ import { Jimp, loadFont, HorizontalAlign, VerticalAlign } from "jimp";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import kebabCase from "lodash.kebabcase";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -14,7 +13,7 @@ function getSortedPostsData(includeDraft = false) {
     const matterResult = matter(fileContents);
     return {
       ...matterResult.data,
-      slug: matterResult.data.slug || kebabCase(matterResult.data.title),
+      slug: matterResult.data.slug,
     };
   });
 

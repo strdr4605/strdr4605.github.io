@@ -1,6 +1,7 @@
 ---
 title: "Dynamic Tmux Window Naming with Claude Code"
 date: 2025-10-27
+slug: dynamic-tmux-window-naming-with-claude-code
 description: How to automatically rename tmux windows based on your current task when working with Claude Code.
 tags:
   - tmux

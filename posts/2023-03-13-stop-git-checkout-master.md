@@ -1,6 +1,7 @@
 ---
 title: "Stop doing git checkout master branch"
 date: 2023-03-13
+slug: stop-doing-git-checkout-master-branch
 description: My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.
 tags:
   - git

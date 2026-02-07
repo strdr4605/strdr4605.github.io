@@ -1,6 +1,5 @@
 import { getCollection } from 'astro:content';
 import { Feed } from 'feed';
-import kebabCase from 'lodash.kebabcase';
 import externalPosts from '../../external-posts.json';
 
 const siteURL = 'https://strdr4605.com';
@@ -18,7 +17,7 @@ export async function generateFeed() {
 
   const allPosts: PostItem[] = [
     ...posts.map((post) => ({
-      slug: post.data.slug || kebabCase(post.data.title),
+      slug: post.data.slug,
       date: post.data.date,
       title: post.data.title,
       description: post.data.description,

@@ -1,6 +1,7 @@
 ---
 title: "Optional pre-commit checks with husky"
 date: 2022-03-31
+slug: optional-pre-commit-checks-with-husky
 description: How to make your husky pre-commit optional for each check   
 tags:
   - git

@@ -1,6 +1,7 @@
 ---
 title: Project over money, team over project
 date: 2020-07-11
+slug: project-over-money-team-over-project
 description: What motivates me when I am looking for a new job in software engineering.
 tags:
  - motivation

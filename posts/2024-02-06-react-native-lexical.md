@@ -1,6 +1,7 @@
 ---
 title: "How to set up Lexical editor in React Native"
 date: 2024-02-21
+slug: how-to-set-up-lexical-editor-in-react-native
 description: We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview.
 tags:
   - react-native

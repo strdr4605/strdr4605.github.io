@@ -1,6 +1,7 @@
 ---
 title: "Nudge Github PR reviewers with Slack API"
 date: 2022-02-11
+slug: nudge-github-pr-reviewers-with-slack-api
 description: How to create a simple script that will nudge Github Pull Request reviewers on Slack using Slack API and userscripts.
 tags:
   - tools

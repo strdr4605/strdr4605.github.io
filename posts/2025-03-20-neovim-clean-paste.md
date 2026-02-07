@@ -1,6 +1,7 @@
 ---
 title: "Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace"
 date: 2025-03-20
+slug: clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace
 description: How to paste code in Neovim without unwanted newlines and leading whitespace.
 tags:
   - vim

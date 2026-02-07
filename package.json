@@ -27,11 +27,9 @@
     "astro": "^5.2.5",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
-    "jimp": "^1.6.0",
-    "lodash.kebabcase": "^4.1.1"
+    "jimp": "^1.6.0"
   },
   "devDependencies": {
-    "@types/lodash.kebabcase": "^4.1.9",
     "prettier": "3.5.3",
     "typescript": "^5.7.3"
   }

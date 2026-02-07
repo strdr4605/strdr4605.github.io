@@ -1,6 +1,7 @@
 ---
 title: "Keep your JavaScript repository clean"
 date: 2022-04-08
+slug: keep-your-java-script-repository-clean
 description: How we can clean up the repository root directory from config files like .eslintrc.js, tsconfig.json, jest.config.js and others.
 tags:
   - tools
