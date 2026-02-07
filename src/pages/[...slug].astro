@@ -25,8 +25,6 @@ const { post } = Astro.props;
 const slug = post.data.slug || kebabCase(post.data.title);
 const ogImage = `${siteUrl}/${post.data.banner || slug + '.jpg'}`;
 const { Content } = await render(post);
-
-const extraHead = `<link rel="stylesheet" href="https://unpkg.com/prismjs@1.28.0/plugins/diff-highlight/prism-diff-highlight.min.css" />`;
 ---
 
 <BaseLayout
@@ -35,7 +33,6 @@ const extraHead = `<link rel="stylesheet" href="https://unpkg.com/prismjs@1.28.0
   ogImage={ogImage}
   ogType="article"
   canonicalUrl={`${siteUrl}/${slug}`}
-  extraHead={extraHead}
 >
   <article>
     <h1>{post.data.title}</h1>

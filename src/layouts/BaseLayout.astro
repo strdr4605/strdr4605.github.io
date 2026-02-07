@@ -5,7 +5,6 @@ interface Props {
   ogImage?: string;
   ogType?: string;
   canonicalUrl?: string;
-  extraHead?: string;
 }
 
 const siteUrl = 'https://strdr4605.com';
@@ -15,7 +14,6 @@ const {
   ogImage = `${siteUrl}/banner.jpg`,
   ogType = 'website',
   canonicalUrl = siteUrl,
-  extraHead,
 } = Astro.props;
 ---
 
@@ -37,7 +35,6 @@ const {
     <meta name="twitter:creator" content="@strdr4605" />
     <meta name="theme-color" content="#FAF181" />
     <link rel="canonical" href={canonicalUrl} />
-    <Fragment set:html={extraHead} />
   </head>
   <body>
     <div class="container">
