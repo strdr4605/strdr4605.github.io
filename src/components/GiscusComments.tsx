@@ -1,5 +1,4 @@
 import Giscus from "@giscus/react";
-import React from "react";
 
 const GiscusComments: React.FC = () => (
   <Giscus

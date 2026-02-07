@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
 
 We should have this result:
 
-![expo-webview-init](expo-webview-init.png#small)
+![expo-webview-init](/expo-webview-init.png#small)
 
 ## Add lexical editor
 
@@ -129,7 +129,7 @@ npm --workspace=lexical-editor run dev
 
 And we can see this in the browser:
 
-![lexical-vite-init](lexical-vite-init.png)
+![lexical-vite-init](/lexical-vite-init.png)
 
 Cool, now how can we put this into `react-native-webview`?!
 
@@ -214,7 +214,7 @@ Only now we can import the output of the web app into react-native-webview:
        </View>
 ```
 
-![lexical-vite-webview](lexical-vite-webview.png#small)
+![lexical-vite-webview](/lexical-vite-webview.png#small)
 
 ## Create a basic lexical editor
 

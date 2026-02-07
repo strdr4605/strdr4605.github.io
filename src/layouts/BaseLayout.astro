@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  ogType?: string;
+  canonicalUrl?: string;
+  extraHead?: string;
+}
+
+const siteUrl = 'https://strdr4605.com';
+const {
+  title,
+  description,
+  ogImage = `${siteUrl}/banner.jpg`,
+  ogType = 'website',
+  canonicalUrl = siteUrl,
+  extraHead,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content={ogType} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:creator" content="@strdr4605" />
+    <meta name="theme-color" content="#FAF181" />
+    <link rel="canonical" href={canonicalUrl} />
+    <Fragment set:html={extraHead} />
+  </head>
+  <body>
+    <div class="container">
+      <slot />
+    </div>
+    <script
+      defer
+      src="https://analytics.umami.is/script.js"
+      data-website-id="ffd94eb4-d3a5-4505-bcd4-35c97edc57c8"
+    ></script>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/globals.css';
+</style>

@@ -1,0 +1,138 @@
+:root {
+  --link-color: #0366d6;
+  --second-color: #faf181;
+  --prism-inline-code: #f5f2f0;
+  --code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.6em;
+}
+
+a {
+  color: var(--link-color);
+}
+
+img {
+  width: 100%;
+}
+
+blockquote {
+  border-left: 1px solid #999;
+  padding-left: 1rem;
+  font-style: italic;
+}
+
+@media only screen and (min-width: 900px) {
+  .astro-code {
+    width: 150%;
+    margin-left: -25%;
+  }
+}
+
+img[src*="#small"] {
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* prism for inline code */
+
+:not(pre) > code {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+  background: var(--prism-inline-code);
+  font-family: var(--code-font);
+}
+
+/* Container */
+.container {
+  max-width: 60ch;
+  padding: 0 1rem;
+  margin: 1rem auto;
+}
+
+/* Header */
+.header {
+  position: relative;
+}
+
+.header nav p a {
+  margin-right: 1rem;
+}
+
+.github-icon {
+  position: absolute;
+  top: 0;
+  right: 2.5rem;
+}
+
+.rss-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Blog posts list */
+.blog-posts {
+  list-style-type: none;
+  padding: unset;
+}
+
+.blog-posts li {
+  display: flex;
+  margin: 1rem 0;
+}
+
+.blog-posts li span {
+  flex: 0 0 8rem;
+}
+
+li.starred::before {
+  content: "★";
+  margin-left: -1.5rem;
+  position: absolute;
+}
+
+@media only screen and (max-width: 666px) {
+  .blog-posts {
+    list-style-type: disc;
+    padding-left: 1rem;
+  }
+
+  .blog-posts li {
+    display: list-item;
+  }
+
+  .blog-posts li span {
+    display: none;
+  }
+
+  .starred {
+    list-style-type: "★ ";
+  }
+
+  li.starred::before {
+    content: unset;
+  }
+}
+
+/* Post footer */
+.post-footer {
+  border-top: 1px solid #999;
+  text-align: center;
+  padding: 1rem;
+}

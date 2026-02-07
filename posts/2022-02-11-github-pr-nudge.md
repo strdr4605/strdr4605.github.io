@@ -95,7 +95,7 @@ Now let's create a **Nudge reviewers** button and add it to the Reviewers sectio
 })();
 ```
 
-![nudge_reviewers_button](nudge_reviewers_button.png)
+![nudge_reviewers_button](/nudge_reviewers_button.png)
 
 ### Who needs to review
 

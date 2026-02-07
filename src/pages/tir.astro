@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+
+const siteUrl = 'https://strdr4605.com';
+---
+
+<BaseLayout
+  title="Today I Read - Dragoș Străinu's blog"
+  ogImage={`${siteUrl}/banner.jpg`}
+  canonicalUrl={`${siteUrl}/tir`}
+>
+  <Header />
+  <h1>Today I read</h1>
+  <ul id="tir-list"></ul>
+</BaseLayout>
+
+<script>
+  import { parse } from '@vanillaes/csv';
+
+  const gistUrl =
+    'https://gist.githubusercontent.com/strdr4605/f096d7efba21377d79e4422ba15a0c63/raw/data.csv';
+
+  function formatDate(date: Date): string {
+    return date.toLocaleDateString('en-GB', {
+      timeZone: 'UTC',
+      month: 'short',
+      day: '2-digit',
+      year: 'numeric',
+    });
+  }
+
+  async function loadTIR() {
+    const response = await fetch(gistUrl);
+    const data = await response.text();
+    const lines = parse(data) as string[][];
+    const headers = lines[0];
+    const result: Array<{
+      date?: string;
+      url?: string;
+      title?: string;
+      referrer?: string;
+    }> = [];
+
+    for (let i = 1; i < lines.length; i++) {
+      const obj: Record<string, string> = {};
+      const currentline = lines[i];
+      for (let j = 0; j < headers.length; j++) {
+        obj[headers[j]] = currentline[j];
+      }
+      result.push(obj);
+    }
+
+    // reverse array so that latest articles are first
+    result.reverse();
+
+    const list = document.getElementById('tir-list');
+    if (!list) return;
+
+    result.forEach((item) => {
+      if (!item.date || !item.title || !item.url) return;
+
+      const li = document.createElement('li');
+      li.style.display = 'flex';
+      li.style.gap = '1rem';
+      li.style.alignItems = 'flex-end';
+
+      const span = document.createElement('span');
+      const time = document.createElement('time');
+      const dateObj = new Date(item.date);
+      time.dateTime = dateObj.toISOString().split('T')[0];
+      time.textContent = formatDate(dateObj);
+      const i = document.createElement('i');
+      i.appendChild(time);
+      span.appendChild(i);
+
+      const a = document.createElement('a');
+      a.href = item.url;
+      a.textContent = item.title;
+
+      li.appendChild(span);
+      li.appendChild(a);
+
+      if (item.referrer) {
+        const sub = document.createElement('sub');
+        sub.textContent = ` ${item.referrer}`;
+        li.appendChild(sub);
+      }
+
+      list.appendChild(li);
+    });
+  }
+
+  loadTIR();
+</script>

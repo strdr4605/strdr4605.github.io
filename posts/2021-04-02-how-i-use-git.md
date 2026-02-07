@@ -34,7 +34,7 @@ git log --oneline --all --graph
 You can look at what all these arguments do at [git-log docs](https://www.git-scm.com/docs/git-log).
 Basically, it prints the history in this format:
 
-![git-log](git-log.png)
+![git-log](/git-log.png)
 
 I can see my current location **`HEAD`**, also local and remote branches. <br/>
 I run `git log --oneline --all --graph` almost every time with other commands that I use.

@@ -1,0 +1,19 @@
+---
+interface Props {
+  date: Date | string;
+}
+
+const { date } = Astro.props;
+const dateObj = new Date(date);
+const isoDate = dateObj.toISOString().split('T')[0];
+const formattedDate = dateObj.toLocaleDateString('en-GB', {
+  timeZone: 'UTC',
+  month: 'short',
+  day: '2-digit',
+  year: 'numeric',
+});
+---
+
+<i>
+  <time datetime={isoDate}>{formattedDate}</time>
+</i>

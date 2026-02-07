@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from 'astro:content';
+import kebabCase from 'lodash.kebabcase';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import AnimatedName from '../components/AnimatedName';
+import DateComponent from '../components/Date.astro';
+import PostFooter from '../components/PostFooter.astro';
+import GiscusComments from '../components/GiscusComments';
+
+const siteUrl = 'https://strdr4605.com';
+
+export async function getStaticPaths() {
+  // Include all posts (including drafts) - drafts are just hidden from home page
+  const posts = await getCollection('posts');
+  return posts.map((post) => {
+    const slug = post.data.slug || kebabCase(post.data.title);
+    return {
+      params: { slug },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const slug = post.data.slug || kebabCase(post.data.title);
+const ogImage = `${siteUrl}/${post.data.banner || slug + '.jpg'}`;
+const { Content } = await render(post);
+
+const extraHead = `<link rel="stylesheet" href="https://unpkg.com/prismjs@1.28.0/plugins/diff-highlight/prism-diff-highlight.min.css" />`;
+---
+
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  ogImage={ogImage}
+  ogType="article"
+  canonicalUrl={`${siteUrl}/${slug}`}
+  extraHead={extraHead}
+>
+  <article>
+    <h1>{post.data.title}</h1>
+    <DateComponent date={post.data.date} />
+    {' on '}
+    <a href="/">
+      <AnimatedName client:load />'s blog
+    </a>
+    <br />
+    <Content />
+    <PostFooter />
+  </article>
+  <GiscusComments client:visible />
+</BaseLayout>
