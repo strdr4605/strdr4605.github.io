@@ -1194,6 +1194,11 @@
   resolved "https://registry.yarnpkg.com/@ungap/structured-clone/-/structured-clone-1.3.0.tgz#d06bbb384ebcf6c505fde1c3d0ed4ddffe0aaff8"
   integrity sha512-WmoN8qaIAo7WTYWbAZuG8PYEhn5fkz7dZrqTBZ7dtt//lL2Gwms1IcnQ5yHqjDfX8Ft5j4YzDM23f87zBfDe9g==
 
+"@vanillaes/csv@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@vanillaes/csv/-/csv-3.0.4.tgz#e09fb5ff766f23b7a4438fbec3f583627a6ef935"
+  integrity sha512-cMJ/pAljVGpsHvqgd5N4EpNJOvMjFubg7x+9ehjVgQUFi2h+u4Nc4O4C0ErNLV53rO3rI0W1JnKX3wQz0pWgIA==
+
 "@vitejs/plugin-react@^4.7.0":
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-react/-/plugin-react-4.7.0.tgz#647af4e7bb75ad3add578e762ad984b90f4a24b9"
