@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import { transformerNotationDiff } from '@shikijs/transformers';
-import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
@@ -11,7 +10,6 @@ export default defineConfig({
     '/planable-wrapped': '/planable-wrapped/index.html',
   },
   integrations: [
-    react(),
     sitemap(),
   ],
   markdown: {

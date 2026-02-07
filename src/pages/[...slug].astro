@@ -5,7 +5,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import AnimatedName from '../components/AnimatedName.astro';
 import DateComponent from '../components/Date.astro';
 import PostFooter from '../components/PostFooter.astro';
-import GiscusComments from '../components/GiscusComments';
+import GiscusComments from '../components/GiscusComments.astro';
 
 const siteUrl = 'https://strdr4605.com';
 
@@ -45,5 +45,5 @@ const { Content } = await render(post);
     <Content />
     <PostFooter />
   </article>
-  <GiscusComments client:visible />
+  <GiscusComments />
 </BaseLayout>
