@@ -1042,6 +1042,14 @@
   dependencies:
     "@shikijs/types" "3.22.0"
 
+"@shikijs/transformers@^3.22.0":
+  version "3.22.0"
+  resolved "https://registry.yarnpkg.com/@shikijs/transformers/-/transformers-3.22.0.tgz#f5693349a2106d270cb9ee6ce1b0aa52ae3746d8"
+  integrity sha512-E7eRV7mwDBjueLF6852n2oYeJYxBq3NSsDk+uyruYAXONv4U8holGmIrT+mPRJQ1J1SNOH6L8G19KRzmBawrFw==
+  dependencies:
+    "@shikijs/core" "3.22.0"
+    "@shikijs/types" "3.22.0"
+
 "@shikijs/types@3.22.0":
   version "3.22.0"
   resolved "https://registry.yarnpkg.com/@shikijs/types/-/types-3.22.0.tgz#43fe92d163742424e794894cb27ce6ce1b4ca8a8"

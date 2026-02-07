@@ -72,16 +72,16 @@ How? By creating a new app inside the project using [npm workspaces](https://doc
 
 We add a workspace to `package.json`:
 
-```diff-json[class="diff-highlight"]
-   "name": "react-native-lexical",
-   "version": "1.0.0",
-   "main": "node_modules/expo/AppEntry.js",
-+  "workspaces": [
-+    "lexical-editor"
-+  ],
-   "scripts": {
-     "start": "expo start",
-     "android": "expo start --android",
+```json
+  "name": "react-native-lexical",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "workspaces": [ // [!code ++]
+    "lexical-editor" // [!code ++]
+  ], // [!code ++]
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
 ```
 
 > We can name it how we want `post-editor`, `page-editor`. Also we can have multiple editors if needed.
@@ -188,30 +188,30 @@ And vite will build the web editor on every change.
 
 Also, we need to build the app on install:
 
-```diff-json[class="diff-highlight"]
-   "scripts": {
-     "dev": "vite",
-     "build": "tsc && vite build",
-+    "prepare": "npm run build -- --no-watch",
+```json
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "prepare": "npm run build -- --no-watch", // [!code ++]
 ```
 
 Only now we can import the output of the web app into react-native-webview:
 
-```diff-tsx[class="diff-highlight"]
- import { StyleSheet, Text, View } from "react-native";
- import WebView from "react-native-webview";
-+import htmlString from "./lexical-editor/dist/htmlString";
+```tsx
+import { StyleSheet, Text, View } from "react-native";
+import WebView from "react-native-webview";
+import htmlString from "./lexical-editor/dist/htmlString"; // [!code ++]
 
- export default function App() {
-   return (
-         <Text>Lexical Webview</Text>
-         <WebView
-           originWhitelist={["*"]}
--          source={{ uri: "https://playground.lexical.dev" }}
-+          source={{ html: htmlString }}
-           style={{ marginTop: 20 }}
-         />
-       </View>
+export default function App() {
+  return (
+        <Text>Lexical Webview</Text>
+        <WebView
+          originWhitelist={["*"]}
+          source={{ uri: "https://playground.lexical.dev" }} // [!code --]
+          source={{ html: htmlString }} // [!code ++]
+          style={{ marginTop: 20 }}
+        />
+      </View>
 ```
 
 ![lexical-vite-webview](/lexical-vite-webview.png#small)
@@ -268,73 +268,73 @@ export function Editor() {
 
 Let's add the `OnChangePlugin` and post a message to react-native:
 
-```diff-tsx[class="diff-highlight"]
-+import { $getRoot, EditorState } from "lexical";
- import { LexicalComposer } from "@lexical/react/LexicalComposer";
- import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
- import { ContentEditable } from "@lexical/react/LexicalContentEditable";
- import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-+import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
- import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
- import "./Editor.css";
+```tsx
+import { $getRoot, EditorState } from "lexical"; // [!code ++]
+import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
+import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
+import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin"; // [!code ++]
+import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import "./Editor.css";
 
-@@ -15,6 +17,22 @@ export function Editor() {
-     onError,
-   };
+// ...
+    onError,
+  };
 
-+  function onChange(editorState: EditorState) {
-+    editorState.read(() => {
-+      const plainText = $getRoot().getTextContent();
-+
-+      const message = {
-+        type: "LEXICAL_EDITOR_STATE_CHANGE",
-+        payload: {
-+          plainText,
-+          serializedEditorState: editorState.toJSON(),
-+        },
-+      };
-+
-+      window.ReactNativeWebView?.postMessage(JSON.stringify(message));
-+    });
-+  }
-+
-   return (
-     <LexicalComposer initialConfig={initialConfig}>
-       <div className="editor-container">
-@@ -26,6 +44,7 @@ export function Editor() {
-           ErrorBoundary={LexicalErrorBoundary}
-         />
-         <HistoryPlugin />
-+        <OnChangePlugin onChange={onChange} />
-       </div>
-     </LexicalComposer>
-   );
+  function onChange(editorState: EditorState) { // [!code ++]
+    editorState.read(() => { // [!code ++]
+      const plainText = $getRoot().getTextContent(); // [!code ++]
+ // [!code ++]
+      const message = { // [!code ++]
+        type: "LEXICAL_EDITOR_STATE_CHANGE", // [!code ++]
+        payload: { // [!code ++]
+          plainText, // [!code ++]
+          serializedEditorState: editorState.toJSON(), // [!code ++]
+        }, // [!code ++]
+      }; // [!code ++]
+ // [!code ++]
+      window.ReactNativeWebView?.postMessage(JSON.stringify(message)); // [!code ++]
+    }); // [!code ++]
+  } // [!code ++]
+ // [!code ++]
+  return (
+    <LexicalComposer initialConfig={initialConfig}>
+      <div className="editor-container">
+// ...
+          ErrorBoundary={LexicalErrorBoundary}
+        />
+        <HistoryPlugin />
+        <OnChangePlugin onChange={onChange} /> // [!code ++]
+      </div>
+    </LexicalComposer>
+  );
 ```
 
 Ok, now we can receive this message on the react-native side:
 
-```diff-tsx[class="diff-highlight"]
- import { StyleSheet, Text, View } from "react-native";
--import WebView from "react-native-webview";
-+import WebView, { WebViewMessageEvent } from "react-native-webview";
- import htmlString from "./lexical-editor/dist/htmlString";
+```tsx
+import { StyleSheet, Text, View } from "react-native";
+import WebView from "react-native-webview"; // [!code --]
+import WebView, { WebViewMessageEvent } from "react-native-webview"; // [!code ++]
+import htmlString from "./lexical-editor/dist/htmlString";
 
- export default function App() {
-+  function onMessage(event: WebViewMessageEvent) {
-+    const message = JSON.parse(event.nativeEvent.data);
-+    console.log(JSON.stringify(message, null, 2));
-+  }
-+
-   return (
-     <View style={styles.container}>
-       <View style={{ width: "100%", height: "80%" }}>
-         <Text>Lexical Webview</Text>
-         <WebView
-           originWhitelist={["*"]}
-+          onMessage={onMessage}
-           source={{ html: htmlString }}
-           style={{ marginTop: 20 }}
-         />
+export default function App() {
+  function onMessage(event: WebViewMessageEvent) { // [!code ++]
+    const message = JSON.parse(event.nativeEvent.data); // [!code ++]
+    console.log(JSON.stringify(message, null, 2)); // [!code ++]
+  } // [!code ++]
+ // [!code ++]
+  return (
+    <View style={styles.container}>
+      <View style={{ width: "100%", height: "80%" }}>
+        <Text>Lexical Webview</Text>
+        <WebView
+          originWhitelist={["*"]}
+          onMessage={onMessage} // [!code ++]
+          source={{ html: htmlString }}
+          style={{ marginTop: 20 }}
+        />
 ```
 
 When we type something in the WebView editor we receive:
@@ -401,66 +401,66 @@ Let's say, we want to initialize the editor state when it is mounted.
 
 We listen for `LEXICAL_EDITOR_READY` message and post a message to webview using WebView ref.
 
-```diff-tsx[class="diff-highlight"]
+```tsx
 ...
-+import { useRef } from "react";
+import { useRef } from "react"; // [!code ++]
 
- export default function App() {
-+  const webviewRef = useRef<WebView>(null);
-+
-   function onMessage(event: WebViewMessageEvent) {
-     const message = JSON.parse(event.nativeEvent.data);
-     console.log(JSON.stringify(message, null, 2));
-     ...
-         // Do something with the editor state
-         // like saving it to a database
-         break;
-+      case "LEXICAL_EDITOR_READY":
-+        const commandMessage = {
-+          command: "INIT_SERIALIZED_EDITOR_STATE",
-+          payload: {
-+            root: {
-+              children: [
-+                {
-+                  children: [
-+                    {
-+                      detail: 0,
-+                      format: 0,
-+                      mode: "normal",
-+                      style: "",
-+                      text: "Initial text",
-+                      type: "text",
-+                      version: 1,
-+                    },
-+                  ],
-+                  direction: "ltr",
-+                  format: "",
-+                  indent: 0,
-+                  type: "paragraph",
-+                  version: 1,
-+                },
-+              ],
-+              direction: "ltr",
-+              format: "",
-+              indent: 0,
-+              type: "root",
-+              version: 1,
-+            },
-+          },
-+        };
-+
-+        webviewRef.current?.postMessage(JSON.stringify(commandMessage));
-+        break;
-       default:
-         console.error("Unknown message type", message);
-     }
-       <View style={{ width: "100%", height: "80%" }}>
-         <Text>Lexical Webview</Text>
-         <WebView
-+          ref={webviewRef}
-           originWhitelist={["*"]}
-           onMessage={onMessage}
-           source={{ html: htmlString }}
+export default function App() {
+  const webviewRef = useRef<WebView>(null); // [!code ++]
+ // [!code ++]
+  function onMessage(event: WebViewMessageEvent) {
+    const message = JSON.parse(event.nativeEvent.data);
+    console.log(JSON.stringify(message, null, 2));
+    ...
+        // Do something with the editor state
+        // like saving it to a database
+        break;
+      case "LEXICAL_EDITOR_READY": // [!code ++]
+        const commandMessage = { // [!code ++]
+          command: "INIT_SERIALIZED_EDITOR_STATE", // [!code ++]
+          payload: { // [!code ++]
+            root: { // [!code ++]
+              children: [ // [!code ++]
+                { // [!code ++]
+                  children: [ // [!code ++]
+                    { // [!code ++]
+                      detail: 0, // [!code ++]
+                      format: 0, // [!code ++]
+                      mode: "normal", // [!code ++]
+                      style: "", // [!code ++]
+                      text: "Initial text", // [!code ++]
+                      type: "text", // [!code ++]
+                      version: 1, // [!code ++]
+                    }, // [!code ++]
+                  ], // [!code ++]
+                  direction: "ltr", // [!code ++]
+                  format: "", // [!code ++]
+                  indent: 0, // [!code ++]
+                  type: "paragraph", // [!code ++]
+                  version: 1, // [!code ++]
+                }, // [!code ++]
+              ], // [!code ++]
+              direction: "ltr", // [!code ++]
+              format: "", // [!code ++]
+              indent: 0, // [!code ++]
+              type: "root", // [!code ++]
+              version: 1, // [!code ++]
+            }, // [!code ++]
+          }, // [!code ++]
+        }; // [!code ++]
+ // [!code ++]
+        webviewRef.current?.postMessage(JSON.stringify(commandMessage)); // [!code ++]
+        break; // [!code ++]
+      default:
+        console.error("Unknown message type", message);
+    }
+      <View style={{ width: "100%", height: "80%" }}>
+        <Text>Lexical Webview</Text>
+        <WebView
+          ref={webviewRef} // [!code ++]
+          originWhitelist={["*"]}
+          onMessage={onMessage}
+          source={{ html: htmlString }}
 ```
 
 Now we need to handle this in Lexical editor. We can create a custom plugin.
@@ -503,41 +503,41 @@ export const EditorStateInitPlugin = () => {
 
 And use it in our `Editor.tsx`:
 
-```diff-tsx[class="diff-highlight"]
--import { $getRoot, EditorState } from "lexical";
-+import { $getRoot, EditorState, LexicalEditor } from "lexical";
- import { LexicalComposer } from "@lexical/react/LexicalComposer";
- import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
- import { ContentEditable } from "@lexical/react/LexicalContentEditable";
- import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
- import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
- import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
-+import { EditorStateInitPlugin } from "./plugins/EditorStateInitPlugin";
- import "./Editor.css";
+```tsx
+import { $getRoot, EditorState } from "lexical"; // [!code --]
+import { $getRoot, EditorState, LexicalEditor } from "lexical"; // [!code ++]
+import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
+import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
+import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
+import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import { EditorStateInitPlugin } from "./plugins/EditorStateInitPlugin"; // [!code ++]
+import "./Editor.css";
 
 ...
 
--  function onChange(editorState: EditorState) {
-+  function onChange(
-+    editorState: EditorState,
-+    _latestEditor: LexicalEditor,
-+    tags: Set<string>,
-+  ) {
-+    if (tags.has("FromReactNativeToLexical")) {
-+      return;
-+    }
-     editorState.read(() => {
-       const plainText = $getRoot().getTextContent();
+  function onChange(editorState: EditorState) { // [!code --]
+  function onChange( // [!code ++]
+    editorState: EditorState, // [!code ++]
+    _latestEditor: LexicalEditor, // [!code ++]
+    tags: Set<string>, // [!code ++]
+  ) { // [!code ++]
+    if (tags.has("FromReactNativeToLexical")) { // [!code ++]
+      return; // [!code ++]
+    } // [!code ++]
+    editorState.read(() => {
+      const plainText = $getRoot().getTextContent();
 
 ...
 
-           ErrorBoundary={LexicalErrorBoundary}
-         />
-         <HistoryPlugin />
-+        <EditorStateInitPlugin />
-         <OnChangePlugin onChange={onChange} />
-       </div>
-     </LexicalComposer>
+          ErrorBoundary={LexicalErrorBoundary}
+        />
+        <HistoryPlugin />
+        <EditorStateInitPlugin /> // [!code ++]
+        <OnChangePlugin onChange={onChange} />
+      </div>
+    </LexicalComposer>
 ```
 
 Let's see it in action:

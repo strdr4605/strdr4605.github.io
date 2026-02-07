@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import { transformerNotationDiff } from '@shikijs/transformers';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
@@ -13,6 +14,7 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: 'github-light',
+      transformers: [transformerNotationDiff()],
     },
   },
 });

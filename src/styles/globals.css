@@ -48,6 +48,29 @@ img[src*="#small"] {
   object-fit: contain;
 }
 
+/* Shiki diff highlighting */
+.astro-code .diff.add {
+  background-color: #acf2bd4d;
+}
+
+.astro-code .diff.remove {
+  background-color: #fdb8c04d;
+}
+
+.astro-code .diff.add::before {
+  content: "+";
+  color: #22863a;
+  position: absolute;
+  left: 0.5rem;
+}
+
+.astro-code .diff.remove::before {
+  content: "-";
+  color: #cb2431;
+  position: absolute;
+  left: 0.5rem;
+}
+
 /* prism for inline code */
 
 :not(pre) > code {
