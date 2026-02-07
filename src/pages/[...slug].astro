@@ -2,7 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import kebabCase from 'lodash.kebabcase';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import AnimatedName from '../components/AnimatedName';
+import AnimatedName from '../components/AnimatedName.astro';
 import DateComponent from '../components/Date.astro';
 import PostFooter from '../components/PostFooter.astro';
 import GiscusComments from '../components/GiscusComments';
@@ -39,7 +39,7 @@ const { Content } = await render(post);
     <DateComponent date={post.data.date} />
     {' on '}
     <a href="/">
-      <AnimatedName client:load />'s blog
+      <AnimatedName />'s blog
     </a>
     <br />
     <Content />
