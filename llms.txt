@@ -1,0 +1,61 @@
+# Dragoș Străinu's Blog
+
+> Personal blog by Dragoș Străinu, a Full Stack Software Engineer, about development, developer tools, git workflows, vim, hackathons, and open-source.
+
+## Blog Posts
+
+- [Dynamic Tmux Window Naming with Claude Code](https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code): How to automatically rename tmux windows based on your current task when working with Claude Code.
+- [Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace](https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace): How to paste code in Neovim without unwanted newlines and leading whitespace.
+- [How to set up Lexical editor in React Native](https://strdr4605.com/how-to-set-up-lexical-editor-in-react-native): We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview.
+- [MacOS: notify when the terminal command is finished](https://strdr4605.com/mac-os-notify-when-the-terminal-command-is-finished): I created a small bash function to notify me when a long-running terminal command finishes
+- [Stop doing git checkout master branch](https://strdr4605.com/stop-doing-git-checkout-master-branch): My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.
+- [Typescript errors into vim quickfix](https://strdr4605.com/typescript-errors-into-vim-quickfix): How to populate errors from running tsc in vim/neovim quickfix. Get typescript compiler errors inside vim.
+- [How I keep my iPhone battery at optimal level](https://strdr4605.com/how-i-keep-my-i-phone-battery-at-optimal-level): How I maintain the iPhone battery between 35% and 70% using iPhone shortcuts
+- [How to gradually add an eslint rule](https://strdr4605.com/how-to-gradually-add-an-eslint-rule): Sometimes you decide to add a new eslint plugin or rule to your javascript project. To not do 2000+ files change you may try to gradually change files with lint-staged.
+- [How I found a bug in 2000 files](https://strdr4605.com/how-i-found-a-bug-in-2000-files): A story how I found a bug in a change of 2000 files using bash, git commits and git bisect. Another title for this post cound be How to creat a commit per file that was changed.
+- [NodeJS: How to test the npm package before releasing](https://strdr4605.com/node-js-how-to-test-the-npm-package-before-releasing): How to test and release an npm package when it is still a Work In Progress. How to create prereleases of a NodeJS package following semver.org convention.
+- [Keep your JavaScript repository clean](https://strdr4605.com/keep-your-java-script-repository-clean): How we can clean up the repository root directory from config files like .eslintrc.js, tsconfig.json, jest.config.js and others.
+- [Optional pre-commit checks with husky](https://strdr4605.com/optional-pre-commit-checks-with-husky): How to make your husky pre-commit optional for each check
+- [NPM: How to document your package.json scripts](https://strdr4605.com/npm-how-to-document-your-package-json-scripts): Let's see different ways you can document your npm scripts using README, comments in package.json, or using npx why package.
+- [You need to use Git worktree](https://strdr4605.com/you-need-to-use-git-worktree): A basic guide on why and how to use Git worktree feature.
+- [Use Caps Lock to trigger iTerm2 terminal](https://strdr4605.com/use-caps-lock-to-trigger-iterm2-terminal): A guide to remap Caps Lock to open the iTerm2 Mac terminal from anywhere in the system.
+- [Git: hide specific branch when doing git log --all](https://strdr4605.com/git-hide-specific-branch-when-doing-git-log-all): How to hide a specific branch when looking into git log history.
+- [Nudge Github PR reviewers with Slack API](https://strdr4605.com/nudge-github-pr-reviewers-with-slack-api): How to create a simple script that will nudge Github Pull Request reviewers on Slack using Slack API and userscripts.
+- [Git: temporary change commit author](https://strdr4605.com/git-temporary-change-commit-author): A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author
+- [Meteor: a better way to use meteor npm command](https://strdr4605.com/meteor-a-better-way-to-use-meteor-npm-command): Did you forget to add meteor command before npm? Try adding a bash script that will make sure you always run it correctly.
+- [Commitlint: custom commit message with emojis](https://strdr4605.com/commitlint-custom-commit-message-with-emojis): A guide to customize the commitlint to your need and use it as convention in your git repository. Customize commitlint header format to use emojis.
+- [No tits in git](https://strdr4605.com/no-tits-in-git): Why merge commits make git history unreadable and how git rebase keeps it clean.
+- [9 Ways to Win a Hackathon... Without Coming in First Place](https://strdr4605.com/how-to-win-a-hackathon): To win first place at a hackathon, you need to combine multiple components... and that's not always possible. Here's how to make the most of your next hackathon without coming in 'first place'.
+- [Kanban/Sprint board isn't working for you? Try this!](https://strdr4605.com/kanban-board-alternative): An alternative to kanban board. Using Google Docs as a planning tool.
+- [How I use Git](https://strdr4605.com/how-i-use-git): My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day.
+- [Building a command-line time tracker](https://strdr4605.com/building-a-command-line-time-tracker): This is my attempt to create a simple time tracker from the command line
+- [What I learned from 35 Hackathons](https://strdr4605.com/what-i-learned-from-35-hackathons): What I learned from 35 hackathons, why you should participate at hackathons, how to gain experience without a full-time job.
+- [My biggest Pull Request](https://strdr4605.com/my-biggest-pull-request): Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!
+- [Project over money, team over project](https://strdr4605.com/project-over-money-team-over-project): What motivates me when I am looking for a new job in software engineering.
+- [My first open-source project](https://strdr4605.com/my-first-open-source-project): How I created mockingcase, a beginner-friendly npm package that converts strings to mOcKiNgCaSe, and what I learned about open-source contribution.
+
+## Tags
+
+- [automation](https://strdr4605.com/tags/automation)
+- [bash](https://strdr4605.com/tags/bash)
+- [career](https://strdr4605.com/tags/career)
+- [claude](https://strdr4605.com/tags/claude)
+- [development](https://strdr4605.com/tags/development)
+- [git](https://strdr4605.com/tags/git)
+- [github](https://strdr4605.com/tags/github)
+- [hackathons](https://strdr4605.com/tags/hackathons)
+- [hacks](https://strdr4605.com/tags/hacks)
+- [learning](https://strdr4605.com/tags/learning)
+- [macos](https://strdr4605.com/tags/macos)
+- [management](https://strdr4605.com/tags/management)
+- [motivation](https://strdr4605.com/tags/motivation)
+- [node](https://strdr4605.com/tags/node)
+- [npm](https://strdr4605.com/tags/npm)
+- [open-source](https://strdr4605.com/tags/open-source)
+- [react-native](https://strdr4605.com/tags/react-native)
+- [shortcuts](https://strdr4605.com/tags/shortcuts)
+- [tmux](https://strdr4605.com/tags/tmux)
+- [tools](https://strdr4605.com/tags/tools)
+- [userscript](https://strdr4605.com/tags/userscript)
+- [vim](https://strdr4605.com/tags/vim)
+- [zsh](https://strdr4605.com/tags/zsh)
