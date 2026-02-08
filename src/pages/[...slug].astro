@@ -28,11 +28,29 @@ const { Content } = await render(post);
 
 <BaseLayout
   title={post.data.title}
-  description={post.data.description}
+  description={post.data.description ?? undefined}
   ogImage={ogImage}
   ogType="article"
   canonicalUrl={`${siteUrl}/${slug}`}
 >
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: post.data.title,
+      description: post.data.description,
+      datePublished: post.data.date.toISOString(),
+      url: `${siteUrl}/${slug}`,
+      image: ogImage,
+      author: {
+        '@type': 'Person',
+        name: 'Dragoș Străinu',
+        url: siteUrl,
+      },
+      keywords: post.data.tags,
+    })}
+  />
   <article>
     <h1>{post.data.title}</h1>
     <DateComponent date={post.data.date} />

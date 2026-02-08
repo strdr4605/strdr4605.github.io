@@ -1,11 +1,11 @@
-import { getCollection } from 'astro:content';
-import { Feed } from 'feed';
-import externalPosts from '../../external-posts.json';
+import { getCollection } from "astro:content";
+import { Feed } from "feed";
+import externalPosts from "../../external-posts.json";
 
-const siteURL = 'https://strdr4605.com';
+const siteURL = "https://strdr4605.com";
 
 export async function generateFeed() {
-  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  const posts = await getCollection("posts", ({ data }) => !data.draft);
 
   type PostItem = {
     slug: string;
@@ -17,13 +17,13 @@ export async function generateFeed() {
 
   const allPosts: PostItem[] = [
     ...posts.map((post) => ({
-      slug: post.data.slug,
+      slug: post.data.slug ?? "",
       date: post.data.date,
       title: post.data.title,
-      description: post.data.description,
+      description: post.data.description ?? undefined,
     })),
     ...externalPosts.map((post) => ({
-      slug: '',
+      slug: "",
       date: post.date,
       title: post.title,
       externalLink: post.externalLink,
@@ -32,22 +32,22 @@ export async function generateFeed() {
 
   const date = new Date();
   const author = {
-    name: 'Dragoș Străinu',
-    email: 'str.dr4605@gmail.com',
-    link: 'https://x.com/strdr4605',
+    name: "Dragoș Străinu",
+    email: "str.dr4605@gmail.com",
+    link: "https://x.com/strdr4605",
   };
 
   const feed = new Feed({
     title: "Dragoș Străinu's blog",
     description:
-      'I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.',
+      "I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.",
     id: siteURL,
     link: siteURL,
     image: `${siteURL}/banner.jpg`,
     favicon: `${siteURL}/favicon.ico`,
     copyright: `All rights reserved ${date.getFullYear()}, Dragoș Străinu`,
     updated: date,
-    generator: 'Feed for Node.js',
+    generator: "Feed for Node.js",
     feedLinks: {
       rss2: `${siteURL}/feed/rss.xml`,
       json: `${siteURL}/feed/feed.json`,
