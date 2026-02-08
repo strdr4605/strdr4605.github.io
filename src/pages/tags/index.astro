@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+
+const siteUrl = 'https://strdr4605.com';
+
+const posts = await getCollection('posts', ({ data }) => !data.draft);
+
+const tagCounts = new Map<string, number>();
+for (const post of posts) {
+  for (const tag of post.data.tags) {
+    tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+  }
+}
+
+const sortedTags = [...tagCounts.entries()].sort((a, b) =>
+  a[0].localeCompare(b[0]),
+);
+---
+
+<BaseLayout
+  title="Tags | strdr4605"
+  description="Browse articles by tag"
+  canonicalUrl={`${siteUrl}/tags`}
+>
+  <Header />
+  <h2>Tags</h2>
+  <ul class="tag-list">
+    {
+      sortedTags.map(([tag, count]) => (
+        <li>
+          <a href={`/tags/${tag}`}>
+            #{tag}
+          </a>{' '}
+          ({count})
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
+
+<style>
+  .tag-list {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .tag-list li {
+    margin: 0.5rem 0;
+  }
+</style>

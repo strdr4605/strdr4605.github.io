@@ -41,6 +41,15 @@ const { Content } = await render(post);
       <AnimatedName />'s blog
     </a>
     <br />
+    {post.data.tags.length > 0 && (
+      <span class="post-tags">
+        {post.data.tags.map((tag, i) => (
+          <>
+            <a href={`/tags/${tag}`}>#{tag}</a>{i < post.data.tags.length - 1 && ', '}
+          </>
+        ))}
+      </span>
+    )}
     <Content />
     <PostFooter />
   </article>
