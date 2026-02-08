@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import DateComponent from '../../components/Date.astro';
+
+const siteUrl = 'https://strdr4605.com';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+
+  const tagMap = new Map<string, typeof posts>();
+  for (const post of posts) {
+    for (const tag of post.data.tags) {
+      const existing = tagMap.get(tag) || [];
+      existing.push(post);
+      tagMap.set(tag, existing);
+    }
+  }
+
+  return [...tagMap.entries()].map(([tag, posts]) => ({
+    params: { tag },
+    props: {
+      posts: posts
+        .map((post) => ({
+          slug: post.data.slug,
+          date: post.data.date,
+          title: post.data.title,
+          starred: post.data.starred,
+        }))
+        .sort(
+          (a, b) =>
+            new Date(b.date).getTime() - new Date(a.date).getTime(),
+        ),
+    },
+  }));
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<BaseLayout
+  title={`Posts tagged: ${tag} | strdr4605`}
+  description={`Articles about ${tag} by Dragoș Străinu`}
+  canonicalUrl={`${siteUrl}/tags/${tag}`}
+>
+  <Header />
+  <h2>#{tag}</h2>
+  <section>
+    <ul class="blog-posts">
+      {
+        posts.map(({ slug, date, title, starred }) => (
+          <li class={starred ? 'starred' : ''}>
+            <span>
+              <DateComponent date={date} />
+            </span>
+            <a href={`/${slug}`}>{title}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>
