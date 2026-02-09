@@ -7,6 +7,7 @@ tags:
   - tmux
   - claude
   - automation
+  - tools
 ---
 
 When working with Claude Code in tmux, I wanted a way to automatically update my window names based on what I'm currently working on. Instead of manually renaming windows or having generic names, I set up Claude Code to dynamically update the window name as I switch between tasks.

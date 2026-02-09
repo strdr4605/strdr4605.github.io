@@ -5,6 +5,7 @@ slug: stop-doing-git-checkout-master-branch
 description: My workflow when starting a new task for the project with git. How I checkout on a new branch based on origin/master branch.
 tags:
   - git
+  - productivity
 ---
 
 I see a common workflow when starting to work on new task:

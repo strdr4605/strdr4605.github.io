@@ -4,6 +4,8 @@ date: 2022-02-22
 description: A guide to remap Caps Lock to open the iTerm2 Mac terminal from anywhere in the system.
 tags:
   - tools
+  - productivity
+  - macos
 slug: use-caps-lock-to-trigger-iterm2-terminal
 ---
 

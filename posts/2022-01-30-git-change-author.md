@@ -5,7 +5,7 @@ slug: git-temporary-change-commit-author
 description: A small function that you can add to your shell config file that will change the GIT_COMMITTER_NAME, GIT_COMMITTER_EMAIL and git commit author
 tags:
   - git
-  - bash
+  - zsh
   - tools
 ---
 

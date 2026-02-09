@@ -6,6 +6,7 @@ description: An alternative to kanban board. Using Google Docs as a planning too
 tags:
   - management
   - tools
+  - productivity
 ---
 
 For most of the projects where I was involved we mostly used Kanban.

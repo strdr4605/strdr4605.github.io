@@ -5,7 +5,6 @@ slug: mac-os-notify-when-the-terminal-command-is-finished
 description: I created a small bash function to notify me when a long-running terminal command finishes
 tags:
   - macos
-  - bash
   - zsh
 ---
 

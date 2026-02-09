@@ -4,7 +4,8 @@ date: 2020-07-25
 slug: my-biggest-pull-request
 description: Lessons learned from my biggest Pull Request. What to do when the Pull Request is too big?!
 tags:
-  - development
+  - git
+  - github
 ---
 
 ## The story

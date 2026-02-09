@@ -6,6 +6,7 @@ description: How I maintain the iPhone battery between 35% and 70% using iPhone 
 tags:
   - hacks
   - shortcuts
+  - productivity
 ---
 
 I am not a heavy user of mobile phones. I don't rush for the latest model and when I buy a phone I hope it to last for at least 4-5 years.

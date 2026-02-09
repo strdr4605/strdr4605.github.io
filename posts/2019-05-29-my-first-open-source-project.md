@@ -5,6 +5,7 @@ slug: my-first-open-source-project
 description: "How I created mockingcase, a beginner-friendly npm package that converts strings to mOcKiNgCaSe, and what I learned about open-source contribution."
 tags:
   - open-source
+  - github
 ---
 
 > Originally posted on [dev.to](https://dev.to/strdr4605/my-first-open-source-project-35ka).

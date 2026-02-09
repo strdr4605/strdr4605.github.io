@@ -4,7 +4,8 @@ date: 2022-05-17
 slug: how-to-gradually-add-an-eslint-rule
 description: Sometimes you decide to add a new eslint plugin or rule to your javascript project. To not do 2000+ files change you may try to gradually change files with lint-staged.
 tags:
-  - development
+  - tools
+  - node
 ---
 
 As your javascript project grows and new engineers are joining the team, you may try to add new eslint plugins and rules to make the code base more rigid.

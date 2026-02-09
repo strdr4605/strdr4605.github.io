@@ -4,7 +4,7 @@ date: 2021-04-02
 slug: how-i-use-git
 description: My daily use of Git. What Git commands I usually use. Tips and tricks that I use every day.
 tags:
-  - development
+  - git
   - tools
 ---
 

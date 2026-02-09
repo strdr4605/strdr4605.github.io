@@ -7,6 +7,7 @@ tags:
   - tools
   - github
   - userscript
+  - automation
 ---
 
 You know that moment when you have a Pull Request waiting for someone to review but days pass and no one is looking at it, so you have to manually ask reviewers in a public channel or privately. How we can automate this?

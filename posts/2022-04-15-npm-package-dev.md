@@ -4,7 +4,7 @@ date: 2022-04-15
 slug: node-js-how-to-test-the-npm-package-before-releasing
 description: How to test and release an npm package when it is still a Work In Progress. How to create prereleases of a NodeJS package following semver.org convention.
 tags:
-  - development
+  - tools
   - node
   - npm
 ---
