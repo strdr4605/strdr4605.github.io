@@ -37,10 +37,8 @@
 ## Tags
 
 - [automation](https://strdr4605.com/tags/automation)
-- [bash](https://strdr4605.com/tags/bash)
 - [career](https://strdr4605.com/tags/career)
 - [claude](https://strdr4605.com/tags/claude)
-- [development](https://strdr4605.com/tags/development)
 - [git](https://strdr4605.com/tags/git)
 - [github](https://strdr4605.com/tags/github)
 - [hackathons](https://strdr4605.com/tags/hackathons)
@@ -52,6 +50,7 @@
 - [node](https://strdr4605.com/tags/node)
 - [npm](https://strdr4605.com/tags/npm)
 - [open-source](https://strdr4605.com/tags/open-source)
+- [productivity](https://strdr4605.com/tags/productivity)
 - [react-native](https://strdr4605.com/tags/react-native)
 - [shortcuts](https://strdr4605.com/tags/shortcuts)
 - [tmux](https://strdr4605.com/tags/tmux)
