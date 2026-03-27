@@ -24,7 +24,7 @@
     "@astrojs/sitemap": "^3.2.1",
     "@shikijs/transformers": "^3.22.0",
     "@vanillaes/csv": "^3.0.4",
-    "astro": "^5.2.5",
+    "astro": "^5.18.1",
     "feed": "^4.2.2",
     "gray-matter": "^4.0.3",
     "sharp": "^0.34.5"
