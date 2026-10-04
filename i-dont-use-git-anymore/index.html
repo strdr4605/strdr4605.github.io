@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><title>I don&#39;t use git anymore</title><meta name="description" content="A story about how I switched from Git version control system to a better alternative jj-vcs."><meta property="og:locale" content="en_GB"><meta property="og:title" content="I don't use git anymore"><meta property="og:description" content="A story about how I switched from Git version control system to a better alternative jj-vcs."><meta property="og:image" content="https://strdr4605.com/i-dont-use-git-anymore.jpg"><meta property="og:type" content="article"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:creator" content="@strdr4605"><meta name="theme-color" content="#FAF181"><meta property="og:url" content="https://strdr4605.com/i-dont-use-git-anymore"><link rel="canonical" href="https://strdr4605.com/i-dont-use-git-anymore"><style>:root{--link-color: #0366d6;--second-color: #faf181;--prism-inline-code: #f5f2f0;--code-font: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace}html,body{padding:0;margin:0;font-family:Verdana,Geneva,Tahoma,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}*{box-sizing:border-box}h1{font-size:1.6em}a{color:var(--link-color)}img{width:100%}blockquote{border-left:1px solid #999;padding-left:1rem;font-style:italic}@media only screen and (min-width:900px){.astro-code{width:150%;margin-left:-25%}}img[src*="#small"]{max-height:500px;object-fit:contain}.astro-code .diff.add{background-color:#acf2bd4d}.astro-code .diff.remove{background-color:#fdb8c04d}.astro-code .diff.add:before{content:"+";color:#22863a;position:absolute;left:.5rem}.astro-code .diff.remove:before{content:"-";color:#cb2431;position:absolute;left:.5rem}:not(pre)>code{padding:.1em;border-radius:.3em;white-space:normal;background:var(--prism-inline-code);font-family:var(--code-font)}.container{max-width:60ch;padding:0 1rem;margin:1rem auto}.header{position:relative}.header nav p a{margin-right:1rem}.github-icon{position:absolute;top:0;right:2.5rem}.rss-icon{position:absolute;top:0;right:0}.blog-posts{list-style-type:none;padding:unset}.blog-posts li{display:flex;margin:1rem 0}.blog-posts li span{flex:0 0 8rem}li.starred:before{content:"★";margin-left:-1.5rem;position:absolute}@media only screen and (max-width:666px){.blog-posts{list-style-type:disc;padding-left:1rem}.blog-posts li{display:list-item}.blog-posts li span{display:none}.starred{list-style-type:"★ "}li.starred:before{content:unset}}.post-footer{border-top:1px solid #999;text-align:center;padding:1rem}
+</style></head> <body> <div class="container">  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"I don't use git anymore","description":"A story about how I switched from Git version control system to a better alternative jj-vcs.","datePublished":"2026-10-04T00:00:00.000Z","url":"https://strdr4605.com/i-dont-use-git-anymore","image":"https://strdr4605.com/i-dont-use-git-anymore.jpg","author":{"@type":"Person","name":"Dragoș Străinu","url":"https://strdr4605.com"},"keywords":["git","jj"]}</script> <article> <h1>I don&#39;t use git anymore</h1> <i> <time datetime="2026-10-04">04 Oct 2026</time> </i>  on  <a href="/"> <span id="animated-name">Dragoș Străinu</span><script type="module">const e=document.getElementById("animated-name");if(e){const n=(t=250)=>new Promise(o=>setTimeout(o,t));(async()=>{await n(1500);const t="Dragoș Străinu".split("");t.splice(6,1),e.textContent=t.join("");let o=5;for(;o>=0;){let[i]=t.splice(o,1);t.splice(t.length-5+o,0,i),await n(),e.textContent=t.join(""),o--}for(o=6;o>2;)t.splice(o,1),await n(),e.textContent=t.join(""),o--;t[0]=t[0].toLowerCase(),await n(),e.textContent=t.join(""),t[3]=t[3].toLowerCase(),await n(),e.textContent=t.join(""),t[5]=t[5].toUpperCase(),await n(),e.textContent=t.join(""),t[6]=t[6].toUpperCase(),await n(),e.textContent=t.join(""),t[7]=t[7].toUpperCase(),await n(),e.textContent=t.join(""),t[8]=t[8].toUpperCase(),await n(),e.textContent=t.join(""),t[5]="4",await n(),e.textContent=t.join(""),t[6]="6",await n(),e.textContent=t.join(""),t[7]="0",await n(),e.textContent=t.join(""),t[8]="5",await n(),e.textContent=t.join("")})()}</script>'s blog
+</a> <br> <span class="post-tags">  <a href="/tags/git">#git</a>,  <a href="/tags/jj">#jj</a> </span> <p>You probably opened this article with the thought:</p>
+<blockquote>
+<p>This guy outsourced all his work to coding agents and is not managing git by himself🤔😅</p>
+</blockquote>
+<p>And this is a partial truth; although coding agents do manipulate git by themselves, I still check the git state, commits, branches (so it’s not fully outsourced).</p>
+<p>But this is a story about replacing git with a better alternative.</p>
+<h2 id="how-i-started-using-git">How I started using git</h2>
+<p>I found out about git in the hard way.</p>
+<p>While in the middle of a 4-week hackathon trying to develop <a href="https://strdr4605.com/fracfik/">Fracfik</a> in collaboration with my teammates, not knowing about git, and sharing code changes on Messenger by sending files and archives of the project and handling code merging and conflicts manually😭.</p>
+<p><img src="/fracfik-version-2.png" alt="fracfik-version-2"></p>
+<p>It was a nightmare to work that way and I thought to myself</p>
+<blockquote>
+<p>There should be a better way of doing this kind of collaboration over a coding project🤔</p>
+</blockquote>
+<p>At the end of the hackathon a mentor saw how we work, and asked us, “Why don’t you use git for the project?” It was too late for that project, but that day I went home and started digging into git and GitHub.</p>
+<p>That day I had the “aha moment”, and from then on I used git and GitHub for all my hackathons, university, and personal projects.</p>
+<p>Going back I think version control systems and git should be among the first things that a software engineer needs to learn and understand. This is why I teach students git and GitHub at the beginning of all my courses.</p>
+<h2 id="the-git-expert">The git expert</h2>
+<p>Over the course of years I got more advanced at using git and went above “git add, commit, push, pull” commands. <em>I know engineers who are stuck at this level even after years in the career</em>.</p>
+<p>I became the go-to person when some of my friends or teammates would have to handle some complicated git operations.</p>
+<p>A friend of mine would call me every other week and ask me to help him fix a git problem. <em>Nowadays he doesn’t reach out to me anymore as his coding agents solve any git-related problems</em>.</p>
+<p>As you can see from <a href="/tags/git">other articles of mine</a>, I consider myself a proficient git user who can manipulate commits and branches with ease.</p>
+<p><img src="/iron-man-hologram.gif" alt="iron-man-hologram"></p>
+<p>I <code>rebase</code> and <code>push --force</code> multiple times per day<sup><a href="#user-content-fn-1" id="user-content-fnref-1" data-footnote-ref="" aria-describedby="footnote-label">1</a></sup>.</p>
+<p>I kind of <a href="/no-tits-in-git">hate <code>git merge</code></a>😅, and promote <a href="https://trunkbaseddevelopment.com/">Trunk based development</a>.</p>
+<p>I used <a href="/you-need-to-use-git-worktree">git worktrees</a> before it was mainstream with coding agents.</p>
+<p>I added <a href="/stop-doing-git-checkout-master-branch">custom aliases</a> to simplify my workflow.</p>
+<p>And now my <a href="https://github.com/strdr4605/.dotfiles/blob/master/.gitconfig">.gitconfig</a> has a lot of settings that match my needs.</p>
+<h2 id="problems-with-git">Problems with git</h2>
+<p>I encountered a bottleneck in git when trying to explore the <a href="https://jg.gg/2018/09/29/stacked-diffs-versus-pull-requests/">Stacked diffs</a> concept and trying to do a <a href="https://docs.github.com/en/pull-requests/how-tos/stacked-pull-requests">Stacked Pull Requests workflow</a> (even before it was a feature in GitHub).</p>
+<p>I tried several tools (<a href="https://github.com/ezyang/ghstack">ghstack</a>, <a href="https://github.com/spacedentist/spr">spr</a>) and eventually created my own scripts: <a href="https://github.com/strdr4605/.dotfiles/blob/master/bin/gh-pr-create-stacked">gh-pr-create-stacked</a>, <a href="https://github.com/strdr4605/.dotfiles/blob/master/bin/git-push-stacked">git-push-stacked</a>. But in the chase to create a perfect git flow and commit history, it was a nightmare to edit, rebase, fix stacked PRs, and maintain a simple workflow. <em>Even after discovering <code>git commit --fixup</code> and <a href="https://github.com/strdr4605/.dotfiles/blob/master/.gitconfig#L22-L25">nice git settings</a></em>.</p>
+<h2 id="finding-the-solution">Finding the solution</h2>
+<p>In autumn of 2025 I found out about <a href="https://gitbutler.com/">GitButler</a>, a tool to simplify the work with git, but at that time it was presented as a Desktop app<sup><a href="#user-content-fn-2" id="user-content-fnref-2" data-footnote-ref="" aria-describedby="footnote-label">2</a></sup> and, being a terminal guy, I skipped it but was still interested and watching tutorials on their YouTube channel.</p>
+<p>One day I saw <a href="https://www.youtube.com/watch?v=dwyMlLYIrPk">Jujutsu | Ep. 5 Bits and Booze</a> and was very intrigued by this <a href="https://www.jj-vcs.dev/latest/">jj-vcs</a> alternative to git; one that can use git as backend and allows you to collaborate with teammates that are still using git.</p>
+<p>I installed the <code>jj</code> CLI and ran <code>jj git init</code> to colocate it in the same repo with a work project.</p>
+<p>And OMG😱, I felt like one of my students when I teach them <code>git rebase -i</code>. All these commands were new to me, I was afraid to run most of them<sup><a href="#user-content-fn-3" id="user-content-fnref-3" data-footnote-ref="" aria-describedby="footnote-label">3</a></sup>.</p>
+<p>I added the Neovim integration for Jujutsu and even <a href="https://github.com/NicolasGB/jj.nvim/pull/2">contributed to it</a> but while doing this I encountered a conflict that was hard to understand (in jj workflow) so I decided I’d had enough jj for that day and went back to git.</p>
+<h2 id="final-switch">Final switch</h2>
+<p>This year, while building a new project, I decided to challenge myself and not use git<sup><a href="#user-content-fn-4" id="user-content-fnref-4" data-footnote-ref="" aria-describedby="footnote-label">4</a></sup>. And created <a href="https://github.com/strdr4605/.dotfiles/blob/master/jj-git-nudge.zsh#L75-L147"><code>jjask</code></a> headless coding agents helpers to guide me:</p>
+<pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#005CC5">command</span><span style="color:#032F62"> claude</span><span style="color:#005CC5"> -p</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#005CC5">    --model</span><span style="color:#032F62"> "</span><span style="color:#24292E">$JJ_SUGGEST_MODEL</span><span style="color:#032F62">"</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#005CC5">    --output-format</span><span style="color:#032F62"> text</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#005CC5">    --append-system-prompt</span><span style="color:#032F62"> 'You are a Jujutsu (jj) expert helping a user accomplish a task in jj. Reply with concrete jj command(s) in a fenced code block, then brief reasoning. Keep it under ~12 lines, no preamble, no closing remarks. Target jj 0.43+ and use CURRENT commands only: prefer `jj new`/`jj edit` (never the deprecated `jj checkout`), `jj bookmark` (not `jj branch`), `jj git fetch`/`jj git push`, `jj describe`/`jj squash`; remote branches are bookmarks like `master@origin`. Do NOT call any tools; answer only from the provided context.'</span><span style="color:#005CC5"> \</span></span>
+<span class="line"><span style="color:#032F62">    "I want to: ${</span><span style="color:#24292E">question</span><span style="color:#032F62">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">Here is my current jj state:</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">${</span><span style="color:#24292E">ctx</span><span style="color:#032F62">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#032F62">What should I do?"</span><span style="color:#D73A49"> &#x3C;</span><span style="color:#032F62">/dev/null</span></span></code></pre>
+<p>To match my current setup (with git worktrees) I created <a href="https://github.com/strdr4605/.dotfiles/blob/master/bin/jj-clone-jjmain-for-workspaces">helper scripts</a> that allow me to create jj workspaces.</p>
+<p>I am still new to <code>jj</code> and have a lot to learn</p>
+<blockquote>
+<p>This is the part that excites me🤩, a new tool that I have the joy of exploring and becoming good at.</p>
+</blockquote>
+<p>Here are some <code>jj</code> features that I really like:</p>
+<h3 id="no-staging-area">No staging area</h3>
+<p>Unlike <code>git</code>, in <code>jj</code> every change is automatically committed into a change and if I need these changes to be in separate commits I can run <code>jj split</code> with a very nice TUI:</p>
+<p><img src="/jj-split.png" alt="jj-split"></p>
+<h3 id="refactor-without-manual-rebasing">Refactor without manual rebasing</h3>
+<p>When I need to change a previous commit, I don’t do <code>git commit --fixup</code> or <code>git rebase -i</code>, I just run <code>jj edit -r &#x3C;change-id></code>, do my fixes and then I <code>jj edit -r &#x3C;top-change-id></code> and jj automatically rebases all changes.</p>
+<h3 id="no-need-for-branches">No need for branches</h3>
+<p>I consider that branches come and go (created and removed), only commits matter, then why are they almost always required for a normal git flow? With Jujutsu you create branches (bookmarks) at the end of developing when you want to share changes on GitHub. (No more need for temp/test branches).</p>
+<h3 id="handling-conflicts">Handling conflicts</h3>
+<p>In <code>jj</code> conflicts are first-class citizens, it records the conflict as a normal conflicted state in commit history instead of forcing you to stop and resolve immediately. You can keep working with conflicted changes and resolve conflicts later whenever you’re ready.</p>
+<h3 id="jj-absorb"><code>jj absorb</code></h3>
+<p>In a stacked PRs scenario you can fix suggestions from multiple PRs in one big change and running <code>jj absorb</code> will move independent changes to their related descendant PRs.</p>
+<h2 id="final-thoughts">Final thoughts</h2>
+<p>It’s still a long way until I may consider myself good at using jj as I am now with git. And in today’s era, where coding agents do most of the manipulation with git and jj, it’s hard to learn a proper usage (as it’s easy to reach out to agents for help). Who knows, maybe one day I will discover that GitButler is better than jj and I will write another article titled <strong><code>"I don't use jj anymore"</code></strong> or even <strong><code>"I am going back to git"</code></strong> 😱🤔.</p>
+<p>If you are interested in trying jj or GitButler I strongly suggest giving it a try, but before that, please become a git expert, so in rare cases when your company’s agents subscription is cancelled/unpaid or APIs time out, you could rebase/bisect/cherry-pick without needing a coding agent.</p>
+<section data-footnotes="" class="footnotes"><h2 class="sr-only" id="footnote-label">Footnotes</h2>
+<ol>
+<li id="user-content-fn-1">
+<p>Who says that <code>--force</code> is dangerous and forbidden, does not know git. <a href="#user-content-fnref-1" data-footnote-backref="" aria-label="Back to reference 1" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-2">
+<p>Nowadays GitButler has a CLI, so who knows, maybe one day I will switch to <code>but</code> <a href="#user-content-fnref-2" data-footnote-backref="" aria-label="Back to reference 2" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-3">
+<p>Especially because I was in the middle of a WIP feature that I did not want to lose 😅 <a href="#user-content-fnref-3" data-footnote-backref="" aria-label="Back to reference 3" class="data-footnote-backref">↩</a></p>
+</li>
+<li id="user-content-fn-4">
+<p>I even mapped the <code>git</code> command to a <a href="https://github.com/strdr4605/.dotfiles/blob/master/jj-git-nudge.zsh#L32-L71">helper function</a> that no longer allowed me to run <code>git</code>😄, but it had a recursion bug that ended up spawning multiple headless claude instances so I had to abandon this idea. <a href="#user-content-fnref-4" data-footnote-backref="" aria-label="Back to reference 4" class="data-footnote-backref">↩</a></p>
+</li>
+</ol>
+</section> <footer class="post-footer">
+Liked this post? Follow me  <a target="_blank" href="https://x.com/strdr4605" rel="noreferrer">
+@strdr4605
+</a> 
+to get more updates.
+</footer> </article> <section id="giscus-container"></section> <script type="module">const e=document.getElementById("giscus-container");if(e){const a=new IntersectionObserver(i=>{if(i[0].isIntersecting){a.disconnect();const t=document.createElement("script");t.src="https://giscus.app/client.js",t.setAttribute("data-repo","strdr4605/strdr4605.github.io"),t.setAttribute("data-repo-id","MDEwOlJlcG9zaXRvcnkxNDk5ODc2NDA="),t.setAttribute("data-category","General"),t.setAttribute("data-category-id","DIC_kwDOCPChOM4COePA"),t.setAttribute("data-mapping","pathname"),t.setAttribute("data-reactions-enabled","1"),t.setAttribute("data-emit-metadata","0"),t.setAttribute("data-input-position","bottom"),t.setAttribute("data-theme","light"),t.setAttribute("data-lang","en"),t.setAttribute("data-loading","lazy"),t.crossOrigin="anonymous",t.async=!0,e.appendChild(t)}},{rootMargin:"200px"});a.observe(e)}</script>  </div> <script defer src="https://analytics.umami.is/script.js" data-website-id="ffd94eb4-d3a5-4505-bcd4-35c97edc57c8"></script> </body> </html> 
