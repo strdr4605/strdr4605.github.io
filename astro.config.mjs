@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import { transformerNotationDiff } from '@shikijs/transformers';
 import sitemap from '@astrojs/sitemap';
+import remarkGfm from 'remark-gfm';
 
 export default defineConfig({
   site: 'https://strdr4605.com',
@@ -12,6 +13,7 @@ export default defineConfig({
   integrations: [
     sitemap(),
   ],
+  remarkPlugins: [remarkGfm],
   markdown: {
     shikiConfig: {
       theme: 'github-light',
