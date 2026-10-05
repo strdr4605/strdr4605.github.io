@@ -3,7 +3,6 @@ title: "I don't use git anymore"
 date: 2026-10-04
 slug: i-dont-use-git-anymore
 description: A story about how I switched from Git version control system to a better alternative jj-vcs.
-draft: true
 tags:
   - git
   - jj
@@ -53,7 +52,7 @@ I `rebase` and `push --force` multiple times per day[^1].
 
 I kind of [hate `git merge`](/no-tits-in-git)😅, and promote [Trunk based development](https://trunkbaseddevelopment.com/).
 
-I used [git worktrees](/you-need-to-use-git-worktree) before it was mainstream with coding agents.
+I used [git worktrees](/you-need-to-use-git-worktree) before it became mainstream, and coding agents picked up on it too.
 
 I added [custom aliases](/stop-doing-git-checkout-master-branch) to simplify my workflow.
 
@@ -136,4 +135,4 @@ In a stacked PRs scenario you can fix suggestions from multiple PRs in one big c
 
 It's still a long way until I may consider myself good at using jj as I am now with git. And in today's era, where coding agents do most of the manipulation with git and jj, it's hard to learn a proper usage (as it's easy to reach out to agents for help). Who knows, maybe one day I will discover that GitButler is better than jj and I will write another article titled **`"I don't use jj anymore"`** or even **`"I am going back to git"`** 😱🤔.
 
-If you are interested in trying jj or GitButler I strongly suggest giving it a try, but before that, please become a git expert, so in rare cases when your company's agents subscription is cancelled/unpaid or APIs time out, you could rebase/bisect/cherry-pick without needing a coding agent.
+If you are interested in trying jj or GitButler I strongly suggest giving it a try, but before that, it's worth becoming comfortable with git's lower-level tools, so in rare cases when your company's agents subscription is cancelled/unpaid or APIs time out, you could rebase/bisect/cherry-pick without needing a coding agent.
