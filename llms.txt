@@ -4,6 +4,7 @@
 
 ## Blog Posts
 
+- [I don't use git anymore](https://strdr4605.com/i-dont-use-git-anymore): A story about how I switched from Git version control system to a better alternative jj-vcs.
 - [Dynamic Tmux Window Naming with Claude Code](https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code): How to automatically rename tmux windows based on your current task when working with Claude Code.
 - [Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace](https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace): How to paste code in Neovim without unwanted newlines and leading whitespace.
 - [How to set up Lexical editor in React Native](https://strdr4605.com/how-to-set-up-lexical-editor-in-react-native): We will look at how to build a rich text editor in React Native using lexical editor, with the help of react-native-webview.
@@ -43,6 +44,7 @@
 - [github](https://strdr4605.com/tags/github)
 - [hackathons](https://strdr4605.com/tags/hackathons)
 - [hacks](https://strdr4605.com/tags/hacks)
+- [jj](https://strdr4605.com/tags/jj)
 - [learning](https://strdr4605.com/tags/learning)
 - [macos](https://strdr4605.com/tags/macos)
 - [management](https://strdr4605.com/tags/management)

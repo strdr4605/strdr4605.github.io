@@ -11,6 +11,18 @@
     },
     "items": [
         {
+            "id": "https://strdr4605.com/i-dont-use-git-anymore",
+            "content_html": "A story about how I switched from Git version control system to a better alternative jj-vcs.",
+            "url": "https://strdr4605.com/i-dont-use-git-anymore",
+            "title": "I don't use git anymore",
+            "summary": "A story about how I switched from Git version control system to a better alternative jj-vcs.",
+            "date_modified": "2026-10-04T00:00:00.000Z",
+            "author": {
+                "name": "Dragoș Străinu",
+                "url": "https://x.com/strdr4605"
+            }
+        },
+        {
             "id": "https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code",
             "content_html": "How to automatically rename tmux windows based on your current task when working with Claude Code.",
             "url": "https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code",
