@@ -2,7 +2,7 @@
 title: "My Keyboard as a Status Board for Coding Agents"
 date: 2026-10-25
 slug: planck-keyboard-coding-agents
-description: How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.
+description: "How I built a custom Stream Deck for coding agents with a 47-key Planck EZ Glow: RGB status lights, QMK macro keys and herdr."
 tags:
   - tools
   - automation
