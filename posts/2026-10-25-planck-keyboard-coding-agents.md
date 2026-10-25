@@ -1,6 +1,6 @@
 ---
 title: "My Keyboard as a Status Board for Coding Agents"
-date: 2026-10-19
+date: 2026-10-25
 slug: planck-keyboard-coding-agents
 description: How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.
 tags:
