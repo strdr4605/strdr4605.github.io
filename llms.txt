@@ -60,3 +60,7 @@
 - [userscript](https://strdr4605.com/tags/userscript)
 - [vim](https://strdr4605.com/tags/vim)
 - [zsh](https://strdr4605.com/tags/zsh)
+
+## Markdown
+
+Every page has a markdown version. Add `.md` to a post URL, for example `https://strdr4605.com/how-i-use-git.md`. The blog index is at `https://strdr4605.com/index.md`.
