@@ -18,6 +18,17 @@
       ]
     },
     {
+      "identifier": "urn:air:strdr4605.com:content:markdown-index",
+      "displayName": "Blog index in Markdown",
+      "description": "Markdown index of every published post. Each post also has a markdown version at its URL plus the .md suffix.",
+      "type": "text/markdown",
+      "url": "https://strdr4605.com/index.md",
+      "representativeQueries": [
+        "list all blog posts in markdown",
+        "get the markdown version of a post"
+      ]
+    },
+    {
       "identifier": "urn:air:strdr4605.com:feed:json",
       "displayName": "JSON Feed of blog posts",
       "description": "Machine-readable feed of every published post with title, link, date and description.",

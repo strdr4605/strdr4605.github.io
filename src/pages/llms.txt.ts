@@ -1,23 +1,13 @@
 import type { APIRoute } from "astro";
-import { getCollection } from "astro:content";
+import { buildPostListMarkdown, getSortedPosts } from "../lib/posts";
 
 const siteUrl = "https://strdr4605.com";
 
 export const GET: APIRoute = async () => {
-  const posts = await getCollection("posts", ({ data }) => !data.draft);
-
-  const sortedPosts = posts
-    .map((post) => ({
-      slug: post.data.slug,
-      date: post.data.date,
-      title: post.data.title,
-      description: post.data.description,
-      tags: post.data.tags,
-    }))
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  const posts = await getSortedPosts();
 
   const tagSet = new Set<string>();
-  for (const post of sortedPosts) {
+  for (const post of posts) {
     for (const tag of post.tags) {
       tagSet.add(tag);
     }
@@ -31,14 +21,15 @@ export const GET: APIRoute = async () => {
     "",
     `## Blog Posts`,
     "",
-    ...sortedPosts.map(
-      (post) =>
-        `- [${post.title}](${siteUrl}/${post.slug})${post.description ? `: ${post.description}` : ""}`,
-    ),
+    buildPostListMarkdown(posts),
     "",
     `## Tags`,
     "",
     ...tags.map((tag) => `- [${tag}](${siteUrl}/tags/${tag})`),
+    "",
+    `## Markdown`,
+    "",
+    "Every page has a markdown version. Add `.md` to a post URL, for example `https://strdr4605.com/how-i-use-git.md`. The blog index is at `https://strdr4605.com/index.md`.",
     "",
   ];
 
