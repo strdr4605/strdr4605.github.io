@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2026-10-25T09:55:53.546Z</updated>
+    <updated>2026-10-25T19:20:00.522Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
@@ -15,6 +15,24 @@
     <logo>https://strdr4605.com/banner.jpg</logo>
     <icon>https://strdr4605.com/favicon.ico</icon>
     <rights>All rights reserved 2026, Dragoș Străinu</rights>
+    <entry>
+        <title type="html"><![CDATA[My Keyboard as a Status Board for Coding Agents]]></title>
+        <id>https://strdr4605.com/planck-keyboard-coding-agents</id>
+        <link href="https://strdr4605.com/planck-keyboard-coding-agents"/>
+        <updated>2026-10-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.]]></summary>
+        <content type="html"><![CDATA[How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.]]></content>
+        <author>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://x.com/strdr4605</uri>
+        </author>
+        <contributor>
+            <name>Dragoș Străinu</name>
+            <email>str.dr4605@gmail.com</email>
+            <uri>https://x.com/strdr4605</uri>
+        </contributor>
+    </entry>
     <entry>
         <title type="html"><![CDATA[I don't use git anymore]]></title>
         <id>https://strdr4605.com/i-dont-use-git-anymore</id>
