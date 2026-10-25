@@ -48,6 +48,28 @@ img[src*="#small"] {
   object-fit: contain;
 }
 
+/* Wide media breaks out of the 60ch column. Add #wide to the media URL. */
+img[src*="#wide"],
+video[poster*="#wide"] {
+  max-width: 100%;
+}
+
+video {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 900px) {
+  img[src*="#wide"],
+  video[poster*="#wide"] {
+    display: block;
+    width: 150%;
+    max-width: none;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
 /* Shiki diff highlighting */
 .astro-code .diff.add {
   background-color: #acf2bd4d;
