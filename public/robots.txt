@@ -2,6 +2,9 @@
 User-agent: *
 Allow: /
 
+# Content Signals (https://contentsignals.org/)
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+
 # Host
 Host: https://strdr4605.com
 
