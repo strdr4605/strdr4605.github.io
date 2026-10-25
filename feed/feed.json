@@ -12,10 +12,10 @@
     "items": [
         {
             "id": "https://strdr4605.com/planck-keyboard-coding-agents",
-            "content_html": "How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.",
+            "content_html": "How I built a custom Stream Deck for coding agents with a 47-key Planck EZ Glow: RGB status lights, QMK macro keys and herdr.",
             "url": "https://strdr4605.com/planck-keyboard-coding-agents",
             "title": "My Keyboard as a Status Board for Coding Agents",
-            "summary": "How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.",
+            "summary": "How I built a custom Stream Deck for coding agents with a 47-key Planck EZ Glow: RGB status lights, QMK macro keys and herdr.",
             "date_modified": "2026-10-25T00:00:00.000Z",
             "author": {
                 "name": "Dragoș Străinu",

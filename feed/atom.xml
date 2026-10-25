@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://strdr4605.com</id>
     <title>Dragoș Străinu's blog</title>
-    <updated>2026-10-25T19:24:46.428Z</updated>
+    <updated>2026-10-25T19:29:05.985Z</updated>
     <generator>Feed for Node.js</generator>
     <author>
         <name>Dragoș Străinu</name>
@@ -20,8 +20,8 @@
         <id>https://strdr4605.com/planck-keyboard-coding-agents</id>
         <link href="https://strdr4605.com/planck-keyboard-coding-agents"/>
         <updated>2026-10-25T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.]]></summary>
-        <content type="html"><![CDATA[How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.]]></content>
+        <summary type="html"><![CDATA[How I built a custom Stream Deck for coding agents with a 47-key Planck EZ Glow: RGB status lights, QMK macro keys and herdr.]]></summary>
+        <content type="html"><![CDATA[How I built a custom Stream Deck for coding agents with a 47-key Planck EZ Glow: RGB status lights, QMK macro keys and herdr.]]></content>
         <author>
             <name>Dragoș Străinu</name>
             <email>str.dr4605@gmail.com</email>

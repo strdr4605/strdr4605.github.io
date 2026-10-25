@@ -4,7 +4,7 @@
         <title>Dragoș Străinu's blog</title>
         <link>https://strdr4605.com</link>
         <description>I am Dragoș (Dragosh), a Front-end Software Engineer, Hackathoner, OSS enthusiast.</description>
-        <lastBuildDate>Sun, 25 Oct 2026 19:24:46 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 25 Oct 2026 19:29:05 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -18,8 +18,8 @@
             <link>https://strdr4605.com/planck-keyboard-coding-agents</link>
             <guid>https://strdr4605.com/planck-keyboard-coding-agents</guid>
             <pubDate>Sun, 25 Oct 2026 00:00:00 GMT</pubDate>
-            <description><![CDATA[How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.]]></description>
-            <content:encoded><![CDATA[How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.]]></content:encoded>
+            <description><![CDATA[How I built a custom Stream Deck for coding agents with a 47-key Planck EZ Glow: RGB status lights, QMK macro keys and herdr.]]></description>
+            <content:encoded><![CDATA[How I built a custom Stream Deck for coding agents with a 47-key Planck EZ Glow: RGB status lights, QMK macro keys and herdr.]]></content:encoded>
             <author>str.dr4605@gmail.com (Dragoș Străinu)</author>
         </item>
         <item>

@@ -4,7 +4,7 @@
 
 ## Blog Posts
 
-- [My Keyboard as a Status Board for Coding Agents](https://strdr4605.com/planck-keyboard-coding-agents): How a 47-key Planck EZ Glow becomes a control deck for herdr coding agents, with live status lights and a row of macro keys.
+- [My Keyboard as a Status Board for Coding Agents](https://strdr4605.com/planck-keyboard-coding-agents): How I built a custom Stream Deck for coding agents with a 47-key Planck EZ Glow: RGB status lights, QMK macro keys and herdr.
 - [I don't use git anymore](https://strdr4605.com/i-dont-use-git-anymore): A story about how I switched from Git version control system to a better alternative jj-vcs.
 - [Dynamic Tmux Window Naming with Claude Code](https://strdr4605.com/dynamic-tmux-window-naming-with-claude-code): How to automatically rename tmux windows based on your current task when working with Claude Code.
 - [Clean Paste in Neovim: Paste Text Without Newlines and Leading Whitespace](https://strdr4605.com/clean-paste-in-neovim-paste-text-without-newlines-and-leading-whitespace): How to paste code in Neovim without unwanted newlines and leading whitespace.
