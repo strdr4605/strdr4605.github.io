@@ -1,0 +1,54 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Dragoș Străinu's Blog",
+    "identifier": "did:web:strdr4605.com"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:strdr4605.com:content:llms-txt",
+      "displayName": "Blog index for LLMs (llms.txt)",
+      "description": "Plain-text list of all published posts, with descriptions and tags, meant for AI agents.",
+      "type": "text/plain",
+      "url": "https://strdr4605.com/llms.txt",
+      "representativeQueries": [
+        "list all blog posts by Dragoș Străinu",
+        "what tags are used on this blog",
+        "find posts about git workflows"
+      ]
+    },
+    {
+      "identifier": "urn:air:strdr4605.com:feed:json",
+      "displayName": "JSON Feed of blog posts",
+      "description": "Machine-readable feed of every published post with title, link, date and description.",
+      "type": "application/feed+json",
+      "url": "https://strdr4605.com/feed/feed.json",
+      "representativeQueries": [
+        "get the latest posts from this blog",
+        "subscribe to new blog posts"
+      ]
+    },
+    {
+      "identifier": "urn:air:strdr4605.com:feed:rss",
+      "displayName": "RSS feed of blog posts",
+      "description": "RSS 2.0 feed of every published post.",
+      "type": "application/rss+xml",
+      "url": "https://strdr4605.com/feed/rss.xml",
+      "representativeQueries": [
+        "show the RSS feed of this blog",
+        "get posts about developer tooling"
+      ]
+    },
+    {
+      "identifier": "urn:air:strdr4605.com:content:tags",
+      "displayName": "Blog posts by tag",
+      "description": "Tag index of the blog, each tag listing its posts.",
+      "type": "text/html",
+      "url": "https://strdr4605.com/tags/",
+      "representativeQueries": [
+        "list posts tagged git",
+        "browse blog posts by topic"
+      ]
+    }
+  ]
+}
