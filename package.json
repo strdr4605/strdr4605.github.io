@@ -17,7 +17,8 @@
     "build-og-images": "node scripts/generateOGImages.js",
     "redirects": "html-redirections redirects.json out",
     "preview": "astro preview --port 4605",
-    "lint": "astro check"
+    "lint": "astro check",
+    "publish:devto": "node scripts/syncDevTo.js"
   },
   "dependencies": {
     "@allindevelopers/html-redirections": "^1.1.1",
