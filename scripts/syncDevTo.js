@@ -1,8 +1,9 @@
 // Sync the blog posts to dev.to. Every post gets a canonical URL back to the blog.
-// Usage: DEVTO_API_KEY=xxx node scripts/syncDevTo.js [posts/<file>.md]
+// Usage: DEVTO_API_KEY=xxx node scripts/syncDevTo.js [posts/a.md posts/b.md]
 // Without a file, all posts are processed.
 import fs from "fs";
 import path from "path";
+import { execSync } from "child_process";
 import matter from "gray-matter";
 
 const SITE = "https://strdr4605.com";
@@ -133,15 +134,43 @@ function ownCanonical(current) {
 // dev.to allows 30 requests per 30 seconds. Keep the pace under that limit.
 const sleep = () => new Promise((r) => setTimeout(r, 1200));
 
-// Usage: DEVTO_API_KEY=xxx node scripts/syncDevTo.js [posts/<file>.md] [--body]
+// Usage: DEVTO_API_KEY=xxx node scripts/syncDevTo.js [posts/a.md posts/b.md] [--body]
 // --body overwrites the dev.to body with the local post. Use it only for articles
 // that dev.to got from this script, because a manual edit on dev.to is lost.
 const forceBody = process.argv.includes("--body");
 
+const args = process.argv.slice(2).filter((a) => !a.startsWith("--"));
+
+// In CI, sync only the posts that changed in the push.
+function changedPosts() {
+  const before = process.env.DEVTO_DIFF_BEFORE;
+  const after = process.env.DEVTO_DIFF_AFTER || "HEAD";
+
+  // A new branch push has no previous commit to diff against.
+  if (!before || /^0+$/.test(before)) return [];
+
+  const out = execSync(`git diff --name-only ${before} ${after} -- posts`, {
+    encoding: "utf8",
+  });
+
+  return out
+    .split("\n")
+    .filter(Boolean)
+    .map((f) => path.join(process.cwd(), f))
+    .filter((f) => fs.existsSync(f));
+}
+
 const files =
-  process.argv[2] && !process.argv[2].startsWith("--")
-    ? [process.argv[2]]
-    : fs.readdirSync(postsDirectory).map((f) => path.join(postsDirectory, f));
+  args.length > 0
+    ? args
+    : process.env.DEVTO_DIFF_BEFORE
+      ? changedPosts()
+      : fs.readdirSync(postsDirectory).map((f) => path.join(postsDirectory, f));
+
+if (files.length === 0) {
+  console.log("no posts to sync");
+  process.exit(0);
+}
 
 const existing = await api(`${API}/me?per_page=1000`, "GET");
 

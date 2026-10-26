@@ -25,3 +25,26 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           commit_message: ${{ github.event.head_commit.message }}
+
+  devto:
+    # Runs after the deploy, so the canonical URLs point to live pages.
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # the sync diffs the push against the previous commit
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - run: yarn
+
+      - name: Sync posts to dev.to
+        env:
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+          DEVTO_DIFF_BEFORE: ${{ github.event.before }}
+          DEVTO_DIFF_AFTER: ${{ github.sha }}
+        run: yarn publish:devto
