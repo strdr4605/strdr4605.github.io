@@ -167,12 +167,13 @@ const files =
       ? changedPosts()
       : fs.readdirSync(postsDirectory).map((f) => path.join(postsDirectory, f));
 
+// Fetch the list first, so a wrong key fails the job even when nothing changed.
+const existing = await api(`${API}/me?per_page=1000`, "GET");
+
 if (files.length === 0) {
   console.log("no posts to sync");
   process.exit(0);
 }
-
-const existing = await api(`${API}/me?per_page=1000`, "GET");
 
 for (const file of files) {
   const post = matter(fs.readFileSync(file, "utf8"));
